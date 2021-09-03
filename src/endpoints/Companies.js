@@ -1,4 +1,5 @@
 import { Company } from "../model/Company"
+import { CompaniesContactInfo } from "./CompaniesContactInfo"
 
 export class Companies {
 
@@ -36,8 +37,8 @@ export class Companies {
      * 
      * @param {Company} company 
      */
-    async update(company) {
-        const response = await this._client.put(`/companies`, company)
+    async update(companyId, company) {
+        const response = await this._client.put(`/companies/${companyId}`, company)
         const data = response.data()
         return new Company(data)
     }
@@ -56,6 +57,15 @@ export class Companies {
      */
     async delete(companyId, options) {
         await this._client.post(`/companies/${companyId}/`, options)
+    }
+
+    /**
+     * 
+     * @param {String} companyId 
+     * @returns {CompaniesContactInfo}
+     */
+    contactInfo (companyId) {
+        return new CompaniesContactInfo(this._client, companyId)
     }
 
 }

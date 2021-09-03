@@ -1,5 +1,5 @@
-// TODO: All
-export class Company {
+// TODO: ALL
+export class CompanyContactInfo {
     constructor(data) {
         this._data = data || {}
     }
@@ -11,15 +11,18 @@ export class Company {
         return this._data.id
     }
 
-    get name() {
-        return this._data.name
+    /**
+     * @type {('phone'|'email'|'address'|'custom')}
+     */
+    get type() {
+        return this._data.type
     }
 
     /**
      * @type {Boolean}
      */
-    get hasImage() {
-        return this._data.title
+    get isAddress() {
+        return this._data.isAddress
     }
 
     toPlainObject() {
