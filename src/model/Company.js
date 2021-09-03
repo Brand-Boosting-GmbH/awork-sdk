@@ -11,6 +11,10 @@ export class Company {
         return this._data.id
     }
 
+    get name() {
+        return this._data.name
+    }
+
     /**
      * @type {Boolean}
      */
@@ -21,6 +25,7 @@ export class Company {
     toPlainObject() {
         return {
             id: this._data.id,
+            name: this._data.name,
             hasImage: this._data.hasImage,
         }
     }

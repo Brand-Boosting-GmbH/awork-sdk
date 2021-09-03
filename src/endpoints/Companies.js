@@ -3,17 +3,21 @@ import { Company } from "../model/Company"
 export class Companies {
 
     constructor(client) {
-        this.client = client
+        this._client = client
     }
 
     async get(companyId) {
-        const response = await this.client.get(`/companies/${companyId}`)
+        const response = await this._client.get(`/companies/${companyId}`)
         const data = response.data()
         return new Company(data)
     }
 
+    /**
+     * 
+     * @returns {Promise<Array<Company>>}
+     */
     async list() {
-        const response = await this.client.get(`/companies`)
+        const response = await this._client.get(`/companies`)
         const data = response.data()
         return data.map(d => new Company(d))
     }
@@ -23,7 +27,7 @@ export class Companies {
      * @param {Company} company 
      */
     async create(company) {
-        const response = await this.client.post(`/companies`, company)
+        const response = await this._client.post(`/companies`, company)
         const data = response.data()
         return new Company(data)
     }
@@ -33,7 +37,7 @@ export class Companies {
      * @param {Company} company 
      */
     async update(company) {
-        const response = await this.client.put(`/companies`, company)
+        const response = await this._client.put(`/companies`, company)
         const data = response.data()
         return new Company(data)
     }
@@ -51,7 +55,7 @@ export class Companies {
      * @returns 
      */
     async delete(companyId, options) {
-        await this.client.post(`/companies/${companyId}/`, options)
+        await this._client.post(`/companies/${companyId}/`, options)
     }
 
 }
