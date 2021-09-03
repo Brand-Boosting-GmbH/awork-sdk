@@ -1,0 +1,33 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "12"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.2",
+    "blob": "^0.1.0",
+    "cors": "^2.8.5",
+    "csv-writer": "^1.6.0",
+    "delivery-boosting-2021-model": "git+https://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:x-oauth-basic@github.com//Brand-Boosting-GmbH/delivery-boosting-2021-model.git",
+    "firebase-admin": "^9.2.0",
+    "firebase-functions": "^3.11.0",
+    "nodemailer": "^6.6.2",
+    "vm2": "^3.9.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
