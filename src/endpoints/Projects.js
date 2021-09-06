@@ -1,5 +1,6 @@
 import { Project } from "../model/Project"
 import { ProjectMembers } from "./ProjectMembers"
+import { EntityFiles } from "./EntityFiles"
 
 
 export class Projects {
