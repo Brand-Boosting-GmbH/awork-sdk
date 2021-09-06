@@ -1,6 +1,6 @@
 import { CompanyContactInfo } from "../model/CompanyContactInfo"
 
-export class CompaniesContactInfo {
+export class CompaniesContactInfos {
 
     constructor(client, companyId) {
         this._client = client

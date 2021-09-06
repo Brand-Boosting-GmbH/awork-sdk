@@ -1,12 +1,12 @@
 import { Company } from "../model/Company"
-import { CompaniesContactInfo } from "./CompaniesContactInfo"
+import { CompaniesContactInfos } from "./CompaniesContactInfos"
 
 export class Companies {
 
     constructor(client) {
         this._client = client
     }
-
+z
     async get(companyId) {
         const response = await this._client.get(`/companies/${companyId}`)
         const data = response.data()
@@ -62,10 +62,10 @@ export class Companies {
     /**
      * 
      * @param {String} companyId 
-     * @returns {CompaniesContactInfo}
+     * @returns {CompaniesContactInfos}
      */
     contactInfo (companyId) {
-        return new CompaniesContactInfo(this._client, companyId)
+        return new CompaniesContactInfos(this._client, companyId)
     }
 
 }

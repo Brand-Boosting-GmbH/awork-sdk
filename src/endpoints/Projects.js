@@ -1,4 +1,6 @@
 import { Project } from "../model/Project"
+import { ProjectMembers } from "./ProjectMembers"
+
 
 export class Projects {
 
@@ -47,6 +49,14 @@ export class Projects {
      */
     async delete(projectId) {
         await this.client.post(`/projects/${projectId}/`, options)
+    }
+
+    members(projectId) {
+        return new ProjectMembers(this.client, projectId)
+    }
+
+    files (projectId) { //projects = entityName, projectId = entityId
+        return new EntityFiles(this.client, 'projects', projectId) //TODO EntityFiles..
     }
 
 }
