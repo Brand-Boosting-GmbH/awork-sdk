@@ -6,7 +6,7 @@ export class Companies {
     constructor(client) {
         this._client = client
     }
-z
+
     async get(companyId) {
         const response = await this._client.get(`/companies/${companyId}`)
         const data = response.data()
