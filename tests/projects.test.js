@@ -7,7 +7,7 @@ test('1=1t', async () => {
     const projects = new Projects(client)
     const response = await projects.list()
     console.log(response.map(c => c.name))
-    //console.log(response.map(c => c.members('7495fdd5-4f07-ec11-b563-dc984023d47e')))
+    console.log(response.find(c => c.name === 'Kontra K App'))
 
     // console.log(await companies.contactInfo(response[5].id).list())
     expect(1).toBe(1)
