@@ -65,7 +65,7 @@ export class ProjectStatuses {
      * @param {String} projectStatusId 
      * @param {Boolean} archivedStatus 
      */
-    async archive (projectStatusId, archivedStatus) {
+    async archive (projectStatusId, archivedStatus = true) {
         await this._client.post(`/projectstatuses/${projectStatusId}/setarchived`, {'isArchived': archivedStatus})
     }
 }
