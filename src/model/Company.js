@@ -94,7 +94,7 @@ export class Company {
 
     /**
      * The version of the entity continuously incremented by 1 on every update of the entity.
-     * @type {Integer}
+     * @type {Number}
      */
     get resourceVersion () {
         return this._data.resourceVersion
@@ -110,7 +110,7 @@ export class Company {
 
     /**
      * The number of all projects related to the company.
-     * @type {Integer}
+     * @type {Number}
      */
     get projectsCount () {
         return this._data.projectsCount
@@ -118,7 +118,7 @@ export class Company {
 
     /**
      * The number of all projects in status 'progress' related to the company.
-     * @type {Integer}
+     * @type {Number}
      */
     get projectsInProgressCount () {
         return this._data.projectsInProgressCount

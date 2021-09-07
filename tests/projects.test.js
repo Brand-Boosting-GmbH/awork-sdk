@@ -18,6 +18,18 @@ test('test get members of a project', async () => {
     const projects = new Projects(client)
     const members = projects.members('7495fdd5-4f07-ec11-b563-dc984023d47e') // Kontra K Project
     console.log(await members.list())
+    console.log(await members.get('b4486823-9986-ea11-a94c-00155d314c5a'))
+
+    expect(1).toBe(1)
+})
+
+
+test('test get projectstatuses of a project', async () => {
+    const client = new Client(API_KEY)
+    const projects = new Projects(client)
+    const statuses = projects.projectStatuses()
+    console.log(await statuses.get('7495fdd5-4f07-ec11-b563-dc984023d47e'))
+    // console.log(await members.get('b4486823-9986-ea11-a94c-00155d314c5a'))
 
     expect(1).toBe(1)
 })

@@ -39,7 +39,7 @@ export class Project {
     
     /**
      * The time budget the project has in seconds.
-     * @type {Integer} nullable
+     * @type {Number} nullable
      */
     get timeBudget () {
         return this._data.timeBudget
@@ -182,7 +182,7 @@ export class Project {
 
     /**
      * The order of the status type.
-     * @type {Integer}
+     * @type {Number}
      */
     get projectStatusTypeOrder () {
         return this._data.projectStatus.typeOrder
@@ -280,7 +280,7 @@ export class Project {
 
     /**
      * The total planned time of the project, in seconds. The time is calculated of the planned duration by all project tasks.
-     * @type {Integer} nullable
+     * @type {Number} nullable
      */
     get plannedDuration () {
         return this._data.plannedDuration
@@ -288,7 +288,7 @@ export class Project {
 
     /**
      * The number of all tasks related to the project.
-     * @type {Integer} nullable
+     * @type {Number} nullable
      */
     get tasksCount () {
         return this._data.tasksCount
@@ -296,7 +296,7 @@ export class Project {
 
     /**
      * The number of all tasks in status 'done' related to the project.
-     * @type {Integer} nullable
+     * @type {Number} nullable
      */
     get tasksDoneCount () {
         return this._data.taksDoneCount
@@ -313,7 +313,7 @@ export class Project {
 
     /**
      * The summed up duration of all time trackings for this project.
-     * @type {Integer} nullable
+     * @type {Number} nullable
      */
     get trackedDuration () {
         return this._data.trackedDuration
@@ -321,7 +321,7 @@ export class Project {
 
     /**
      * The version of the entity continuously incremented.
-     * @type {Integer}
+     * @type {Number}
      */
     get resourceVersion () {
         return this._data.resourceVersion

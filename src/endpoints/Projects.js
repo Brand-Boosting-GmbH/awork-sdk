@@ -1,6 +1,7 @@
 import { Project } from "../model/Project"
 import { ProjectMembers } from "./ProjectMembers"
 import { EntityFiles } from "./EntityFiles"
+import { ProjectStatuses } from "./ProjectStatuses"
 
 
 export class Projects {
@@ -59,5 +60,11 @@ export class Projects {
     files (projectId) { //projects = entityName, projectId = entityId
         return new EntityFiles(this.client, 'projects', projectId) //TODO EntityFiles..
     }
+
+    projectStatuses () {
+        return new ProjectStatuses(this.client)
+    }
+
+
 
 }
