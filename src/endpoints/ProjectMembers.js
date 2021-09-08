@@ -81,7 +81,7 @@ export class ProjectMembers {
      * @returns {Promise<ProjectMember>}
      */
     async update(userId, projectMember) {
-        await this._client.post(`projects/${this.projectId}/updateprojectmember`, { userId, ...projectMember})
+        await this._client.post(`projects/${this._projectId}/updateprojectmember`, { userId, ...projectMember})
         return new ProjectMember({ userId, ...projectMember})
     }
 
@@ -93,6 +93,6 @@ export class ProjectMembers {
      * @returns {Promise<void>}
      */
     async delete(projectMemberId) {
-        await this._client.post(`projects/${this.projectId}/removeprojectmember`, {userId: projectMemberId})
+        await this._client.post(`projects/${this._projectId}/removeprojectmember`, {userId: projectMemberId})
     }
 }

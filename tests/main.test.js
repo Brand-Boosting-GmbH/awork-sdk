@@ -24,7 +24,9 @@ test('awork main 2', async () => {
 const MAX_MM_UID = 'bc32b5df-b910-ec11-b563-dc984023d47e'
 
 test('awork main 3', async () => {
+    console.log((await awork.client.get('/projectroles')).data())
     const projects = await awork.projects.list({ filterBy: "startswith(name,'Best')" })
-    const projectMembers = await awork.projects.members('1fdc53dc-ce10-ec11-b563-dc984023d47e').create({ projectRoleId: '87232828-ba10-ec11-b563-dc984023d47e', isResponsible: true, userId: MAX_MM_UID})
+    const projectMember = await awork.projects.members('f8ab5ee8-ce10-ec11-b563-dc984023d47e').create({ projectRoleId: '87232828-ba10-ec11-b563-dc984023d47e', isResponsible: true, userId: MAX_MM_UID})
+    const projectMember2 = await awork.projects.members('f8ab5ee8-ce10-ec11-b563-dc984023d47e').update(MAX_MM_UID, { projectRoleId: '82232828-ba10-ec11-b563-dc984023d47e', isResponsible: true})
     console.log(projectMembers)
 })

@@ -55,7 +55,7 @@ export class Client {
 
     async post(path, payload, params = {}) {
         let data = Client.getPlainObject(payload)
-        const response = await this.http.post(path, data, { params }).catch(r => console.error(r.response.data))
+        const response = await this.http.post(path, data, { params }).catch(r => console.error(r.response))
         return new AworkResponse(response.status, response.headers, response.data)
     }
 
