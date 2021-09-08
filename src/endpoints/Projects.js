@@ -106,7 +106,7 @@ export class Projects {
      * @returns {Promise<void>}
      */
     async delete(projectId, options) {
-        await this._client.post(`/projects/${projectId}/`, options)
+        await this._client.post(`/projects/${projectId}/delete`, options)
     }
 
     /**
