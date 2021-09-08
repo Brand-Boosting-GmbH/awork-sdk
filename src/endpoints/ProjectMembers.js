@@ -60,9 +60,8 @@ export class ProjectMembers {
      * @returns {Promise<ProjectMember>}
      */
     async create(projectMember) {
-        const response = await this._client.post(`projects/${this._projectId}/addprojectmember`, projectMember)
-        const data = response.data()
-        return new ProjectMember(data)
+        await this._client.post(`projects/${this._projectId}/addprojectmember`, projectMember)
+        return new ProjectMember(projectMember)
     }
 
     /**
@@ -82,9 +81,8 @@ export class ProjectMembers {
      * @returns {Promise<ProjectMember>}
      */
     async update(userId, projectMember) {
-        const response = await this._client.post(`projects/${this.projectId}/updateprojectmember`, { userId, ...projectMember})
-        const data = response.data()
-        return new ProjectMember(data)
+        await this._client.post(`projects/${this.projectId}/updateprojectmember`, { userId, ...projectMember})
+        return new ProjectMember({ userId, ...projectMember})
     }
 
     /**
