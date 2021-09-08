@@ -15,6 +15,9 @@ export class Projects {
      * @param {import('../client').Client} client 
      */
     constructor(client) {
+        /**
+         * @private
+         */
         this._client = client
     }
 

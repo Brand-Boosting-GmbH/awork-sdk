@@ -6,7 +6,13 @@ import { ProjectMember } from "../model/ProjectMember"
  */
 export class ProjectMembers {
     constructor(client, projectId) {
+        /**
+         * @private
+         */
         this._client = client
+        /**
+         * @private
+         */
         this._projectId = projectId
     }
 
