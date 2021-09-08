@@ -49,7 +49,6 @@ export class Client {
      * @returns {AworkResponse}
      */
     async get(path, params = {}) {
-        console.log({path})
         const response = await this.http.get(path, { params })
         return new AworkResponse(response.status, response.headers, response.data)
     }
