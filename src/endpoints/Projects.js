@@ -94,7 +94,7 @@ export class Projects {
 
     /**
      * @typedef {Object} DeleteProjectOptions
-     * @property {Boolean} [boolean] Set to true to delete also the related time trackings. If it is set to false the related time trackings are still there, but the project and task reference will be cleared. That will also happen if no request body is present.
+     * @property {Boolean} [deleteTimeTrackings] Set to true to delete also the related time trackings. If it is set to false the related time trackings are still there, but the project and task reference will be cleared. That will also happen if no request body is present.
      */    
 
     /**
@@ -105,7 +105,7 @@ export class Projects {
      * @param {DeleteProjectOptions} [options]
      * @returns {Promise<void>}
      */
-    async delete(projectId, options) {
+    async delete(projectId, options = { deleteTimeTrackings: false }) {
         await this._client.post(`/projects/${projectId}/delete`, options)
     }
 
