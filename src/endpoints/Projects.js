@@ -1,3 +1,4 @@
+import '../globalTypedef'
 import { Project } from "../model/Project"
 import { ProjectMembers } from "./ProjectMembers"
 import { EntityFiles } from "./EntityFiles"
@@ -9,6 +10,10 @@ import { ProjectProjectStatus } from "./ProjectProjectStatus"
  */
 export class Projects {
 
+    /**
+     * Endpoint constructor
+     * @param {import('../client').Client} client 
+     */
     constructor(client) {
         this._client = client
     }
@@ -26,10 +31,11 @@ export class Projects {
 
     /**
      * Returns all projects the user has 'read' permissions of feature 'project-master-data' for.
+     * @param {ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<Project>>}
      */
-    async list() {
-        const response = await this._client.get(`/projects`)
+    async list(options) {
+        const response = await this._client.get(`/projects`, options)
         const data = response.data()
         return data.map(d => new Project(d))
     }
