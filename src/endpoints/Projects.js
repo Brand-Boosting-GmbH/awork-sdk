@@ -58,7 +58,7 @@ export class Projects {
     }
 
     files (projectId) { //projects = entityName, projectId = entityId
-        return new EntityFiles(this._client, 'projects', projectId) //TODO EntityFiles..
+        return new EntityFiles(this._client, 'projects', projectId)
     }
 
     projectStatus (projectId) {
