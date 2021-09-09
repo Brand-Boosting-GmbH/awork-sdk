@@ -24,6 +24,7 @@ class AworkResponse {
 
 /**
  * Client class used to perform the http requests
+ * @category Util
  * @class
  */
 export class Client {

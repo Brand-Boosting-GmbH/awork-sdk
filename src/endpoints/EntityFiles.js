@@ -7,6 +7,7 @@ import FormData from "form-data"
 
 /**
  * Class corresponding to Aworks EntityFiles Endpoints
+ * @category Endpoints
  * @see [EntityFiles in Awork API Docs](https://openapi.awork.io/#/EntityFiles)
  */
 export class EntityFiles {
