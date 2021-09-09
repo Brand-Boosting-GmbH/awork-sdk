@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> model/CompanyContactInfo.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="Projects.html">Projects</a></li><li><a href="Teams.html">Teams</a></li></ul><h3><a href="global.html">Global</a></h3></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>model/CompanyContactInfo.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>export class CompanyContactInfo {
+    constructor(data) {
+        this._data = data || {}
+    }
+
+    /**
+     * The id of the contact info.
+     * @type {String}
+     */
+    get id() {
+        return this._data.id
+    }
+
+    /**
+     * The label of the contact info. Only necessary if type 'custom' is used.
+     * @type {String} nullable
+     */
+    get label () {
+        return this._data.label
+    }
+
+    /**
+     * The value of the contact info
+     * @type {String} nullable
+     */
+    get value () {
+        return this._data.value
+    }
+
+    /**
+     * The type of the contact info.
+     * @type {('phone'|'email'|'address'|'custom')}
+     */
+    get type() {
+        return this._data.type
+    }
+
+    /**
+     * @typedef {('central'|'other')} PhoneSubType
+     */
+
+    /**
+     * @typedef {('central'|'invoice'|'other')} EmailSubType
+     */
+
+    /**
+     * @typedef {('central'|'invoice'|'other')} AddressSubType
+     */
+
+    /**
+     * @typedef {('primary'|'other')} UrlSubType
+     */
+
+
+    /**
+     * The subtype of the contact info. Answers depening on type of the contact info.
+     * @type {(PhoneSubType|EmailSubType|AddressSubType|UrlSubType)}
+     */
+    get subType () {
+        return this._data.subType
+    }
+
+    /**
+     * The first address line of the contact info.
+     * @type {String} nullable
+     */
+    get addressLine1 () {
+        return this._data.addressLine1
+    }
+
+    /**
+     * The second address line of the contact info.
+     * @type {String} nullable
+     */
+     get addressLine2 () {
+        return this._data.addressLine2
+    }
+
+    /**
+     * The Zipcode of the contact info.
+     * @type {String} nullable
+     */
+    get zipCode () {
+        return this._data.zipCode
+    }
+
+    /**
+     * The city of the contact info.
+     * @type {String} nullable
+     */
+    get city () {
+        return this._data.city
+    }
+
+    /**
+     * The state of the contact info.
+     * @type {String} nullable
+     */
+    get state () {
+        return this._data.state
+    }
+
+    /**
+     * The 2-letter iso code of the country.
+     * @type {String} nullable
+     */
+    get country () {
+        return this._data.country
+    }
+
+    /**
+     * Flags wheter this contact info is an address or not. If its an address, the address fields are required.
+     * @type {Boolean}
+     */
+    get isAddress() {
+        return this._data.isAddress
+    }
+
+    /**
+     * The date this entity was created.
+     * @type {String}
+     */
+    get createdOn () {
+        return this._data.createdOn
+    }
+
+    /**
+     * The id of the user who created this entity.
+     * @type {String}
+     */
+     get createdBy () {
+        return this._data.createdBy
+    }
+
+    /**
+     * The id of the user who created this entity.
+     * @type {String}
+     */
+    get updatedOn () {
+        return this._data.updatedOn
+    }
+
+    /**
+     * The id of the user who last modified this entity.
+     * @type {String}
+     */
+    get updatedBy () {
+        return this._data.updatedBy
+    }
+
+    /**
+     * The company id of the contact info.
+     * @type {String}
+     */
+    get companyId () {
+        return this._data.companyId
+    }
+
+    toPlainObject() {
+        return {
+            id: this._data.id,
+            label: this._data.label,
+            value: this._data.value,
+            type: this._data.type,
+            subType: this._data.subType,
+            addressLine1: this._data.addressLine1,
+            addressLine2: this._data.addressLine2,
+            zipCode: this._data.zipCode,
+            city: this._data.city,
+            state: this._data.state,
+            country: this._data.country,
+            isAddress: this._data.isAddress,
+            createdOn: this._data.createdOn,
+            createdBy: this._data.createdBy,
+            updatedOn: this._data.updatedOn,
+            updatedBy: this._data.updatedBy
+        }
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>
