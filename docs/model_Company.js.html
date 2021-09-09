@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: model/Company.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: model/Company.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+
+export class Company {
+    constructor(data) {
+        this._data = data || {}
+    }
+
+    /**
+     * The id of the company.
+     * @type {String}
+     */
+    get id() {
+        return this._data.id
+    }
+
+    /**
+     * The company name. Required.
+     * @type {String} nullable
+     */
+    get name() {
+        return this._data.name
+    }
+
+    /**
+     * The company description. Optional.
+     * @type {String} nullable
+     */
+     get description () {
+        return this._data.description
+    }
+
+    /**
+     * The company's industry. Optional.
+     * @type {String} nullable
+     */
+    get industry () {
+        return this._data.industry
+    }
+
+    /**
+     * The workspace id of the company.
+     * @type {String}
+     */
+    get workspaceId () {
+        return this._data.workspaceId
+    }
+
+    /**
+     * Whether the company has an image.
+     * @type {Boolean}
+     */
+    get hasImage() {
+        return this._data.title
+    }
+
+    /**
+     * The company infos assigned to this company.
+     * @type {Array&lt;import('./CompanyContactInfo').CompanyContactInfo>}
+     */
+    get companyContactInfos () {
+        return this._data.companyContactInfos
+    }
+
+    /**
+     * The date this entity was created.
+     * @type {String} date-time
+     */
+     get createdOn () {
+        return this._data.createdOn
+    }
+
+    /**
+     * The id of the user who created this entity.
+     * @type {String} uuid
+     */
+    get createdBy () {
+        return this._data.createdBy
+    }
+
+    /**
+     * The date this entity was last modified.
+     * @type {String} date-time
+     */
+     get updatedOn () {
+        return this._data.updatedOn
+    }
+
+    /**
+     * The id of the user who last modified this entity.
+     * @type {String} uuid
+     */
+    get updatedBy () {
+        return this._data.updatedBy
+    }
+
+    /**
+     * The version of the entity continuously incremented by 1 on every update of the entity.
+     * @type {Number}
+     */
+    get resourceVersion () {
+        return this._data.resourceVersion
+    }
+
+
+    /**
+     * @typedef {Object} CompanyTags
+     * @property {String} id uuid
+     * @property {String} name nullable
+     * @property {String} color nullable
+     * @property {String} entityId uuid
+     * @property {String} createdOn date-time
+     * @property {String} createdBy uuid
+     * @property {String} updatedOn date-time
+     * @property {String} updatedBy uuid
+     */
+
+    /**
+     * The tags for this company.
+     * @type {Array&lt;CompanyTags>} nullable
+     */
+    get tags () {
+        return this._data.tags
+    }
+
+    /**
+     * The number of all projects related to the company.
+     * @type {Number}
+     */
+    get projectsCount () {
+        return this._data.projectsCount
+    }
+
+    /**
+     * The number of all projects in status 'progress' related to the company.
+     * @type {Number}
+     */
+    get projectsInProgressCount () {
+        return this._data.projectsInProgressCount
+    }
+
+
+
+    toPlainObject() {
+        return {
+            id: this._data.id,
+            name: this._data.name,
+            description: this._data.description,
+            industry: this._data.industry,
+            workspaceId: this._data.workspaceId,
+            hasImage: this._data.hasImage,
+            companyContactInfos: this._data.companyContactInfos,
+            createdOn: this._data.createdOn,
+            createdBy: this._data.createdBy,
+            updatedOn: this._data.updatedOn,
+            updatedBy: this._data.updatedBy,
+            resourceVersion: this._data.resourceVersion,
+            tags: this._data.tags,
+            projectsCount: this._data.projectsCount,
+            projectsInProgressCount: this._data.projectsInProgressCount
+        }
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="Projects.html">Projects</a></li><li><a href="Teams.html">Teams</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu Sep 09 2021 17:55:44 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
