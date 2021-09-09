@@ -1,9 +1,32 @@
 import { EntityFile } from "../model/EntityFile"
+import { FileVersions } from "./FileVersions"
+import '../globalTypedef'
 
+
+/**
+ * Class corresponding to Aworks EntityFiles Endpoints
+ * @see [EntityFiles in Awork API Docs](https://openapi.awork.io/#/EntityFiles)
+ */
 export class EntityFiles {
+
+     /**
+     * Endpoint constructor
+     * @param {import('../client').Client} client
+     * @param {('projects'|'companies'|'tasks'|'comments')} entityName
+     * @param {String} entityId
+     */
     constructor (client, entityName, entityId) {
+        /**
+         * @private
+         */
         this._client = client
+        /**
+         * @private
+         */
         this._entityName = entityName
+        /**
+         * @private
+         */
         this._entityId = entityId
     }
 
@@ -20,10 +43,11 @@ export class EntityFiles {
 
     /**
      * Returns all files of the entity with the specified id.
+     * @param {ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<EntityFile>>}
      */
-    async list () {
-        const response = await this._client.get(`${this._entityName}/${this._entityId}/files`)
+    async list (options) {
+        const response = await this._client.get(`${this._entityName}/${this._entityId}/files`, options)
         const data = response.data()
         return data.map(d => new EntityFile(d))
     }
@@ -79,6 +103,7 @@ export class EntityFiles {
     /**
      * Endpoint to create file infos with batch operation. Created file infos don't have a version.
      * @param {Array<ExternalFileForm>} value
+     * @returns {Promise<EntityFile>}
      */
     async externalFiles (value) {
         const response = await this._client.post(`${this._entityName}/${this._entityId}/externalfiles/`, value)
@@ -91,13 +116,12 @@ export class EntityFiles {
      * @property {String} url The public URL to the file.
      * @property {String} name The name of the file.
      * @property {String} description The description of the file.
-     * 
      */
 
     /**
      * Uploads a new file by providing an url. The file needs to be a public available url. The file size must not exceed 100MB.
      * @param {FileInformations} value 
-     * @returns 
+     * @returns {Promise<EntityFile>}
      */
     async byUrl (value) {
         const response = await this._client.post(`${this._entityName}/${this._entityId}/files/byurl`, value)
@@ -113,12 +137,33 @@ export class EntityFiles {
      */
 
     /**
-     * 
      * @param {String} fileId 
      * @param {DownloadOptions} options
+     * @returns {String} binary
      */
     async download (fileId, options) {
         const response = await this._client.get(`${this._entityName}/${this._entityId}/files/${fileId}/download`, options)
         return response.data()
     }
+
+    /**
+     * Returns the content of the entity file with the specified id as pdf if possible and returns bad request, if not valid type or conversion not possible.
+     * @param {String} fileId 
+     * @param {Boolean} inline Default: false. If inline is false, content-disposition header is attachment.
+     * @returns {String} binary
+     */
+    async pdf (fileId, inline) {
+        const response = await this._client.get(`${this._entityName}/${this._entityId}/files/${fileId}/pdf`, {inline: inline})
+        return response.data()
+    }
+
+
+    versions (fileId) {
+        return new FileVersions(this._client, this._entityName, this._entityId, fileId)
+    }
+    
+
+    
+
+
 }
