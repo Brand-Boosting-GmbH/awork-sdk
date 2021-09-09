@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "jest",
-        "build": "jsdoc src -r -c conf.json -d \"./docs\" && babel src --out-dir lib --plugins @babel/plugin-transform-modules-commonjs",
+        "gen-docs": "jsdoc src -r -c conf.json -d \"./docs\"",
+        "build": "babel src --out-dir lib --plugins @babel/plugin-transform-modules-commonjs",
         "declaration:build": "tsc -p declaration.tsconfig.json"
     },
     "author": "",
