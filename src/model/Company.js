@@ -1,4 +1,5 @@
-// TODO: All
+
+
 export class Company {
     constructor(data) {
         this._data = data || {}
@@ -54,7 +55,7 @@ export class Company {
 
     /**
      * The company infos assigned to this company.
-     * @type {Array}
+     * @type {Array<import('./CompanyContactInfo').CompanyContactInfo>}
      */
     get companyContactInfos () {
         return this._data.companyContactInfos
@@ -100,9 +101,22 @@ export class Company {
         return this._data.resourceVersion
     }
 
+
+    /**
+     * @typedef {Object} CompanyTags
+     * @property {String} id uuid
+     * @property {String} name nullable
+     * @property {String} color nullable
+     * @property {String} entityId uuid
+     * @property {String} createdOn date-time
+     * @property {String} createdBy uuid
+     * @property {String} updatedOn date-time
+     * @property {String} updatedBy uuid
+     */
+
     /**
      * The tags for this company.
-     * @type {Array} nullable
+     * @type {Array<CompanyTags>} nullable
      */
     get tags () {
         return this._data.tags
