@@ -262,17 +262,27 @@ export class Project {
 
     /**
      * The Tags of the company.
-     * @type {Array} nullable
-     * @returns Array of Objects with keys "id", "name", "color" and "entityId"
+     * @type {Array<{id: String, name: String, entityId: String}>} nullable
      */
     get companyTags () {
         return this._data.company.tags
     }
 
+
+    /**
+     * @typedef {Object} TagObject
+     * @property {String} id uuid
+     * @property {String} name nullable
+     * @property {String} color nullable
+     * @property {String} entityId uuid
+     * @property {String} createdOn date-time
+     * @property {String} createdBy uuid
+     * @property {String} updatedOn date-time
+     * @property {String} updatedBy uuid
+     */
     /**
      * The tags for this project.
-     * @type {Array}
-     * @returns Array of Objects with keys "id", "name", "color", "entityId", "createdOn", "createdBy", "updatedOn", "updatedBy"
+     * @type {Array<TagObject>}
      */
     get tags () {
         return this._data.tags
@@ -303,9 +313,22 @@ export class Project {
     }
 
     /**
+     * @typedef {Object} MemberProperties
+     * @property {String} id uuid
+     * @property {String} userId uuid
+     * @property {String} firstName nullable
+     * @property {String} lastName nullable
+     * @property {Boolean} hasImage nullable
+     * @property {String} projectRoleId uuid
+     * @property {String} projectRoleName nullable
+     * @property {Boolean} isResponsible uuid
+     * @property {Boolean} isDeactivated uuid
+     * @property {String} projectId uuid
+     */
+
+    /**
      * The members of this project.
-     * @type {Array} nullable
-     * @returns Array of all members of this project. Keys of an Object in this Array: "id", "userId", "firstName", "lastName", "hasImage", "projectRoleId", "projectRoleName", "isResponsible", "isDeactivated", "projectId".
+     * @type {Array<MemberProperties>} nullable
      */
     get members () {
         return this._data.members
@@ -329,8 +352,7 @@ export class Project {
 
     /**
      * The teams the project is associated to.
-     * @type {Array} nullable
-     * @returns Array of Objects with keys "id", "name", "color", "icon".
+     * @type {Array<{id: String, name: String, color: String, icon: String}>} nullable
      */
     get teams () {
         return this._data.teams

@@ -33,3 +33,8 @@ test('awork project lifecycle', async () => {
     console.log(dl)
     await awork.projects.delete(project.id)
 })
+
+test('awork project filtering', async () => {
+    const projects = await awork.projects.list({filterBy: "endswith(name,'6')"})
+    console.log(projects)
+})
