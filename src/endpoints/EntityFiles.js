@@ -1,4 +1,6 @@
 import { EntityFile } from "../model/EntityFile"
+import { fromBuffer } from 'file-type'
+import FormData from "form-data"
 
 export class EntityFiles {
     constructor (client, entityName, entityId) {
@@ -29,12 +31,31 @@ export class EntityFiles {
     }
 
     /**
-     * Creates a new entity file for the entity with the specified id.
-     * @param {EntityFile} entityFile 
+     * @typedef {Object} FileMetaData
+     * @property {String} [name] The user-specified name of the file.
+     * @property {String} [filename] The name of the file.
+     */
+
+    /**
+     * 
+     * @param {File|Buffer} file 
+     * @param {FileMetaData} metadata 
      * @returns {Promise<EntityFile>}
      */
-    async create (entityFile) {
-        const response = await this._client.post(`${this._entityName}/${this._entityId}/files`, entityFile)
+    async create (file, metadata) {
+        let filename = metadata.filename
+        let fileObj = file
+        filename = filename || fileObj.name
+        if(fileObj instanceof Buffer) {
+            const { ext } = await fromBuffer(fileObj)
+            filename = filename || `upload.${ext}`
+        }
+        
+        let formData = new FormData()
+        formData.append('file', fileObj, filename || 'upload')
+        formData.append('name', metadata.name || filename || 'upload')
+        formData.append('filename', filename || 'upload')
+        const response = await this._client.post(`${this._entityName}/${this._entityId}/files`, formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders()})
         const data = response.data()
         return new EntityFile(data)
     }

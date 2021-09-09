@@ -1,5 +1,6 @@
 import { Awork } from '../src/index'
 import { API_KEY } from './credentials'
+import fs from 'fs'
 const awork = new Awork({ apiKey: API_KEY })
 
 test('awork main', async () => {
@@ -29,10 +30,10 @@ test('awork project lifecycle', async () => {
     await awork.projects.members(project.id).update(MAX_MM_UID, { projectRoleId: '82232828-ba10-ec11-b563-dc984023d47e', isResponsible: true})
     const file = await awork.projects.files(project.id).byUrl({ url: 'https://placekitten.com/500/500', name: 'Cat.jpg' })
     const dl = await awork.projects.files(project.id).download(file.id)
-    await awork.projects.update(project.id, { name: 'Test Name Changed' })
-    console.log(dl)
-    await awork.projects.delete(project.id)
-})
+    const file2 = await awork.projects.files(project.id).create(fs.readFileSync('./tests/kitten.jpg'), {  })
+    await awork.projects.update(project.id, { name: 'Test Name Changed 5' })
+    //await awork.projects.delete(project.id)
+}, 60000)
 
 
 test('awork webhooks WiP', async () => {
