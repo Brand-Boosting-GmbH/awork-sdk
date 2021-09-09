@@ -19,6 +19,7 @@
         "form-data": "^4.0.0",
         "form-data-encoder": "^1.5.1",
         "formdata-node": "^4.0.1",
+        "jsdoc": "^3.6.7",
         "jsdoc-tsimport-plugin": "^1.0.5",
         "regenerator-runtime": "^0.13.7"
     },
