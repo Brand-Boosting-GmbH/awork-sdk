@@ -48,25 +48,25 @@ export class Client {
      * @param {Object} params 
      * @returns {AworkResponse}
      */
-    async get(path, params = {}) {
-        const response = await this.http.get(path, { params })
+    async get(path, params = {}, headers = {}) {
+        const response = await this.http.get(path, { params, headers })
         return new AworkResponse(response.status, response.headers, response.data)
     }
 
-    async post(path, payload, params = {}) {
+    async post(path, payload, params = {}, headers = {}) {
         let data = Client.getPlainObject(payload)
-        const response = await this.http.post(path, data, { params }).catch(r => console.error(r.response))
+        const response = await this.http.post(path, data, { params, headers })
         return new AworkResponse(response.status, response.headers, response.data)
     }
 
-    async put(path, payload, params = {}) {
+    async put(path, payload, params = {}, headers = {}) {
         let data = Client.getPlainObject(payload)
-        const response = await this.http.put(path, data, { params })
+        const response = await this.http.put(path, data, { params, headers })
         return new AworkResponse(response.status, response.headers, response.data)
     }
 
-    async delete(path, params = {}) {
-        const response = await this.http.delete(path, { params })
+    async delete(path, params = {}, headers = {}) {
+        const response = await this.http.delete(path, { params, headers })
         return new AworkResponse(response.status, response.headers, response.data)
     }
 

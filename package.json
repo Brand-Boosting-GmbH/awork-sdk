@@ -15,6 +15,10 @@
         "@babel/polyfill": "^7.12.1",
         "@types/jest": "^26.0.22",
         "axios": "^0.21.1",
+        "file-type": "^16.5.3",
+        "form-data": "^4.0.0",
+        "form-data-encoder": "^1.5.1",
+        "formdata-node": "^4.0.1",
         "regenerator-runtime": "^0.13.7"
     },
     "devDependencies": {
