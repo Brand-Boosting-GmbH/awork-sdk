@@ -33,3 +33,9 @@ test('awork project lifecycle', async () => {
     console.log(dl)
     await awork.projects.delete(project.id)
 })
+
+
+test('awork webhooks WiP', async () => {
+    const res = await awork.client.get('/webhooks')
+    console.log(res.data())   
+})
