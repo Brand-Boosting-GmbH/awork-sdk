@@ -22,6 +22,10 @@ class AworkResponse {
 
 }
 
+/**
+ * Client class used to perform the http requests
+ * @class
+ */
 export class Client {
 
     constructor (apiKey = '', basePath = 'https://api.awork.io/api/v1'){

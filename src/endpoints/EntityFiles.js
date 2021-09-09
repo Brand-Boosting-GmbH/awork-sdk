@@ -13,7 +13,7 @@ export class EntityFiles {
 
      /**
      * Endpoint constructor
-     * @param {import('../client').Client} client
+     * @param {import('../client/index').Client} client
      * @param {('projects'|'companies'|'tasks'|'comments')} entityName
      * @param {String} entityId
      */

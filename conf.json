@@ -1,0 +1,6 @@
+{
+    "plugins": [
+        "plugins/summarize",
+        "node_modules/jsdoc-tsimport-plugin/index.js"
+    ]
+}

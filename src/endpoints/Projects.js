@@ -12,7 +12,7 @@ export class Projects {
 
     /**
      * Endpoint constructor
-     * @param {import('../client').Client} client 
+     * @param {import('../client/index').Client} client 
      */
     constructor(client) {
         /**
