@@ -61,7 +61,7 @@ export class EntityFiles {
      */
 
     /**
-     * 
+     * Uploads a File or Buffer Object
      * @param {File|Buffer} file 
      * @param {FileMetaData} metadata 
      * @returns {Promise<EntityFile>}
@@ -99,13 +99,15 @@ export class EntityFiles {
     /**
      * Deletes the file with the specified id of the entity with the specified Id.
      * @param {String} fileId 
+     * @returns {Promise<void>}
      */
     async delete (fileId) {
         await this._client.delete(`${this._entityName}/${this._entityId}/files/${fileId}`)
     }
-
+    
     /**
      * Deletes all the files of the specified entity.
+     * @returns {Promise<void>}
      */
     async deleteAll () {
         await this._client.delete(`${this._entityName}/${this._entityId}/files`)
