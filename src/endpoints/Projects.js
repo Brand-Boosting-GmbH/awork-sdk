@@ -6,6 +6,7 @@ import { ProjectProjectStatus } from "./ProjectProjectStatus"
 
 /**
  * Class corresponding to Aworks Projects Endpoints
+ * @category Endpoints
  * @see [Projects in Awork API Docs](https://openapi.awork.io/#/Projects)
  */
 export class Projects {

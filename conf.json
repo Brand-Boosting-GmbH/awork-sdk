@@ -1,6 +1,10 @@
 {
+    "tags": {
+        "allowUnknownTags": ["category"]
+    },
     "plugins": [
         "plugins/summarize",
-        "node_modules/jsdoc-tsimport-plugin/index.js"
+        "node_modules/jsdoc-tsimport-plugin/index.js",
+        "node_modules/better-docs/category"
     ]
 }

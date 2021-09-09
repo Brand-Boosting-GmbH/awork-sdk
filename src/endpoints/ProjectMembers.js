@@ -2,6 +2,7 @@ import { ProjectMember } from "../model/ProjectMember"
 
 /**
  * Class corresponding to the Member part of Aworks Projects Endpoint
+ * @category Endpoints
  * @see [Projects in Awork API Docs](https://openapi.awork.io/#/Projects)
  */
 export class ProjectMembers {
