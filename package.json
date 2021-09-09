@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "jest",
-        "gen-docs": "jsdoc src -r -c conf.json -d \"./docs\"",
+        "gen-docs": "jsdoc src -r -c conf.json -d \"./docs\" -t ./node_modules/better-docs",
         "build": "babel src --out-dir lib --plugins @babel/plugin-transform-modules-commonjs",
         "declaration:build": "tsc -p declaration.tsconfig.json"
     },
@@ -29,6 +29,7 @@
         "@babel/core": "^7.13.14",
         "@babel/preset-env": "^7.13.12",
         "babel-jest": "^26.6.3",
+        "better-docs": "^2.3.2",
         "jest": "^26.6.3"
     },
     "jest": {
