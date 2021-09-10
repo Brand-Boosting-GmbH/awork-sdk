@@ -32,7 +32,7 @@ test('awork project lifecycle', async () => {
     const dl = await awork.projects.files(project.id).download(file.id)
     const file2 = await awork.projects.files(project.id).create(fs.readFileSync('./tests/kitten.jpg'), {  })
     await awork.projects.update(project.id, { name: 'Test Name Changed 5' })
-    //await awork.projects.delete(project.id)
+    await awork.projects.delete(project.id)
 }, 60000)
 
 
@@ -40,3 +40,4 @@ test('awork webhooks WiP', async () => {
     const res = await awork.client.get('/webhooks')
     console.log(res.data())   
 })
+
