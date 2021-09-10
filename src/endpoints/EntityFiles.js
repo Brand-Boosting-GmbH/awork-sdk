@@ -139,7 +139,7 @@ export class EntityFiles {
      * @typedef {Object} FileInformations
      * @property {String} url The public URL to the file.
      * @property {String} name The name of the file.
-     * @property {String} description The description of the file.
+     * @property {String} [description] The description of the file.
      */
 
     /**
