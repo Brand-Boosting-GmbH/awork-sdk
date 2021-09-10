@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/Company.js</title>
+  <title> model/TypeOfWork.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/Company.js</h1>
+                    <h1>model/TypeOfWork.js</h1>
                 </header>
                 
 
@@ -85,97 +85,77 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
-
-/**
- * Company Model
+            <pre class="prettyprint source linenums"><code>/**
+ * TypeOfWork Model
  * @category Models
  * @class
  */
-export class Company {
+export class TypeOfWork {
 
     /**
-     * @typedef {Company &amp; {_plain?: true}} CompanyLike
+     * @typedef {TypeOfWork &amp; {_plain?: true}} TypeOfWorkLike
      */
 
     /**
      * Model constructor
-     * @param {CompanyLike} data 
+     * @param {TypeOfWorkLike} data 
      */
     constructor(data) {
-        /**
-         * @private
-         */
-        this._data = data || {}
+        /** @private */
+        this._data = data
     }
 
     /**
-     * The id of the company.
-     * @type {String}
+     * The id of the task type.
+     * @type {string}
      */
-    get id() {
+    get id () {
         return this._data.id
     }
 
     /**
-     * The company name. Required.
-     * @type {String} nullable
+     * The name of the task type.
+     * @type {String}
      */
-    get name() {
+    get name () {
         return this._data.name
     }
 
     /**
-     * The company description. Optional.
-     * @type {String} nullable
+     * A short (max. 140 characters) description of the task type.
+     * @type {String}
      */
-     get description () {
+    get description () {
         return this._data.description
     }
 
     /**
-     * The company's industry. Optional.
-     * @type {String} nullable
-     */
-    get industry () {
-        return this._data.industry
-    }
-
-    /**
-     * The workspace id of the company.
+     * The icon associated with this task type.
      * @type {String}
      */
-    get workspaceId () {
-        return this._data.workspaceId
+    get icon () {
+        return this._data.icon
     }
 
     /**
-     * Whether the company has an image.
+     * Whether the type of work has been archived.
      * @type {Boolean}
      */
-    get hasImage() {
-        return this._data.title
-    }
-
-    /**
-     * The company infos assigned to this company.
-     * @type {Array&lt;import('./CompanyContactInfo').CompanyContactInfo>}
-     */
-    get companyContactInfos () {
-        return this._data.companyContactInfos
+    get isArchived () {
+        return this._data.isArchived
     }
 
     /**
      * The date this entity was created.
-     * @type {String} date-time
+     * @type {String}
      */
-     get createdOn () {
+    get createdOn () {
         return this._data.createdOn
     }
 
     /**
      * The id of the user who created this entity.
-     * @type {String} uuid
+     * @type {String}
      */
     get createdBy () {
         return this._data.createdBy
@@ -183,84 +163,31 @@ export class Company {
 
     /**
      * The date this entity was last modified.
-     * @type {String} date-time
+     * @type {String}
      */
-     get updatedOn () {
+    get updatedOn () {
         return this._data.updatedOn
     }
 
     /**
      * The id of the user who last modified this entity.
-     * @type {String} uuid
+     * @type {String}
      */
     get updatedBy () {
         return this._data.updatedBy
     }
-
-    /**
-     * The version of the entity continuously incremented by 1 on every update of the entity.
-     * @type {Number}
-     */
-    get resourceVersion () {
-        return this._data.resourceVersion
-    }
-
-
-    /**
-     * @typedef {Object} CompanyTags
-     * @property {String} id uuid
-     * @property {String} name nullable
-     * @property {String} color nullable
-     * @property {String} entityId uuid
-     * @property {String} createdOn date-time
-     * @property {String} createdBy uuid
-     * @property {String} updatedOn date-time
-     * @property {String} updatedBy uuid
-     */
-
-    /**
-     * The tags for this company.
-     * @type {Array&lt;CompanyTags>} nullable
-     */
-    get tags () {
-        return this._data.tags
-    }
-
-    /**
-     * The number of all projects related to the company.
-     * @type {Number}
-     */
-    get projectsCount () {
-        return this._data.projectsCount
-    }
-
-    /**
-     * The number of all projects in status 'progress' related to the company.
-     * @type {Number}
-     */
-    get projectsInProgressCount () {
-        return this._data.projectsInProgressCount
-    }
-
-
 
     toPlainObject() {
         return {
             id: this._data.id,
             name: this._data.name,
             description: this._data.description,
-            industry: this._data.industry,
-            workspaceId: this._data.workspaceId,
-            hasImage: this._data.hasImage,
-            companyContactInfos: this._data.companyContactInfos,
+            icon: this._data.icon,
+            isArchived: this._data.isArchived,
             createdOn: this._data.createdOn,
             createdBy: this._data.createdBy,
             updatedOn: this._data.updatedOn,
-            updatedBy: this._data.updatedBy,
-            resourceVersion: this._data.resourceVersion,
-            tags: this._data.tags,
-            projectsCount: this._data.projectsCount,
-            projectsInProgressCount: this._data.projectsInProgressCount
+            updatedBy: this._data.updatedBy
         }
     }
 }</code></pre>

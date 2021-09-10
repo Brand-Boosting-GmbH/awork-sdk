@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/Company.js</title>
+  <title> endpoints/TypeOfWorks.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/Company.js</h1>
+                    <h1>endpoints/TypeOfWorks.js</h1>
                 </header>
                 
 
@@ -85,183 +85,46 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+import { TypeOfWork } from "../model/TypeOfWork"
 
 /**
- * Company Model
- * @category Models
- * @class
+ * Class corresponding to Aworks TypeOfWork Endpoints
+ * @category Endpoints
+ * @see [TypeOfWork in Awork API Docs](https://openapi.awork.io/#/TypeOfWork)
  */
-export class Company {
-
+export class TypeOfWorks {
     /**
-     * @typedef {Company &amp; {_plain?: true}} CompanyLike
+     * Endpoint constructor
+     * @param {import('../client/index').Client} client 
      */
-
-    /**
-     * Model constructor
-     * @param {CompanyLike} data 
-     */
-    constructor(data) {
+    constructor(client) {
         /**
          * @private
          */
-        this._data = data || {}
+        this._client = client
     }
 
     /**
-     * The id of the company.
-     * @type {String}
+     * Gets a single type of work by its id.
+     * @param {String} id The id of the type of work.
+     * @returns {Promise&lt;TypeOfWork>}
      */
-    get id() {
-        return this._data.id
+    async get(id) {
+        const response = await this._client.get(`/typeofwork/${id}`)
+        const data = response.data()
+        return new TypeOfWork(data)
     }
 
     /**
-     * The company name. Required.
-     * @type {String} nullable
+     * Returns all type of work.
+     * @param {ListOptions} [options] Pagination and filtering options
+     * @returns {Promise&lt;Array&lt;TypeOfWork>>}
      */
-    get name() {
-        return this._data.name
-    }
-
-    /**
-     * The company description. Optional.
-     * @type {String} nullable
-     */
-     get description () {
-        return this._data.description
-    }
-
-    /**
-     * The company's industry. Optional.
-     * @type {String} nullable
-     */
-    get industry () {
-        return this._data.industry
-    }
-
-    /**
-     * The workspace id of the company.
-     * @type {String}
-     */
-    get workspaceId () {
-        return this._data.workspaceId
-    }
-
-    /**
-     * Whether the company has an image.
-     * @type {Boolean}
-     */
-    get hasImage() {
-        return this._data.title
-    }
-
-    /**
-     * The company infos assigned to this company.
-     * @type {Array&lt;import('./CompanyContactInfo').CompanyContactInfo>}
-     */
-    get companyContactInfos () {
-        return this._data.companyContactInfos
-    }
-
-    /**
-     * The date this entity was created.
-     * @type {String} date-time
-     */
-     get createdOn () {
-        return this._data.createdOn
-    }
-
-    /**
-     * The id of the user who created this entity.
-     * @type {String} uuid
-     */
-    get createdBy () {
-        return this._data.createdBy
-    }
-
-    /**
-     * The date this entity was last modified.
-     * @type {String} date-time
-     */
-     get updatedOn () {
-        return this._data.updatedOn
-    }
-
-    /**
-     * The id of the user who last modified this entity.
-     * @type {String} uuid
-     */
-    get updatedBy () {
-        return this._data.updatedBy
-    }
-
-    /**
-     * The version of the entity continuously incremented by 1 on every update of the entity.
-     * @type {Number}
-     */
-    get resourceVersion () {
-        return this._data.resourceVersion
-    }
-
-
-    /**
-     * @typedef {Object} CompanyTags
-     * @property {String} id uuid
-     * @property {String} name nullable
-     * @property {String} color nullable
-     * @property {String} entityId uuid
-     * @property {String} createdOn date-time
-     * @property {String} createdBy uuid
-     * @property {String} updatedOn date-time
-     * @property {String} updatedBy uuid
-     */
-
-    /**
-     * The tags for this company.
-     * @type {Array&lt;CompanyTags>} nullable
-     */
-    get tags () {
-        return this._data.tags
-    }
-
-    /**
-     * The number of all projects related to the company.
-     * @type {Number}
-     */
-    get projectsCount () {
-        return this._data.projectsCount
-    }
-
-    /**
-     * The number of all projects in status 'progress' related to the company.
-     * @type {Number}
-     */
-    get projectsInProgressCount () {
-        return this._data.projectsInProgressCount
-    }
-
-
-
-    toPlainObject() {
-        return {
-            id: this._data.id,
-            name: this._data.name,
-            description: this._data.description,
-            industry: this._data.industry,
-            workspaceId: this._data.workspaceId,
-            hasImage: this._data.hasImage,
-            companyContactInfos: this._data.companyContactInfos,
-            createdOn: this._data.createdOn,
-            createdBy: this._data.createdBy,
-            updatedOn: this._data.updatedOn,
-            updatedBy: this._data.updatedBy,
-            resourceVersion: this._data.resourceVersion,
-            tags: this._data.tags,
-            projectsCount: this._data.projectsCount,
-            projectsInProgressCount: this._data.projectsInProgressCount
-        }
+    async list (options) {
+        const response = await this._client.get(`/typeofwork`, options)
+        const data = response.data()
+        return data.map(d => new TypeOfWork(d))
     }
 }</code></pre>
         </article>
