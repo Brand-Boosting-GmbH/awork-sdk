@@ -34,10 +34,11 @@ export class ProjectMembers {
      * Returns the project members from the project.
      * 
      * The user needs 'read' permissions of feature 'project-master-data'.
+     * @param {ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<ProjectMember>>}
      */
-    async list() {
-        const response = await this._client.get(`projects/${this._projectId}/members`)
+    async list(options) {
+        const response = await this._client.get(`projects/${this._projectId}/members`, options)
         const data = response.data()
         return data.map(d => new ProjectMember(d))
     }
