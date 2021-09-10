@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> endpoints/Companies.js</title>
+  <title> endpoints/TimeReports.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>endpoints/Companies.js</h1>
+                    <h1>endpoints/TimeReports.js</h1>
                 </header>
                 
 
@@ -85,76 +85,80 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { Company } from "../model/Company"
-import { CompaniesContactInfos } from "./CompaniesContactInfos"
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+import { TimeReport } from "../model/TimeReport"
 
-export class Companies {
+/**
+ * Class corresponding to Aworks TimeReports Endpoints
+ * @category Endpoints
+ * @see [TimeReports in Awork API Docs](https://openapi.awork.io/#/TimeReports)
+ */
+export class TimeReports {
 
+    /**
+     * ENdpoint constructor
+     * @param {import('../client/index').Client} client 
+     */
     constructor(client) {
+        /**
+         * @private
+         */
         this._client = client
     }
 
-    async get(companyId) {
-        const response = await this._client.get(`/companies/${companyId}`)
+    /**
+     * Returns time reports of the specified id. Returns time reports of the specified id.
+     * @param {String} timeReportId The id of the time report.
+     * @returns {Promise&lt;TimeReport>}
+     */
+    async get(timeReportId) {
+        const response = await this._client.get(`/timereports/${timeReportId}`)
         const data = response.data()
-        return new Company(data)
+        return new TimeReport(data)
     }
 
     /**
-     * 
-     * @returns {Promise&lt;Array&lt;Company>>}
+     * Returns all time reports of a user. Returns time reports the user created as well as the shared time reports of other users.
+     * @param {ListOptions} options 
+     * @returns {Promise&lt;Array&lt;TimeReport>>}
      */
-    async list() {
-        const response = await this._client.get(`/companies`)
+    async list(options) {
+        const response = await this._client.get('/timereports', options)
         const data = response.data()
-        return data.map(d => new Company(d))
+        return data.map(d => new TimeReport(d))
     }
 
     /**
-     * 
-     * @param {Company} company 
+     * Creates a new time report.
+     * @param {TimeReport} timeReport
+     * @returns {Promise&lt;TimeReport>}
      */
-    async create(company) {
-        const response = await this._client.post(`/companies`, company)
+    async create(timeReport) {
+        const response = await this._client.post('/timereports', timeReport)
         const data = response.data()
-        return new Company(data)
+        return new TimeReport(data)
     }
 
     /**
-     * 
-     * @param {Company} company 
+     * Updates the time report of the specified id.
+     * @param {String} timeReportId 
+     * @param {TimeReport} timeReport 
+     * @returns {Promise&lt;TimeReport>}
      */
-    async update(companyId, company) {
-        const response = await this._client.put(`/companies/${companyId}`, company)
+    async update(timeReportId, timeReport) {
+        const response = await this._client.put(`/timereports/${timeReportId}`, timeReport)
         const data = response.data()
-        return new Company(data)
+        return new TimeReport(data)
     }
 
     /**
-     * @typedef {Object} DeleteCompanyOptions
-     * @property {String} moveToCompany Moves all related objects to this company. Related projects and tasks (including their time entries) will be connected to this company. Have to set if 'DeleteOperation' contains 'move'.
-     * @property {('move'|'delete-all-without-timeentries')} deleteOperation Defines the operation to delete a company. Possible operations are 'move': Move related objects to another company. 'delete-only-company': Delete only the company. Related objects loose the company information. 'delete-all-without-timeentries': Delete all related objects apart from time entries. 'delete-all': Delete all.
+     * Deletes the time report of the specified id.
+     * @param {String} timeReportId 
+     * @returns {Promise&lt;void>}
      */
-
-    /**
-     * 
-     * @param {String} companyId 
-     * @param {DeleteCompanyOptions} options 
-     * @returns 
-     */
-    async delete(companyId, options) {
-        await this._client.post(`/companies/${companyId}/`, options)
+    async delete(timeReportId) {
+        await this._client.delete(`/timereports/${timeReportId}`)
     }
-
-    /**
-     * 
-     * @param {String} companyId 
-     * @returns {CompaniesContactInfos}
-     */
-    contactInfo (companyId) {
-        return new CompaniesContactInfos(this._client, companyId)
-    }
-
 }</code></pre>
         </article>
     </section>
