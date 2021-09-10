@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> endpoints/ProjectRoles.js</title>
+  <title> TaskRecurrency</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -75,117 +73,220 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Source</p>
-                    <h1>endpoints/ProjectRoles.js</h1>
+                    <p>Class</p>
+                    <h1>TaskRecurrency</h1>
                 </header>
                 
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
-import { ProjectRole } from "../model/ProjectRole"
+        <h2><span class="attribs"><span class="type-signature"></span></span>TaskRecurrency<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">TaskRecurrency Model</div>
+        
+    
+</header>
 
-/**
- * Class corresponding to Aworks ProjectRoles Endpoints
- * @category Endpoints
- * @see [ProjectRoles in Awork API Docs](https://openapi.awork.io/#/ProjectRoles)
- */
- export class ProjectRoles {
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
 
-    /**
-     * Endpoint constructor
-     * @param {import('../client/index').Client} client 
-     */
-    constructor(client) {
-        /**
-         * @private
-         */
-        this._client = client
-    }
 
-    /**
-     * Returns the project role with the specified id.
-     * @param {String} projectRoleId 
-     * @returns {Promise&lt;ProjectRole>}
-     */
-    async get (projectRoleId) {
-        const response = await this._client.get(`/projectroles/${projectRoleId}`)
-        const data = response.data()
-        return new ProjectRole(data)
-    }
+    
+    <h4 class="name" id="TaskRecurrency">
+        <a class="href-link" href="#TaskRecurrency">#</a>
+        
+        <span class="code-name">
+            
+                new TaskRecurrency<span class="signature">(data)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
 
-    /**
-     * Returns all project roles.
-     * @param {ListOptions} [options] Pagination and filtering options
-     * @returns {Promise&lt;Array&lt;ProjectRole>>}
-     */
-    async list (options) {
-        const response = await this._client.get('/projectroles', options)
-        const data = response.data()
-        return data.map(d => new ProjectRole(d))
+    
+    <p class="summary">Model constructor.</p>
+    
+    
+    <div class="description">
+        Model constructor
+    </div>
+    
 
-    }
 
-    /**
-     * @typedef {Object} ProjectRoleCreateAndUpdateModel The model used to create a project role.
-     * @property {String} name The name of the project role. Required.
-     * @property {Boolean} [isDefault] Whether to use this role as default when adding new project members.
-     * @property {String} [defaultProjectRoleId] The id of the new default project role. Required if the updated project role is the current default role.
-     */
 
-    /**
-     * Creates a new project role.
-     * @param {ProjectRoleCreateAndUpdateModel} projectRole 
-     * @return {Promise&lt;ProjectRole>}
-     */
-    async create (projectRole) {
-        const response = await this._client.post('/projectroles', projectRole)
-        const data = response.data()
-        return new ProjectRole(data)
-    }
 
-    /**
-     * Updates the project role with the specified id.
-     * @param {String} projectRoleId 
-     * @param {ProjectRoleCreateAndUpdateModel} projectRole
-     */
-    async update (projectRoleId, projectRole) {
-        const response = await this._client.put(`/projectroles/${projectRoleId}`, projectRole)
-        const data = response.data()
-        return new ProjectRole(data)
-    }
 
-    /**
-     * @typedef {Object} ProjectRoleDeleteModel The model to delete the project role.
-     * @property {String} newProjectRoleId The id of the new project role. Needs to be set when there are still users in projects with the old project role.
-     */
 
-    /**
-     * Deletes the project role with the specified id. When you want to delete a project role which is still in use, you are required to specify which role the currently assigned members should be assigned to instead. If the default role gets deleted, the migration role becomes the new default project role.
-     * @param {String} projectRoleId 
-     * @param {ProjectRoleDeleteModel} newProjectRole
-     * @return {Promise&lt;void>}
-     */
-    async delete (projectRoleId, newProjectRole) {
-        await this._client.post(`/projectroles/${projectRoleId}/delete`, newProjectRole)
-    }
 
-    /**
-     * Returns all project roles of a specific user.
-     * @param {String} userId 
-     * @returns {Promise&lt;Array&lt;ProjectRole>>}
-     */
-    async byUserId (userId) {
-        const response = await this._client.get(`/projectroles/byuserid/${userId}`)
-        const data = response.data()
-        return data.map(d => new ProjectRole(d))
-    }
-}</code></pre>
-        </article>
-    </section>
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>data</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">TaskRecurrencyLike</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TaskRecurrency.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TaskRecurrency.js.html">model/TaskRecurrency.js</a>, <a href="model_TaskRecurrency.js.html#line6">line 6</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="TaskRecurrency.html">TaskRecurrency</a></dt>
+            <dd>Model constructor.</dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
