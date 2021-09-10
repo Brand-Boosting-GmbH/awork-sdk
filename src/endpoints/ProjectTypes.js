@@ -1,0 +1,108 @@
+import '../globalTypedef'
+import { ProjectType } from "../model/ProjectType"
+
+/**
+ * Class corresponding to Aworks ProjectTypes Endpoints
+ * @category Endpoints
+ * @see [ProjectTypes in Awork API Docs](https://openapi.awork.io/#/ProjectTypes)
+ */
+ export class ProjectTypes {
+
+    /**
+     * Endpoint constructor
+     * @param {import('../client/index').Client} client 
+     */
+    constructor(client) {
+        /**
+         * @private
+         */
+        this._client = client
+    }
+
+    /**
+     * Returns the project type with the specified id.
+     * @param {String} projectTypeId 
+     * @returns {Promise<ProjectType>}
+     */
+    async get (projectTypeId) {
+        const response = await this._client.get(`/projecttypes/${projectTypeId}`)
+        const data = response.data()
+        return new ProjectType(data)
+    }
+
+    /**
+     * @typedef {Object} ShowArchived
+     * @property {Boolean} showArchived Include archived project types in the results. Optional. False by default.
+     */
+
+    /**
+     * Returns all existing project types.
+     * @param {ShowArchived} options Pagination and filtering options
+     * @returns {Promise<Array<ProjectType>>}
+     */
+    async list (options) {
+        const response = await this._client.get('/projecttypes', options)
+        const data = response.data()
+        return data.map(d => new ProjectType(d))
+    }
+
+    /**
+     * @typedef {Object} ProjectTypeCreateAndUpdateModel The model to change the project type.
+     * @property {String} name The names of the project type.
+     * @property {String} description A short description of the project type.
+     * @property {String} icon The identifier of the project type icon.
+     */
+
+    /**
+     * Creates a new project type.
+     * @param {ProjectTypeCreateAndUpdateModel} projectType 
+     * @returns {Promise<ProjectType>}
+     */
+    async create (projectType) {
+        const response = await this._client.post('/projecttypes', projectType)
+        const data = response.data()
+        return new ProjectType(data)
+    }
+
+    /**
+     * Updates the project type with the specified id.
+     * @param {String} projectTypeId 
+     * @param {ProjectTypeCreateAndUpdateModel} projectType 
+     * @returns {Promise<ProjectType>}
+     */
+    async update (projectTypeId, projectType) {
+        const response = await this._client.put(`/projecttypes/${projectTypeId}`, projectType)
+        const data = response.data()
+        return new ProjectType(data)
+    }
+
+    /**
+     * Deletes the project type with the specified id. If an id of a new type is provided, projects will be updated to reference the new type If no id of type is provided, the type if removed from the projects.
+     * @param {String} projectTypeId 
+     */
+    async delete (projectTypeId) {
+        await this._client.post(`/projecttypes/${projectTypeId}/delete`, {'projectTypeId': projectTypeId}) //??
+    }
+
+    /**
+     * Archives or unarchives the project type with the specified id. Archived objects can not be used any longer but still exist for being referenced by other entities.
+     * @param {String} projectTypeId 
+     * @param {Boolean} archived 
+     * @returns {Promise<ProjectType>}
+     */
+    async setArchived (projectTypeId, archived) {
+        const response = await this._client.post(`/projecttypes/${projectTypeId}/setarchived`, {'isArchived': archived})
+        const data = response.data()
+        return new ProjectType(data)
+    }
+
+    /**
+     * Get all possible icons for project types.
+     * @returns {Promise<Array<String>>}
+     */
+    async icons () {
+        const response = await this._client.get('/projecttypes/icons')
+        return response.data()
+    }
+
+}

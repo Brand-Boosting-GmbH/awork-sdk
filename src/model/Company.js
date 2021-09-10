@@ -12,10 +12,13 @@ export class Company {
      */
 
     /**
-     * 
+     * Model constructor
      * @param {CompanyLike} data 
      */
     constructor(data) {
+        /**
+         * @private
+         */
         this._data = data || {}
     }
 

@@ -96,7 +96,7 @@ export class ClientApplications {
     }
 
     /**
-     * 
+     * Generates an API key for the specified client application. Requires an API user.
      * @param {String} clientId 
      * @returns {Promise<({ apiUserId: String })>}
      */
