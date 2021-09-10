@@ -24,7 +24,7 @@ import { ProjectRole } from "../model/ProjectRole"
      * @param {String} projectRoleId 
      * @returns {Promise<ProjectRole>}
      */
-    get (projectRoleId) {
+    async get (projectRoleId) {
         const response = await this._client.get(`/projectroles/${projectRoleId}`)
         const data = response.data()
         return new ProjectRole(data)
