@@ -68,7 +68,7 @@ export class EntityFiles {
      * @returns {Promise<EntityFile>}
      */
     async create (file, metadata) {
-        let filename = metadata.filename || fileObj.name
+        let filename = metadata.filename || file.name
         if(file instanceof Buffer) {
             const { ext } = await fromBuffer(file)
             filename = filename || `upload.${ext}`
