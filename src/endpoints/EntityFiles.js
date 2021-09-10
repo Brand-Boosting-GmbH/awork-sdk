@@ -68,16 +68,13 @@ export class EntityFiles {
      * @returns {Promise<EntityFile>}
      */
     async create (file, metadata) {
-        let filename = metadata.filename
-        let fileObj = file
-        filename = filename || fileObj.name
-        if(fileObj instanceof Buffer) {
-            const { ext } = await fromBuffer(fileObj)
+        let filename = metadata.filename || fileObj.name
+        if(file instanceof Buffer) {
+            const { ext } = await fromBuffer(file)
             filename = filename || `upload.${ext}`
-        }
-        
+        }    
         let formData = new FormData()
-        formData.append('file', fileObj, filename || 'upload')
+        formData.append('file', file, filename || 'upload')
         formData.append('name', metadata.name || filename || 'upload')
         formData.append('filename', filename || 'upload')
         const response = await this._client.post(`/${this._entityName}/${this._entityId}/files`, formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders()})
