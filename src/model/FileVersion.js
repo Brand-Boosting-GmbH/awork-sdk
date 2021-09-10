@@ -1,5 +1,19 @@
+/**
+ * FileVersion Model
+ * @category Models
+ * @class
+ */
 export class FileVersion {
+    /**
+     * @typedef {FileVersion & {_plain?: true}} FileVersionLike
+     */
+
+    /**
+     * Model constructor
+     * @param {FileVersionLike} data 
+     */
     constructor (data) {
+        /** @private */
         this._data = data
     }
 

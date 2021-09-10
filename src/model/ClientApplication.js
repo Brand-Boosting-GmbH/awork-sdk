@@ -1,5 +1,22 @@
+/**
+ * ClientApplication Model
+ * @category Models
+ * @class
+ */
+
 export class ClientApplication {
+     /**
+     * @typedef {ClientApplication & {_plain?: true}} ClientApplicationLike
+     */
+
+    /**
+     * Model constructor
+     * @param {ClientApplicationLike} data 
+     */
     constructor(data) {
+        /**
+         * @private
+         */
         this._data = data || {}
     }
 

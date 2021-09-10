@@ -1,5 +1,19 @@
+/**
+ * TaskRecurrency Model
+ * @category Models
+ * @class
+ */
 export class TaskRecurrency {
+    /**
+     * @typedef {TaskRecurrency & {_plain?: true}} TaskRecurrencyLike
+     */
+
+    /**
+     * Model constructor
+     * @param {TaskRecurrencyLike} data 
+     */
     constructor(data) {
+      /** @private */
       this._data = data || {};
     }
   

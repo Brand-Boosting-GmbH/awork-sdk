@@ -1,5 +1,22 @@
+/**
+ * EntityFile Model
+ * @category Models
+ * @class
+ */
+
 export class EntityFile {
+    /**
+     * @typedef {EntityFile & {_plain?: true}} EntityFileLike
+     */
+
+    /**
+     * Model constructor
+     * @param {EntityFileLike} data 
+     */
     constructor(data) {
+        /**
+         * @private
+         */
         this._data = data || {}
     }
 

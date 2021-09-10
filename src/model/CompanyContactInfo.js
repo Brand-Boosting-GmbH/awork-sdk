@@ -1,5 +1,22 @@
+/**
+ * CompanyContactInfo Model
+ * @category Models
+ * @class
+ */
+
 export class CompanyContactInfo {
+    /**
+     * @typedef {CompanyContactInfo & {_plain?: true}} CompanyContactInfoLike
+     */
+
+    /**
+     * Model constructor
+     * @param {CompanyContactInfoLike} data 
+     */
     constructor(data) {
+        /**
+         * @private
+         */
         this._data = data || {}
     }
 

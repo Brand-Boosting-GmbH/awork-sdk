@@ -1,6 +1,20 @@
+/**
+ * ProjectStatus Model
+ * @category Models
+ * @class
+ */
 export class ProjectStatus {
 
+    /**
+     * @typedef {ProjectStatus & {_plain?: true}} ProjectStatusLike
+     */
+
+    /**
+     * Model constructor
+     * @param {ProjectStatusLike} data 
+     */
     constructor(data) {
+        /** @private */
         this._data = data
     }
 

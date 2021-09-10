@@ -1,5 +1,9 @@
 import { FileVersion } from "../model/FileVersion"
 import '../globalTypedef'
+import { fromBuffer } from 'file-type'
+import FormData from "form-data"
+
+
 
 /**
  * Class corresponding to Versions part of the Aworks EntityFiles Endpoints

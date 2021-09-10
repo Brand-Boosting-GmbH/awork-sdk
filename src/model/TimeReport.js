@@ -1,6 +1,20 @@
 
+/**
+ * TimeReport Model
+ * @category Models
+ * @class
+ */
 export class TimeReport {
+    /**
+     * @typedef {TimeReport & {_plain?: true}} TimeReportLike
+     */
+
+    /**
+     * Model constructor
+     * @param {TimeReportLike} data 
+     */
     constructor(data) {
+        /** @private */
         this._data = data || {}
     }
 

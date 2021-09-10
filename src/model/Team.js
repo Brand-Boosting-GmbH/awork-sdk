@@ -1,6 +1,20 @@
 
+/**
+ * Team Model
+ * @category Models
+ * @class
+ */
 export class Team {
+    /**
+     * @typedef {Team & {_plain?: true}} TeamLike
+     */
+
+    /**
+     * Model constructor
+     * @param {TeamLike} data 
+     */
     constructor(data) {
+        /** @private */
         this._data = data || {}
     }
 

@@ -1,4 +1,17 @@
+/**
+ * Task Model
+ * @category Models
+ * @class
+ */
 export class Task {
+  /**
+     * @typedef {Task & {_plain?: true}} TaskLike
+     */
+
+    /**
+     * Model constructor
+     * @param {TaskLike} data 
+     */
     constructor(data) {
       this._data = data || {};
     }

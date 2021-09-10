@@ -1,5 +1,20 @@
+/**
+ * ProjectMember Model
+ * @category Models
+ * @class
+ */
+
 export class ProjectMember {
+    /**
+     * @typedef {ProjectMember & {_plain?: true}} ProjectMemberLike
+     */
+
+    /**
+     * Model constructor
+     * @param {ProjectMemberLike} data 
+     */
     constructor(data) {
+        /** @private */
         this._data = data || {}
     }
 

@@ -1,5 +1,18 @@
+/**
+ * Project Model
+ * @category Models
+ * @class
+ */
 
 export class Project {
+    /**
+     * @typedef {Project & {_plain?: true}} ProjectLike
+     */
+
+    /**
+     * Model constructor
+     * @param {ProjectLike} data 
+     */
     constructor(data) {
         this._data = data || {}
     }
