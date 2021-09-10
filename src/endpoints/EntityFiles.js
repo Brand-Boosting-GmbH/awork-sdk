@@ -39,7 +39,7 @@ export class EntityFiles {
      * @returns {Promise<EntityFile>}
      */
     async get (fileId) {
-        const response = await this._client.get(`${this._entityName}/${this._entityId}/files/${fileId}`)
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${fileId}`)
         const data = response.data()
         return new EntityFile(data)
     }
@@ -50,7 +50,7 @@ export class EntityFiles {
      * @returns {Promise<Array<EntityFile>>}
      */
     async list (options) {
-        const response = await this._client.get(`${this._entityName}/${this._entityId}/files`, options)
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files`, options)
         const data = response.data()
         return data.map(d => new EntityFile(d))
     }
@@ -80,7 +80,7 @@ export class EntityFiles {
         formData.append('file', fileObj, filename || 'upload')
         formData.append('name', metadata.name || filename || 'upload')
         formData.append('filename', filename || 'upload')
-        const response = await this._client.post(`${this._entityName}/${this._entityId}/files`, formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders()})
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/files`, formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders()})
         const data = response.data()
         return new EntityFile(data)
     }
@@ -92,7 +92,7 @@ export class EntityFiles {
      * @returns {Promise<EntityFile>} 
      */
     async update (fileId, entityFile) {
-        const response = await this._client.put(`${this._entityName}/${this._entityId}/files/${fileId}`, entityFile)
+        const response = await this._client.put(`/${this._entityName}/${this._entityId}/files/${fileId}`, entityFile)
         const data = response.data()
         return new EntityFile(data)
     }
@@ -103,7 +103,7 @@ export class EntityFiles {
      * @returns {Promise<void>}
      */
     async delete (fileId) {
-        await this._client.delete(`${this._entityName}/${this._entityId}/files/${fileId}`)
+        await this._client.delete(`/${this._entityName}/${this._entityId}/files/${fileId}`)
     }
     
     /**
@@ -111,7 +111,7 @@ export class EntityFiles {
      * @returns {Promise<void>}
      */
     async deleteAll () {
-        await this._client.delete(`${this._entityName}/${this._entityId}/files`)
+        await this._client.delete(`/${this._entityName}/${this._entityId}/files`)
     }
 
     /**
@@ -130,7 +130,7 @@ export class EntityFiles {
      * @returns {Promise<EntityFile>}
      */
     async externalFiles (value) {
-        const response = await this._client.post(`${this._entityName}/${this._entityId}/externalfiles/`, value)
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/externalfiles/`, value)
         const data = response.data()
         return new EntityFile(data)
     }
@@ -148,7 +148,7 @@ export class EntityFiles {
      * @returns {Promise<EntityFile>}
      */
     async byUrl (value) {
-        const response = await this._client.post(`${this._entityName}/${this._entityId}/files/byurl`, value)
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/files/byurl`, value)
         const data = response.data()
         return new EntityFile(data)
     }
@@ -166,7 +166,7 @@ export class EntityFiles {
      * @returns {String} binary
      */
     async download (fileId, options) {
-        const response = await this._client.get(`${this._entityName}/${this._entityId}/files/${fileId}/download`, options)
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${fileId}/download`, options)
         return response.data()
     }
 
@@ -177,13 +177,61 @@ export class EntityFiles {
      * @returns {String} binary
      */
     async pdf (fileId, inline) {
-        const response = await this._client.get(`${this._entityName}/${this._entityId}/files/${fileId}/pdf`, {inline: inline})
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${fileId}/pdf`, {inline: inline})
         return response.data()
     }
 
 
     versions (fileId) {
         return new FileVersions(this._client, this._entityName, this._entityId, fileId)
+    }
+
+    /**
+     * @typedef {Object} LinkedEntity The model to change the entity information of the file.
+     * @property {String} entityId The id of the entity the file should be linked to.
+     * @property {String} entityType The type of the linked entity.
+     */
+
+    /**
+     * Copys the file to a new entity (meta and content).
+     * @param {String} fileId 
+     * @param {LinkedEntity} entity 
+     * @returns {Promise<void>} /??
+     */
+    async copy (fileId, entity) {
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/files/${fileId}/copy`, entity)
+        return response.data()
+    }
+
+    /**
+     * Currently only allowed in the projects entity. Returns all files of the entity with the specified id.
+     * @returns {Promise<Array<EntityFile>>}
+     */
+    async allFiles() {
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/allfiles`)
+        const data = response.data()
+        return data.map(d => new EntityFile(d))
+    }
+
+    /**
+     * Returns a url to share the file.
+     * @param {String} fileId 
+     * @returns {Promise<String>}
+     */
+    async shareUrl (fileId) {
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${fileId}/shareurl`)
+        return response.data()
+    }
+
+    /**
+     * Changes the entity this file belongs to. Switch to the specified entity or to a global file if the 'EntityId' of the model is set to null.
+     * @param {String} fileId 
+     * @param {LinkedEntity} entity
+     * @returns {Promise<void>}
+     */
+    async changeEntity (fileId, entity) {
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/files/${fileId}/changeentity`, entity)
+        return response.data()
     }
     
 

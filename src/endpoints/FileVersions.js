@@ -16,7 +16,7 @@ export class FileVersions {
      * @returns {Promise<FileVersion>}
      */
     async get (versionId) {
-        const response = await this._client.get(`${this._entityName}/${this._entityId}/files/${this._fileId}/versions/${versionId}`)
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions/${versionId}`)
         const data = response.data()
         return new FileVersion(data)
     }
@@ -28,7 +28,7 @@ export class FileVersions {
      * @returns {Array<FileVersion>}
      */
      async list (options) {
-        const response = await this._client.get(`${this._entityName}/${this._entityId}/files/${this._fileId}/versions`, options)
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions`, options)
         const data = response.data()
         return data.map(d => new FileVersion(d))
     }
@@ -39,9 +39,23 @@ export class FileVersions {
      * @param {String} fileId 
      * @param {*} version 
      */
-     async uploadNew (version) {
-        const response = await this._client.get(`${this._entityName}/${this._entityId}/files/${this._fileId}/versions`, version)
+    async uploadNew (version) {
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions`, version)
         const data = response.data()
 
     }
+
+    /**
+     * Returns the content of the entity file version with the specified id.
+     * @param {String} versionId 
+     * @returns {Promise<Object>} //??
+     */
+    async download (versionId) {
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions/${versionId}/download`)
+        return response.data() //?? Example Value is {}
+    }
+
+
+
+
 }

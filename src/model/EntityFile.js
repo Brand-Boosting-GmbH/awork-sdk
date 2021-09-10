@@ -93,7 +93,7 @@ export class EntityFile {
 
     /**
      * List of all versions.
-     * @type {Array}
+     * @type {Array<import('./FileVersion').FileVersion>}
      */
     get fileVersions () {
         return this._data.fileVersions
