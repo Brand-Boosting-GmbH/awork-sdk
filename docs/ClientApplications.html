@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Projects</title>
+  <title> ClientApplications</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Class</p>
-                    <h1>Projects</h1>
+                    <h1>ClientApplications</h1>
                 </header>
                 
 
@@ -85,9 +85,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Projects<span class="signature">(client)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ClientApplications<span class="signature">(client)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class corresponding to Aworks Projects Endpoints</div>
+            <div class="class-description">Class corresponding to Aworks ClientApplications Endpoints</div>
         
     
 </header>
@@ -106,12 +106,12 @@
 
 
     
-    <h4 class="name" id="Projects">
-        <a class="href-link" href="#Projects">#</a>
+    <h4 class="name" id="ClientApplications">
+        <a class="href-link" href="#ClientApplications">#</a>
         
         <span class="code-name">
             
-                new Projects<span class="signature">(client)</span><span class="type-signature"></span>
+                new ClientApplications<span class="signature">(client)</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -220,7 +220,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>[Projects in Awork API Docs](https://openapi.awork.io/#/Projects)</li>
+            <li>[ClientApplications in Awork API Docs](https://openapi.awork.io/#/ClientApplications)</li>
         </ul>
     </dd>
     
@@ -229,9 +229,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_Projects.js.html" class="button">View Source</a>
+            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Projects.js.html">endpoints/Projects.js</a>, <a href="endpoints_Projects.js.html#line12">line 12</a>
+                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -273,7 +273,7 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            <dt><a href="Projects.html">Projects</a></dt>
+            <dt><a href="ClientApplications.html">ClientApplications</a></dt>
             <dd>Endpoint constructor.</dd>
         </dl>
     
@@ -304,18 +304,18 @@
         
         <span class="code-name">
             
-                create<span class="signature">(project)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Project.html">Project</a>>}</span>
+                create<span class="signature">(client)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Creates a new project.</p>
+    <p class="summary">Registers a new client application.</p>
     
     
     <div class="description">
-        Creates a new project.
+        Registers a new client application.
     </div>
     
 
@@ -353,242 +353,18 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>project</code></td>
+      <td class="name"><code>client</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#ProjectCreateModel">ProjectCreateModel</a></span>
+<span class="param-type"><a href="global.html#ClientRegisterModel">ClientRegisterModel</a></span>
 
 
   
   </td>
 
-  
-
-  
-
-  <td class="description last">The project creation object</td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_Projects.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_Projects.js.html">endpoints/Projects.js</a>, <a href="endpoints_Projects.js.html#line66">line 66</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;<a href="Project.html">Project</a>></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="delete">
-        <a class="href-link" href="#delete">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                delete<span class="signature">(projectId, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    <p class="summary">Deletes the project with the specified id.</p>
-    
-    
-    <div class="description">
-        Deletes the project with the specified id. In the default case the related tasks of this project will also be deleted and the related time trackings of this project and all tasks loose the relation to the deleted project and tasks. To delete the time trackings as well, it is necessary to set the 'DeleteTimeTrackings' property of the post model to true.
-
-The user can delete a project if he is the owner or he needs 'write' permissions of the feature 'project-master-data
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-            <th>Attributes</th>
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>projectId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last">The id of the project.</td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>options</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="global.html#DeleteProjectOptions">DeleteProjectOptions</a></span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-          &lt;optional><br>
-      
-
-      
-
-      
-      </td>
   
 
   
@@ -639,9 +415,186 @@ The user can delete a project if he is the owner or he needs 'write' permissions
 
     
         <p class="tag-source">
-            <a href="endpoints_Projects.js.html" class="button">View Source</a>
+            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Projects.js.html">endpoints/Projects.js</a>, <a href="endpoints_Projects.js.html#line109">line 109</a>
+                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line56">line 56</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="delete">
+        <a class="href-link" href="#delete">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                delete<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    <p class="summary">Deletes the specified client application.</p>
+    
+    
+    <div class="description">
+        Deletes the specified client application.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>clientId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line84">line 84</a>
             </span>
         </p>
     
@@ -696,24 +649,22 @@ The user can delete a project if he is the owner or he needs 'write' permissions
 
 
     
-    <h4 class="name" id="files">
-        <a class="href-link" href="#files">#</a>
+    <h4 class="name" id="generateApiKey">
+        <a class="href-link" href="#generateApiKey">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
         
         <span class="code-name">
             
-                files<span class="signature">(projectId)</span><span class="type-signature"> &rarr; {<a href="EntityFiles.html">EntityFiles</a>}</span>
+                generateApiKey<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;({apiUserId: String})>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Returns the <a href="EntityFiles.html">EntityFiles</a> Endpoint with the specified project Id and entityType 'projects'.</p>
-    
-    
-    <div class="description">
-        Returns the <a href="EntityFiles.html">EntityFiles</a> Endpoint with the specified project Id and entityType 'projects'.
-    </div>
     
 
 
@@ -750,7 +701,7 @@ The user can delete a project if he is the owner or he needs 'write' permissions
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projectId</code></td>
+      <td class="name"><code>clientId</code></td>
   
 
   <td class="type">
@@ -766,7 +717,7 @@ The user can delete a project if he is the owner or he needs 'write' permissions
 
   
 
-  <td class="description last">The id of the project.</td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -812,9 +763,9 @@ The user can delete a project if he is the owner or he needs 'write' permissions
 
     
         <p class="tag-source">
-            <a href="endpoints_Projects.js.html" class="button">View Source</a>
+            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Projects.js.html">endpoints/Projects.js</a>, <a href="endpoints_Projects.js.html#line127">line 127</a>
+                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line103">line 103</a>
             </span>
         </p>
     
@@ -849,7 +800,184 @@ The user can delete a project if he is the owner or he needs 'write' permissions
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type"><a href="EntityFiles.html">EntityFiles</a></span>
+<span class="param-type">Promise.&lt;({apiUserId: String})></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="generateSecret">
+        <a class="href-link" href="#generateSecret">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                generateSecret<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;({clientSecret: String})>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    <p class="summary">Generates a new secret for the specified client application.</p>
+    
+    
+    <div class="description">
+        Generates a new secret for the specified client application.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>clientId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line93">line 93</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;({clientSecret: String})></span>
 
 
     </div>
@@ -878,18 +1006,18 @@ The user can delete a project if he is the owner or he needs 'write' permissions
         
         <span class="code-name">
             
-                get<span class="signature">(projectId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Project.html">Project</a>>}</span>
+                get<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Returns the project with the specified id if the user has 'read' permissions of feature 'project-master-data'.</p>
+    <p class="summary">Returns the client application with the specified id.</p>
     
     
     <div class="description">
-        Returns the project with the specified id if the user has 'read' permissions of feature 'project-master-data'.
+        Returns the client application with the specified id.
     </div>
     
 
@@ -927,7 +1055,7 @@ The user can delete a project if he is the owner or he needs 'write' permissions
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projectId</code></td>
+      <td class="name"><code>clientId</code></td>
   
 
   <td class="type">
@@ -943,7 +1071,7 @@ The user can delete a project if he is the owner or he needs 'write' permissions
 
   
 
-  <td class="description last">The id of the project.</td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -989,9 +1117,9 @@ The user can delete a project if he is the owner or he needs 'write' permissions
 
     
         <p class="tag-source">
-            <a href="endpoints_Projects.js.html" class="button">View Source</a>
+            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Projects.js.html">endpoints/Projects.js</a>, <a href="endpoints_Projects.js.html#line30">line 30</a>
+                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line27">line 27</a>
             </span>
         </p>
     
@@ -1026,7 +1154,7 @@ The user can delete a project if he is the owner or he needs 'write' permissions
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="Project.html">Project</a>></span>
+<span class="param-type">Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>></span>
 
 
     </div>
@@ -1055,18 +1183,18 @@ The user can delete a project if he is the owner or he needs 'write' permissions
         
         <span class="code-name">
             
-                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="Project.html">Project</a>>>}</span>
+                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="ClientApplication.html">ClientApplication</a>>>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Returns all projects the user has 'read' permissions of feature 'project-master-data' for.</p>
+    <p class="summary">Returns all client applications.</p>
     
     
     <div class="description">
-        Returns all projects the user has 'read' permissions of feature 'project-master-data' for.
+        Returns all client applications.
     </div>
     
 
@@ -1178,9 +1306,9 @@ The user can delete a project if he is the owner or he needs 'write' permissions
 
     
         <p class="tag-source">
-            <a href="endpoints_Projects.js.html" class="button">View Source</a>
+            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Projects.js.html">endpoints/Projects.js</a>, <a href="endpoints_Projects.js.html#line41">line 41</a>
+                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line38">line 38</a>
             </span>
         </p>
     
@@ -1215,353 +1343,7 @@ The user can delete a project if he is the owner or he needs 'write' permissions
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;Array.&lt;<a href="Project.html">Project</a>>></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="members">
-        <a class="href-link" href="#members">#</a>
-        
-        <span class="code-name">
-            
-                members<span class="signature">(projectId)</span><span class="type-signature"> &rarr; {<a href="ProjectMembers.html">ProjectMembers</a>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    <p class="summary">Returns the <a href="ProjectMembers.html">ProjectMembers</a> Endpoint with the specified project Id.</p>
-    
-    
-    <div class="description">
-        Returns the <a href="ProjectMembers.html">ProjectMembers</a> Endpoint with the specified project Id.
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>projectId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">The id of the project.</td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_Projects.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_Projects.js.html">endpoints/Projects.js</a>, <a href="endpoints_Projects.js.html#line118">line 118</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type"><a href="ProjectMembers.html">ProjectMembers</a></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="projectStatus">
-        <a class="href-link" href="#projectStatus">#</a>
-        
-        <span class="code-name">
-            
-                projectStatus<span class="signature">(projectId)</span><span class="type-signature"> &rarr; {<a href="ProjectProjectStatus.html">ProjectProjectStatus</a>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    <p class="summary">Returns the <a href="ProjectProjectStatus.html">ProjectProjectStatus</a> Endpoint with the specified project Id.</p>
-    
-    
-    <div class="description">
-        Returns the <a href="ProjectProjectStatus.html">ProjectProjectStatus</a> Endpoint with the specified project Id.
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>projectId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">The id of the project.</td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_Projects.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_Projects.js.html">endpoints/Projects.js</a>, <a href="endpoints_Projects.js.html#line136">line 136</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type"><a href="ProjectProjectStatus.html">ProjectProjectStatus</a></span>
+<span class="param-type">Promise.&lt;Array.&lt;<a href="ClientApplication.html">ClientApplication</a>>></span>
 
 
     </div>
@@ -1590,20 +1372,13 @@ The user can delete a project if he is the owner or he needs 'write' permissions
         
         <span class="code-name">
             
-                update<span class="signature">(projectId, project)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Project.html">Project</a>>}</span>
+                update<span class="signature">(clientId, client)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Updates the project with the specified id.</p>
-    
-    
-    <div class="description">
-        Updates the project with the specified id.
-The user can update a project if he is the owner or he needs 'write' permissions of the feature 'project-master-data'.
-    </div>
     
 
 
@@ -1640,7 +1415,7 @@ The user can update a project if he is the owner or he needs 'write' permissions
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projectId</code></td>
+      <td class="name"><code>clientId</code></td>
   
 
   <td class="type">
@@ -1656,7 +1431,7 @@ The user can update a project if he is the owner or he needs 'write' permissions
 
   
 
-  <td class="description last">The id of the project.</td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -1665,13 +1440,13 @@ The user can update a project if he is the owner or he needs 'write' permissions
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>project</code></td>
+      <td class="name"><code>client</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#ProjectUpdateModel">ProjectUpdateModel</a></span>
+<span class="param-type"><a href="global.html#ClientUpdateModel">ClientUpdateModel</a></span>
 
 
   
@@ -1681,7 +1456,7 @@ The user can update a project if he is the owner or he needs 'write' permissions
 
   
 
-  <td class="description last">The project update object</td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -1727,9 +1502,9 @@ The user can update a project if he is the owner or he needs 'write' permissions
 
     
         <p class="tag-source">
-            <a href="endpoints_Projects.js.html" class="button">View Source</a>
+            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Projects.js.html">endpoints/Projects.js</a>, <a href="endpoints_Projects.js.html#line90">line 90</a>
+                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line73">line 73</a>
             </span>
         </p>
     
@@ -1764,7 +1539,7 @@ The user can update a project if he is the owner or he needs 'write' permissions
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="Project.html">Project</a>></span>
+<span class="param-type">Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>></span>
 
 
     </div>

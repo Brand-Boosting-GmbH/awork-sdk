@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/Team.js</title>
+  <title> model/ClientApplication.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/Team.js</h1>
+                    <h1>model/ClientApplication.js</h1>
                 </header>
                 
 
@@ -85,104 +85,58 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
-export class Team {
+            <pre class="prettyprint source linenums"><code>export class ClientApplication {
     constructor(data) {
         this._data = data || {}
     }
 
     /**
-     * The team name.
+     * The client application's identifier.
      * @type {String}
      */
-    get name () {
-        return this._data.name
+    get clientId () {
+        return this._data.clientId
     }
 
     /**
-     * The team description. Optional.
-     * @type {String} nullable
+     * The client application's display name.
+     * @type {String}
      */
-    get icon () {
-        return this._data.icon
+    get displayName () {
+        return this._data.displayName
     }
 
     /**
-     * The team type. Optional.
-     * @type {String} nullable
+     * The redirect URIs.
+     * @type {Array&lt;String>}
      */
-    get color () {
-        return this._data.color
+    get redirectUris () {
+        return this._data.redirectUris
     }
 
     /**
-     * The id of the team.
-     * @type {String} uuid
-     */
-    get id () {
-        return this._data.id
-    }
-
-    /**
-     * The date this team was created.
-     * @type {String} date-time
+     * The date this entity was created.
+     * @type {String}
      */
     get createdOn () {
         return this._data.createdOn
     }
 
     /**
-     * The id of the user who created this team.
-     * @type {String} uuid
-     */
-    get createdBy () {
-        return this._data.createdBy
-    }
-
-    /**
-     * The date this team was last modified.
-     * @type {String} date-time
+     * The date this entity was last modified.
+     * @type {String}
      */
     get updatedOn () {
         return this._data.updatedOn
     }
 
-    /**
-     * The id of the user who last updated this team.
-     * @type {String} uuid
-     */
-    get updatedBy () {
-        return this._data.updatedBy
-    }
-
-    /**
-     * The ids of the users in the team.
-     * @type {Array&lt;String>} 
-     */
-    get userIds () {
-        return this._data.userIds
-    }
-
-    /**
-     * The ids of the projects in the team.
-     * @type {Array&lt;String>}
-     */
-    get projectIds () {
-        return this._data.projectIds
-    }
-
-    toPlainObject () {
+    toPlainObject() {
         return {
-            name: this._data.name,
-            icon: this._data.icon,
-            color: this._data.color,
-            id: this._data.id,
+            clientId: this._data.clientId,
+            displayName: this._data.displayName,
+            redirectUris: this._data.redirectUris,
             createdOn: this._data.createdOn,
-            createdBy: this._data.createdBy,
-            updatedOn: this._data.updatedOn,
-            updatedBy: this._data.updatedBy,
-            userIds: this._data.userIds,
-            projectIds: this._data.projectIds
+            updatedOn: this._data.updatedOn
         }
     }
 }</code></pre>

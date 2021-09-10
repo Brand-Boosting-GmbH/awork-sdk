@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/Team.js</title>
+  <title> endpoints/ClientApplications.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/Team.js</h1>
+                    <h1>endpoints/ClientApplications.js</h1>
                 </header>
                 
 
@@ -85,106 +85,116 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
-export class Team {
-    constructor(data) {
-        this._data = data || {}
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+import { ClientApplication } from "../model/ClientApplication"
+
+/**
+ * Class corresponding to Aworks ClientApplications Endpoints
+ * @category Endpoints
+ * @see [ClientApplications in Awork API Docs](https://openapi.awork.io/#/ClientApplications)
+ */
+export class ClientApplications {
+
+    /**
+     * Endpoint constructor
+     * @param {import('../client/index').Client} client 
+     */
+    constructor(client) {
+        /**
+         * @private
+         */
+        this._client = client
     }
 
     /**
-     * The team name.
-     * @type {String}
+     * Returns the client application with the specified id.
+     * @param {String} clientId 
+     * @returns {Promise&lt;ClientApplication>}
      */
-    get name () {
-        return this._data.name
+    async get (clientId) {
+        const response = await this._client.get(`/clientapplications/${clientId}`)
+        const data = response.data()
+        return new ClientApplication(data)
     }
 
     /**
-     * The team description. Optional.
-     * @type {String} nullable
+     * Returns all client applications.
+     * @param {ListOptions} [options] Pagination and filtering options
+     * @returns {Promise&lt;Array&lt;ClientApplication>>}
      */
-    get icon () {
-        return this._data.icon
+    async list (options) {
+        const response = await this._client.get('/clientapplications', options)
+        const data = response.data()
+        return data.map(d => new ClientApplication(d))
     }
 
     /**
-     * The team type. Optional.
-     * @type {String} nullable
+     * @typedef {Object} ClientRegisterModel The client application is required for the OAuth flow.
+     * @property {String} clientId The client application's identifier.
+     * @property {String} displayName The client application's display name.
+     * @property {Array&lt;String>} redirectUris The redirect URIs.
      */
-    get color () {
-        return this._data.color
+
+    /**
+     * Registers a new client application.
+     * @param {ClientRegisterModel} client 
+     * @returns {Promise&lt;ClientApplication>}
+     */
+    async create (client) {
+        const response = await this._client.post('/clientapplications', client)
+        const data = response.data()
+        return new ClientApplication(data)
     }
 
     /**
-     * The id of the team.
-     * @type {String} uuid
+     * @typedef {Object} ClientUpdateModel The model to update a client application.
+     * @property {String} displayName The client application's display name.
+     * @property {Array&lt;String>} redirectUris The redirect URIs.
      */
-    get id () {
-        return this._data.id
+
+    /**
+     * @param {String} clientId 
+     * @param {ClientUpdateModel} client 
+     * @returns {Promise&lt;ClientApplication>}
+     */
+    async update (clientId, client) {
+        const response = await this._client.put(`/clientapplications/${clientId}`, client)
+        const data = response.data()
+        return new ClientApplication(data)
     }
 
     /**
-     * The date this team was created.
-     * @type {String} date-time
+     * Deletes the specified client application.
+     * @param {String} clientId 
+     * @returns {Promise&lt;void>}
      */
-    get createdOn () {
-        return this._data.createdOn
+    async delete (clientId) {
+        await this._client.delete(`/clientapplications/${clientId}`)
     }
 
     /**
-     * The id of the user who created this team.
-     * @type {String} uuid
+     * Generates a new secret for the specified client application.
+     * @param {String} clientId 
+     * @returns {Promise&lt;({ clientSecret: String })>}
      */
-    get createdBy () {
-        return this._data.createdBy
+    async generateSecret (clientId) {
+        const response = await this._client.post(`/clientapplications/${clientId}/generatesecret`)
+        return response.data()
     }
 
     /**
-     * The date this team was last modified.
-     * @type {String} date-time
+     * 
+     * @param {String} clientId 
+     * @returns {Promise&lt;({ apiUserId: String })>}
      */
-    get updatedOn () {
-        return this._data.updatedOn
+    async generateApiKey (clientId) {
+        const response = await this._client.post(`/clientapplications/${clientId}/generateapikey`)
+        return response.data()
     }
 
-    /**
-     * The id of the user who last updated this team.
-     * @type {String} uuid
-     */
-    get updatedBy () {
-        return this._data.updatedBy
-    }
 
-    /**
-     * The ids of the users in the team.
-     * @type {Array&lt;String>} 
-     */
-    get userIds () {
-        return this._data.userIds
-    }
 
-    /**
-     * The ids of the projects in the team.
-     * @type {Array&lt;String>}
-     */
-    get projectIds () {
-        return this._data.projectIds
-    }
 
-    toPlainObject () {
-        return {
-            name: this._data.name,
-            icon: this._data.icon,
-            color: this._data.color,
-            id: this._data.id,
-            createdOn: this._data.createdOn,
-            createdBy: this._data.createdBy,
-            updatedOn: this._data.updatedOn,
-            updatedBy: this._data.updatedBy,
-            userIds: this._data.userIds,
-            projectIds: this._data.projectIds
-        }
-    }
 }</code></pre>
         </article>
     </section>
