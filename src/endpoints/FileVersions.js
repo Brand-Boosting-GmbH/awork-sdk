@@ -1,7 +1,13 @@
 import { FileVersion } from "../model/FileVersion"
 import '../globalTypedef'
 
+/**
+ * Class corresponding to Versions part of the Aworks EntityFiles Endpoints
+ * @category Endpoints
+ * @see [EntityFiles in Awork API Docs](https://openapi.awork.io/#/EntityFiles)
+ */
 export class FileVersions {
+
     constructor (client, entityName, entityId, fileId) {
         /** @private */
         this._client = client
@@ -12,7 +18,6 @@ export class FileVersions {
         /** @private */
         this._fileId = fileId
     }
-
 
     /**
      * Returns the entity file version with the specified id
