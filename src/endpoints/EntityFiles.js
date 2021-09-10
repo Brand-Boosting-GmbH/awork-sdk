@@ -173,10 +173,10 @@ export class EntityFiles {
     /**
      * Returns the content of the entity file with the specified id as pdf if possible and returns bad request, if not valid type or conversion not possible.
      * @param {String} fileId 
-     * @param {Boolean} inline Default: false. If inline is false, content-disposition header is attachment.
+     * @param {Boolean} [inline] Default: false. If inline is false, content-disposition header is attachment.
      * @returns {String} binary
      */
-    async pdf (fileId, inline) {
+    async pdf (fileId, inline = false) {
         const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${fileId}/pdf`, {inline: inline})
         return response.data()
     }
