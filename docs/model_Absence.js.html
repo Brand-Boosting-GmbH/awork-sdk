@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/ProjectStatus.js</title>
+  <title> model/Absence.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/ProjectStatus.js</h1>
+                    <h1>model/Absence.js</h1>
                 </header>
                 
 
@@ -86,109 +86,119 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * ProjectStatus Model
+ * Absence Model
  * @category Models
  * @class
  */
-export class ProjectStatus {
+export class Absence {
 
     /**
-     * @typedef {ProjectStatus &amp; {_plain?: true}} ProjectStatusLike
+     * @typedef {Absence &amp; {_plain?: true}} AbsenceLike
      */
 
     /**
      * Model constructor
-     * @param {ProjectStatusLike} data 
+     * @param {AbsenceLike} data 
      */
     constructor(data) {
-        /** @private */
-        this._data = data
+         /**
+         * @private
+         */
+        this._data = data || {}
     }
 
+    /**
+     * The id of the user that created the absence.
+     * @type {String} uuid
+     */
+    get userId () {
+        return this._data.userId
+    }
 
     /**
-     * The primary identifier of this project status.
-     * @type {String}
+     * The start time of the absence.
+     * @type {String} date-time
+     */
+    get startOn () {
+        return this._data.startOn
+    }
+
+    /**
+     * The end time of the absence.
+     * @type {String} date-time
+     */
+    get endOn () {
+        return this._data.endOn
+    }
+
+    /**
+     * The id of the absence.
+     * @type {String} uuid
      */
     get id () {
         return this._data.id
     }
 
     /**
-     * The name of the project status.
-     * @type {String}
-     */
-    get name () {
-        return this._data.name
-    }
-
-    /**
-     * @type {Number}
-     */
-    get order () {
-        return this._data.order
-    }
-
-    /**
-     * The date this entity was created.
-     * @type {String}
+     * The date the absence was created.
+     * @type {String} date-time
      */
     get createdOn () {
         return this._data.createdOn
     }
 
     /**
-     * The id of the user who created this entity.
-     * @type {String}
+     * The id of the user that created the absence.
+     * @type {String} uuid
      */
     get createdBy () {
         return this._data.createdBy
     }
 
     /**
-     * The date this entity was last modified.
-     * @type {String}
+     * The date the absence was updated.
+     * @type {String} date-time
      */
     get updatedOn () {
         return this._data.updatedOn
     }
 
     /**
-     * The project template of the status.
-     * @type {String}
-     */
-    get projectTemplateId () {
-        return this._data.projectTemplateId
-    }
-
-    /**
-     * The id of the project the status belongs to.
-     * @type {String}
-     */
-    get projectId () {
-        return this._data.projectId
-    }
-
-    /**
-     * The id of the user who last modified this entity.
-     * @type {String}
+     * The id of the user that updated the absence.
+     * @type {String} uuid
      */
     get updatedBy () {
         return this._data.updatedBy
     }
 
+    /**
+     * The date the absence was deleted.
+     * @type {String} date-time
+     */
+    get deletedOn () {
+        return this._data.deletedOn
+    }
+
+    /**
+     * The id of the user that deleted the absence.
+     * @type {String} uuid
+     */
+    get deletedBy () {
+        return this._data.deletedBy
+    }
+
     toPlainObject() {
         return {
+            userId: this._data.userId,
+            startOn: this._data.startOn,
+            endOn: this._data.endOn,
             id: this._data.id,
-            name: this._data.name,
-            type: this._data.type,
-            order: this._data.order,
             createdOn: this._data.createdOn,
             createdBy: this._data.createdBy,
             updatedOn: this._data.updatedOn,
-            projectTemplateId: this._data.projectTemplateId,
-            projectId: this._data.projectId,
-            updatedBy: this._data.updatedBy
+            updatedBy: this._data.updatedBy,
+            deletedOn: this._data.deletedOn,
+            deletedBy: this._data.deletedBy
         }
     }
 }</code></pre>

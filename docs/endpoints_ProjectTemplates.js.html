@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/ProjectStatus.js</title>
+  <title> endpoints/ProjectTemplates.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/ProjectStatus.js</h1>
+                    <h1>endpoints/ProjectTemplates.js</h1>
                 </header>
                 
 
@@ -85,111 +85,114 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * ProjectStatus Model
- * @category Models
- * @class
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+import { ProjectTemplate } from "../model/ProjectTemplate"
+
+/**
+ * Class corresponding to Aworks ProjectTemplates Endpoints
+ * @category Endpoints
+ * @see [ProjectTemplates in Awork API Docs](https://openapi.awork.io/#/ProjectTemplates)
  */
-export class ProjectStatus {
+export class ProjectTemplates {
 
     /**
-     * @typedef {ProjectStatus &amp; {_plain?: true}} ProjectStatusLike
-     */
-
-    /**
-     * Model constructor
-     * @param {ProjectStatusLike} data 
-     */
-    constructor(data) {
-        /** @private */
-        this._data = data
-    }
-
-
-    /**
-     * The primary identifier of this project status.
-     * @type {String}
-     */
-    get id () {
-        return this._data.id
+    * Endpoint constructor
+    * @param {import('../client/index').Client} client 
+    */
+    constructor(client) {
+        /**
+        * @private
+        */
+        this._client = client
     }
 
     /**
-     * The name of the project status.
-     * @type {String}
+     * Returns the project template with the specified id and the related statuses.
+     * @param {String} projectTemplateId The id of the project template.
+     * @returns {Promise&lt;ProjectTemplate>}
      */
-    get name () {
-        return this._data.name
+    async get(projectTemplateId) {
+        const response = await this._client.get(`/projecttemplates/${projectTemplateId}`)
+        const data = response.data()
+        return new ProjectTemplate(data)
     }
 
     /**
-     * @type {Number}
+     * Returns all existing project types.
+     * @param {ListOptions} [options] Pagination and filtering options 
+     * @returns {Promise&lt;Array&lt;ProjectTemplate>>}
      */
-    get order () {
-        return this._data.order
+    async list(options) {
+        const response = await this._client.get('/projecttemplates', options)
+        const data = response.data()
+        return data.map(d => new ProjectTemplate(d))
     }
 
     /**
-     * The date this entity was created.
-     * @type {String}
+     * @typedef {Object} ProjectTemplateProperties
+     * @property {String} description Description of the project template.
+     * @property {String} name Name of the project template.
+     * @property {Boolean} isBillableByDefault
+     * @property {String} defaultTaskListIdForEmails uuid
      */
-    get createdOn () {
-        return this._data.createdOn
+
+    /**
+     * Creates a new project template.
+     * @param {ProjectTemplateProperties} projectTemplate 
+     * @returns {Promise&lt;ProjectTemplate>}
+     */
+    async create(projectTemplate) {
+        const response = await this._client.post('/projecttemplates', projectTemplate)
+        const data = response.data()
+        return new ProjectTemplate(data)
     }
 
     /**
-     * The id of the user who created this entity.
-     * @type {String}
+     * Updates the project template with the specified id.
+     * @param {String} projectTemplateId The id of the project template.
+     * @param {ProjectTemplateProperties} projectTemplate 
+     * @returns {Promise&lt;ProjectTemplate>}
      */
-    get createdBy () {
-        return this._data.createdBy
+    async update(projectTemplateId, projectTemplate) {
+        const response = await this._client.put(`/projecttemplates/${projectTemplateId}`, projectTemplate)
+        const data = response.data()
+        return new ProjectTemplate(data)
     }
 
     /**
-     * The date this entity was last modified.
-     * @type {String}
+     * Deletes the project template with the specified id.
+     * @param {String} projectTemplateId 
+     * @returns {Promise&lt;void>}
      */
-    get updatedOn () {
-        return this._data.updatedOn
+    async delete(projectTemplateId) {
+        await this._client.delete(`/projecttemplates/${projectTemplateId}`)
     }
 
     /**
-     * The project template of the status.
-     * @type {String}
+     * @typedef {Object} StatusOrderObject
+     * @property {String} projectStatusId The id of the project status.
+     * @property {Integer} order The order value which determines the position of the project status in the flow of the project type. Only accepts 0 and positive values. For independent statuses without successor and predecessor this value is set to null.
      */
-    get projectTemplateId () {
-        return this._data.projectTemplateId
+
+    /**
+     * Updates the order of a project status.
+     * @param {String} projectTemplateId The id of the project template.
+     * @param {StatusOrderObject} statusOrderObject 
+     * @returns {Promise&lt;void>}
+     */
+    async updateProjectStatusOrder(projectTemplateId, statusOrderObject) {
+        const response = await this._client.post(`/projecttemplates/${projectTemplateId}/updateprojectstatusorder`, statusOrderObject)
+        return response.data()
     }
 
     /**
-     * The id of the project the status belongs to.
-     * @type {String}
+     * Returns the task bundle id which is linked to the template.
+     * @param {*} projectTemplateId 
+     * @returns {Promise&lt;({taskBundleId:String})>}
      */
-    get projectId () {
-        return this._data.projectId
-    }
-
-    /**
-     * The id of the user who last modified this entity.
-     * @type {String}
-     */
-    get updatedBy () {
-        return this._data.updatedBy
-    }
-
-    toPlainObject() {
-        return {
-            id: this._data.id,
-            name: this._data.name,
-            type: this._data.type,
-            order: this._data.order,
-            createdOn: this._data.createdOn,
-            createdBy: this._data.createdBy,
-            updatedOn: this._data.updatedOn,
-            projectTemplateId: this._data.projectTemplateId,
-            projectId: this._data.projectId,
-            updatedBy: this._data.updatedBy
-        }
+    async taskBundle(projectTemplateId) {
+        const response = await this._client.get(`/projecttemplates/${projectTemplateId}/taskbundle`)
+        return response.data()
     }
 }</code></pre>
         </article>
