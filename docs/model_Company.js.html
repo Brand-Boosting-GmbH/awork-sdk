@@ -68,7 +68,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="Projects.html">Projects</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TimeReports.html">TimeReports</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="Projects.html">Projects</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TimeReports.html">TimeReports</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Company.html">Company</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul></div>
                 
             </nav>
         </div>
@@ -87,7 +87,21 @@
         <article>
             <pre class="prettyprint source linenums"><code>
 
+/**
+ * Company Model
+ * @category Models
+ * @class
+ */
 export class Company {
+
+    /**
+     * @typedef {Company &amp; {_plain?: true}} CompanyLike
+     */
+
+    /**
+     * 
+     * @param {CompanyLike} data 
+     */
     constructor(data) {
         this._data = data || {}
     }
