@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/ClientApplication.js</title>
+  <title> endpoints/ProjectRoles.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/ClientApplication.js</h1>
+                    <h1>endpoints/ProjectRoles.js</h1>
                 </header>
                 
 
@@ -85,59 +85,103 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>export class ClientApplication {
-    constructor(data) {
-        this._data = data || {}
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+import { ProjectRole } from "../model/ProjectRole"
+
+/**
+ * Class corresponding to Aworks ProjectRoles Endpoints
+ * @category Endpoints
+ * @see [ProjectRoles in Awork API Docs](https://openapi.awork.io/#/ProjectRoles)
+ */
+ export class ProjectRoles {
+
+    /**
+     * Endpoint constructor
+     * @param {import('../client/index').Client} client 
+     */
+    constructor(client) {
+        /**
+         * @private
+         */
+        this._client = client
     }
 
     /**
-     * The client application's identifier.
-     * @type {String}
+     * Returns the project role with the specified id.
+     * @param {String} projectRoleId 
+     * @returns {Promise&lt;ProjectRole>}
      */
-    get clientId () {
-        return this._data.clientId
+    async get (projectRoleId) {
+        const response = await this._client.get(`/projectroles/${projectRoleId}`)
+        const data = response.data()
+        return new ProjectRole(data)
     }
 
     /**
-     * The client application's display name.
-     * @type {String}
+     * Returns all project roles.
+     * @param {ListOptions} [options] Pagination and filtering options
+     * @returns {Promise&lt;Array&lt;ProjectRole>>}
      */
-    get displayName () {
-        return this._data.displayName
+    async list (options) {
+        const response = await this._client.get('/projectroles', options)
+        const data = response.data()
+        return data.map(d => new ProjectRole(d))
+
     }
 
     /**
-     * The redirect URIs.
-     * @type {Array&lt;String>}
+     * @typedef {Object} ProjectRoleCreateAndUpdateModel The model used to create a project role.
+     * @property {String} name The name of the project role. Required.
+     * @property {Boolean} [isDefault] Whether to use this role as default when adding new project members.
+     * @property {String} [defaultProjectRoleId] The id of the new default project role. Required if the updated project role is the current default role.
      */
-    get redirectUris () {
-        return this._data.redirectUris
+
+    /**
+     * Creates a new project role.
+     * @param {ProjectRoleCreateAndUpdateModel} projectRole 
+     * @return {Promise&lt;ProjectRole>}
+     */
+    async create (projectRole) {
+        const response = await this._client.post('/projectroles', projectRole)
+        const data = response.data()
+        return new ProjectRole(data)
     }
 
     /**
-     * The date this entity was created.
-     * @type {String}
+     * Updates the project role with the specified id.
+     * @param {String} projectRoleId 
+     * @param {ProjectRoleCreateAndUpdateModel} projectRole
      */
-    get createdOn () {
-        return this._data.createdOn
+    async update (projectRoleId, projectRole) {
+        const response = await this._client.put(`/projectroles/${projectRoleId}`, projectRole)
+        const data = response.data()
+        return new ProjectRole(data)
     }
 
     /**
-     * The date this entity was last modified.
-     * @type {String}
+     * @typedef {Object} ProjectRoleDeleteModel The model to delete the project role.
+     * @property {String} newProjectRoleId The id of the new project role. Needs to be set when there are still users in projects with the old project role.
      */
-    get updatedOn () {
-        return this._data.updatedOn
+
+    /**
+     * Deletes the project role with the specified id. When you want to delete a project role which is still in use, you are required to specify which role the currently assigned members should be assigned to instead. If the default role gets deleted, the migration role becomes the new default project role.
+     * @param {String} projectRoleId 
+     * @param {ProjectRoleDeleteModel} newProjectRole
+     * @return {Promise&lt;void>}
+     */
+    async delete (projectRoleId, newProjectRole) {
+        await this._client.post(`/projectroles/${projectRoleId}/delete`, newProjectRole)
     }
 
-    toPlainObject() {
-        return {
-            clientId: this._data.clientId,
-            displayName: this._data.displayName,
-            redirectUris: this._data.redirectUris,
-            createdOn: this._data.createdOn,
-            updatedOn: this._data.updatedOn
-        }
+    /**
+     * Returns all project roles of a specific user.
+     * @param {String} userId 
+     * @returns {Promise&lt;Array&lt;ProjectRole>>}
+     */
+    async byUserId (userId) {
+        const response = await this._client.get(`/projectroles/byuserid/${userId}`)
+        const data = response.data()
+        return data.map(d => new ProjectRole(d))
     }
 }</code></pre>
         </article>

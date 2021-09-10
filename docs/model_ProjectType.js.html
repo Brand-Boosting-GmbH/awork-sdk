@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/ClientApplication.js</title>
+  <title> model/ProjectType.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/ClientApplication.js</h1>
+                    <h1>model/ProjectType.js</h1>
                 </header>
                 
 
@@ -85,58 +85,120 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>export class ClientApplication {
+            <pre class="prettyprint source linenums"><code>/**
+ * ProjectType Model
+ * @category Models
+ * @class
+ */
+ export class ProjectType {
+
+    /**
+     * @typedef {ProjectType &amp; {_plain?: true}} ProjectTypeLike
+     */
+
+    /**
+     * Model constructor
+     * @param {ProjectTypeLike} data 
+     */
     constructor(data) {
+        /**
+         * @private
+         */
         this._data = data || {}
     }
 
     /**
-     * The client application's identifier.
+     * The id of the type.
      * @type {String}
      */
-    get clientId () {
-        return this._data.clientId
+    get id () {
+        return this._data.id
     }
 
     /**
-     * The client application's display name.
-     * @type {String}
+     * The name of the project type.
+     * @type
      */
-    get displayName () {
-        return this._data.displayName
+    get name () {
+        return this._data.name
     }
 
     /**
-     * The redirect URIs.
-     * @type {Array&lt;String>}
+     * A short (max. 140 characters) description of the project type.
+     * @type {String}
      */
-    get redirectUris () {
-        return this._data.redirectUris
+    get description () {
+        return this._data.description
+    }
+
+    /**
+     * The identifier of the project type icon.
+     * @type {String}
+     */
+    get icon () {
+        return this._data.icon
+    }
+
+    /**
+     * Whether this type is archived. It can no longer be used to create projects, but existing ones will continue using it.
+     * @type {Boolean}
+     */
+    get isArchived () {
+        return this._data.isArchived
+    }
+
+    /**
+     * Whether this type is one of the preset types. Preset types cannot be edited.
+     * @type {Boolean}
+     */
+    get isPreset () {
+        return this._data.isPreset
     }
 
     /**
      * The date this entity was created.
-     * @type {String}
+     * @type {String} date-time
      */
     get createdOn () {
         return this._data.createdOn
     }
 
     /**
+     * The id of the user who created this entity.
+     * @type {String} uuid
+     */
+    get createdBy () {
+        return this._data.createdBy
+    }
+
+    /**
      * The date this entity was last modified.
-     * @type {String}
+     * @type {String} date-time
      */
     get updatedOn () {
         return this._data.updatedOn
     }
 
+    /**
+     * The id of the user who last modified this entity.
+     * @type {String} uuid
+     */
+    get updatedBy () {
+        return this._data.updatedBy
+    }
+
     toPlainObject() {
         return {
-            clientId: this._data.clientId,
-            displayName: this._data.displayName,
-            redirectUris: this._data.redirectUris,
+            id: this._data.id,
+            name: this._data.name,
+            description: this._data.description,
+            icon: this._data.icon,
+            isArchived: this._data.isArchived,
+            isPreset: this._data.isPreset,
             createdOn: this._data.createdOn,
-            updatedOn: this._data.updatedOn
+            createdBy: this._data.createdBy,
+            updatedOn: this._data.updatedOn,
+            updatedBy: this._data.updatedBy
         }
     }
 }</code></pre>

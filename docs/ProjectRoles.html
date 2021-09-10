@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> ClientApplications</title>
+  <title> ProjectRoles</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Class</p>
-                    <h1>ClientApplications</h1>
+                    <h1>ProjectRoles</h1>
                 </header>
                 
 
@@ -85,9 +85,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ClientApplications<span class="signature">(client)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ProjectRoles<span class="signature">(client)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class corresponding to Aworks ClientApplications Endpoints</div>
+            <div class="class-description">Class corresponding to Aworks ProjectRoles Endpoints</div>
         
     
 </header>
@@ -106,12 +106,12 @@
 
 
     
-    <h4 class="name" id="ClientApplications">
-        <a class="href-link" href="#ClientApplications">#</a>
+    <h4 class="name" id="ProjectRoles">
+        <a class="href-link" href="#ProjectRoles">#</a>
         
         <span class="code-name">
             
-                new ClientApplications<span class="signature">(client)</span><span class="type-signature"></span>
+                new ProjectRoles<span class="signature">(client)</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -220,7 +220,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>[ClientApplications in Awork API Docs](https://openapi.awork.io/#/ClientApplications)</li>
+            <li>[ProjectRoles in Awork API Docs](https://openapi.awork.io/#/ProjectRoles)</li>
         </ul>
     </dd>
     
@@ -229,9 +229,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
+            <a href="endpoints_ProjectRoles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line9">line 9</a>
+                <a href="endpoints_ProjectRoles.js.html">endpoints/ProjectRoles.js</a>, <a href="endpoints_ProjectRoles.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -273,7 +273,7 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            <dt><a href="ClientApplications.html">ClientApplications</a></dt>
+            <dt><a href="ProjectRoles.html">ProjectRoles</a></dt>
             <dd>Endpoint constructor.</dd>
         </dl>
     
@@ -295,8 +295,8 @@
 
 
     
-    <h4 class="name" id="create">
-        <a class="href-link" href="#create">#</a>
+    <h4 class="name" id="byUserId">
+        <a class="href-link" href="#byUserId">#</a>
         
             
                 <span class='tag'>async</span>
@@ -304,18 +304,18 @@
         
         <span class="code-name">
             
-                create<span class="signature">(client)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>>}</span>
+                byUserId<span class="signature">(userId)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="ProjectRole.html">ProjectRole</a>>>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Registers a new client application.</p>
+    <p class="summary">Returns all project roles of a specific user.</p>
     
     
     <div class="description">
-        Registers a new client application.
+        Returns all project roles of a specific user.
     </div>
     
 
@@ -353,184 +353,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>client</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="global.html#ClientRegisterModel">ClientRegisterModel</a></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line56">line 56</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="delete">
-        <a class="href-link" href="#delete">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                delete<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    <p class="summary">Deletes the specified client application.</p>
-    
-    
-    <div class="description">
-        Deletes the specified client application.
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>clientId</code></td>
+      <td class="name"><code>userId</code></td>
   
 
   <td class="type">
@@ -592,9 +415,388 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
+            <a href="endpoints_ProjectRoles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line84">line 84</a>
+                <a href="endpoints_ProjectRoles.js.html">endpoints/ProjectRoles.js</a>, <a href="endpoints_ProjectRoles.js.html#line94">line 94</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;Array.&lt;<a href="ProjectRole.html">ProjectRole</a>>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="create">
+        <a class="href-link" href="#create">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                create<span class="signature">(projectRole)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ProjectRole.html">ProjectRole</a>>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    <p class="summary">Creates a new project role.</p>
+    
+    
+    <div class="description">
+        Creates a new project role.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>projectRole</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="global.html#ProjectRoleCreateAndUpdateModel">ProjectRoleCreateAndUpdateModel</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_ProjectRoles.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_ProjectRoles.js.html">endpoints/ProjectRoles.js</a>, <a href="endpoints_ProjectRoles.js.html#line57">line 57</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;<a href="ProjectRole.html">ProjectRole</a>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="delete">
+        <a class="href-link" href="#delete">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                delete<span class="signature">(projectRoleId, newProjectRole)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    <p class="summary">Deletes the project role with the specified id.</p>
+    
+    
+    <div class="description">
+        Deletes the project role with the specified id. When you want to delete a project role which is still in use, you are required to specify which role the currently assigned members should be assigned to instead. If the default role gets deleted, the migration role becomes the new default project role.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>projectRoleId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>newProjectRole</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="global.html#ProjectRoleDeleteModel">ProjectRoleDeleteModel</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_ProjectRoles.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_ProjectRoles.js.html">endpoints/ProjectRoles.js</a>, <a href="endpoints_ProjectRoles.js.html#line85">line 85</a>
             </span>
         </p>
     
@@ -649,360 +851,6 @@
 
 
     
-    <h4 class="name" id="generateApiKey">
-        <a class="href-link" href="#generateApiKey">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                generateApiKey<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;({apiUserId: String})>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    <p class="summary">Generates an API key for the specified client application.</p>
-    
-    
-    <div class="description">
-        Generates an API key for the specified client application. Requires an API user.
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>clientId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line103">line 103</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;({apiUserId: String})></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="generateSecret">
-        <a class="href-link" href="#generateSecret">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                generateSecret<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;({clientSecret: String})>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    <p class="summary">Generates a new secret for the specified client application.</p>
-    
-    
-    <div class="description">
-        Generates a new secret for the specified client application.
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>clientId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line93">line 93</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;({clientSecret: String})></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
     <h4 class="name" id="get">
         <a class="href-link" href="#get">#</a>
         
@@ -1012,18 +860,18 @@
         
         <span class="code-name">
             
-                get<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>>}</span>
+                get<span class="signature">(projectRoleId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ProjectRole.html">ProjectRole</a>>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Returns the client application with the specified id.</p>
+    <p class="summary">Returns the project role with the specified id.</p>
     
     
     <div class="description">
-        Returns the client application with the specified id.
+        Returns the project role with the specified id.
     </div>
     
 
@@ -1061,7 +909,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>clientId</code></td>
+      <td class="name"><code>projectRoleId</code></td>
   
 
   <td class="type">
@@ -1123,9 +971,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
+            <a href="endpoints_ProjectRoles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line27">line 27</a>
+                <a href="endpoints_ProjectRoles.js.html">endpoints/ProjectRoles.js</a>, <a href="endpoints_ProjectRoles.js.html#line27">line 27</a>
             </span>
         </p>
     
@@ -1160,7 +1008,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>></span>
+<span class="param-type">Promise.&lt;<a href="ProjectRole.html">ProjectRole</a>></span>
 
 
     </div>
@@ -1189,18 +1037,18 @@
         
         <span class="code-name">
             
-                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="ClientApplication.html">ClientApplication</a>>>}</span>
+                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="ProjectRole.html">ProjectRole</a>>>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Returns all client applications.</p>
+    <p class="summary">Returns all project roles.</p>
     
     
     <div class="description">
-        Returns all client applications.
+        Returns all project roles.
     </div>
     
 
@@ -1312,9 +1160,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
+            <a href="endpoints_ProjectRoles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line38">line 38</a>
+                <a href="endpoints_ProjectRoles.js.html">endpoints/ProjectRoles.js</a>, <a href="endpoints_ProjectRoles.js.html#line38">line 38</a>
             </span>
         </p>
     
@@ -1349,7 +1197,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;Array.&lt;<a href="ClientApplication.html">ClientApplication</a>>></span>
+<span class="param-type">Promise.&lt;Array.&lt;<a href="ProjectRole.html">ProjectRole</a>>></span>
 
 
     </div>
@@ -1378,13 +1226,19 @@
         
         <span class="code-name">
             
-                update<span class="signature">(clientId, client)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>>}</span>
+                update<span class="signature">(projectRoleId, projectRole)</span><span class="type-signature"></span>
             
         </span>
     </h4>
     
 
     
+    <p class="summary">Updates the project role with the specified id.</p>
+    
+    
+    <div class="description">
+        Updates the project role with the specified id.
+    </div>
     
 
 
@@ -1421,7 +1275,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>clientId</code></td>
+      <td class="name"><code>projectRoleId</code></td>
   
 
   <td class="type">
@@ -1446,13 +1300,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>client</code></td>
+      <td class="name"><code>projectRole</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#ClientUpdateModel">ClientUpdateModel</a></span>
+<span class="param-type"><a href="global.html#ProjectRoleCreateAndUpdateModel">ProjectRoleCreateAndUpdateModel</a></span>
 
 
   
@@ -1508,9 +1362,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ClientApplications.js.html" class="button">View Source</a>
+            <a href="endpoints_ProjectRoles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ClientApplications.js.html">endpoints/ClientApplications.js</a>, <a href="endpoints_ClientApplications.js.html#line73">line 73</a>
+                <a href="endpoints_ProjectRoles.js.html">endpoints/ProjectRoles.js</a>, <a href="endpoints_ProjectRoles.js.html#line68">line 68</a>
             </span>
         </p>
     
@@ -1532,29 +1386,6 @@
 
 
 
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;<a href="ClientApplication.html">ClientApplication</a>></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
 
 
 

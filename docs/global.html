@@ -66,7 +66,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="Projects.html">Projects</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TimeReports.html">TimeReports</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Company.html">Company</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TimeReports.html">TimeReports</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Company.html">Company</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectType.html">ProjectType</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul></div>
                 
             </nav>
         </div>
@@ -842,7 +842,7 @@
         <p class="tag-source">
             <a href="model_Company.js.html" class="button">View Source</a>
             <span>
-                <a href="model_Company.js.html">model/Company.js</a>, <a href="model_Company.js.html#line119">line 119</a>
+                <a href="model_Company.js.html">model/Company.js</a>, <a href="model_Company.js.html#line122">line 122</a>
             </span>
         </p>
     
@@ -3782,6 +3782,338 @@
 
     </span>
 
+<h4 class="name" id="ProjectRoleCreateAndUpdateModel">
+    <a class="href-link" href="#ProjectRoleCreateAndUpdateModel">#</a>
+    
+    <span class="code-name">
+        ProjectRoleCreateAndUpdateModel
+    </span>
+    
+</h4>
+
+
+<p class="summary">The model used to create a project role.</p>
+
+
+
+<div class="description">
+    The model used to create a project role.
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>name</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last">The name of the project role. Required.</td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>isDefault</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Boolean</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last">Whether to use this role as default when adding new project members.</td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>defaultProjectRoleId</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last">The id of the new default project role. Required if the updated project role is the current default role.</td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_ProjectRoles.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_ProjectRoles.js.html">endpoints/ProjectRoles.js</a>, <a href="endpoints_ProjectRoles.js.html#line45">line 45</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Object</span>
+
+
+    </span>
+
+<h4 class="name" id="ProjectRoleDeleteModel">
+    <a class="href-link" href="#ProjectRoleDeleteModel">#</a>
+    
+    <span class="code-name">
+        ProjectRoleDeleteModel
+    </span>
+    
+</h4>
+
+
+<p class="summary">The model to delete the project role.</p>
+
+
+
+<div class="description">
+    The model to delete the project role.
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>newProjectRoleId</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last">The id of the new project role. Needs to be set when there are still users in projects with the old project role.</td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_ProjectRoles.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_ProjectRoles.js.html">endpoints/ProjectRoles.js</a>, <a href="endpoints_ProjectRoles.js.html#line74">line 74</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Object</span>
+
+
+    </span>
+
 <h4 class="name" id="ProjectTeamPair">
     <a class="href-link" href="#ProjectTeamPair">#</a>
     
@@ -3909,6 +4241,183 @@
             <a href="endpoints_Teams.js.html" class="button">View Source</a>
             <span>
                 <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line120">line 120</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Object</span>
+
+
+    </span>
+
+<h4 class="name" id="ProjectTypeCreateAndUpdateModel">
+    <a class="href-link" href="#ProjectTypeCreateAndUpdateModel">#</a>
+    
+    <span class="code-name">
+        ProjectTypeCreateAndUpdateModel
+    </span>
+    
+</h4>
+
+
+<p class="summary">The model to change the project type.</p>
+
+
+
+<div class="description">
+    The model to change the project type.
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>name</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last">The names of the project type.</td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>description</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last">A short description of the project type.</td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>icon</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last">The identifier of the project type icon.</td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_ProjectTypes.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_ProjectTypes.js.html">endpoints/ProjectTypes.js</a>, <a href="endpoints_ProjectTypes.js.html#line49">line 49</a>
             </span>
         </p>
     
@@ -4230,6 +4739,131 @@
             <a href="endpoints_Projects.js.html" class="button">View Source</a>
             <span>
                 <a href="endpoints_Projects.js.html">endpoints/Projects.js</a>, <a href="endpoints_Projects.js.html#line72">line 72</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Object</span>
+
+
+    </span>
+
+<h4 class="name" id="ShowArchived">
+    <a class="href-link" href="#ShowArchived">#</a>
+    
+    <span class="code-name">
+        ShowArchived
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>showArchived</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Boolean</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last">Include archived project types in the results. Optional. False by default.</td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_ProjectTypes.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_ProjectTypes.js.html">endpoints/ProjectTypes.js</a>, <a href="endpoints_ProjectTypes.js.html#line33">line 33</a>
             </span>
         </p>
     

@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/ClientApplication.js</title>
+  <title> endpoints/ProjectTypes.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/ClientApplication.js</h1>
+                    <h1>endpoints/ProjectTypes.js</h1>
                 </header>
                 
 
@@ -85,60 +85,113 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>export class ClientApplication {
-    constructor(data) {
-        this._data = data || {}
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+import { ProjectType } from "../model/ProjectType"
+
+/**
+ * Class corresponding to Aworks ProjectTypes Endpoints
+ * @category Endpoints
+ * @see [ProjectTypes in Awork API Docs](https://openapi.awork.io/#/ProjectTypes)
+ */
+ export class ProjectTypes {
+
+    /**
+     * Endpoint constructor
+     * @param {import('../client/index').Client} client 
+     */
+    constructor(client) {
+        /**
+         * @private
+         */
+        this._client = client
     }
 
     /**
-     * The client application's identifier.
-     * @type {String}
+     * Returns the project type with the specified id.
+     * @param {String} projectTypeId 
+     * @returns {Promise&lt;ProjectType>}
      */
-    get clientId () {
-        return this._data.clientId
+    async get (projectTypeId) {
+        const response = await this._client.get(`/projecttypes/${projectTypeId}`)
+        const data = response.data()
+        return new ProjectType(data)
     }
 
     /**
-     * The client application's display name.
-     * @type {String}
+     * @typedef {Object} ShowArchived
+     * @property {Boolean} showArchived Include archived project types in the results. Optional. False by default.
      */
-    get displayName () {
-        return this._data.displayName
+
+    /**
+     * Returns all existing project types.
+     * @param {ShowArchived} options Pagination and filtering options
+     * @returns {Promise&lt;Array&lt;ProjectType>>}
+     */
+    async list (options) {
+        const response = await this._client.get('/projecttypes', options)
+        const data = response.data()
+        return data.map(d => new ProjectType(d))
     }
 
     /**
-     * The redirect URIs.
-     * @type {Array&lt;String>}
+     * @typedef {Object} ProjectTypeCreateAndUpdateModel The model to change the project type.
+     * @property {String} name The names of the project type.
+     * @property {String} description A short description of the project type.
+     * @property {String} icon The identifier of the project type icon.
      */
-    get redirectUris () {
-        return this._data.redirectUris
+
+    /**
+     * Creates a new project type.
+     * @param {ProjectTypeCreateAndUpdateModel} projectType 
+     * @returns {Promise&lt;ProjectType>}
+     */
+    async create (projectType) {
+        const response = await this._client.post('/projecttypes', projectType)
+        const data = response.data()
+        return new ProjectType(data)
     }
 
     /**
-     * The date this entity was created.
-     * @type {String}
+     * Updates the project type with the specified id.
+     * @param {String} projectTypeId 
+     * @param {ProjectTypeCreateAndUpdateModel} projectType 
+     * @returns {Promise&lt;ProjectType>}
      */
-    get createdOn () {
-        return this._data.createdOn
+    async update (projectTypeId, projectType) {
+        const response = await this._client.put(`/projecttypes/${projectTypeId}`, projectType)
+        const data = response.data()
+        return new ProjectType(data)
     }
 
     /**
-     * The date this entity was last modified.
-     * @type {String}
+     * Deletes the project type with the specified id. If an id of a new type is provided, projects will be updated to reference the new type If no id of type is provided, the type if removed from the projects.
+     * @param {String} projectTypeId 
      */
-    get updatedOn () {
-        return this._data.updatedOn
+    async delete (projectTypeId) {
+        await this._client.post(`/projecttypes/${projectTypeId}/delete`, {'projectTypeId': projectTypeId}) //??
     }
 
-    toPlainObject() {
-        return {
-            clientId: this._data.clientId,
-            displayName: this._data.displayName,
-            redirectUris: this._data.redirectUris,
-            createdOn: this._data.createdOn,
-            updatedOn: this._data.updatedOn
-        }
+    /**
+     * Archives or unarchives the project type with the specified id. Archived objects can not be used any longer but still exist for being referenced by other entities.
+     * @param {String} projectTypeId 
+     * @param {Boolean} archived 
+     * @returns {Promise&lt;ProjectType>}
+     */
+    async setArchived (projectTypeId, archived) {
+        const response = await this._client.post(`/projecttypes/${projectTypeId}/setarchived`, {'isArchived': archived})
+        const data = response.data()
+        return new ProjectType(data)
     }
+
+    /**
+     * Get all possible icons for project types.
+     * @returns {Promise&lt;Array&lt;String>>}
+     */
+    async icons () {
+        const response = await this._client.get('/projecttypes/icons')
+        return response.data()
+    }
+
 }</code></pre>
         </article>
     </section>
