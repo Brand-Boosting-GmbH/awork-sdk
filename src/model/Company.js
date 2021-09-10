@@ -1,6 +1,20 @@
 
 
+/**
+ * Company Model
+ * @category Models
+ * @class
+ */
 export class Company {
+
+    /**
+     * @typedef {Company & {_plain?: true}} CompanyLike
+     */
+
+    /**
+     * 
+     * @param {CompanyLike} data 
+     */
     constructor(data) {
         this._data = data || {}
     }
