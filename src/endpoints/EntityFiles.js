@@ -196,7 +196,7 @@ export class EntityFiles {
      * Copys the file to a new entity (meta and content).
      * @param {String} fileId 
      * @param {LinkedEntity} entity 
-     * @returns {Promise<void>} /??
+     * @returns {Promise<void>}
      */
     async copy (fileId, entity) {
         const response = await this._client.post(`/${this._entityName}/${this._entityId}/files/${fileId}/copy`, entity)
