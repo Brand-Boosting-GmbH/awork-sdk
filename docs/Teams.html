@@ -304,7 +304,7 @@
         
         <span class="code-name">
             
-                addProjects<span class="signature">(teamId, projects)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="global.html#ProjectTeamPair">ProjectTeamPair</a>>>}</span>
+                addProjects<span class="signature">(teamId, projectIds)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="global.html#ProjectTeamPair">ProjectTeamPair</a>>>}</span>
             
         </span>
     </h4>
@@ -369,7 +369,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The team id.</td>
 </tr>
 
 
@@ -378,7 +378,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projects</code></td>
+      <td class="name"><code>projectIds</code></td>
   
 
   <td class="type">
@@ -394,7 +394,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The project Ids to add.</td>
 </tr>
 
 
@@ -442,7 +442,7 @@
         <p class="tag-source">
             <a href="endpoints_Teams.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line132">line 132</a>
+                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line129">line 129</a>
             </span>
         </p>
     
@@ -506,7 +506,7 @@
         
         <span class="code-name">
             
-                addUsers<span class="signature">(teamId, users)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="global.html#UserTeamPair">UserTeamPair</a>>>}</span>
+                addUsers<span class="signature">(teamId, userIds)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="global.html#UserTeamPair">UserTeamPair</a>>>}</span>
             
         </span>
     </h4>
@@ -580,7 +580,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>users</code></td>
+      <td class="name"><code>userIds</code></td>
   
 
   <td class="type">
@@ -1453,7 +1453,7 @@
         
         <span class="code-name">
             
-                removeProjects<span class="signature">(teamId, projects)</span><span class="type-signature"></span>
+                removeProjects<span class="signature">(teamId, projectIds)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
             
         </span>
     </h4>
@@ -1518,7 +1518,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The team id.</td>
 </tr>
 
 
@@ -1527,7 +1527,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projects</code></td>
+      <td class="name"><code>projectIds</code></td>
   
 
   <td class="type">
@@ -1543,7 +1543,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The project Ids to remove.</td>
 </tr>
 
 
@@ -1591,7 +1591,7 @@
         <p class="tag-source">
             <a href="endpoints_Teams.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line143">line 143</a>
+                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line140">line 140</a>
             </span>
         </p>
     
@@ -1623,6 +1623,14 @@
 <div class="columns">
     
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+    </div>
+    
 </div>
 
                 
@@ -1647,7 +1655,7 @@
         
         <span class="code-name">
             
-                removeUsers<span class="signature">(teamId, users)</span><span class="type-signature"></span>
+                removeUsers<span class="signature">(teamId, userIds)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
             
         </span>
     </h4>
@@ -1712,7 +1720,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The team id.</td>
 </tr>
 
 
@@ -1721,7 +1729,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>users</code></td>
+      <td class="name"><code>userIds</code></td>
   
 
   <td class="type">
@@ -1737,7 +1745,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">the ids of the users to remove.</td>
 </tr>
 
 
@@ -1785,7 +1793,7 @@
         <p class="tag-source">
             <a href="endpoints_Teams.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line114">line 114</a>
+                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line113">line 113</a>
             </span>
         </p>
     
@@ -1816,6 +1824,14 @@
 
 <div class="columns">
     
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+    </div>
     
 </div>
 
