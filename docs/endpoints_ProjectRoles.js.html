@@ -68,7 +68,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="Absences.html">Absences</a></li><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectTemplates.html">ProjectTemplates</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="TaskBundles.html">TaskBundles</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TemporaryFiles.html">TemporaryFiles</a></li><li><a href="TimeReports.html">TimeReports</a></li><li><a href="TypesOfWorks.html">TypesOfWorks</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Absence.html">Absence</a></li><li><a href="ClientApplication.html">ClientApplication</a></li><li><a href="Company.html">Company</a></li><li><a href="CompanyContactInfo.html">CompanyContactInfo</a></li><li><a href="EntityFile.html">EntityFile</a></li><li><a href="FileVersion.html">FileVersion</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectMember.html">ProjectMember</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectStatus.html">ProjectStatus</a></li><li><a href="ProjectTemplate.html">ProjectTemplate</a></li><li><a href="ProjectType.html">ProjectType</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBundle.html">TaskBundle</a></li><li><a href="TaskRecurrency.html">TaskRecurrency</a></li><li><a href="Team.html">Team</a></li><li><a href="TimeReport.html">TimeReport</a></li><li><a href="TypeOfWork.html">TypeOfWork</a></li><li><a href="User.html">User</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="Absences.html">Absences</a></li><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectProjectStatuses.html">ProjectProjectStatuses</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectStatuses.html">ProjectStatuses</a></li><li><a href="ProjectTemplateProjectStatuses.html">ProjectTemplateProjectStatuses</a></li><li><a href="ProjectTemplates.html">ProjectTemplates</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="TaskBundles.html">TaskBundles</a></li><li><a href="TaskListTemplates.html">TaskListTemplates</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TemporaryFiles.html">TemporaryFiles</a></li><li><a href="TimeReports.html">TimeReports</a></li><li><a href="TypesOfWorks.html">TypesOfWorks</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Absence.html">Absence</a></li><li><a href="ClientApplication.html">ClientApplication</a></li><li><a href="Company.html">Company</a></li><li><a href="CompanyContactInfo.html">CompanyContactInfo</a></li><li><a href="EntityFile.html">EntityFile</a></li><li><a href="FileVersion.html">FileVersion</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectMember.html">ProjectMember</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectStatus.html">ProjectStatus</a></li><li><a href="ProjectTemplate.html">ProjectTemplate</a></li><li><a href="ProjectType.html">ProjectType</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBundle.html">TaskBundle</a></li><li><a href="TaskListTemplate.html">TaskListTemplate</a></li><li><a href="TaskRecurrency.html">TaskRecurrency</a></li><li><a href="Team.html">Team</a></li><li><a href="TimeReport.html">TimeReport</a></li><li><a href="TypeOfWork.html">TypeOfWork</a></li><li><a href="User.html">User</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul></div>
                 
             </nav>
         </div>
@@ -108,7 +108,7 @@ import { ProjectRole } from "../model/ProjectRole"
 
     /**
      * Returns the project role with the specified id.
-     * @param {String} projectRoleId 
+     * @param {String} projectRoleId The id of the project role.
      * @returns {Promise&lt;ProjectRole>}
      */
     async get (projectRoleId) {
@@ -130,7 +130,7 @@ import { ProjectRole } from "../model/ProjectRole"
     }
 
     /**
-     * @typedef {Object} ProjectRoleCreateAndUpdateModel The model used to create a project role.
+     * @typedef {Object} ProjectRoleCreateModel The model used to create a project role.
      * @property {String} name The name of the project role. Required.
      * @property {Boolean} [isDefault] Whether to use this role as default when adding new project members.
      * @property {String} [defaultProjectRoleId] The id of the new default project role. Required if the updated project role is the current default role.
@@ -138,7 +138,7 @@ import { ProjectRole } from "../model/ProjectRole"
 
     /**
      * Creates a new project role.
-     * @param {ProjectRoleCreateAndUpdateModel} projectRole 
+     * @param {ProjectRoleCreateModel} projectRole The model to create a project role.
      * @return {Promise&lt;ProjectRole>}
      */
     async create (projectRole) {
@@ -148,9 +148,13 @@ import { ProjectRole } from "../model/ProjectRole"
     }
 
     /**
+     * @typedef {ProjectRoleCreateModel} ProjectRoleUpdateModel
+     */
+
+    /**
      * Updates the project role with the specified id.
-     * @param {String} projectRoleId 
-     * @param {ProjectRoleCreateAndUpdateModel} projectRole
+     * @param {String} projectRoleId The id of the project role.
+     * @param {ProjectRoleUpdateModel} projectRole The model to update a project.
      */
     async update (projectRoleId, projectRole) {
         const response = await this._client.put(`/projectroles/${projectRoleId}`, projectRole)
@@ -159,23 +163,18 @@ import { ProjectRole } from "../model/ProjectRole"
     }
 
     /**
-     * @typedef {Object} ProjectRoleDeleteModel The model to delete the project role.
-     * @property {String} newProjectRoleId The id of the new project role. Needs to be set when there are still users in projects with the old project role.
-     */
-
-    /**
      * Deletes the project role with the specified id. When you want to delete a project role which is still in use, you are required to specify which role the currently assigned members should be assigned to instead. If the default role gets deleted, the migration role becomes the new default project role.
-     * @param {String} projectRoleId 
-     * @param {ProjectRoleDeleteModel} newProjectRole
+     * @param {String} projectRoleId The id of the project role.
+     * @param {String} newProjectRoleId The project role id to replace the old project role with.
      * @return {Promise&lt;void>}
      */
-    async delete (projectRoleId, newProjectRole) {
-        await this._client.post(`/projectroles/${projectRoleId}/delete`, newProjectRole)
+    async delete (projectRoleId, newProjectRoleId) {
+        await this._client.post(`/projectroles/${projectRoleId}/delete`, {newProjectRoleId: newProjectRoleId})
     }
 
     /**
      * Returns all project roles of a specific user.
-     * @param {String} userId 
+     * @param {String} userId The id of the user.
      * @returns {Promise&lt;Array&lt;ProjectRole>>}
      */
     async byUserId (userId) {

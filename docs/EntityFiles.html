@@ -66,7 +66,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="Absences.html">Absences</a></li><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectTemplates.html">ProjectTemplates</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="TaskBundles.html">TaskBundles</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TemporaryFiles.html">TemporaryFiles</a></li><li><a href="TimeReports.html">TimeReports</a></li><li><a href="TypesOfWorks.html">TypesOfWorks</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Absence.html">Absence</a></li><li><a href="ClientApplication.html">ClientApplication</a></li><li><a href="Company.html">Company</a></li><li><a href="CompanyContactInfo.html">CompanyContactInfo</a></li><li><a href="EntityFile.html">EntityFile</a></li><li><a href="FileVersion.html">FileVersion</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectMember.html">ProjectMember</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectStatus.html">ProjectStatus</a></li><li><a href="ProjectTemplate.html">ProjectTemplate</a></li><li><a href="ProjectType.html">ProjectType</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBundle.html">TaskBundle</a></li><li><a href="TaskRecurrency.html">TaskRecurrency</a></li><li><a href="Team.html">Team</a></li><li><a href="TimeReport.html">TimeReport</a></li><li><a href="TypeOfWork.html">TypeOfWork</a></li><li><a href="User.html">User</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="Absences.html">Absences</a></li><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectProjectStatuses.html">ProjectProjectStatuses</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectStatuses.html">ProjectStatuses</a></li><li><a href="ProjectTemplateProjectStatuses.html">ProjectTemplateProjectStatuses</a></li><li><a href="ProjectTemplates.html">ProjectTemplates</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="TaskBundles.html">TaskBundles</a></li><li><a href="TaskListTemplates.html">TaskListTemplates</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TemporaryFiles.html">TemporaryFiles</a></li><li><a href="TimeReports.html">TimeReports</a></li><li><a href="TypesOfWorks.html">TypesOfWorks</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Absence.html">Absence</a></li><li><a href="ClientApplication.html">ClientApplication</a></li><li><a href="Company.html">Company</a></li><li><a href="CompanyContactInfo.html">CompanyContactInfo</a></li><li><a href="EntityFile.html">EntityFile</a></li><li><a href="FileVersion.html">FileVersion</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectMember.html">ProjectMember</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectStatus.html">ProjectStatus</a></li><li><a href="ProjectTemplate.html">ProjectTemplate</a></li><li><a href="ProjectType.html">ProjectType</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBundle.html">TaskBundle</a></li><li><a href="TaskListTemplate.html">TaskListTemplate</a></li><li><a href="TaskRecurrency.html">TaskRecurrency</a></li><li><a href="Team.html">Team</a></li><li><a href="TimeReport.html">TimeReport</a></li><li><a href="TypeOfWork.html">TypeOfWork</a></li><li><a href="User.html">User</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul></div>
                 
             </nav>
         </div>
@@ -421,7 +421,7 @@
         <p class="tag-source">
             <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line207">line 207</a>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line209">line 209</a>
             </span>
         </p>
     
@@ -485,7 +485,7 @@
         
         <span class="code-name">
             
-                byUrl<span class="signature">(value)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="EntityFile.html">EntityFile</a>>}</span>
+                byUrl<span class="signature">(fileByUrlModel)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="EntityFile.html">EntityFile</a>>}</span>
             
         </span>
     </h4>
@@ -532,13 +532,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>value</code></td>
+      <td class="name"><code>fileByUrlModel</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#FileInformations">FileInformations</a></span>
+<span class="param-type"><a href="global.html#FileByUrlModel">FileByUrlModel</a></span>
 
 
   
@@ -548,7 +548,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The url, name and description of the file.</td>
 </tr>
 
 
@@ -596,7 +596,7 @@
         <p class="tag-source">
             <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line147">line 147</a>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line154">line 154</a>
             </span>
         </p>
     
@@ -723,7 +723,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the file.</td>
 </tr>
 
 
@@ -748,7 +748,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The entity to move the file to.</td>
 </tr>
 
 
@@ -796,7 +796,7 @@
         <p class="tag-source">
             <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line229">line 229</a>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line231">line 231</a>
             </span>
         </p>
     
@@ -923,7 +923,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the file.</td>
 </tr>
 
 
@@ -948,7 +948,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The entity to copy the file to.</td>
 </tr>
 
 
@@ -996,7 +996,7 @@
         <p class="tag-source">
             <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line198">line 198</a>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line200">line 200</a>
             </span>
         </p>
     
@@ -1126,7 +1126,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The file content eather as ES6 File object or Buffer.</td>
 </tr>
 
 
@@ -1151,7 +1151,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The file metadata.</td>
 </tr>
 
 
@@ -1326,7 +1326,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the file.</td>
 </tr>
 
 
@@ -1374,7 +1374,7 @@
         <p class="tag-source">
             <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line102">line 102</a>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line109">line 109</a>
             </span>
         </p>
     
@@ -1498,7 +1498,7 @@
         <p class="tag-source">
             <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line110">line 110</a>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line117">line 117</a>
             </span>
         </p>
     
@@ -1621,7 +1621,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the file.</td>
 </tr>
 
 
@@ -1646,7 +1646,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The download options.</td>
 </tr>
 
 
@@ -1694,7 +1694,7 @@
         <p class="tag-source">
             <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line165">line 165</a>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line172">line 172</a>
             </span>
         </p>
     
@@ -1760,7 +1760,7 @@
         
         <span class="code-name">
             
-                externalFiles<span class="signature">(value)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="EntityFile.html">EntityFile</a>>}</span>
+                externalFiles<span class="signature">(externalFileForm)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="EntityFile.html">EntityFile</a>>}</span>
             
         </span>
     </h4>
@@ -1807,7 +1807,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>value</code></td>
+      <td class="name"><code>externalFileForm</code></td>
   
 
   <td class="type">
@@ -1823,7 +1823,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">List of file forms.</td>
 </tr>
 
 
@@ -1871,7 +1871,7 @@
         <p class="tag-source">
             <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line129">line 129</a>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line136">line 136</a>
             </span>
         </p>
     
@@ -1998,7 +1998,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the file.</td>
 </tr>
 
 
@@ -2376,7 +2376,7 @@
       </td>
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the file.</td>
 </tr>
 
 
@@ -2465,7 +2465,7 @@
         <p class="tag-source">
             <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line176">line 176</a>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line183">line 183</a>
             </span>
         </p>
     
@@ -2594,7 +2594,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the file.</td>
 </tr>
 
 
@@ -2642,7 +2642,7 @@
         <p class="tag-source">
             <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line218">line 218</a>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line220">line 220</a>
             </span>
         </p>
     
@@ -2769,7 +2769,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the file.</td>
 </tr>
 
 
@@ -2784,7 +2784,7 @@
   <td class="type">
   
       
-<span class="param-type"><a href="EntityFile.html">EntityFile</a></span>
+<span class="param-type"><a href="global.html#EntityFileUpdateModel">EntityFileUpdateModel</a></span>
 
 
   
@@ -2794,7 +2794,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The model to update the file with the specified id.</td>
 </tr>
 
 
@@ -2842,7 +2842,7 @@
         <p class="tag-source">
             <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line91">line 91</a>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line98">line 98</a>
             </span>
         </p>
     
@@ -2878,6 +2878,177 @@
         <label>Type: </label>
         
 <span class="param-type">Promise.&lt;<a href="EntityFile.html">EntityFile</a>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="versions">
+        <a class="href-link" href="#versions">#</a>
+        
+        <span class="code-name">
+            
+                versions<span class="signature">(fileId)</span><span class="type-signature"> &rarr; {<a href="FileVersions.html">FileVersions</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Returns the <a href="FileVersions.html">FileVersions</a> Endpoint with the specified entity name, entity id and file Id.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>fileId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The id of the file.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_EntityFiles.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_EntityFiles.js.html">endpoints/EntityFiles.js</a>, <a href="endpoints_EntityFiles.js.html#line241">line 241</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="FileVersions.html">FileVersions</a></span>
 
 
     </div>

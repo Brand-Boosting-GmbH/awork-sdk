@@ -68,7 +68,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="Absences.html">Absences</a></li><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectTemplates.html">ProjectTemplates</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="TaskBundles.html">TaskBundles</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TemporaryFiles.html">TemporaryFiles</a></li><li><a href="TimeReports.html">TimeReports</a></li><li><a href="TypesOfWorks.html">TypesOfWorks</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Absence.html">Absence</a></li><li><a href="ClientApplication.html">ClientApplication</a></li><li><a href="Company.html">Company</a></li><li><a href="CompanyContactInfo.html">CompanyContactInfo</a></li><li><a href="EntityFile.html">EntityFile</a></li><li><a href="FileVersion.html">FileVersion</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectMember.html">ProjectMember</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectStatus.html">ProjectStatus</a></li><li><a href="ProjectTemplate.html">ProjectTemplate</a></li><li><a href="ProjectType.html">ProjectType</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBundle.html">TaskBundle</a></li><li><a href="TaskRecurrency.html">TaskRecurrency</a></li><li><a href="Team.html">Team</a></li><li><a href="TimeReport.html">TimeReport</a></li><li><a href="TypeOfWork.html">TypeOfWork</a></li><li><a href="User.html">User</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="Absences.html">Absences</a></li><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectProjectStatuses.html">ProjectProjectStatuses</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectStatuses.html">ProjectStatuses</a></li><li><a href="ProjectTemplateProjectStatuses.html">ProjectTemplateProjectStatuses</a></li><li><a href="ProjectTemplates.html">ProjectTemplates</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="TaskBundles.html">TaskBundles</a></li><li><a href="TaskListTemplates.html">TaskListTemplates</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TemporaryFiles.html">TemporaryFiles</a></li><li><a href="TimeReports.html">TimeReports</a></li><li><a href="TypesOfWorks.html">TypesOfWorks</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Absence.html">Absence</a></li><li><a href="ClientApplication.html">ClientApplication</a></li><li><a href="Company.html">Company</a></li><li><a href="CompanyContactInfo.html">CompanyContactInfo</a></li><li><a href="EntityFile.html">EntityFile</a></li><li><a href="FileVersion.html">FileVersion</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectMember.html">ProjectMember</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectStatus.html">ProjectStatus</a></li><li><a href="ProjectTemplate.html">ProjectTemplate</a></li><li><a href="ProjectType.html">ProjectType</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBundle.html">TaskBundle</a></li><li><a href="TaskListTemplate.html">TaskListTemplate</a></li><li><a href="TaskRecurrency.html">TaskRecurrency</a></li><li><a href="Team.html">Team</a></li><li><a href="TimeReport.html">TimeReport</a></li><li><a href="TypeOfWork.html">TypeOfWork</a></li><li><a href="User.html">User</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul></div>
                 
             </nav>
         </div>
@@ -108,7 +108,7 @@ import { ProjectType } from "../model/ProjectType"
 
     /**
      * Returns the project type with the specified id.
-     * @param {String} projectTypeId 
+     * @param {String} projectTypeId The id of the project type.
      * @returns {Promise&lt;ProjectType>}
      */
     async get (projectTypeId) {
@@ -124,7 +124,7 @@ import { ProjectType } from "../model/ProjectType"
 
     /**
      * Returns all existing project types.
-     * @param {ShowArchived} options Pagination and filtering options
+     * @param {ListOptions &amp; ShowArchived} [options] Pagination, filtering and showArchived options.
      * @returns {Promise&lt;Array&lt;ProjectType>>}
      */
     async list (options) {
@@ -134,15 +134,15 @@ import { ProjectType } from "../model/ProjectType"
     }
 
     /**
-     * @typedef {Object} ProjectTypeCreateAndUpdateModel The model to change the project type.
-     * @property {String} name The names of the project type.
-     * @property {String} description A short description of the project type.
-     * @property {String} icon The identifier of the project type icon.
+     * @typedef {Object} ProjectTypeCreateModel The model to change the project type.
+     * @property {String} [name] The names of the project type.
+     * @property {String} [description] A short description of the project type.
+     * @property {Icon} [icon] The identifier of the project type icon.
      */
 
     /**
      * Creates a new project type.
-     * @param {ProjectTypeCreateAndUpdateModel} projectType 
+     * @param {ProjectTypeCreateModel} projectType The model to create a project type.
      * @returns {Promise&lt;ProjectType>}
      */
     async create (projectType) {
@@ -152,9 +152,13 @@ import { ProjectType } from "../model/ProjectType"
     }
 
     /**
+     * @typedef {ProjectTypeCreateModel} ProjectTypeUpdateModel
+     */
+
+    /**
      * Updates the project type with the specified id.
-     * @param {String} projectTypeId 
-     * @param {ProjectTypeCreateAndUpdateModel} projectType 
+     * @param {String} projectTypeId The id of the project type.
+     * @param {ProjectTypeUpdateModel} projectType The model to update the project type.
      * @returns {Promise&lt;ProjectType>}
      */
     async update (projectTypeId, projectType) {
@@ -165,7 +169,7 @@ import { ProjectType } from "../model/ProjectType"
 
     /**
      * Deletes the project type with the specified id. If an id of a new type is provided, projects will be updated to reference the new type If no id of type is provided, the type if removed from the projects.
-     * @param {String} projectTypeId 
+     * @param {String} projectTypeId The id of the project type.
      */
     async delete (projectTypeId) {
         await this._client.post(`/projecttypes/${projectTypeId}/delete`, {'projectTypeId': projectTypeId}) //??
@@ -173,11 +177,11 @@ import { ProjectType } from "../model/ProjectType"
 
     /**
      * Archives or unarchives the project type with the specified id. Archived objects can not be used any longer but still exist for being referenced by other entities.
-     * @param {String} projectTypeId 
-     * @param {Boolean} archived 
+     * @param {String} projectTypeId The id of the project type.
+     * @param {Boolean} [archived] Whether the project type should be archived.
      * @returns {Promise&lt;ProjectType>}
      */
-    async setArchived (projectTypeId, archived) {
+    async setArchived (projectTypeId, archived = true) {
         const response = await this._client.post(`/projecttypes/${projectTypeId}/setarchived`, {'isArchived': archived})
         const data = response.data()
         return new ProjectType(data)
