@@ -21,7 +21,7 @@ import { ProjectRole } from "../model/ProjectRole"
 
     /**
      * Returns the project role with the specified id.
-     * @param {String} projectRoleId 
+     * @param {String} projectRoleId The id of the project role.
      * @returns {Promise<ProjectRole>}
      */
     async get (projectRoleId) {
@@ -43,7 +43,7 @@ import { ProjectRole } from "../model/ProjectRole"
     }
 
     /**
-     * @typedef {Object} ProjectRoleCreateAndUpdateModel The model used to create a project role.
+     * @typedef {Object} ProjectRoleCreateModel The model used to create a project role.
      * @property {String} name The name of the project role. Required.
      * @property {Boolean} [isDefault] Whether to use this role as default when adding new project members.
      * @property {String} [defaultProjectRoleId] The id of the new default project role. Required if the updated project role is the current default role.
@@ -51,7 +51,7 @@ import { ProjectRole } from "../model/ProjectRole"
 
     /**
      * Creates a new project role.
-     * @param {ProjectRoleCreateAndUpdateModel} projectRole 
+     * @param {ProjectRoleCreateModel} projectRole The model to create a project role.
      * @return {Promise<ProjectRole>}
      */
     async create (projectRole) {
@@ -61,9 +61,13 @@ import { ProjectRole } from "../model/ProjectRole"
     }
 
     /**
+     * @typedef {ProjectRoleCreateModel} ProjectRoleUpdateModel
+     */
+
+    /**
      * Updates the project role with the specified id.
-     * @param {String} projectRoleId 
-     * @param {ProjectRoleCreateAndUpdateModel} projectRole
+     * @param {String} projectRoleId The id of the project role.
+     * @param {ProjectRoleUpdateModel} projectRole The model to update a project.
      */
     async update (projectRoleId, projectRole) {
         const response = await this._client.put(`/projectroles/${projectRoleId}`, projectRole)
@@ -72,23 +76,18 @@ import { ProjectRole } from "../model/ProjectRole"
     }
 
     /**
-     * @typedef {Object} ProjectRoleDeleteModel The model to delete the project role.
-     * @property {String} newProjectRoleId The id of the new project role. Needs to be set when there are still users in projects with the old project role.
-     */
-
-    /**
      * Deletes the project role with the specified id. When you want to delete a project role which is still in use, you are required to specify which role the currently assigned members should be assigned to instead. If the default role gets deleted, the migration role becomes the new default project role.
-     * @param {String} projectRoleId 
-     * @param {ProjectRoleDeleteModel} newProjectRole
+     * @param {String} projectRoleId The id of the project role.
+     * @param {String} newProjectRoleId The project role id to replace the old project role with.
      * @return {Promise<void>}
      */
-    async delete (projectRoleId, newProjectRole) {
-        await this._client.post(`/projectroles/${projectRoleId}/delete`, newProjectRole)
+    async delete (projectRoleId, newProjectRoleId) {
+        await this._client.post(`/projectroles/${projectRoleId}/delete`, {newProjectRoleId: newProjectRoleId})
     }
 
     /**
      * Returns all project roles of a specific user.
-     * @param {String} userId 
+     * @param {String} userId The id of the user.
      * @returns {Promise<Array<ProjectRole>>}
      */
     async byUserId (userId) {

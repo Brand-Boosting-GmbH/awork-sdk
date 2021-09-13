@@ -35,7 +35,7 @@ export class EntityFiles {
 
     /**
      * Returns the file with the specified id of the entity with the specified Id
-     * @param {String} fileId 
+     * @param {String} fileId The id of the file.
      * @returns {Promise<EntityFile>}
      */
     async get (fileId) {
@@ -63,8 +63,8 @@ export class EntityFiles {
 
     /**
      * Uploads a File or Buffer Object
-     * @param {File|Buffer} file 
-     * @param {FileMetaData} metadata 
+     * @param {File|Buffer} file The file content eather as ES6 File object or Buffer.
+     * @param {FileMetaData} metadata The file metadata.
      * @returns {Promise<EntityFile>}
      */
     async create (file, metadata) {
@@ -83,9 +83,16 @@ export class EntityFiles {
     }
 
     /**
+     * @typedef {Object} EntityFileUpdateModel
+     * @property {String} [name] The user-specified name of the file.
+     * @property {String} [description] The description of the file.
+     *
+     */
+
+    /**
      * Updates the file with the specified id of the entity with the specified Id.
-     * @param {String} fileId 
-     * @param {EntityFile} entityFile 
+     * @param {String} fileId The id of the file.
+     * @param {EntityFileUpdateModel} entityFile The model to update the file with the specified id.
      * @returns {Promise<EntityFile>} 
      */
     async update (fileId, entityFile) {
@@ -96,7 +103,7 @@ export class EntityFiles {
 
     /**
      * Deletes the file with the specified id of the entity with the specified Id.
-     * @param {String} fileId 
+     * @param {String} fileId The id of the file.
      * @returns {Promise<void>}
      */
     async delete (fileId) {
@@ -123,17 +130,17 @@ export class EntityFiles {
 
     /**
      * Endpoint to create file infos with batch operation. Created file infos don't have a version.
-     * @param {Array<ExternalFileForm>} value
+     * @param {Array<ExternalFileForm>} externalFileForm List of file forms.
      * @returns {Promise<EntityFile>}
      */
-    async externalFiles (value) {
-        const response = await this._client.post(`/${this._entityName}/${this._entityId}/externalfiles/`, value)
+    async externalFiles (externalFileForm) {
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/externalfiles/`, externalFileForm)
         const data = response.data()
         return new EntityFile(data)
     }
 
     /**
-     * @typedef {Object} FileInformations
+     * @typedef {Object} FileByUrlModel
      * @property {String} url The public URL to the file.
      * @property {String} name The name of the file.
      * @property {String} [description] The description of the file.
@@ -141,11 +148,11 @@ export class EntityFiles {
 
     /**
      * Uploads a new file by providing an url. The file needs to be a public available url. The file size must not exceed 100MB.
-     * @param {FileInformations} value 
+     * @param {FileByUrlModel} fileByUrlModel The url, name and description of the file.
      * @returns {Promise<EntityFile>}
      */
-    async byUrl (value) {
-        const response = await this._client.post(`/${this._entityName}/${this._entityId}/files/byurl`, value)
+    async byUrl (fileByUrlModel) {
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/files/byurl`, fileByUrlModel)
         const data = response.data()
         return new EntityFile(data)
     }
@@ -158,8 +165,8 @@ export class EntityFiles {
      */
 
     /**
-     * @param {String} fileId 
-     * @param {DownloadOptions} options
+     * @param {String} fileId The id of the file.
+     * @param {DownloadOptions} options The download options.
      * @returns {String} binary
      */
     async download (fileId, options) {
@@ -169,18 +176,13 @@ export class EntityFiles {
 
     /**
      * Returns the content of the entity file with the specified id as pdf if possible and returns bad request, if not valid type or conversion not possible.
-     * @param {String} fileId 
+     * @param {String} fileId The id of the file.
      * @param {Boolean} [inline] Default: false. If inline is false, content-disposition header is attachment.
      * @returns {String} binary
      */
     async pdf (fileId, inline = false) {
         const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${fileId}/pdf`, {inline: inline})
         return response.data()
-    }
-
-
-    versions (fileId) {
-        return new FileVersions(this._client, this._entityName, this._entityId, fileId)
     }
 
     /**
@@ -191,8 +193,8 @@ export class EntityFiles {
 
     /**
      * Copys the file to a new entity (meta and content).
-     * @param {String} fileId 
-     * @param {LinkedEntity} entity 
+     * @param {String} fileId The id of the file.
+     * @param {LinkedEntity} entity The entity to copy the file to.
      * @returns {Promise<void>}
      */
     async copy (fileId, entity) {
@@ -212,7 +214,7 @@ export class EntityFiles {
 
     /**
      * Returns a url to share the file.
-     * @param {String} fileId 
+     * @param {String} fileId The id of the file.
      * @returns {Promise<String>}
      */
     async shareUrl (fileId) {
@@ -222,17 +224,21 @@ export class EntityFiles {
 
     /**
      * Changes the entity this file belongs to. Switch to the specified entity or to a global file if the 'EntityId' of the model is set to null.
-     * @param {String} fileId 
-     * @param {LinkedEntity} entity
+     * @param {String} fileId The id of the file.
+     * @param {LinkedEntity} entity The entity to move the file to.
      * @returns {Promise<void>}
      */
     async changeEntity (fileId, entity) {
         const response = await this._client.post(`/${this._entityName}/${this._entityId}/files/${fileId}/changeentity`, entity)
         return response.data()
     }
-    
 
-    
-
-
+    /**
+     * Returns the {@link FileVersions} Endpoint with the specified entity name, entity id and file Id.
+     * @param {String} fileId The id of the file.
+     * @returns {FileVersions}
+     */
+     versions (fileId) {
+        return new FileVersions(this._client, this._entityName, this._entityId, fileId)
+    }
 }

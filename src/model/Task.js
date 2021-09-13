@@ -19,8 +19,6 @@ export class Task {
     /**
      * The name of the Task. Required.
      * @type {String} nullable
-     * @readonly
-     * @memberof Task
      */
     get name() {
       return this._data.name;
@@ -29,8 +27,6 @@ export class Task {
     /**
      * The description of the Task.
      * @type {String} nullable
-     * @readonly
-     * @memberof Task
      */
     get description() {
       return this._data.description;
@@ -39,8 +35,6 @@ export class Task {
     /**
      * Whether this task is marked as priority.
      * @type {Boolean} nullable
-     * @readonly
-     * @memberof Task
      */
     get isPrio() {
       return this._data.isPrio;
@@ -49,8 +43,6 @@ export class Task {
     /**
      * The expected start date and time of the task.
      * @type {String} nullable date-time
-     * @readonly
-     * @memberof Task
      */
     get startOn() {
       return this._data.startOn;
@@ -59,8 +51,6 @@ export class Task {
     /**
      * The expected due date and time of the task.
      * @type {String} nullable date-time
-     * @readonly
-     * @memberof Task
      */
     get dueOn() {
       return this._data.dueOn;
@@ -69,8 +59,6 @@ export class Task {
     /**
      * The lane order defines the vertical position in the gant planner.
      * @type {Number} nullable
-     * @readonly
-     * @memberof Task
      */
     get laneOrder() {
       return this._data.laneOrder;
@@ -79,8 +67,6 @@ export class Task {
     /**
      * The expected planned workload of the task, in seconds.
      * @type {Number} nullable
-     * @readonly
-     * @memberof Task
      */
     get plannedDuration() {
       return this._data.plannedDuration;
@@ -89,8 +75,6 @@ export class Task {
     /**
      * The expected remaining duration from the original planned effort of the task, in seconds.
      * @type {Number} nullable
-     * @readonly
-     * @memberof Task
      */
     get remainingDuration() {
       return this._data.remainingDuration;
@@ -99,8 +83,6 @@ export class Task {
      /**
      * The Id of the task.
      * @type {String} uuid
-     * @readonly
-     * @memberof Task
      */
     get id() {
       return this._data.id;
@@ -109,8 +91,6 @@ export class Task {
     /**
      * The unique task key, which needs to be unique within the entire workspace.
      * @type {String} nullable
-     * @readonly
-     * @memberof Task
      */
     get key() {
       return this._data.key;
@@ -119,8 +99,6 @@ export class Task {
     /**
      * The numerical part of the key.
      * @type {Number} 
-     * @readonly
-     * @memberof Task
      */
     get numberCount() {
       return this._data.numberCount;
@@ -129,8 +107,6 @@ export class Task {
     /**
      * The base type of the task. Can be 'private' for a private task or 'projecttask' for a project task.
      * @type {String} nullable 
-     * @readonly
-     * @memberof Task
      */
     get baseType() {
       return this._data.baseType;
@@ -139,15 +115,13 @@ export class Task {
     /**
      * The id of the status for this task.
      * @type {String} uuid
-     * @readonly
-     * @memberof Task
      */
     get taskStatusId() {
       return this._data.taskStatusId;
     }
     
     /**
-     * @typedef {TaskStatus}
+     * @typedef {Object} TaskStatus
      * @property {String} id uuid
      * @property {String} name nullable
      * @property {String} type uuid
@@ -160,12 +134,11 @@ export class Task {
      * @property {String} createdBy uuid
      * @property {String} updatedOn date-time
      * @property {String} updatedBy uuid
-     * 
-     * 
+     */
+
+    /**
      * The status of the task.
      * @type {TaskStatus} uuid
-     * @readonly
-     * @memberof Task
      */
     get taskStatus() {
       return this._data.taskStatus;
@@ -174,24 +147,22 @@ export class Task {
     /**
      * The id of the type of work of this task.
      * @type {String} uuid
-     * @readonly
-     * @memberof Task
      */
     get typeOfWorkId() {
       return this._data.typeOfWorkId;
     }
     
     /**
-     * @typedef {TypeofWork}
+     * @typedef {Object} TypeofWork
      * @property {String} id uuid
      * @property {String} name nullable
      * @property {String} icon nullable
      * @property {Boolean} isArchived
-     * 
+     */
+
+    /**
      * The type of work of the task.
      * @type {TypeofWork}
-     * @readonly
-     * @memberof Task
      */
     get typeOfWork() {
       return this._data.typeOfWork;
@@ -200,26 +171,24 @@ export class Task {
     /**
      * The id of the user assigned to this task, or null if none is assigned.
      * @type {String} uuid
-     * @readonly
-     * @memberof Task
      */
     get assigneeId() {
       return this._data.assigneeId;
     }
     
     /**
-     * @typedef {Assignee}
+     * @typedef {Object} Assignee
      * @property {String} id uuid
      * @property {String} firstName nullable
      * @property {String} lastName nullable
      * @property {Boolean} hasImage
      * @property {Array} tags
      * @property {Array} teams
-     * 
+     * /
+     
+    /**
      * The assignee of the task.
      * @type {Assignee}
-     * @readonly
-     * @memberof Task
      */
     get assignee() {
       return this._data.assignee;

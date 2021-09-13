@@ -1,5 +1,6 @@
 import '../globalTypedef'
 import { TaskBundle } from '../model/TaskBundle'
+import { TaskListTemplates } from './TaskListTemplates'
 
 /**
  * Class corresponding to Aworks TaskBundles Endpoints
@@ -78,4 +79,30 @@ export class TaskBundles {
     async delete (taskBundleId) {
         await this._client.delete(`/taskbundles/${taskBundleId}`)
     }
+
+    /**
+     * Returns all possible icons for a task bundle.
+     * @returns {Promise<Array<String>>}
+     */
+    async icons () {
+        const response = await this._client.get('/taskbundles/icons')
+        return response.data()
+    }
+
+    /**
+     * Creates the taskbundle, task templates, task list templates, task template to task list templates and copies the attachments.
+     * @param {String} taskBundleId The id of the task bundle to be copied.
+     * @returns {Promise<TaskBundle>}
+     */
+    async copy (taskBundleId) {
+        const response = await this._client.post(`/taskbundles/${taskBundleId}/copy`)
+        const data = response.data()
+        return new TaskBundle(data)
+    }
+
+    taskListTemplates (taskBundleId) {
+        return new TaskListTemplates(this._client, taskBundleId)
+    }
+
+
 }

@@ -1,15 +1,27 @@
 import { ProjectStatus } from "../model/ProjectStatus"
+import '../globalTypedef'
 
+
+/**
+ * Class corresponding to Aworks ProjectStatuses Endpoints
+ * @category Endpoints
+ * @see [ProjectStatuses in Awork API Docs](https://openapi.awork.io/#/ProjectStatuses)
+ */
 export class ProjectStatuses {
 
+     /**
+     * Endpoint constructor
+     * @param {import('../client/index').Client} client 
+     */
     constructor (client) {
+        /** @private */
         this._client = client
     }
 
 
     /**
      * Returns the project status with the specified id.
-     * @param {String} projectId 
+     * @param {String} projectStatusId The id of the project status.
      * @returns {Array<Promise<ProjectStatus>>}
      */
     async get (projectStatusId) {
@@ -20,17 +32,18 @@ export class ProjectStatuses {
 
     /**
      * Returns all project statuses.
+     * @param {ListOptions} [options] Pagination and filtering options.
      * @returns {Array<Promise<ProjectStatus>>}
      */
-    async list () {
-        const response = await this._client.get('/projectstatuses')
+    async list (options) {
+        const response = await this._client.get('/projectstatuses', options)
         const data = response.data()
         return data.map(d => new ProjectStatus(d))
     }
 
     /**
      * Creates a new project status. For this operation, a projectTemplateId is required.
-     * @param {String} projectTemplateId 
+     * @param {String} projectTemplateId The id of the project template.
      * @param {ProjectStatus} projectStatus 
      * @returns {Promise<ProjectStatus>}
      */

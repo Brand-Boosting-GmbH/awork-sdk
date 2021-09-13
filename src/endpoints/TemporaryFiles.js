@@ -71,19 +71,20 @@ export class TemporaryFiles {
     }
     
     /**
-     * @typedef {Object} NameDescriptionPair
-     * @property {String} name The user-specified name of the file.
-     * @property {String} description The description of the file.
+     * @typedef {Object} TemporaryFilesUpdateModel
+     * @property {String} [name] The user-specified name of the file.
+     * @property {String} [description] The description of the file.
+     *
      */
 
     /**
      * Updates the meta information of the temporary file with the specified id.
      * @param {String} fileId The id of the file.
-     * @param {NameDescriptionPair} nameDescriptionPair
+     * @param {TemporaryFilesUpdateModel} temporaryFile The model to update the temporary file.
      * @returns {Promise<EntityFile>}
      */
-    async update(fileId, nameDescriptionPair) {
-        const response = await this._client.put(`/temporaryfiles/${fileId}`, nameDescriptionPair)
+    async update(fileId, temporaryFile) {
+        const response = await this._client.put(`/temporaryfiles/${fileId}`, temporaryFile)
         const data = response.data()
         return new EntityFile(data)
     }
@@ -99,19 +100,18 @@ export class TemporaryFiles {
     }
 
     /**
-     * @typedef {Object} EntityObject
-     * @property {String} entityId The id of the entity the file should be linked to. Set to null to change the file to a global file.
-     * @property {String} entityType The type of the linked entity. Necessary if EntityId is set.
+     * @typedef {Object} LinkedEntity The model to change the entity information of the file.
+     * @property {String} entityId The id of the entity the file should be linked to.
+     * @property {String} entityType The type of the linked entity.
      */
 
     /**
      * Sets the temporary file to a global or entity file. Links the temporary file to the specified entity or switches to a global file if the 'EntityId' of the model is set to null. The file is no longer a temporary file afterwards and becomes visible.
      * @param {String} fileId The id of the file.
-     * @param {EntityObject} entityObject
-     * @returns {Promise<Object>}
+     * @param {LinkedEntity} entityObject
+     * @returns {Promise<void>}
      */
-    async setentity(fileId, entityObject) {
-        const response = await this._client.post(`/temporaryfiles/${fileId}/setenity`, entityObject)
-        return response.data()
+    async setEntity(fileId, entityObject) {
+        await this._client.post(`/temporaryfiles/${fileId}/setenity`, entityObject)
     }
 }

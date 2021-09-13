@@ -37,7 +37,7 @@ test('awork project lifecycle', async () => {
 
 
 test('awork webhooks WiP', async () => {
-    const res = await awork.client.get('/webhooks')
+    const res = await awork.client.get('/files/images/user')
     console.log(res.data())   
 })
 

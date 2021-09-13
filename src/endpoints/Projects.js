@@ -2,7 +2,7 @@ import '../globalTypedef'
 import { Project } from "../model/Project"
 import { ProjectMembers } from "./ProjectMembers"
 import { EntityFiles } from "./EntityFiles"
-import { ProjectProjectStatus } from "./ProjectProjectStatus"
+import { ProjectProjectStatuses } from "./ProjectProjectStatuses"
 
 /**
  * Class corresponding to Aworks Projects Endpoints
@@ -134,7 +134,7 @@ export class Projects {
      * @returns {ProjectProjectStatus}
      */
     projectStatus (projectId) {
-        return new ProjectProjectStatus(this._client, projectId)
+        return new ProjectProjectStatuses(this._client, projectId)
     }
 
 

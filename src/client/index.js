@@ -66,7 +66,7 @@ export class Client {
 
     async put(path, payload, params = {}, headers = {}) {
         let data = Client.getPlainObject(payload)
-        const response = await this.http.put(path, data, { params, headers }).catch(err => console.log(err.response.data))
+        const response = await this.http.put(path, data, { params, headers })
         return new AworkResponse(response.status, response.headers, response.data)
     }
 

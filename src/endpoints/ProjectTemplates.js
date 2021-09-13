@@ -1,5 +1,6 @@
 import '../globalTypedef'
 import { ProjectTemplate } from "../model/ProjectTemplate"
+import { ProjectTemplateProjectStatuses } from './ProjectTemplateProjectStatuses'
 
 /**
  * Class corresponding to Aworks ProjectTemplates Endpoints
@@ -42,7 +43,7 @@ export class ProjectTemplates {
     }
 
     /**
-     * @typedef {Object} ProjectTemplateProperties
+     * @typedef {Object} ProjectTemplateCreateModel
      * @property {String} description Description of the project template.
      * @property {String} name Name of the project template.
      * @property {Boolean} isBillableByDefault
@@ -51,7 +52,7 @@ export class ProjectTemplates {
 
     /**
      * Creates a new project template.
-     * @param {ProjectTemplateProperties} projectTemplate 
+     * @param {ProjectTemplateCreateModel} projectTemplate The model to create a project template.
      * @returns {Promise<ProjectTemplate>}
      */
     async create(projectTemplate) {
@@ -61,9 +62,13 @@ export class ProjectTemplates {
     }
 
     /**
+     * @typedef {ProjectTemplateCreateModel} ProjectTemplateUpdateModel
+     */
+
+    /**
      * Updates the project template with the specified id.
      * @param {String} projectTemplateId The id of the project template.
-     * @param {ProjectTemplateProperties} projectTemplate 
+     * @param {ProjectTemplateUpdateModel} projectTemplate The model to update a project template with.
      * @returns {Promise<ProjectTemplate>}
      */
     async update(projectTemplateId, projectTemplate) {
@@ -74,7 +79,7 @@ export class ProjectTemplates {
 
     /**
      * Deletes the project template with the specified id.
-     * @param {String} projectTemplateId 
+     * @param {String} projectTemplateId The id of the project template.
      * @returns {Promise<void>}
      */
     async delete(projectTemplateId) {
@@ -82,7 +87,7 @@ export class ProjectTemplates {
     }
 
     /**
-     * @typedef {Object} StatusOrderObject
+     * @typedef {Object} ProjectStatusOrder
      * @property {String} projectStatusId The id of the project status.
      * @property {Integer} order The order value which determines the position of the project status in the flow of the project type. Only accepts 0 and positive values. For independent statuses without successor and predecessor this value is set to null.
      */
@@ -90,21 +95,30 @@ export class ProjectTemplates {
     /**
      * Updates the order of a project status.
      * @param {String} projectTemplateId The id of the project template.
-     * @param {StatusOrderObject} statusOrderObject 
+     * @param {ProjectStatusOrder} projectStatusOrder The project status with updated order.
      * @returns {Promise<void>}
      */
-    async updateProjectStatusOrder(projectTemplateId, statusOrderObject) {
-        const response = await this._client.post(`/projecttemplates/${projectTemplateId}/updateprojectstatusorder`, statusOrderObject)
+    async updateProjectStatusOrder(projectTemplateId, projectStatusOrder) {
+        const response = await this._client.post(`/projecttemplates/${projectTemplateId}/updateprojectstatusorder`, projectStatusOrder)
         return response.data()
     }
 
     /**
      * Returns the task bundle id which is linked to the template.
-     * @param {*} projectTemplateId 
-     * @returns {Promise<({taskBundleId:String})>}
+     * @param {String} projectTemplateId The id of the project template.
+     * @returns {Promise<String>}
      */
     async taskBundle(projectTemplateId) {
         const response = await this._client.get(`/projecttemplates/${projectTemplateId}/taskbundle`)
-        return response.data()
+        return response.data().taskBundleId
+    }
+
+    /**
+     * Returns the {@link ProjectTemplateProjectStatuses} Endpoint with the specified project template Id.
+     * @param {String} projectTemplateId The id of the project template
+     * @returns {ProjectTemplateProjectStatuses}
+     */
+    projectStatus (projectTemplateId) {
+        return new ProjectTemplateProjectStatuses(this._client, projectTemplateId)
     }
 }

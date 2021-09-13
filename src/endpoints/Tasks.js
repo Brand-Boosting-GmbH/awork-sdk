@@ -6,23 +6,26 @@ export class Tasks {
       this._client = client;
     }
   
+    /**
+     * The required permissions depend on the base type of the task. If the task is a project task, 'read' permissions on the 'project-planning-data' feature are required. For a user's private task, no special permissions are required.
+     * @param {String} taskId The id of the task.
+     * @returns {Promise<Task>}
+     */
     async get(taskId) {
       const response = await this._client.get(`/tasks/${taskId}`);
       const data = response.data();
-      return new _Task.Task(data);
+      return new Task(data);
     }
     
     /**
-     * Create a task
-     *
+     * To create a task, the user needs to be the assignee of the task or 'ProjectPlanning' permissions in general or in the project the task is related to.
      * @param {Task} task
      * @return {Task} 
-     * @memberof Tasks
      */
     async create(task) {
       const response = await this._client.post(`/tasks`, task);
       const data = response.data();
-      return new _Task.Task(data);
+      return new Task(data);
     }
     
     
@@ -37,7 +40,7 @@ export class Tasks {
     async update(taskId, task) {
       const response = await this._client.put(`/tasks/${taskId}`, task);
       const data = response.data();
-      return new _Task.Task(data);
+      return new Task(data);
     }
   
     
@@ -50,7 +53,7 @@ export class Tasks {
      */
     async assignUsers(payload) {
       const response = await this._client.post(`/tasks/assignusers`, payload);
-      return response.status;
+      return response.data();
     }
   
     /**
@@ -62,7 +65,7 @@ export class Tasks {
      */
      async unassignUsers(payload) {
       const response = await this._client.post(`/tasks/unassignusers`, payload);
-      return response.status;
+      return response.data();
     }
   
      /**
@@ -74,7 +77,7 @@ export class Tasks {
       */
      async assignUserByEmail(payload) {
       const response = await this._client.post(`/tasks/assignuserbyemail`, payload);
-      return response.status;
+      return response.data();
     }
   
     
@@ -87,7 +90,7 @@ export class Tasks {
      */
     async delete(payload) {
       const response = await this._client.post(`/tasks/delete`, payload);
-      return response.status;
+      return response.data();
     }
   
     /**
@@ -99,7 +102,7 @@ export class Tasks {
      */
     async changeStatuses(payload) {
       const response = await this._client.post(`/tasks/changestatuses`, payload);
-      return response.status;
+      return response.data();
     }
   
     
@@ -113,7 +116,7 @@ export class Tasks {
      */
     async updateOrder(taskId, payload) {
       const response = await this._client.post(`/tasks/${taskId}/updateorder`, payload);
-      return response.status;
+      return response.data();
     }
   
   
@@ -126,7 +129,7 @@ export class Tasks {
      */
     async changeTypeOfWork(payload) {
       const response = await this._client.post(`/tasks/changetypeofwork`, payload);
-      return response.status;
+      return response.data();
     }
   
     /**
@@ -138,7 +141,7 @@ export class Tasks {
      */
     async changeBaseTypes(payload) {
       const response = await this._client.post(`/tasks/changebasetypes`, payload);
-      return response.status;
+      return response.data();
     }
   
     /**
@@ -150,7 +153,7 @@ export class Tasks {
      */
     async setTaskPriority(payload) {
       const response = await this._client.post(`/tasks/settaskpriority`, payload);
-      return response.status;
+      return response.data();
     }
   
     /**
@@ -163,7 +166,7 @@ export class Tasks {
     async copy(taskId) {
       const response = await this._client.post(`/tasks/${taskId}/copy`);
       const data = response.data();
-      return new _Task.Task(data);
+      return new Task(data);
     }
   
   
@@ -177,6 +180,6 @@ export class Tasks {
     async getRecurrency(taskId) {
       const response = await this._client.post(`/tasks/${taskId}/recurrency`);
       const data = response.data();
-      return new _TaskRecurrency.TaskRecurrency(data);
+      return new TaskRecurrency(data);
     }
   }

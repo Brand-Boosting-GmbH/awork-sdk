@@ -42,7 +42,7 @@ export class ClientApplications {
     }
 
     /**
-     * @typedef {Object} ClientCreationModel The client application is required for the OAuth flow.
+     * @typedef {Object} ClientCreateModel The client application is required for the OAuth flow.
      * @property {String} clientId The client application's identifier.
      * @property {String} displayName The client application's display name.
      * @property {Array<String>} redirectUris The redirect URIs.
@@ -50,7 +50,7 @@ export class ClientApplications {
 
     /**
      * Registers a new client application.
-     * @param {ClientCreationModel} client The client application is required for the OAuth flow.
+     * @param {ClientCreateModel} client The client application is required for the OAuth flow.
      * @returns {Promise<ClientApplication>}
      */
     async create (client) {

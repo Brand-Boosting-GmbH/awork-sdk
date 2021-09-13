@@ -43,7 +43,7 @@ export class TimeReports {
 
     /**
      * Creates a new time report.
-     * @param {TimeReport} timeReport
+     * @param {TimeReport} timeReport The timereport model.
      * @returns {Promise<TimeReport>}
      */
     async create(timeReport) {
@@ -54,8 +54,8 @@ export class TimeReports {
 
     /**
      * Updates the time report of the specified id.
-     * @param {String} timeReportId 
-     * @param {TimeReport} timeReport 
+     * @param {String} timeReportId The id of the time report.
+     * @param {TimeReport} timeReport The timereport model.
      * @returns {Promise<TimeReport>}
      */
     async update(timeReportId, timeReport) {
@@ -66,7 +66,7 @@ export class TimeReports {
 
     /**
      * Deletes the time report of the specified id.
-     * @param {String} timeReportId 
+     * @param {String} timeReportId The id of the time report.
      * @returns {Promise<void>}
      */
     async delete(timeReportId) {

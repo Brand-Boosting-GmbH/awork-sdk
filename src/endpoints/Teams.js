@@ -28,10 +28,10 @@ export class Teams {
     /**
      * Returns the team with the specified id. Returns NotFound if the team doesn't exist.
      * @param {String} teamId The id of the team.
-     * @param {TeamOptions} options
+     * @param {TeamOptions} [options] Options on how to display the team.
      * @returns {Promise<Team>}
      */
-    async get(teamId, options) {
+    async get(teamId, options = {}) {
         const response = await this._client.get(`/teams/${teamId}`, options)
         const data = response.data()
         return new Team(data)
@@ -49,15 +49,15 @@ export class Teams {
     }
 
     /**
-     * @typedef {Object} TeamProperties
+     * @typedef {Object} TeamCreateModel
      * @property {String} name The team name.
-     * @property {('attach_money'|'poll'|'golf_course'|'all_inclusive'|'portrait'|'timeline'|'transform'|'description'|'folder'|'computer'|'web'|'phone_iphone'|'cloud'|'local_movies'|'shopping_cart'|'brush'|'image'|'camera_alt'|'movie_creation'|'public'|'whatshot'|'extension'|'explore'|'lock'|'settings'|'stars'|'store'|'school'|'local_bar'|'question_answer'|'favorite'|'work'|'flight_takeoff'|'map'|'local_dining')} [icon] The team icon. Optional.
-     * @property {('red'|'coral'|'yellow'|'green'|'teal'|'arctic'|'blue'|'azure'|'purple'|'violet')} [color] The team color. Optional.
+     * @property {Icon} [icon] The team icon. Optional.
+     * @property {Color} [color] The team color. Optional.
      */
 
     /**
      * Creates a new team. No validations are done for color and icon property, can be any string. Throws IllegalOperationException if team with the same name already exists.
-     * @param {TeamProperties} team 
+     * @param {TeamCreateModel} team The model to create a team.
      * @returns {Promise<Team>}
      */
     async create(team) {
@@ -67,9 +67,13 @@ export class Teams {
     }
 
     /**
+     * @typedef {TeamCreateModel} TeamUpdateModel
+     */
+
+    /**
      * Updates the team with the specified id. Only updates properties which are not null or whitespace.
-     * @param {String} teamId 
-     * @param {TeamProperties} team 
+     * @param {String} teamId The id of the team.
+     * @param {TeamUpdateModel} team The model to update the team.
      * @returns {Promise<Team>}
      */
     async update(teamId, team) {
@@ -80,7 +84,7 @@ export class Teams {
 
     /**
      * Deletes the team with the specified id. Deletes all related UserInTeamEntities and ProjectInTeamEntities as well.
-     * @param {String} teamId 
+     * @param {String} teamId The id of the team.
      * @returns {Promise<void>}
      */
     async delete(teamId) {
