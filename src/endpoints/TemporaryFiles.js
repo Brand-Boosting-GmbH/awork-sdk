@@ -94,7 +94,7 @@ export class TemporaryFiles {
      * @returns {Promise<String>}
      */
     async download(fileId) {
-        const response = await this._client.put(`/temporaryfiles/${fileId}/download`, nameDescriptionPair)
+        const response = await this._client.get(`/temporaryfiles/${fileId}/download`, nameDescriptionPair)
         return response.data()
     }
 
@@ -103,8 +103,15 @@ export class TemporaryFiles {
      * @property {String} entityId The id of the entity the file should be linked to. Set to null to change the file to a global file.
      * @property {String} entityType The type of the linked entity. Necessary if EntityId is set.
      */
-    async setentity(fileId) {
-        
-    }
 
+    /**
+     * Sets the temporary file to a global or entity file. Links the temporary file to the specified entity or switches to a global file if the 'EntityId' of the model is set to null. The file is no longer a temporary file afterwards and becomes visible.
+     * @param {String} fileId The id of the file.
+     * @param {EntityObject} entityObject
+     * @returns {Promise<Object>}
+     */
+    async setentity(fileId, entityObject) {
+        const response = await this._client.post(`/temporaryfiles/${fileId}/setenity`, entityObject)
+        return response.data()
+    }
 }
