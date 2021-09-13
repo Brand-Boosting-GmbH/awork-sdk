@@ -118,8 +118,6 @@
     
 
     
-    <p class="summary">Endpoint constructor.</p>
-    
     
     <div class="description">
         Endpoint constructor
@@ -274,7 +272,7 @@
 
         <dl>
             <dt><a href="ClientApplications.html">ClientApplications</a></dt>
-            <dd>Endpoint constructor.</dd>
+            <dd></dd>
         </dl>
     
 
@@ -310,8 +308,6 @@
     </h4>
     
 
-    
-    <p class="summary">Registers a new client application.</p>
     
     
     <div class="description">
@@ -359,7 +355,7 @@
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#ClientRegisterModel">ClientRegisterModel</a></span>
+<span class="param-type"><a href="global.html#ClientCreationModel">ClientCreationModel</a></span>
 
 
   
@@ -369,7 +365,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The client application is required for the OAuth flow.</td>
 </tr>
 
 
@@ -488,8 +484,6 @@
     
 
     
-    <p class="summary">Deletes the specified client application.</p>
-    
     
     <div class="description">
         Deletes the specified client application.
@@ -546,7 +540,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the client application.</td>
 </tr>
 
 
@@ -658,14 +652,12 @@
         
         <span class="code-name">
             
-                generateApiKey<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;({apiUserId: String})>}</span>
+                generateApiKey<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;String>}</span>
             
         </span>
     </h4>
     
 
-    
-    <p class="summary">Generates an API key for the specified client application.</p>
     
     
     <div class="description">
@@ -723,7 +715,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the client application.</td>
 </tr>
 
 
@@ -806,7 +798,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;({apiUserId: String})></span>
+<span class="param-type">Promise.&lt;String></span>
 
 
     </div>
@@ -835,14 +827,12 @@
         
         <span class="code-name">
             
-                generateSecret<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;({clientSecret: String})>}</span>
+                generateSecret<span class="signature">(clientId)</span><span class="type-signature"> &rarr; {Promise.&lt;String>}</span>
             
         </span>
     </h4>
     
 
-    
-    <p class="summary">Generates a new secret for the specified client application.</p>
     
     
     <div class="description">
@@ -900,7 +890,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the client application.</td>
 </tr>
 
 
@@ -983,7 +973,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;({clientSecret: String})></span>
+<span class="param-type">Promise.&lt;String></span>
 
 
     </div>
@@ -1018,8 +1008,6 @@
     </h4>
     
 
-    
-    <p class="summary">Returns the client application with the specified id.</p>
     
     
     <div class="description">
@@ -1077,7 +1065,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the client application.</td>
 </tr>
 
 
@@ -1195,8 +1183,6 @@
     </h4>
     
 
-    
-    <p class="summary">Returns all client applications.</p>
     
     
     <div class="description">
@@ -1437,7 +1423,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The id of the client application.</td>
 </tr>
 
 
@@ -1462,7 +1448,7 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last">The client application is required for the OAuth flow.</td>
 </tr>
 
 
