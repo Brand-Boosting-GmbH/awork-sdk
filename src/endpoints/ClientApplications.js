@@ -21,7 +21,7 @@ export class ClientApplications {
 
     /**
      * Returns the client application with the specified id.
-     * @param {String} clientId 
+     * @param {String} clientId The id of the client application.
      * @returns {Promise<ClientApplication>}
      */
     async get (clientId) {
@@ -42,7 +42,7 @@ export class ClientApplications {
     }
 
     /**
-     * @typedef {Object} ClientRegisterModel The client application is required for the OAuth flow.
+     * @typedef {Object} ClientCreationModel The client application is required for the OAuth flow.
      * @property {String} clientId The client application's identifier.
      * @property {String} displayName The client application's display name.
      * @property {Array<String>} redirectUris The redirect URIs.
@@ -50,7 +50,7 @@ export class ClientApplications {
 
     /**
      * Registers a new client application.
-     * @param {ClientRegisterModel} client 
+     * @param {ClientCreationModel} client The client application is required for the OAuth flow.
      * @returns {Promise<ClientApplication>}
      */
     async create (client) {
@@ -66,8 +66,8 @@ export class ClientApplications {
      */
 
     /**
-     * @param {String} clientId 
-     * @param {ClientUpdateModel} client 
+     * @param {String} clientId The id of the client application.
+     * @param {ClientUpdateModel} client The client application is required for the OAuth flow.
      * @returns {Promise<ClientApplication>}
      */
     async update (clientId, client) {
@@ -78,7 +78,7 @@ export class ClientApplications {
 
     /**
      * Deletes the specified client application.
-     * @param {String} clientId 
+     * @param {String} clientId The id of the client application.
      * @returns {Promise<void>}
      */
     async delete (clientId) {
@@ -87,22 +87,22 @@ export class ClientApplications {
 
     /**
      * Generates a new secret for the specified client application.
-     * @param {String} clientId 
-     * @returns {Promise<({ clientSecret: String })>}
+     * @param {String} clientId The id of the client application.
+     * @returns {Promise<String>}
      */
     async generateSecret (clientId) {
         const response = await this._client.post(`/clientapplications/${clientId}/generatesecret`)
-        return response.data()
+        return response.data().clientSecret
     }
 
     /**
      * Generates an API key for the specified client application. Requires an API user.
-     * @param {String} clientId 
-     * @returns {Promise<({ apiUserId: String })>}
+     * @param {String} clientId The id of the client application.
+     * @returns {Promise<String>}
      */
     async generateApiKey (clientId) {
         const response = await this._client.post(`/clientapplications/${clientId}/generateapikey`)
-        return response.data()
+        return response.data().apiUserId
     }
 
 
