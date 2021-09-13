@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> endpoints/FileVersions.js</title>
+  <title> model/TaskBundle.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>endpoints/FileVersions.js</h1>
+                    <h1>model/TaskBundle.js</h1>
                 </header>
                 
 
@@ -85,94 +85,135 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { FileVersion } from "../model/FileVersion"
-import '../globalTypedef'
-import { fromBuffer } from 'file-type'
-import FormData from "form-data"
-
-
-
-/**
- * Class corresponding to Versions part of the Aworks EntityFiles Endpoints
- * @category Endpoints
- * @see [EntityFiles in Awork API Docs](https://openapi.awork.io/#/EntityFiles)
+            <pre class="prettyprint source linenums"><code>/**
+ * Taskbundle Model
+ * @category Models
+ * @class
  */
-export class FileVersions {
+export class TaskBundle {
+    /**
+     * @typedef {Taskbundle &amp; {_plain?: true}} TaskbundleLike
+     */
 
-    constructor (client, entityName, entityId, fileId) {
+    /**
+     * Model constructor
+     * @param {TaskbundleLike} data 
+     */
+    constructor(data) {
         /** @private */
-        this._client = client
-        /** @private */
-        this._entityName = entityName
-        /** @private */
-        this._entityId = entityId
-        /** @private */
-        this._fileId = fileId
+        this._data = data
     }
 
     /**
-     * Returns the entity file version with the specified id
-     * @param {String} versionId 
-     * @returns {Promise&lt;FileVersion>}
+     * The name of the task bundle. Required if its not related to a task bundle.
+     * @type {String} nullable
      */
-    async get (versionId) {
-        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions/${versionId}`)
-        const data = response.data()
-        return new FileVersion(data)
+    get name () {
+        return this._data.name
     }
 
     /**
-     * Returns all file versions of the specified entity file.
-     * @param {String} fileId
-     * @param {ListOptions} [options] Pagination and filtering options
-     * @returns {Array&lt;FileVersion>}
+     * The description of the task bundle.
+     * @type {String} nullable
      */
-     async list (options) {
-        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions`, options)
-        const data = response.data()
-        return data.map(d => new FileVersion(d))
-    }
-
-    
-    /**
-     * @typedef {Object} FileMetaData
-     * @property {String} [name] The user-specified name of the file.
-     * @property {String} [filename] The name of the file.
-     */
-
-    /** 
-     * Uploads a new version of an entity file. Use this to upload a file as a form value along with the basic file meta data. The file size must not exceed 1GB.
-     * @param {File|Buffer} file
-     * @param {FileMetaData} metadata 
-     */
-    async create (file, metadata) {
-        let filename = metadata.filename || file.name
-        if(file instanceof Buffer) {
-            const { ext } = await fromBuffer(file)
-            filename = filename || `upload.${ext}`
-        }    
-        let formData = new FormData()
-        formData.append('file', file, filename || 'upload')
-        formData.append('name', metadata.name || filename || 'upload')
-        formData.append('filename', filename || 'upload')
-        const response = await this._client.post(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions`, formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders()})
-        const data = response.data()
-        return new FileVersion(data)
+    get description () {
+        return this._data.description
     }
 
     /**
-     * Returns the content of the entity file version with the specified id.
-     * @param {String} versionId 
-     * @returns {Promise&lt;Object>}
+     * The icon of the task bundle.
+     * @type {String} 
      */
-    async download (versionId) {
-        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions/${versionId}/download`)
-        return response.data()
+    get icon () {
+        return this._data.icon
     }
 
+    /**
+     * The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
+     * @type {String}
+     */
+    get projectTemplateId () {
+        return this._data.projectTemplateId
+    }
 
+    /**
+     * The id of the task bundle.
+     * @type {String}
+     */
+    get id () {
+        return this._data.id
+    }
 
+    /**
+     * The date this task bundle was created.
+     * @type {String} date-time
+     */
+    get createdOn () {
+        return this._data.createdOn
+    }
 
+    /**
+     * The id of the user who created this task bundle.
+     * @type {String} uuid
+     */
+    get createdBy () {
+        return this._data.createdBy
+    }
+
+    /**
+     * The date this task bundle was last modified.
+     * @type {String} date-time
+     */
+    get updatedOn () {
+        return this._data.updatedOn
+    }
+
+    /**
+     * The id of the user who last modified this task bundle.
+     * @type {String} uuid
+     */
+    get updatedBy () {
+        return this._data.updatedBy
+    }
+
+    /**
+     * @typedef {Object} TaskLists
+     * @property {String} id The id of the task list template.
+     * @property {String} name The name of the task list template.
+     * @property {Number} orderOfTask The order of the task template in the task list template.
+     * @property {Number} order The order of the task list template, unique within the task bundle.
+     */
+
+    /**
+     * The list templates within this task bundle.
+     * @type {Array&lt;TaskLists>}
+     */
+    get taskLists () {
+        return this._data.taskLists
+    }
+
+    /**
+     * @type {Array&lt;import('./Task').Task>}
+     */
+    get tasks () {
+        return this._data.tasks
+    }
+
+    toPlainObject() {
+        return {
+            name: this._data.name,
+            description: this._data.description,
+            icon: this._data.icon,
+            projectTemplateId: this._data.projectTemplateId,
+            id: this._data.id,
+            createdOn: this._data.createdOn,
+            createdBy: this._data.createdBy,
+            updatedOn: this._data.updatedOn,
+            updatedBy: this._data.updatedBy,
+            taskLists: this._data.taskLists,
+            tasks: this._data.tasks
+        }
+    }
 }</code></pre>
         </article>
     </section>

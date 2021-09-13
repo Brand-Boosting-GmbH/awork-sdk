@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> endpoints/FileVersions.js</title>
+  <title> endpoints/TaskBundles.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>endpoints/FileVersions.js</h1>
+                    <h1>endpoints/TaskBundles.js</h1>
                 </header>
                 
 
@@ -85,94 +85,86 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { FileVersion } from "../model/FileVersion"
-import '../globalTypedef'
-import { fromBuffer } from 'file-type'
-import FormData from "form-data"
-
-
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+import { TaskBundle } from '../model/TaskBundle'
 
 /**
- * Class corresponding to Versions part of the Aworks EntityFiles Endpoints
+ * Class corresponding to Aworks TaskBundles Endpoints
  * @category Endpoints
- * @see [EntityFiles in Awork API Docs](https://openapi.awork.io/#/EntityFiles)
+ * @see [TaskBundles in Awork API Docs](https://openapi.awork.io/#/TaskBundles)
  */
-export class FileVersions {
 
-    constructor (client, entityName, entityId, fileId) {
+export class TaskBundles {
+    /**
+     * Endpoint constructor
+     * @param {import('../client/index').Client} client 
+     */
+    constructor(client) {
         /** @private */
         this._client = client
-        /** @private */
-        this._entityName = entityName
-        /** @private */
-        this._entityId = entityId
-        /** @private */
-        this._fileId = fileId
     }
 
     /**
-     * Returns the entity file version with the specified id
-     * @param {String} versionId 
-     * @returns {Promise&lt;FileVersion>}
+     * Returns the task bundle with the specified id.
+     * @param {String} taskBundleId 
+     * @returns {Promise&lt;TaskBundle>}
      */
-    async get (versionId) {
-        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions/${versionId}`)
+    async get (taskBundleId) {
+        const response = await this._client.get(`/taskbundles/${taskBundleId}`)
         const data = response.data()
-        return new FileVersion(data)
+        return new TaskBundle(data)
     }
 
     /**
-     * Returns all file versions of the specified entity file.
-     * @param {String} fileId
-     * @param {ListOptions} [options] Pagination and filtering options
-     * @returns {Array&lt;FileVersion>}
+     * Returns all global task bundles.
+     * @param {ListOptions} [options]
+     * @returns {Promise&lt;Array&lt;TaskBundle>>}
      */
-     async list (options) {
-        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions`, options)
+    async list (options) {
+        const response = await this._client.get('/taskbundles', options)
         const data = response.data()
-        return data.map(d => new FileVersion(d))
+        return data.map(d => new TaskBundle(d))
     }
 
-    
     /**
-     * @typedef {Object} FileMetaData
-     * @property {String} [name] The user-specified name of the file.
-     * @property {String} [filename] The name of the file.
+     * @typedef {Object} TaskBundleModel
+     * @property {String} name The name of the task bundle. Required if its not related to a task bundle.
+     * @property {String} description The description of the task bundle.
+     * @property {String} icon The icon of the task bundle.
+     * @property {String} projectTemplateId The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
      */
 
-    /** 
-     * Uploads a new version of an entity file. Use this to upload a file as a form value along with the basic file meta data. The file size must not exceed 1GB.
-     * @param {File|Buffer} file
-     * @param {FileMetaData} metadata 
+    /**
+     * Returns the task bundle with the specified id.
+     * @param {TaskBundleModel} taskbundle 
+     * @returns {Promise&lt;TaskBundle>}
      */
-    async create (file, metadata) {
-        let filename = metadata.filename || file.name
-        if(file instanceof Buffer) {
-            const { ext } = await fromBuffer(file)
-            filename = filename || `upload.${ext}`
-        }    
-        let formData = new FormData()
-        formData.append('file', file, filename || 'upload')
-        formData.append('name', metadata.name || filename || 'upload')
-        formData.append('filename', filename || 'upload')
-        const response = await this._client.post(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions`, formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders()})
+    async create (taskbundle) {
+        const response = await this._client.post('/taskbundles', taskbundle)
         const data = response.data()
-        return new FileVersion(data)
+        return new TaskBundle(data)
     }
 
     /**
-     * Returns the content of the entity file version with the specified id.
-     * @param {String} versionId 
-     * @returns {Promise&lt;Object>}
+     * Updates the task bundle with the specified id.
+     * @param {String} taskBundleId 
+     * @param {TaskBundleModel} taskBundle 
+     * @returns {Promise&lt;TaskBundle>}
      */
-    async download (versionId) {
-        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions/${versionId}/download`)
-        return response.data()
+    async update (taskBundleId, taskBundle) {
+        const response = await this._client.put(`/taskbundles/${taskBundleId}`, taskBundle)
+        const data = response.data()
+        return new TaskBundle(data)
     }
 
-
-
-
+    /**
+     * Deletes the task bundle with the specified id.
+     * @param {String} taskBundleId 
+     * @returns {Promise&lt;void>}
+     */
+    async delete (taskBundleId) {
+        await this._client.delete(`/taskbundles/${taskBundleId}`)
+    }
 }</code></pre>
         </article>
     </section>

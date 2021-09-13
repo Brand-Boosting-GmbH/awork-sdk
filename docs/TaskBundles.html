@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> TemporaryFiles</title>
+  <title> TaskBundles</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Class</p>
-                    <h1>TemporaryFiles</h1>
+                    <h1>TaskBundles</h1>
                 </header>
                 
 
@@ -85,9 +85,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>TemporaryFiles<span class="signature">(client)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>TaskBundles<span class="signature">(client)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class corresponding to Aworks TemporaryFiles Endpoints</div>
+            <div class="class-description">Class corresponding to Aworks TaskBundles Endpoints</div>
         
     
 </header>
@@ -106,12 +106,12 @@
 
 
     
-    <h4 class="name" id="TemporaryFiles">
-        <a class="href-link" href="#TemporaryFiles">#</a>
+    <h4 class="name" id="TaskBundles">
+        <a class="href-link" href="#TaskBundles">#</a>
         
         <span class="code-name">
             
-                new TemporaryFiles<span class="signature">(client)</span><span class="type-signature"></span>
+                new TaskBundles<span class="signature">(client)</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -220,7 +220,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>[TemporaryFiles in Awork API Docs](https://openapi.awork.io/#/TemporaryFiles)</li>
+            <li>[TaskBundles in Awork API Docs](https://openapi.awork.io/#/TaskBundles)</li>
         </ul>
     </dd>
     
@@ -229,9 +229,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_TemporaryFiles.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskBundles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TemporaryFiles.js.html">endpoints/TemporaryFiles.js</a>, <a href="endpoints_TemporaryFiles.js.html#line11">line 11</a>
+                <a href="endpoints_TaskBundles.js.html">endpoints/TaskBundles.js</a>, <a href="endpoints_TaskBundles.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -273,7 +273,7 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            <dt><a href="TemporaryFiles.html">TemporaryFiles</a></dt>
+            <dt><a href="TaskBundles.html">TaskBundles</a></dt>
             <dd>Endpoint constructor.</dd>
         </dl>
     
@@ -304,18 +304,18 @@
         
         <span class="code-name">
             
-                create<span class="signature">(file, metadata)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="EntityFile.html">EntityFile</a>>}</span>
+                create<span class="signature">(taskbundle)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="TaskBundle.html">TaskBundle</a>>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Uploads a new temporary file.</p>
+    <p class="summary">Returns the task bundle with the specified id.</p>
     
     
     <div class="description">
-        Uploads a new temporary file. Use this to upload a file as a form value along with the basic file meta data. The file size must not exceed 1GB.
+        Returns the task bundle with the specified id.
     </div>
     
 
@@ -353,41 +353,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>file</code></td>
+      <td class="name"><code>taskbundle</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">File</span>
-|
-
-<span class="param-type">Buffer</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>metadata</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="global.html#FileMetaData">FileMetaData</a></span>
+<span class="param-type"><a href="global.html#TaskBundleModel">TaskBundleModel</a></span>
 
 
   
@@ -443,9 +415,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_TemporaryFiles.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskBundles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TemporaryFiles.js.html">endpoints/TemporaryFiles.js</a>, <a href="endpoints_TemporaryFiles.js.html#line58">line 58</a>
+                <a href="endpoints_TaskBundles.js.html">endpoints/TaskBundles.js</a>, <a href="endpoints_TaskBundles.js.html#line55">line 55</a>
             </span>
         </p>
     
@@ -480,7 +452,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="EntityFile.html">EntityFile</a>></span>
+<span class="param-type">Promise.&lt;<a href="TaskBundle.html">TaskBundle</a>></span>
 
 
     </div>
@@ -500,8 +472,8 @@
 
 
     
-    <h4 class="name" id="download">
-        <a class="href-link" href="#download">#</a>
+    <h4 class="name" id="delete">
+        <a class="href-link" href="#delete">#</a>
         
             
                 <span class='tag'>async</span>
@@ -509,18 +481,18 @@
         
         <span class="code-name">
             
-                download<span class="signature">(fileId)</span><span class="type-signature"> &rarr; {Promise.&lt;String>}</span>
+                delete<span class="signature">(taskBundleId)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Returns the content of the temporary file.</p>
+    <p class="summary">Deletes the task bundle with the specified id.</p>
     
     
     <div class="description">
-        Returns the content of the temporary file.
+        Deletes the task bundle with the specified id.
     </div>
     
 
@@ -558,7 +530,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>fileId</code></td>
+      <td class="name"><code>taskBundleId</code></td>
   
 
   <td class="type">
@@ -574,7 +546,7 @@
 
   
 
-  <td class="description last">The id of the file.</td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -620,9 +592,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_TemporaryFiles.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskBundles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TemporaryFiles.js.html">endpoints/TemporaryFiles.js</a>, <a href="endpoints_TemporaryFiles.js.html#line96">line 96</a>
+                <a href="endpoints_TaskBundles.js.html">endpoints/TaskBundles.js</a>, <a href="endpoints_TaskBundles.js.html#line78">line 78</a>
             </span>
         </p>
     
@@ -657,7 +629,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;String></span>
+<span class="param-type">Promise.&lt;void></span>
 
 
     </div>
@@ -686,18 +658,18 @@
         
         <span class="code-name">
             
-                get<span class="signature">(fileId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="EntityFile.html">EntityFile</a>>}</span>
+                get<span class="signature">(taskBundleId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="TaskBundle.html">TaskBundle</a>>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Returns the meta information of the temporary file of the current user.</p>
+    <p class="summary">Returns the task bundle with the specified id.</p>
     
     
     <div class="description">
-        Returns the meta information of the temporary file of the current user.
+        Returns the task bundle with the specified id.
     </div>
     
 
@@ -735,7 +707,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>fileId</code></td>
+      <td class="name"><code>taskBundleId</code></td>
   
 
   <td class="type">
@@ -751,7 +723,7 @@
 
   
 
-  <td class="description last">The id of the file.</td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -797,9 +769,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_TemporaryFiles.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskBundles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TemporaryFiles.js.html">endpoints/TemporaryFiles.js</a>, <a href="endpoints_TemporaryFiles.js.html#line28">line 28</a>
+                <a href="endpoints_TaskBundles.js.html">endpoints/TaskBundles.js</a>, <a href="endpoints_TaskBundles.js.html#line25">line 25</a>
             </span>
         </p>
     
@@ -834,7 +806,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="EntityFile.html">EntityFile</a>></span>
+<span class="param-type">Promise.&lt;<a href="TaskBundle.html">TaskBundle</a>></span>
 
 
     </div>
@@ -863,18 +835,18 @@
         
         <span class="code-name">
             
-                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="EntityFile.html">EntityFile</a>>>}</span>
+                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="TaskBundle.html">TaskBundle</a>>>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Returns the meta information of all temporary files of the current user.</p>
+    <p class="summary">Returns all global task bundles.</p>
     
     
     <div class="description">
-        Returns the meta information of all temporary files of the current user.
+        Returns all global task bundles.
     </div>
     
 
@@ -940,7 +912,7 @@
 
   
 
-  <td class="description last">Pagination and filtering options</td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -986,9 +958,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_TemporaryFiles.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskBundles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TemporaryFiles.js.html">endpoints/TemporaryFiles.js</a>, <a href="endpoints_TemporaryFiles.js.html#line39">line 39</a>
+                <a href="endpoints_TaskBundles.js.html">endpoints/TaskBundles.js</a>, <a href="endpoints_TaskBundles.js.html#line36">line 36</a>
             </span>
         </p>
     
@@ -1023,7 +995,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;Array.&lt;<a href="EntityFile.html">EntityFile</a>>></span>
+<span class="param-type">Promise.&lt;Array.&lt;<a href="TaskBundle.html">TaskBundle</a>>></span>
 
 
     </div>
@@ -1052,18 +1024,18 @@
         
         <span class="code-name">
             
-                update<span class="signature">(fileId, nameDescriptionPair)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="EntityFile.html">EntityFile</a>>}</span>
+                update<span class="signature">(taskBundleId, taskBundle)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="TaskBundle.html">TaskBundle</a>>}</span>
             
         </span>
     </h4>
     
 
     
-    <p class="summary">Updates the meta information of the temporary file with the specified id.</p>
+    <p class="summary">Updates the task bundle with the specified id.</p>
     
     
     <div class="description">
-        Updates the meta information of the temporary file with the specified id.
+        Updates the task bundle with the specified id.
     </div>
     
 
@@ -1101,7 +1073,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>fileId</code></td>
+      <td class="name"><code>taskBundleId</code></td>
   
 
   <td class="type">
@@ -1117,7 +1089,7 @@
 
   
 
-  <td class="description last">The id of the file.</td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -1126,13 +1098,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>nameDescriptionPair</code></td>
+      <td class="name"><code>taskBundle</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#NameDescriptionPair">NameDescriptionPair</a></span>
+<span class="param-type"><a href="global.html#TaskBundleModel">TaskBundleModel</a></span>
 
 
   
@@ -1188,9 +1160,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_TemporaryFiles.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskBundles.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TemporaryFiles.js.html">endpoints/TemporaryFiles.js</a>, <a href="endpoints_TemporaryFiles.js.html#line85">line 85</a>
+                <a href="endpoints_TaskBundles.js.html">endpoints/TaskBundles.js</a>, <a href="endpoints_TaskBundles.js.html#line67">line 67</a>
             </span>
         </p>
     
@@ -1225,7 +1197,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="EntityFile.html">EntityFile</a>></span>
+<span class="param-type">Promise.&lt;<a href="TaskBundle.html">TaskBundle</a>></span>
 
 
     </div>
