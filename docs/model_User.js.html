@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/CompanyContactInfo.js</title>
+  <title> model/User.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/CompanyContactInfo.js</h1>
+                    <h1>model/User.js</h1>
                 </header>
                 
 
@@ -85,200 +85,253 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * CompanyContactInfo Model
+            <pre class="prettyprint source linenums"><code>
+/**
+ * User Model
  * @category Models
  * @class
  */
-
-export class CompanyContactInfo {
+ export class User {
     /**
-     * @typedef {CompanyContactInfo &amp; {_plain?: true}} CompanyContactInfoLike
+     * @typedef {User &amp; {_plain?: true}} UserLike
      */
 
     /**
      * Model constructor
-     * @param {CompanyContactInfoLike} data 
+     * @param {UserLike} data 
      */
     constructor(data) {
-        /**
-         * @private
-         */
+        /** @private */
         this._data = data || {}
     }
 
     /**
-     * The id of the contact info.
-     * @type {String}
+     * The firstname of the user.
+     * @type {String} nullable
      */
-    get id() {
+    get firstName () {
+        return this._data.firstName
+    }
+
+    /**
+     * The lastname of the user.
+     * @type {String} nullable
+     */
+    get lastName () {
+        return this._data.lastName
+    }
+
+    /**
+     * The birthdate of the user.
+     * @type {String} date-time
+     */
+    get birthDate () {
+        return this._data.birthdate
+    }
+
+    /**
+     * The gender of the user.
+     * @type {String} nullable
+     */
+    get gender () {
+        return this._data.gender
+    }
+
+    /**
+     * The title of the user.
+     * @type {String} nullable 
+     */
+    get title () {
+        return this._data.title
+    }
+
+    /**
+     * The position of the user.
+     * @type {String} nullable
+     */
+    get position () {
+        return this._data.position
+    }
+
+    /**
+     * The language preference of the user in ISO 639-1 format.
+     * @type {String} nullable
+     */
+    get language () {
+        return this._data.language
+    }
+
+    /**
+     * The capacity of the user per week in seconds.
+     * @type {Integer} int32
+     */
+    get capacityPerWeek () {
+        return this._data.capacityPerWeek
+    }
+
+    /**
+     * The id of the user.
+     * @type {String} uuid
+     */
+    get id () {
         return this._data.id
     }
 
     /**
-     * The label of the contact info. Only necessary if type 'custom' is used.
+     * Unique identifier of the user.
      * @type {String} nullable
      */
-    get label () {
-        return this._data.label
+    get key () {
+        return this._data.key
     }
 
     /**
-     * The value of the contact info
-     * @type {String} nullable
+     * The status of the user.
+     * @type {Object} status
      */
-    get value () {
-        return this._data.value
+    get status () {
+        return this._data.status
     }
 
     /**
-     * The type of the contact info.
-     * @type {('phone'|'email'|'address'|'custom')}
-     */
-    get type() {
-        return this._data.type
-    }
-
-    /**
-     * @typedef {('central'|'other')} PhoneSubType
-     */
-
-    /**
-     * @typedef {('central'|'invoice'|'other')} EmailSubType
-     */
-
-    /**
-     * @typedef {('central'|'invoice'|'other')} AddressSubType
-     */
-
-    /**
-     * @typedef {('primary'|'other')} UrlSubType
-     */
-
-
-    /**
-     * The subtype of the contact info. Answers depening on type of the contact info.
-     * @type {(PhoneSubType|EmailSubType|AddressSubType|UrlSubType)}
-     */
-    get subType () {
-        return this._data.subType
-    }
-
-    /**
-     * The first address line of the contact info.
-     * @type {String} nullable
-     */
-    get addressLine1 () {
-        return this._data.addressLine1
-    }
-
-    /**
-     * The second address line of the contact info.
-     * @type {String} nullable
-     */
-     get addressLine2 () {
-        return this._data.addressLine2
-    }
-
-    /**
-     * The Zipcode of the contact info.
-     * @type {String} nullable
-     */
-    get zipCode () {
-        return this._data.zipCode
-    }
-
-    /**
-     * The city of the contact info.
-     * @type {String} nullable
-     */
-    get city () {
-        return this._data.city
-    }
-
-    /**
-     * The state of the contact info.
-     * @type {String} nullable
-     */
-    get state () {
-        return this._data.state
-    }
-
-    /**
-     * The 2-letter iso code of the country.
-     * @type {String} nullable
-     */
-    get country () {
-        return this._data.country
-    }
-
-    /**
-     * Flags wheter this contact info is an address or not. If its an address, the address fields are required.
+     * Flag if the user in this workspace accepted the invitation.
      * @type {Boolean}
      */
-    get isAddress() {
-        return this._data.isAddress
+    get statusInvitationAccepted () {
+        return this._data.status.invitationAccepted
     }
 
     /**
-     * The date this entity was created.
-     * @type {String}
+     * Whether the user is deactivated.
+     * @type {Boolean}
+     */
+    get statusIsDeactivated () {
+        return this._data.status.isDeactivated
+    }
+
+    /**
+     * The date this user was created.
+     * @type {String} date-time
      */
     get createdOn () {
         return this._data.createdOn
     }
 
     /**
-     * The id of the user who created this entity.
-     * @type {String}
+     * The id of the user who created this user.
+     * @type {String} uuid
      */
-     get createdBy () {
+    get createdBy () {
         return this._data.createdBy
     }
 
     /**
-     * The id of the user who created this entity.
-     * @type {String}
+     * The date where this user was last updated.
+     * @type {String} uuid
      */
     get updatedOn () {
         return this._data.updatedOn
     }
 
     /**
-     * The id of the user who last modified this entity.
-     * @type {String}
+     * The id of the user who updated the entity.
+     * @type {String} uuid
      */
     get updatedBy () {
         return this._data.updatedBy
     }
 
     /**
-     * The company id of the contact info.
-     * @type {String}
+     * Whether this user is archived. Archived users are automatically inactive and only exist for reference purposes.
+     * @type {Boolean}
      */
-    get companyId () {
-        return this._data.companyId
+    get isArchived () {
+        return this._data.isArchived
     }
 
-    toPlainObject() {
-        return {
-            id: this._data.id,
-            label: this._data.label,
-            value: this._data.value,
-            type: this._data.type,
-            subType: this._data.subType,
-            addressLine1: this._data.addressLine1,
-            addressLine2: this._data.addressLine2,
-            zipCode: this._data.zipCode,
-            city: this._data.city,
-            state: this._data.state,
-            country: this._data.country,
-            isAddress: this._data.isAddress,
-            createdOn: this._data.createdOn,
-            createdBy: this._data.createdBy,
-            updatedOn: this._data.updatedOn,
-            updatedBy: this._data.updatedBy
-        }
+    /**
+     * Whether the user has been deactivated.
+     * @type {Boolean}
+     */
+    get isDeactivated () {
+        return this._data.isDeactivated
+    }
+
+    /**
+     * The date the user was deactivated.
+     * @type {String} date-time
+     */
+    get deactivatedOn () {
+        return this._data.deactivatedOn
+    }
+
+    /**
+     * Whether the user has uploaded a profile image.
+     * @type {Boolean}
+     */
+    get hasImage () {
+        return this._data.hasImage
+    }
+
+    /**
+     * @typedef {('work'|'mobile'|'home'|'work Fax'|'fax'|'other')} PhoneType
+     */
+
+    /**
+     * @typedef {('work'|'private'|'other')} EmailType
+     */
+
+    /**
+     * @typedef {('work'|'home'|'other')} AdressType
+     */
+
+    /**
+     * @typedef {('skype'|'whatsapp'|'other')} MessengerType
+     */
+
+    /**
+     * @typedef {('facebook'|'twitter'|'xing'|'linkedIn'|'instagram'|'pinterest'|'other')} SocialType
+     */
+
+    /**
+     * @typedef {('work'|'private'|'gitHub'|'other')} UrlType
+     */
+
+    /**
+     * @typedef {Object} userContactObject
+     * @property {String} label The label of the contact info. Only necessary if type 'custom' is used.
+     * @property {String} value The value of the contact info.
+     * @property {('phone'|'email'|'adress'|'messenger'|'social'|'urls')} type The type of the contact info.
+     * @property {(PhoneType|EmailType|AdressType|MessengerType|SocialType|UrlType)} subType The subtype of the contact info.
+     * @property {String} adressLine1 The first Address line of the address.
+     * @property {String} adressLine2 The second address line of the contact info.
+     * @property {String} zipCode The Zipcode of the contact info.
+     * @property {String} city The city of the contact info.
+     * @property {String} state The state of the contact info.
+     * @property {String} country The 2 letter iso code of the country.
+     * @property {Boolean} isAdress Flags whether this contactinfo is an address or not. If its an address, the address fields are required.
+     * @property {String} id The Id of the contact info.
+     * @property {Boolean} isDeleted Whether the user has been deleted.
+     * @property {String} createdOn The creation date.
+     * @property {String} createdBy The id of the user who created the entity.
+     * @property {String} updatedOn The date where the entity was updated.
+     * @property {String} updatedBy The id of the user who updated the entity.
+     */
+
+    /**
+     * The contact information assigned to this user.
+     * @type {Array&lt;userContactObject>}
+     */
+    get userContactInfos () {
+        return this._data.userContactInfos
+    }
+
+    /**
+     * The version of the entity continuously incremented by 1 on every update of the entity.
+     * @type {Integer} int64
+     */
+    get resourceVersion () {
+        return this._data.resourceVersion
     }
 }</code></pre>
         </article>
