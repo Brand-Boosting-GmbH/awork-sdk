@@ -42,7 +42,7 @@ export class Absences {
     }
 
     /**
-     * @typedef {Object} AbsenceProperties
+     * @typedef {Object} AbsenceCreateModel
      * @property {String} userId The id of the user that created the absence.
      * @property {String} startOn The start time of the absence.
      * @property {String} endOn The end time of the absence.
@@ -50,7 +50,7 @@ export class Absences {
 
     /**
      * Creates a new absence. The startOn of the model always gets set to 00:00:00 and the endOn gets set to 23:59:59 both in UTC. The end date needs to be the same or after the start date.
-     * @param {AbsenceProperties} absence 
+     * @param {AbsenceCreateModel} absence 
      * @returns {Promise<Absence>}
      */
     async create(absence) {
@@ -60,9 +60,13 @@ export class Absences {
     }
 
     /**
+     * @typedef {AbsenceCreateModel} AbsenceUpdateModel
+     */
+
+    /**
      * Updates the absence with the specified id. The startOn of the model always gets set to 00:00:00 and the endOn gets set to 23:59:59 both in UTC. The end date needs to be the same or after the start date.
      * @param {String} absenceId The id of the absence to update.
-     * @param {AbsenceProperties} absence 
+     * @param {AbsenceUpdateModel} absence 
      * @returns {Promise<Absence>}
      */
     async update(absenceId, absence) {
