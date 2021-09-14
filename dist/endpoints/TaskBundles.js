@@ -9,7 +9,9 @@ require("../globalTypedef");
 
 var _TaskBundle = require("../model/TaskBundle");
 
-var _TaskListTemplates = require("./TaskListTemplates");
+var _TaskBundleTaskListTemplates = require("./TaskBundleTaskListTemplates");
+
+var _TaskBundleTaskTemplates = require("./TaskBundleTaskTemplates");
 
 /**
  * Class corresponding to Aworks TaskBundles Endpoints
@@ -39,7 +41,7 @@ class TaskBundles {
   }
   /**
    * Returns all global task bundles.
-   * @param {ListOptions} [options]
+   * @param {ListOptions} [options] Pagination and filtering options.
    * @returns {Promise<Array<TaskBundle>>}
    */
 
@@ -116,7 +118,11 @@ class TaskBundles {
   }
 
   taskListTemplates(taskBundleId) {
-    return new _TaskListTemplates.TaskListTemplates(this._client, taskBundleId);
+    return new _TaskBundleTaskListTemplates.TaskBundleTaskListTemplates(this._client, taskBundleId);
+  }
+
+  taskTemplates(taskBundleId) {
+    return new _TaskBundleTaskTemplates.TaskBundleTaskTemplates(this._client, taskBundleId);
   }
 
 }

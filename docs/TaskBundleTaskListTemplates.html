@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> TaskBundleTaskListTemplates</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="Absences.html">Absences</a></li><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectProjectStatuses.html">ProjectProjectStatuses</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectStatuses.html">ProjectStatuses</a></li><li><a href="ProjectTemplateProjectStatuses.html">ProjectTemplateProjectStatuses</a></li><li><a href="ProjectTemplates.html">ProjectTemplates</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="TaskBundles.html">TaskBundles</a></li><li><a href="TaskBundleTaskListTemplates.html">TaskBundleTaskListTemplates</a></li><li><a href="TaskBundleTaskListTemplatesTaskTemplates.html">TaskBundleTaskListTemplatesTaskTemplates</a></li><li><a href="TaskBundleTaskTemplates.html">TaskBundleTaskTemplates</a></li><li><a href="TaskTemplates.html">TaskTemplates</a></li><li><a href="TaskTemplateSubTaskTemplates.html">TaskTemplateSubTaskTemplates</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TemporaryFiles.html">TemporaryFiles</a></li><li><a href="TimeReports.html">TimeReports</a></li><li><a href="TypesOfWorks.html">TypesOfWorks</a></li><li><a href="UserContactInfos.html">UserContactInfos</a></li><li><a href="Users.html">Users</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Absence.html">Absence</a></li><li><a href="ClientApplication.html">ClientApplication</a></li><li><a href="Company.html">Company</a></li><li><a href="CompanyContactInfo.html">CompanyContactInfo</a></li><li><a href="EntityFile.html">EntityFile</a></li><li><a href="ExtendedUser.html">ExtendedUser</a></li><li><a href="FileVersion.html">FileVersion</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectMember.html">ProjectMember</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectStatus.html">ProjectStatus</a></li><li><a href="ProjectTemplate.html">ProjectTemplate</a></li><li><a href="ProjectType.html">ProjectType</a></li><li><a href="global.html#Recurrency">Recurrency</a></li><li><a href="SubTaskTemplate.html">SubTaskTemplate</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBundle.html">TaskBundle</a></li><li><a href="TaskListTemplate.html">TaskListTemplate</a></li><li><a href="TaskRecurrency.html">TaskRecurrency</a></li><li><a href="TaskTemplate.html">TaskTemplate</a></li><li><a href="Team.html">Team</a></li><li><a href="TimeReport.html">TimeReport</a></li><li><a href="TypeOfWork.html">TypeOfWork</a></li><li><a href="User.html">User</a></li><li><a href="UserContactInfo.html">UserContactInfo</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Awork.html">Awork</a></li><li><a href="Client.html">Client</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Class</p>
+                    <h1>TaskBundleTaskListTemplates</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>TaskBundleTaskListTemplates<span class="signature">(client, taskBundleId)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">Class corresponding to Aworks tasklisttemplates related part of the TaskBundles Endpoints</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
+
+
+    
+    <h4 class="name" id="TaskBundleTaskListTemplates">
+        <a class="href-link" href="#TaskBundleTaskListTemplates">#</a>
+        
+        <span class="code-name">
+            
+                new TaskBundleTaskListTemplates<span class="signature">(client, taskBundleId)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Endpoint constructor
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>client</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="Client.html">Client</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>taskBundleId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The id of the task bundle.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>[TaskBundles in Awork API Docs](https://openapi.awork.io/#/TaskBundles)</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_TaskBundleTaskListTemplates.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_TaskBundleTaskListTemplates.js.html">endpoints/TaskBundleTaskListTemplates.js</a>, <a href="endpoints_TaskBundleTaskListTemplates.js.html#line10">line 10</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="TaskBundleTaskListTemplates.html">TaskBundleTaskListTemplates</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Methods</h1>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="create">
+        <a class="href-link" href="#create">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                create<span class="signature">(taskListTemplate)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Creates a new task list template for the task bundle with the specified id.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>taskListTemplate</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="global.html#TaskListTemplateCreateModel">TaskListTemplateCreateModel</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The model to create a new task list template.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_TaskBundleTaskListTemplates.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_TaskBundleTaskListTemplates.js.html">endpoints/TaskBundleTaskListTemplates.js</a>, <a href="endpoints_TaskBundleTaskListTemplates.js.html#line57">line 57</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="delete">
+        <a class="href-link" href="#delete">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                delete<span class="signature">(taskListTemplateId)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Deletes the task list template for the task bundle with the specified id.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>taskListTemplateId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The id of the task list template.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_TaskBundleTaskListTemplates.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_TaskBundleTaskListTemplates.js.html">endpoints/TaskBundleTaskListTemplates.js</a>, <a href="endpoints_TaskBundleTaskListTemplates.js.html#line84">line 84</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="get">
+        <a class="href-link" href="#get">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                get<span class="signature">(taskListTemplateId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Returns the task list template of the task bundle with the specified id.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>taskListTemplateId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The id of the task list template.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_TaskBundleTaskListTemplates.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_TaskBundleTaskListTemplates.js.html">endpoints/TaskBundleTaskListTemplates.js</a>, <a href="endpoints_TaskBundleTaskListTemplates.js.html#line29">line 29</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="list">
+        <a class="href-link" href="#list">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Returns all task list templates of the task bundle with the specified id.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>options</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="global.html#ListOptions">ListOptions</a></span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last">Pagination and filtering options.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_TaskBundleTaskListTemplates.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_TaskBundleTaskListTemplates.js.html">endpoints/TaskBundleTaskListTemplates.js</a>, <a href="endpoints_TaskBundleTaskListTemplates.js.html#line40">line 40</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;Array.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="update">
+        <a class="href-link" href="#update">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                update<span class="signature">(taskListTemplateId, taskListTemplate)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Updates the task list template for the task bundle with the specified id.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>taskListTemplateId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The id of the task list template.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>taskListTemplate</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="global.html#TaskListTemplateUpdateModel">TaskListTemplateUpdateModel</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The model to update a task list template.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_TaskBundleTaskListTemplates.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_TaskBundleTaskListTemplates.js.html">endpoints/TaskBundleTaskListTemplates.js</a>, <a href="endpoints_TaskBundleTaskListTemplates.js.html#line73">line 73</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="updateOrder">
+        <a class="href-link" href="#updateOrder">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                updateOrder<span class="signature">(taskListTemplateId, order)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Updates the order of a task list template in a task bundle.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>taskListTemplateId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The id of the task list template.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>order</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The order of the list.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_TaskBundleTaskListTemplates.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_TaskBundleTaskListTemplates.js.html">endpoints/TaskBundleTaskListTemplates.js</a>, <a href="endpoints_TaskBundleTaskListTemplates.js.html#line93">line 93</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>

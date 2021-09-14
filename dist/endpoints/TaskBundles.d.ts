@@ -19,7 +19,7 @@ export class TaskBundles {
     get(taskBundleId: string): Promise<TaskBundle>;
     /**
      * Returns all global task bundles.
-     * @param {ListOptions} [options]
+     * @param {ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<TaskBundle>>}
      */
     list(options?: ListOptions): Promise<Array<TaskBundle>>;
@@ -94,7 +94,9 @@ export class TaskBundles {
      * @returns {Promise<TaskBundle>}
      */
     copy(taskBundleId: string): Promise<TaskBundle>;
-    taskListTemplates(taskBundleId: any): TaskListTemplates;
+    taskListTemplates(taskBundleId: any): TaskBundleTaskListTemplates;
+    taskTemplates(taskBundleId: any): TaskBundleTaskTemplates;
 }
 import { TaskBundle } from "../model/TaskBundle";
-import { TaskListTemplates } from "./TaskListTemplates";
+import { TaskBundleTaskListTemplates } from "./TaskBundleTaskListTemplates";
+import { TaskBundleTaskTemplates } from "./TaskBundleTaskTemplates";

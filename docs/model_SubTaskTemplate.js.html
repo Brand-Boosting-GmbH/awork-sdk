@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> model/SubTaskTemplate.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="Absences.html">Absences</a></li><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectProjectStatuses.html">ProjectProjectStatuses</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectStatuses.html">ProjectStatuses</a></li><li><a href="ProjectTemplateProjectStatuses.html">ProjectTemplateProjectStatuses</a></li><li><a href="ProjectTemplates.html">ProjectTemplates</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="TaskBundles.html">TaskBundles</a></li><li><a href="TaskBundleTaskListTemplates.html">TaskBundleTaskListTemplates</a></li><li><a href="TaskBundleTaskListTemplatesTaskTemplates.html">TaskBundleTaskListTemplatesTaskTemplates</a></li><li><a href="TaskBundleTaskTemplates.html">TaskBundleTaskTemplates</a></li><li><a href="TaskTemplates.html">TaskTemplates</a></li><li><a href="TaskTemplateSubTaskTemplates.html">TaskTemplateSubTaskTemplates</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TemporaryFiles.html">TemporaryFiles</a></li><li><a href="TimeReports.html">TimeReports</a></li><li><a href="TypesOfWorks.html">TypesOfWorks</a></li><li><a href="UserContactInfos.html">UserContactInfos</a></li><li><a href="Users.html">Users</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Absence.html">Absence</a></li><li><a href="ClientApplication.html">ClientApplication</a></li><li><a href="Company.html">Company</a></li><li><a href="CompanyContactInfo.html">CompanyContactInfo</a></li><li><a href="EntityFile.html">EntityFile</a></li><li><a href="ExtendedUser.html">ExtendedUser</a></li><li><a href="FileVersion.html">FileVersion</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectMember.html">ProjectMember</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectStatus.html">ProjectStatus</a></li><li><a href="ProjectTemplate.html">ProjectTemplate</a></li><li><a href="ProjectType.html">ProjectType</a></li><li><a href="global.html#Recurrency">Recurrency</a></li><li><a href="SubTaskTemplate.html">SubTaskTemplate</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBundle.html">TaskBundle</a></li><li><a href="TaskListTemplate.html">TaskListTemplate</a></li><li><a href="TaskRecurrency.html">TaskRecurrency</a></li><li><a href="TaskTemplate.html">TaskTemplate</a></li><li><a href="Team.html">Team</a></li><li><a href="TimeReport.html">TimeReport</a></li><li><a href="TypeOfWork.html">TypeOfWork</a></li><li><a href="User.html">User</a></li><li><a href="UserContactInfo.html">UserContactInfo</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Awork.html">Awork</a></li><li><a href="Client.html">Client</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>model/SubTaskTemplate.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * SubTaskTemplate Model
+ * @category Models
+ * @class
+ */
+export class SubTaskTemplate {
+    /**
+     * @typedef {SubTaskTemplate &amp; {_plain?: true}} SubTaskTemplateLike
+     */
+
+    /**
+     * Model constructor
+     * @param {SubTaskTemplateLike} data 
+     */
+    constructor(data) {
+        /**@private */
+        this._data = data
+    }
+
+    /**
+     * Whether the check list Item is done.
+     * @type {Boolean}
+     */
+    get isDone () {
+        return this._data.isDone
+    }
+
+    /**
+     * The name of the check list Item.
+     * @type {String} nullable
+     */
+    get name () {
+        return this._data.name
+    }
+
+    /**
+     * The order of the check list item.
+     * @type {Number} nullable
+     */
+    get order () {
+        return this._data.order
+    }
+
+    /**
+     * The id of the check list.
+     * @type {String} uuid
+     */
+    get id () {
+        return this._data.id
+    }
+
+    /**
+     * The date this check list was created.
+     * @type {String} uuid
+     */
+    get createdOn () {
+        return this._data.createdOn
+    }
+
+    /**
+     * The id of the user who created this check list.
+     * @type {String} uuid
+     */
+    get createdBy () {
+        return this._data.createdBy
+    }
+
+    /**
+     * The date this check list was last modified.
+     * @type {String} date-name
+     */
+    get updatedOn () {
+        return this._data.updatedOn
+    }
+
+    /**
+     * The id of the user who last modified this check list.
+     * @type {String} uuid
+     */
+    get updatedBy () {
+        return this._data.updatedBy
+    }
+
+    /**
+     * The id of the task template this subtask template item belongs to.
+     * @type {String} uuid
+     */
+    get taskTemplateId () {
+        return this._taskTemplateId
+    }
+
+    toPlainObject() {
+        return {
+            isDone: this._data.isDone,
+            name: this._data.name,
+            order: this._data.order,
+            id: this._data.id,
+            createdOn: this._data.createdOn,
+            createdBy: this._data.createdBy,
+            updatedBy: this._data.updatedBy,
+            updatedOn: this._data.updatedOn,
+            taskTemplateId: this._data.taskTemplateId
+        }
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>

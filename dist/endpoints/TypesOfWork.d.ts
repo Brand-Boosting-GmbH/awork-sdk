@@ -32,7 +32,7 @@ export class TypesOfWorks {
      * @property {String} icon The icon ass with this type of work.
      */
     /**
-     * Creates a new type of work
+     * Creates a new type of work.
      * @param {TypeOfWorkCreateModel} typeOfWork The model to create the type of work.
      * @returns {Promise<TypeOfWork>}
      */

@@ -57,7 +57,7 @@ class TypesOfWorks {
    */
 
   /**
-   * Creates a new type of work
+   * Creates a new type of work.
    * @param {TypeOfWorkCreateModel} typeOfWork The model to create the type of work.
    * @returns {Promise<TypeOfWork>}
    */
