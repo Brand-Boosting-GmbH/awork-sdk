@@ -1,6 +1,7 @@
 import '../globalTypedef'
 import { TaskBundle } from '../model/TaskBundle'
-import { TaskListTemplates } from './TaskListTemplates'
+import { TaskBundleTaskListTemplates } from './TaskBundleTaskListTemplates'
+import { TaskBundleTaskTemplates } from './TaskBundleTaskTemplates'
 
 /**
  * Class corresponding to Aworks TaskBundles Endpoints
@@ -31,7 +32,7 @@ export class TaskBundles {
 
     /**
      * Returns all global task bundles.
-     * @param {ListOptions} [options]
+     * @param {ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<TaskBundle>>}
      */
     async list (options) {
@@ -101,7 +102,11 @@ export class TaskBundles {
     }
 
     taskListTemplates (taskBundleId) {
-        return new TaskListTemplates(this._client, taskBundleId)
+        return new TaskBundleTaskListTemplates(this._client, taskBundleId)
+    }
+
+    taskTemplates (taskBundleId) {
+        return new TaskBundleTaskTemplates(this._client, taskBundleId)
     }
 
 
