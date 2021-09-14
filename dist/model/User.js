@@ -48,7 +48,7 @@ class User {
 
 
   get birthDate() {
-    return this._data.birthdate;
+    return this._data.birthDate;
   }
   /**
    * The gender of the user.
@@ -213,53 +213,8 @@ class User {
     return this._data.hasImage;
   }
   /**
-   * @typedef {('work'|'mobile'|'home'|'work Fax'|'fax'|'other')} PhoneType
-   */
-
-  /**
-   * @typedef {('work'|'private'|'other')} EmailType
-   */
-
-  /**
-   * @typedef {('work'|'home'|'other')} AdressType
-   */
-
-  /**
-   * @typedef {('skype'|'whatsapp'|'other')} MessengerType
-   */
-
-  /**
-   * @typedef {('facebook'|'twitter'|'xing'|'linkedIn'|'instagram'|'pinterest'|'other')} SocialType
-   */
-
-  /**
-   * @typedef {('work'|'private'|'gitHub'|'other')} UrlType
-   */
-
-  /**
-   * @typedef {Object} userContactObject
-   * @property {String} label The label of the contact info. Only necessary if type 'custom' is used.
-   * @property {String} value The value of the contact info.
-   * @property {('phone'|'email'|'adress'|'messenger'|'social'|'urls')} type The type of the contact info.
-   * @property {(PhoneType|EmailType|AdressType|MessengerType|SocialType|UrlType)} subType The subtype of the contact info.
-   * @property {String} adressLine1 The first Address line of the address.
-   * @property {String} adressLine2 The second address line of the contact info.
-   * @property {String} zipCode The Zipcode of the contact info.
-   * @property {String} city The city of the contact info.
-   * @property {String} state The state of the contact info.
-   * @property {String} country The 2 letter iso code of the country.
-   * @property {Boolean} isAdress Flags whether this contactinfo is an address or not. If its an address, the address fields are required.
-   * @property {String} id The Id of the contact info.
-   * @property {Boolean} isDeleted Whether the user has been deleted.
-   * @property {String} createdOn The creation date.
-   * @property {String} createdBy The id of the user who created the entity.
-   * @property {String} updatedOn The date where the entity was updated.
-   * @property {String} updatedBy The id of the user who updated the entity.
-   */
-
-  /**
    * The contact information assigned to this user.
-   * @type {Array<userContactObject>}
+   * @type {Array<import('./UserContactInfo').UserContactInfo>}
    */
 
 
@@ -274,6 +229,57 @@ class User {
 
   get resourceVersion() {
     return this._data.resourceVersion;
+  }
+  /**
+   * @typedef {Object} UserTagsObject
+   * @property {String} id uuid
+   * @property {String} name nullable
+   * @property {String} color nullable
+   * @property {String} entityId uuid
+   * @property {String} createdOn date-time
+   * @property {String} createdBy uuid
+   * @property {String} updatedOn date-time
+   * @property {String} updatedBy uuid
+   */
+
+  /**
+   * The tags of this user.
+   * @type {Array<UserTagsObject>}
+   */
+
+
+  get tags() {
+    return this._data.tags;
+  }
+
+  toPlainObject() {
+    return {
+      id: this._data.id,
+      firstName: this._data.firstName,
+      lastName: this._data.lastName,
+      birthDate: this._data.birthDate,
+      gender: this._data.gender,
+      title: this._data.title,
+      position: this._data.position,
+      language: this._data.language,
+      capacityPerWeek: this._data.capacityPerWeek,
+      key: this._data.key,
+      status: {
+        invitationAccepted: this._data.invitationAccepted,
+        isDeactivated: this._data.isDeactivated
+      },
+      createdOn: this._data.createdOn,
+      createdBy: this._data.createdBy,
+      updatedOn: this._data.updatedOn,
+      updatedBy: this._data.updatedBy,
+      isArchived: this._data.isArchived,
+      isDeactivated: this._data.isDeactivated,
+      deactivatedOn: this._data.deactivatedOn,
+      hasImage: this._data.hasImage,
+      userContactInfos: this._data.userContactInfos,
+      resourceVersion: this._data.resourceVersion,
+      tags: this._data.tags
+    };
   }
 
 }

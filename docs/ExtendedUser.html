@@ -1,0 +1,2453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> ExtendedUser</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="Absences.html">Absences</a></li><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectProjectStatuses.html">ProjectProjectStatuses</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectStatuses.html">ProjectStatuses</a></li><li><a href="ProjectTemplateProjectStatuses.html">ProjectTemplateProjectStatuses</a></li><li><a href="ProjectTemplates.html">ProjectTemplates</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="TaskBundles.html">TaskBundles</a></li><li><a href="TaskListTemplates.html">TaskListTemplates</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TemporaryFiles.html">TemporaryFiles</a></li><li><a href="TimeReports.html">TimeReports</a></li><li><a href="TypesOfWorks.html">TypesOfWorks</a></li><li><a href="UserContactInfos.html">UserContactInfos</a></li><li><a href="Users.html">Users</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Absence.html">Absence</a></li><li><a href="ClientApplication.html">ClientApplication</a></li><li><a href="Company.html">Company</a></li><li><a href="CompanyContactInfo.html">CompanyContactInfo</a></li><li><a href="EntityFile.html">EntityFile</a></li><li><a href="ExtendedUser.html">ExtendedUser</a></li><li><a href="FileVersion.html">FileVersion</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectMember.html">ProjectMember</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectStatus.html">ProjectStatus</a></li><li><a href="ProjectTemplate.html">ProjectTemplate</a></li><li><a href="ProjectType.html">ProjectType</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBundle.html">TaskBundle</a></li><li><a href="TaskListTemplate.html">TaskListTemplate</a></li><li><a href="TaskRecurrency.html">TaskRecurrency</a></li><li><a href="Team.html">Team</a></li><li><a href="TimeReport.html">TimeReport</a></li><li><a href="TypeOfWork.html">TypeOfWork</a></li><li><a href="User.html">User</a></li><li><a href="UserContactInfo.html">UserContactInfo</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Awork.html">Awork</a></li><li><a href="Client.html">Client</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Class</p>
+                    <h1>ExtendedUser</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>ExtendedUser<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">User Model</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
+
+
+    
+    <h4 class="name" id="ExtendedUser">
+        <a class="href-link" href="#ExtendedUser">#</a>
+        
+        <span class="code-name">
+            
+                new ExtendedUser<span class="signature">(data)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Model constructor
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>data</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">ExtendedUserLike</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_ExtendedUser.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_ExtendedUser.js.html">model/ExtendedUser.js</a>, <a href="model_ExtendedUser.js.html#line10">line 10</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="User.html">User</a></li>
+    </ul>
+
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="ExtendedUser.html">ExtendedUser</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="accountId">
+    <a class="href-link" href="#accountId">#</a>
+    
+    <span class="code-name">
+        accountId
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The account id of the user. Only used internally.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_ExtendedUser.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_ExtendedUser.js.html">model/ExtendedUser.js</a>, <a href="model_ExtendedUser.js.html#line28">line 28</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="birthDate">
+    <a class="href-link" href="#birthDate">#</a>
+    
+    <span class="code-name">
+        birthDate
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The birthdate of the user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#birthDate">User#birthDate</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line41">line 41</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="capacityPerWeek">
+    <a class="href-link" href="#capacityPerWeek">#</a>
+    
+    <span class="code-name">
+        capacityPerWeek
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The capacity of the user per week in seconds.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#capacityPerWeek">User#capacityPerWeek</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line81">line 81</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="createdBy">
+    <a class="href-link" href="#createdBy">#</a>
+    
+    <span class="code-name">
+        createdBy
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the user who created this user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#createdBy">User#createdBy</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line137">line 137</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="createdOn">
+    <a class="href-link" href="#createdOn">#</a>
+    
+    <span class="code-name">
+        createdOn
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The date this user was created.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#createdOn">User#createdOn</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line129">line 129</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="deactivatedOn">
+    <a class="href-link" href="#deactivatedOn">#</a>
+    
+    <span class="code-name">
+        deactivatedOn
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The date the user was deactivated.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#deactivatedOn">User#deactivatedOn</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line177">line 177</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="firstName">
+    <a class="href-link" href="#firstName">#</a>
+    
+    <span class="code-name">
+        firstName
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The firstname of the user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#firstName">User#firstName</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line25">line 25</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="gender">
+    <a class="href-link" href="#gender">#</a>
+    
+    <span class="code-name">
+        gender
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The gender of the user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#gender">User#gender</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line49">line 49</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="hasImage">
+    <a class="href-link" href="#hasImage">#</a>
+    
+    <span class="code-name">
+        hasImage
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    Whether the user has uploaded a profile image.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#hasImage">User#hasImage</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line185">line 185</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="id">
+    <a class="href-link" href="#id">#</a>
+    
+    <span class="code-name">
+        id
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#id">User#id</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line89">line 89</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="isArchived">
+    <a class="href-link" href="#isArchived">#</a>
+    
+    <span class="code-name">
+        isArchived
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    Whether this user is archived. Archived users are automatically inactive and only exist for reference purposes.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#isArchived">User#isArchived</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line161">line 161</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="isDeactivated">
+    <a class="href-link" href="#isDeactivated">#</a>
+    
+    <span class="code-name">
+        isDeactivated
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    Whether the user has been deactivated.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#isDeactivated">User#isDeactivated</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line169">line 169</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="key">
+    <a class="href-link" href="#key">#</a>
+    
+    <span class="code-name">
+        key
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    Unique identifier of the user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#key">User#key</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line97">line 97</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="language">
+    <a class="href-link" href="#language">#</a>
+    
+    <span class="code-name">
+        language
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The language preference of the user in ISO 639-1 format.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#language">User#language</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line73">line 73</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="lastName">
+    <a class="href-link" href="#lastName">#</a>
+    
+    <span class="code-name">
+        lastName
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The lastname of the user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#lastName">User#lastName</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line33">line 33</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="position">
+    <a class="href-link" href="#position">#</a>
+    
+    <span class="code-name">
+        position
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The position of the user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#position">User#position</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line65">line 65</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="resourceVersion">
+    <a class="href-link" href="#resourceVersion">#</a>
+    
+    <span class="code-name">
+        resourceVersion
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The version of the entity continuously incremented by 1 on every update of the entity.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#resourceVersion">User#resourceVersion</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line201">line 201</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Object</span>
+
+
+    </span>
+
+<h4 class="name" id="status">
+    <a class="href-link" href="#status">#</a>
+    
+    <span class="code-name">
+        status
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The status of the user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#status">User#status</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line105">line 105</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="statusInvitationAccepted">
+    <a class="href-link" href="#statusInvitationAccepted">#</a>
+    
+    <span class="code-name">
+        statusInvitationAccepted
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    Flag if the user in this workspace accepted the invitation.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#statusInvitationAccepted">User#statusInvitationAccepted</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line113">line 113</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="statusIsDeactivated">
+    <a class="href-link" href="#statusIsDeactivated">#</a>
+    
+    <span class="code-name">
+        statusIsDeactivated
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    Whether the user is deactivated.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#statusIsDeactivated">User#statusIsDeactivated</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line121">line 121</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Array.&lt;<a href="global.html#UserTagsObject">UserTagsObject</a>></span>
+
+
+    </span>
+
+<h4 class="name" id="tags">
+    <a class="href-link" href="#tags">#</a>
+    
+    <span class="code-name">
+        tags
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The tags of this user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#tags">User#tags</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line221">line 221</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Array.&lt;<a href="global.html#TeamsObject">TeamsObject</a>></span>
+
+
+    </span>
+
+<h4 class="name" id="teams">
+    <a class="href-link" href="#teams">#</a>
+    
+    <span class="code-name">
+        teams
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The teams the user is associated to.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_ExtendedUser.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_ExtendedUser.js.html">model/ExtendedUser.js</a>, <a href="model_ExtendedUser.js.html#line44">line 44</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="title">
+    <a class="href-link" href="#title">#</a>
+    
+    <span class="code-name">
+        title
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The title of the user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#title">User#title</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line57">line 57</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="updatedBy">
+    <a class="href-link" href="#updatedBy">#</a>
+    
+    <span class="code-name">
+        updatedBy
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the user who updated the entity.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#updatedBy">User#updatedBy</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line153">line 153</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="updatedOn">
+    <a class="href-link" href="#updatedOn">#</a>
+    
+    <span class="code-name">
+        updatedOn
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The date where this user was last updated.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#updatedOn">User#updatedOn</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line145">line 145</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Array.&lt;<a href="UserContactInfo.html">UserContactInfo</a>></span>
+
+
+    </span>
+
+<h4 class="name" id="userContactInfos">
+    <a class="href-link" href="#userContactInfos">#</a>
+    
+    <span class="code-name">
+        userContactInfos
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The contact information assigned to this user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="User.html#userContactInfos">User#userContactInfos</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_User.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line193">line 193</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>
