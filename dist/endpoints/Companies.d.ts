@@ -1,12 +1,50 @@
+/**
+ * Class corresponding to Aworks Companies Endpoints
+ * @category Endpoints
+ * @see [Companies in Awork API Docs](https://openapi.awork.io/#/Companies)
+ */
 export class Companies {
-    constructor(client: any);
-    _client: any;
-    get(companyId: any): Promise<Company>;
     /**
-     *
+    * Endpoint constructor
+    * @param {import('../client/index').Client} client
+    */
+    constructor(client: import('../client/index').Client);
+    /**
+    * @private
+    */
+    private _client;
+    /**
+     * Returns the company with the specified id.
+     * @param {String} companyId The id of the company.
+     * @returns {Promise<Company>}
+     */
+    get(companyId: string): Promise<Company>;
+    /**
+     * Returns all companies.
+     * @param {ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<Company>>}
      */
-    list(): Promise<Array<Company>>;
+    list(options?: ListOptions): Promise<Array<Company>>;
+    /**
+     * @typedef {('central'|'other')} PhoneSubType
+     */
+    /**
+     * @typedef {('central'|'invoice'|'other')} EmailSubType
+     */
+    /**
+     * @typedef {('central'|'invoice'|'other')} AddressSubType
+     */
+    /**
+     * @typedef {('primary'|'other')} UrlSubType
+     */
+    /**
+     * @typedef {Object} CompanyCreateModel
+     * @property {String} [label] The label of the contact info.
+     * @property {String} [value] The value of the contact info.
+     * @property {('phone'|'email'|'adress'|'custom')} type The type of the contact info.
+     * @property {(PhoneSubType|EmailSubType|AddressSubType|UrlSubType)} The subtype of the contact info.
+     * @property
+     */
     /**
      *
      * @param {Company} company

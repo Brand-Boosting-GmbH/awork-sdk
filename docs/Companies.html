@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Teams</title>
+  <title> Companies</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Class</p>
-                    <h1>Teams</h1>
+                    <h1>Companies</h1>
                 </header>
                 
 
@@ -85,9 +85,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Teams<span class="signature">(client)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Companies<span class="signature">(client)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class corresponding to Aworks Teams Endpoints</div>
+            <div class="class-description">Class corresponding to Aworks Companies Endpoints</div>
         
     
 </header>
@@ -106,12 +106,12 @@
 
 
     
-    <h4 class="name" id="Teams">
-        <a class="href-link" href="#Teams">#</a>
+    <h4 class="name" id="Companies">
+        <a class="href-link" href="#Companies">#</a>
         
         <span class="code-name">
             
-                new Teams<span class="signature">(client)</span><span class="type-signature"></span>
+                new Companies<span class="signature">(client)</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -218,7 +218,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>[Teams in Awork API Docs](https://openapi.awork.io/#/Teams)</li>
+            <li>[Companies in Awork API Docs](https://openapi.awork.io/#/Companies)</li>
         </ul>
     </dd>
     
@@ -227,9 +227,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_Teams.js.html" class="button">View Source</a>
+            <a href="endpoints_Companies.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line9">line 9</a>
+                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -271,7 +271,7 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            <dt><a href="Teams.html">Teams</a></dt>
+            <dt><a href="Companies.html">Companies</a></dt>
             <dd></dd>
         </dl>
     
@@ -293,26 +293,18 @@
 
 
     
-    <h4 class="name" id="addProjects">
-        <a class="href-link" href="#addProjects">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
+    <h4 class="name" id="contactInfo">
+        <a class="href-link" href="#contactInfo">#</a>
         
         <span class="code-name">
             
-                addProjects<span class="signature">(teamId, projectIds)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="global.html#ProjectTeamPair">ProjectTeamPair</a>>>}</span>
+                contactInfo<span class="signature">(companyId)</span><span class="type-signature"> &rarr; {<a href="CompaniesContactInfos.html">CompaniesContactInfos</a>}</span>
             
         </span>
     </h4>
     
 
     
-    
-    <div class="description">
-        Add projects to a team. Returns the created project in team entities. Throws BadRequestException if project ids are null or empty. Throws IllegalOperationException if projects fetched from ids failed or returned no projects. Thrwos IllegalOperationException if projects are already connected to the team. Only creates the project in team entities for projects the user has 'write' permissions of feature 'project-master-data' for or is the owner.
-    </div>
     
 
 
@@ -349,7 +341,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>teamId</code></td>
+      <td class="name"><code>companyId</code></td>
   
 
   <td class="type">
@@ -365,32 +357,7 @@
 
   
 
-  <td class="description last">The team id.</td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>projectIds</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Array.&lt;String></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">The project Ids to add.</td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -436,9 +403,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_Teams.js.html" class="button">View Source</a>
+            <a href="endpoints_Companies.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line133">line 133</a>
+                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line109">line 109</a>
             </span>
         </p>
     
@@ -473,207 +440,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;Array.&lt;<a href="global.html#ProjectTeamPair">ProjectTeamPair</a>>></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="addUsers">
-        <a class="href-link" href="#addUsers">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                addUsers<span class="signature">(teamId, userIds)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="global.html#UserTeamPair">UserTeamPair</a>>>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Add users to a team. Returns the created user in team entities. Throws BadRequestException if user ids are null or empty. Throws IllegalOperationException if users fetched from ids failed, returned no users or misses a user from the userIds.
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>teamId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">The team id.</td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>userIds</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Array.&lt;String></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">the ids of the users to add.</td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_Teams.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line106">line 106</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;Array.&lt;<a href="global.html#UserTeamPair">UserTeamPair</a>>></span>
+<span class="param-type"><a href="CompaniesContactInfos.html">CompaniesContactInfos</a></span>
 
 
     </div>
@@ -702,17 +469,13 @@
         
         <span class="code-name">
             
-                create<span class="signature">(team)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Team.html">Team</a>>}</span>
+                create<span class="signature">(company)</span><span class="type-signature"></span>
             
         </span>
     </h4>
     
 
     
-    
-    <div class="description">
-        Creates a new team. No validations are done for color and icon property, can be any string. Throws IllegalOperationException if team with the same name already exists.
-    </div>
     
 
 
@@ -749,13 +512,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>team</code></td>
+      <td class="name"><code>company</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#TeamCreateModel">TeamCreateModel</a></span>
+<span class="param-type"><a href="Company.html">Company</a></span>
 
 
   
@@ -765,7 +528,7 @@
 
   
 
-  <td class="description last">The model to create a team.</td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -811,9 +574,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_Teams.js.html" class="button">View Source</a>
+            <a href="endpoints_Companies.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line63">line 63</a>
+                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line72">line 72</a>
             </span>
         </p>
     
@@ -835,29 +598,6 @@
 
 
 
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;<a href="Team.html">Team</a>></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
 
 
 
@@ -877,17 +617,13 @@
         
         <span class="code-name">
             
-                delete<span class="signature">(teamId)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
+                delete<span class="signature">(companyId, options)</span><span class="type-signature"></span>
             
         </span>
     </h4>
     
 
     
-    
-    <div class="description">
-        Deletes the team with the specified id. Deletes all related UserInTeamEntities and ProjectInTeamEntities as well.
-    </div>
     
 
 
@@ -924,7 +660,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>teamId</code></td>
+      <td class="name"><code>companyId</code></td>
   
 
   <td class="type">
@@ -940,7 +676,32 @@
 
   
 
-  <td class="description last">The id of the team.</td>
+  <td class="description last"></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>options</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="global.html#DeleteCompanyOptions">DeleteCompanyOptions</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
 </tr>
 
 
@@ -986,9 +747,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_Teams.js.html" class="button">View Source</a>
+            <a href="endpoints_Companies.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line90">line 90</a>
+                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line100">line 100</a>
             </span>
         </p>
     
@@ -1019,14 +780,6 @@
 
 <div class="columns">
     
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;void></span>
-
-
-    </div>
     
 </div>
 
@@ -1052,7 +805,7 @@
         
         <span class="code-name">
             
-                get<span class="signature">(teamId, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Team.html">Team</a>>}</span>
+                get<span class="signature">(companyId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Company.html">Company</a>>}</span>
             
         </span>
     </h4>
@@ -1061,7 +814,7 @@
     
     
     <div class="description">
-        Returns the team with the specified id. Returns NotFound if the team doesn't exist.
+        Returns the company with the specified id.
     </div>
     
 
@@ -1086,8 +839,6 @@
             <th>Type</th>
 
             
-            <th>Attributes</th>
-            
 
             
 
@@ -1101,7 +852,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>teamId</code></td>
+      <td class="name"><code>companyId</code></td>
   
 
   <td class="type">
@@ -1114,53 +865,10 @@
   </td>
 
   
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
 
   
 
-  <td class="description last">The id of the team.</td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>options</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="global.html#TeamOptions">TeamOptions</a></span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-          &lt;optional><br>
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last">Options on how to display the team.</td>
+  <td class="description last">The id of the company.</td>
 </tr>
 
 
@@ -1206,9 +914,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_Teams.js.html" class="button">View Source</a>
+            <a href="endpoints_Companies.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line34">line 34</a>
+                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line26">line 26</a>
             </span>
         </p>
     
@@ -1243,7 +951,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="Team.html">Team</a>></span>
+<span class="param-type">Promise.&lt;<a href="Company.html">Company</a>></span>
 
 
     </div>
@@ -1272,7 +980,7 @@
         
         <span class="code-name">
             
-                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="Team.html">Team</a>>>}</span>
+                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="Company.html">Company</a>>>}</span>
             
         </span>
     </h4>
@@ -1281,7 +989,7 @@
     
     
     <div class="description">
-        Returns all teams for an admin. For everyone else just returns teams they are in. If the include query params aren't set or false, the specified collection property is null in the response. If the include param is true, but there are no entities in the collection, an empty collection is returned.
+        Returns all companies.
     </div>
     
 
@@ -1393,9 +1101,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_Teams.js.html" class="button">View Source</a>
+            <a href="endpoints_Companies.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line45">line 45</a>
+                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line37">line 37</a>
             </span>
         </p>
     
@@ -1430,407 +1138,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;Array.&lt;<a href="Team.html">Team</a>>></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="removeProjects">
-        <a class="href-link" href="#removeProjects">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                removeProjects<span class="signature">(teamId, projectIds)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Removes projects from a team. Throws BadRequestException if project ids are null or empty. Throws BadRequestException if no project in teams could be found for supplied project ids. Validates the project ids by checking if entries exists for that project in the database.
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>teamId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">The team id.</td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>projectIds</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Array.&lt;String></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">The project Ids to remove.</td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_Teams.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line144">line 144</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;void></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="removeUsers">
-        <a class="href-link" href="#removeUsers">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                removeUsers<span class="signature">(teamId, userIds)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Removes users from a team.
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>teamId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">The team id.</td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>userIds</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Array.&lt;String></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">the ids of the users to remove.</td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_Teams.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line117">line 117</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;void></span>
+<span class="param-type">Promise.&lt;Array.&lt;<a href="Company.html">Company</a>>></span>
 
 
     </div>
@@ -1859,17 +1167,13 @@
         
         <span class="code-name">
             
-                update<span class="signature">(teamId, team)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Team.html">Team</a>>}</span>
+                update<span class="signature">(company)</span><span class="type-signature"></span>
             
         </span>
     </h4>
     
 
     
-    
-    <div class="description">
-        Updates the team with the specified id. Only updates properties which are not null or whitespace.
-    </div>
     
 
 
@@ -1906,13 +1210,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>teamId</code></td>
+      <td class="name"><code>company</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">String</span>
+<span class="param-type"><a href="Company.html">Company</a></span>
 
 
   
@@ -1922,32 +1226,7 @@
 
   
 
-  <td class="description last">The id of the team.</td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>team</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="global.html#TeamUpdateModel">TeamUpdateModel</a></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">The model to update the team.</td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -1993,9 +1272,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_Teams.js.html" class="button">View Source</a>
+            <a href="endpoints_Companies.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Teams.js.html">endpoints/Teams.js</a>, <a href="endpoints_Teams.js.html#line79">line 79</a>
+                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line82">line 82</a>
             </span>
         </p>
     
@@ -2017,29 +1296,6 @@
 
 
 
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;<a href="Team.html">Team</a>></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
 
 
 

@@ -9,10 +9,28 @@ var _Company = require("../model/Company");
 
 var _CompaniesContactInfos = require("./CompaniesContactInfos");
 
+/**
+ * Class corresponding to Aworks Companies Endpoints
+ * @category Endpoints
+ * @see [Companies in Awork API Docs](https://openapi.awork.io/#/Companies)
+ */
 class Companies {
+  /**
+  * Endpoint constructor
+  * @param {import('../client/index').Client} client 
+  */
   constructor(client) {
+    /**
+    * @private
+    */
     this._client = client;
   }
+  /**
+   * Returns the company with the specified id.
+   * @param {String} companyId The id of the company.
+   * @returns {Promise<Company>}
+   */
+
 
   async get(companyId) {
     const response = await this._client.get(`/companies/${companyId}`);
@@ -20,16 +38,42 @@ class Companies {
     return new _Company.Company(data);
   }
   /**
-   * 
+   * Returns all companies.
+   * @param {ListOptions} [options] Pagination and filtering options 
    * @returns {Promise<Array<Company>>}
    */
 
 
-  async list() {
-    const response = await this._client.get(`/companies`);
+  async list(options) {
+    const response = await this._client.get(`/companies`, options);
     const data = response.data();
     return data.map(d => new _Company.Company(d));
   }
+  /**
+   * @typedef {('central'|'other')} PhoneSubType
+   */
+
+  /**
+   * @typedef {('central'|'invoice'|'other')} EmailSubType
+   */
+
+  /**
+   * @typedef {('central'|'invoice'|'other')} AddressSubType
+   */
+
+  /**
+   * @typedef {('primary'|'other')} UrlSubType
+   */
+
+  /**
+   * @typedef {Object} CompanyCreateModel
+   * @property {String} [label] The label of the contact info. 
+   * @property {String} [value] The value of the contact info.
+   * @property {('phone'|'email'|'adress'|'custom')} type The type of the contact info.
+   * @property {(PhoneSubType|EmailSubType|AddressSubType|UrlSubType)} The subtype of the contact info.
+   * @property
+   */
+
   /**
    * 
    * @param {Company} company 
