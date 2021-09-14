@@ -5,7 +5,7 @@
  */
 export class TimeReports {
     /**
-     * ENdpoint constructor
+     * Endpoint constructor
      * @param {import('../client/index').Client} client
      */
     constructor(client: import('../client/index').Client);

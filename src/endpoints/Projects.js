@@ -115,7 +115,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {ProjectMembers}
      */
-    members(projectId) {
+    members (projectId) {
         return new ProjectMembers(this._client, projectId)
     }
 

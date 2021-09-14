@@ -122,120 +122,89 @@ export class User {
      */
     get hasImage(): boolean;
     /**
-     * @typedef {('work'|'mobile'|'home'|'work Fax'|'fax'|'other')} PhoneType
-     */
-    /**
-     * @typedef {('work'|'private'|'other')} EmailType
-     */
-    /**
-     * @typedef {('work'|'home'|'other')} AdressType
-     */
-    /**
-     * @typedef {('skype'|'whatsapp'|'other')} MessengerType
-     */
-    /**
-     * @typedef {('facebook'|'twitter'|'xing'|'linkedIn'|'instagram'|'pinterest'|'other')} SocialType
-     */
-    /**
-     * @typedef {('work'|'private'|'gitHub'|'other')} UrlType
-     */
-    /**
-     * @typedef {Object} userContactObject
-     * @property {String} label The label of the contact info. Only necessary if type 'custom' is used.
-     * @property {String} value The value of the contact info.
-     * @property {('phone'|'email'|'adress'|'messenger'|'social'|'urls')} type The type of the contact info.
-     * @property {(PhoneType|EmailType|AdressType|MessengerType|SocialType|UrlType)} subType The subtype of the contact info.
-     * @property {String} adressLine1 The first Address line of the address.
-     * @property {String} adressLine2 The second address line of the contact info.
-     * @property {String} zipCode The Zipcode of the contact info.
-     * @property {String} city The city of the contact info.
-     * @property {String} state The state of the contact info.
-     * @property {String} country The 2 letter iso code of the country.
-     * @property {Boolean} isAdress Flags whether this contactinfo is an address or not. If its an address, the address fields are required.
-     * @property {String} id The Id of the contact info.
-     * @property {Boolean} isDeleted Whether the user has been deleted.
-     * @property {String} createdOn The creation date.
-     * @property {String} createdBy The id of the user who created the entity.
-     * @property {String} updatedOn The date where the entity was updated.
-     * @property {String} updatedBy The id of the user who updated the entity.
-     */
-    /**
      * The contact information assigned to this user.
-     * @type {Array<userContactObject>}
+     * @type {Array<import('./UserContactInfo').UserContactInfo>}
      */
-    get userContactInfos(): {
-        /**
-         * The label of the contact info. Only necessary if type 'custom' is used.
-         */
-        label: string;
-        /**
-         * The value of the contact info.
-         */
-        value: string;
-        /**
-         * The type of the contact info.
-         */
-        type: ('phone' | 'email' | 'adress' | 'messenger' | 'social' | 'urls');
-        /**
-         * The subtype of the contact info.
-         */
-        subType: "private" | "other" | "work" | "mobile" | "home" | "work Fax" | "fax" | "skype" | "whatsapp" | "facebook" | "twitter" | "xing" | "linkedIn" | "instagram" | "pinterest" | "gitHub";
-        /**
-         * The first Address line of the address.
-         */
-        adressLine1: string;
-        /**
-         * The second address line of the contact info.
-         */
-        adressLine2: string;
-        /**
-         * The Zipcode of the contact info.
-         */
-        zipCode: string;
-        /**
-         * The city of the contact info.
-         */
-        city: string;
-        /**
-         * The state of the contact info.
-         */
-        state: string;
-        /**
-         * The 2 letter iso code of the country.
-         */
-        country: string;
-        /**
-         * Flags whether this contactinfo is an address or not. If its an address, the address fields are required.
-         */
-        isAdress: boolean;
-        /**
-         * The Id of the contact info.
-         */
-        id: string;
-        /**
-         * Whether the user has been deleted.
-         */
-        isDeleted: boolean;
-        /**
-         * The creation date.
-         */
-        createdOn: string;
-        /**
-         * The id of the user who created the entity.
-         */
-        createdBy: string;
-        /**
-         * The date where the entity was updated.
-         */
-        updatedOn: string;
-        /**
-         * The id of the user who updated the entity.
-         */
-        updatedBy: string;
-    }[];
+    get userContactInfos(): import("./UserContactInfo").UserContactInfo[];
     /**
      * The version of the entity continuously incremented by 1 on every update of the entity.
      * @type {Integer} int64
      */
     get resourceVersion(): any;
+    /**
+     * @typedef {Object} UserTagsObject
+     * @property {String} id uuid
+     * @property {String} name nullable
+     * @property {String} color nullable
+     * @property {String} entityId uuid
+     * @property {String} createdOn date-time
+     * @property {String} createdBy uuid
+     * @property {String} updatedOn date-time
+     * @property {String} updatedBy uuid
+     */
+    /**
+     * The tags of this user.
+     * @type {Array<UserTagsObject>}
+     */
+    get tags(): {
+        /**
+         * uuid
+         */
+        id: string;
+        /**
+         * nullable
+         */
+        name: string;
+        /**
+         * nullable
+         */
+        color: string;
+        /**
+         * uuid
+         */
+        entityId: string;
+        /**
+         * date-time
+         */
+        createdOn: string;
+        /**
+         * uuid
+         */
+        createdBy: string;
+        /**
+         * date-time
+         */
+        updatedOn: string;
+        /**
+         * uuid
+         */
+        updatedBy: string;
+    }[];
+    toPlainObject(): {
+        id: any;
+        firstName: any;
+        lastName: any;
+        birthDate: any;
+        gender: any;
+        title: any;
+        position: any;
+        language: any;
+        capacityPerWeek: any;
+        key: any;
+        status: {
+            invitationAccepted: any;
+            isDeactivated: any;
+        };
+        createdOn: any;
+        createdBy: any;
+        updatedOn: any;
+        updatedBy: any;
+        isArchived: any;
+        isDeactivated: any;
+        deactivatedOn: any;
+        hasImage: any;
+        userContactInfos: any;
+        resourceVersion: any;
+        tags: any;
+    };
 }

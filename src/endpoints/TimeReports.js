@@ -9,7 +9,7 @@ import { TimeReport } from "../model/TimeReport"
 export class TimeReports {
 
     /**
-     * ENdpoint constructor
+     * Endpoint constructor
      * @param {import('../client/index').Client} client 
      */
     constructor(client) {

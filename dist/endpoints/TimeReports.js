@@ -16,7 +16,7 @@ var _TimeReport = require("../model/TimeReport");
  */
 class TimeReports {
   /**
-   * ENdpoint constructor
+   * Endpoint constructor
    * @param {import('../client/index').Client} client 
    */
   constructor(client) {
