@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> endpoints/TemporaryFiles.js</title>
+  <title> index.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>endpoints/TemporaryFiles.js</h1>
+                    <h1>index.js</h1>
                 </header>
                 
 
@@ -85,122 +85,46 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
-import { EntityFile } from "../model/EntityFile"
-import { fromBuffer } from 'file-type'
-import FormData from "form-data"
+            <pre class="prettyprint source linenums"><code>import { Client } from "./client"
+import { Companies } from "./endpoints/Companies"
+import { Projects } from "./endpoints/Projects"
+import { Teams } from "./endpoints/Teams"
 
 /**
- * Class corresponding to Aworks TemporaryFiles Endpoints
- * @category Endpoints
- * @see [TemporaryFiles in Awork API Docs](https://openapi.awork.io/#/TemporaryFiles)
+ * Awork Class
+ * @category Util
  */
-export class TemporaryFiles {
+export class Awork {
+
     /**
-    * Endpoint constructor
-    * @param {import('../client/index').Client} client 
-    */
-    constructor(client) {
-        /**
-        * @private
-        */
-        this._client = client
+     * 
+     * @param {({apiKey: String})} init 
+     */
+    constructor({ apiKey }){
+        this.client = new Client(apiKey)
     }
 
     /**
-     * Returns the meta information of the temporary file of the current user.
-     * @param {String} fileId The id of the file.
-     * @returns {Promise&lt;EntityFile>}
+     * @returns {Companies}
      */
-    async get(fileId) {
-        const response = await this._client.get(`/temporaryfiles/${fileId}`)
-        const data = response.data()
-        return new EntityFile(data)
+    get companies() {
+        return new Companies(this.client)
     }
 
     /**
-     * Returns the meta information of all temporary files of the current user.
-     * @param {ListOptions} [options] Pagination and filtering options
-     * @returns {Promise&lt;Array&lt;EntityFile>>}
+     * @returns {Projects}
      */
-    async list(options) {
-        const response = await this._client.get(`/temporaryfiles`, options)
-        const data = response.data()
-        return data.map(d => new EntityFile(d))
+    get projects() {
+        return new Projects(this.client)
     }
 
     /**
-     * @typedef {Object} FileMetaData
-     * @property {String} [name] The user-specified name of the temporary file.
-     * @property {String} [filename] The name of the temporary file.
+     * @returns {Teams}
      */
-
-    /**
-     * Uploads a new temporary file. Use this to upload a file as a form value along with the basic file meta data. The file size must not exceed 1GB.
-     * @param {File|Buffer} file 
-     * @param {FileMetaData} metadata 
-     * @returns {Promise&lt;EntityFile>}
-     */
-
-    async create(file, metadata) {
-        let filename = metadata.filename || file.name
-        if(file instanceof Buffer) {
-            const { ext } = await fromBuffer(file)
-            filename = filename || `upload.${ext}`
-        }   
-        let formData = new FormData()
-        formData.append('file', file, filename || 'upload')
-        formData.append('name', metadata.name || filename || 'upload')
-        formData.append('filename', filename || 'upload')
-        const response = await this._client.post('/temporaryfiles', formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders()})
-        const data = response.data()
-        return new EntityFile(data)
-    }
-    
-    /**
-     * @typedef {Object} TemporaryFilesUpdateModel
-     * @property {String} [name] The user-specified name of the file.
-     * @property {String} [description] The description of the file.
-     *
-     */
-
-    /**
-     * Updates the meta information of the temporary file with the specified id.
-     * @param {String} fileId The id of the file.
-     * @param {TemporaryFilesUpdateModel} temporaryFile The model to update the temporary file.
-     * @returns {Promise&lt;EntityFile>}
-     */
-    async update(fileId, temporaryFile) {
-        const response = await this._client.put(`/temporaryfiles/${fileId}`, temporaryFile)
-        const data = response.data()
-        return new EntityFile(data)
+    get teams() {
+        return new Teams(this.client)
     }
 
-    /**
-     * Returns the content of the temporary file.
-     * @param {String} fileId The id of the file.
-     * @returns {Promise&lt;String>}
-     */
-    async download(fileId) {
-        const response = await this._client.get(`/temporaryfiles/${fileId}/download`, nameDescriptionPair)
-        return response.data()
-    }
-
-    /**
-     * @typedef {Object} LinkedEntity The model to change the entity information of the file.
-     * @property {String} entityId The id of the entity the file should be linked to.
-     * @property {String} entityType The type of the linked entity.
-     */
-
-    /**
-     * Sets the temporary file to a global or entity file. Links the temporary file to the specified entity or switches to a global file if the 'EntityId' of the model is set to null. The file is no longer a temporary file afterwards and becomes visible.
-     * @param {String} fileId The id of the file.
-     * @param {LinkedEntity} entityObject
-     * @returns {Promise&lt;void>}
-     */
-    async setEntity(fileId, entityObject) {
-        await this._client.post(`/temporaryfiles/${fileId}/setenity`, entityObject)
-    }
 }</code></pre>
         </article>
     </section>

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> endpoints/TemporaryFiles.js</title>
+  <title> Awork</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -75,135 +73,416 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Source</p>
-                    <h1>endpoints/TemporaryFiles.js</h1>
+                    <p>Class</p>
+                    <h1>Awork</h1>
                 </header>
                 
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
-import { EntityFile } from "../model/EntityFile"
-import { fromBuffer } from 'file-type'
-import FormData from "form-data"
-
-/**
- * Class corresponding to Aworks TemporaryFiles Endpoints
- * @category Endpoints
- * @see [TemporaryFiles in Awork API Docs](https://openapi.awork.io/#/TemporaryFiles)
- */
-export class TemporaryFiles {
-    /**
-    * Endpoint constructor
-    * @param {import('../client/index').Client} client 
-    */
-    constructor(client) {
-        /**
-        * @private
-        */
-        this._client = client
-    }
-
-    /**
-     * Returns the meta information of the temporary file of the current user.
-     * @param {String} fileId The id of the file.
-     * @returns {Promise&lt;EntityFile>}
-     */
-    async get(fileId) {
-        const response = await this._client.get(`/temporaryfiles/${fileId}`)
-        const data = response.data()
-        return new EntityFile(data)
-    }
-
-    /**
-     * Returns the meta information of all temporary files of the current user.
-     * @param {ListOptions} [options] Pagination and filtering options
-     * @returns {Promise&lt;Array&lt;EntityFile>>}
-     */
-    async list(options) {
-        const response = await this._client.get(`/temporaryfiles`, options)
-        const data = response.data()
-        return data.map(d => new EntityFile(d))
-    }
-
-    /**
-     * @typedef {Object} FileMetaData
-     * @property {String} [name] The user-specified name of the temporary file.
-     * @property {String} [filename] The name of the temporary file.
-     */
-
-    /**
-     * Uploads a new temporary file. Use this to upload a file as a form value along with the basic file meta data. The file size must not exceed 1GB.
-     * @param {File|Buffer} file 
-     * @param {FileMetaData} metadata 
-     * @returns {Promise&lt;EntityFile>}
-     */
-
-    async create(file, metadata) {
-        let filename = metadata.filename || file.name
-        if(file instanceof Buffer) {
-            const { ext } = await fromBuffer(file)
-            filename = filename || `upload.${ext}`
-        }   
-        let formData = new FormData()
-        formData.append('file', file, filename || 'upload')
-        formData.append('name', metadata.name || filename || 'upload')
-        formData.append('filename', filename || 'upload')
-        const response = await this._client.post('/temporaryfiles', formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders()})
-        const data = response.data()
-        return new EntityFile(data)
-    }
+        <h2><span class="attribs"><span class="type-signature"></span></span>Awork<span class="signature">(init)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">Awork Class</div>
+        
     
-    /**
-     * @typedef {Object} TemporaryFilesUpdateModel
-     * @property {String} [name] The user-specified name of the file.
-     * @property {String} [description] The description of the file.
-     *
-     */
+</header>
 
-    /**
-     * Updates the meta information of the temporary file with the specified id.
-     * @param {String} fileId The id of the file.
-     * @param {TemporaryFilesUpdateModel} temporaryFile The model to update the temporary file.
-     * @returns {Promise&lt;EntityFile>}
-     */
-    async update(fileId, temporaryFile) {
-        const response = await this._client.put(`/temporaryfiles/${fileId}`, temporaryFile)
-        const data = response.data()
-        return new EntityFile(data)
-    }
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
 
-    /**
-     * Returns the content of the temporary file.
-     * @param {String} fileId The id of the file.
-     * @returns {Promise&lt;String>}
-     */
-    async download(fileId) {
-        const response = await this._client.get(`/temporaryfiles/${fileId}/download`, nameDescriptionPair)
-        return response.data()
-    }
 
-    /**
-     * @typedef {Object} LinkedEntity The model to change the entity information of the file.
-     * @property {String} entityId The id of the entity the file should be linked to.
-     * @property {String} entityType The type of the linked entity.
-     */
+    
+    <h4 class="name" id="Awork">
+        <a class="href-link" href="#Awork">#</a>
+        
+        <span class="code-name">
+            
+                new Awork<span class="signature">(init)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
 
-    /**
-     * Sets the temporary file to a global or entity file. Links the temporary file to the specified entity or switches to a global file if the 'EntityId' of the model is set to null. The file is no longer a temporary file afterwards and becomes visible.
-     * @param {String} fileId The id of the file.
-     * @param {LinkedEntity} entityObject
-     * @returns {Promise&lt;void>}
-     */
-    async setEntity(fileId, entityObject) {
-        await this._client.post(`/temporaryfiles/${fileId}/setenity`, entityObject)
-    }
-}</code></pre>
-        </article>
-    </section>
+    
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>init</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Object</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.js.html" class="button">View Source</a>
+            <span>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line10">line 10</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="Awork.html">Awork</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+<h4 class="name" id="companies">
+    <a class="href-link" href="#companies">#</a>
+    
+    <span class="code-name">
+        companies
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.js.html" class="button">View Source</a>
+            <span>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line23">line 23</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+<h4 class="name" id="projects">
+    <a class="href-link" href="#projects">#</a>
+    
+    <span class="code-name">
+        projects
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.js.html" class="button">View Source</a>
+            <span>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line30">line 30</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+<h4 class="name" id="teams">
+    <a class="href-link" href="#teams">#</a>
+    
+    <span class="code-name">
+        teams
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.js.html" class="button">View Source</a>
+            <span>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line37">line 37</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
