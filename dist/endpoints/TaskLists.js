@@ -9,6 +9,8 @@ require("../globalTypedef");
 
 var _TaskListTemplate = require("../model/TaskListTemplate");
 
+var _TaskListTasks = require("./TaskListTasks");
+
 /**
  * Class corresponding to Aworks TaskLists Endpoints
  * @category Endpoints
@@ -176,7 +178,7 @@ class TaskLists {
   }
 
   tasks(taskListId) {
-    return new TaskListTasks(this._client, this._entityName, this._entityId, taskListId);
+    return new _TaskListTasks.TaskListTasks(this._client, this._entityName, this._entityId, taskListId);
   }
 
 }

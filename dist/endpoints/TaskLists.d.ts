@@ -147,6 +147,7 @@ export class TaskLists {
      * @returns {Promise<void>}
      */
     removeTasks(taskListId: string, tasksToRemove: Array<string>): Promise<void>;
-    tasks(taskListId: any): any;
+    tasks(taskListId: any): TaskListTasks;
 }
 import { TaskListTemplate } from "../model/TaskListTemplate";
+import { TaskListTasks } from "./TaskListTasks";

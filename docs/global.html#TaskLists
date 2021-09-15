@@ -279,7 +279,7 @@
         <p class="tag-source">
             <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line10">line 10</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -489,7 +489,7 @@ To add a new task to a project task list, the user needs manage permissions on t
         <p class="tag-source">
             <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line140">line 140</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line142">line 142</a>
             </span>
         </p>
     
@@ -665,7 +665,7 @@ To create a new project task list, the user needs manage permissions on the proj
         <p class="tag-source">
             <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line66">line 66</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line68">line 68</a>
             </span>
         </p>
     
@@ -878,7 +878,7 @@ To delete project task list, the user needs manage permissions on the project-pl
         <p class="tag-source">
             <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line92">line 92</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line94">line 94</a>
             </span>
         </p>
     
@@ -1054,7 +1054,7 @@ The permission check in this function is dynamically based on the entity name. I
         <p class="tag-source">
             <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line32">line 32</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line34">line 34</a>
             </span>
         </p>
     
@@ -1242,7 +1242,7 @@ The permission check in this function is dynamically based on the entity name. I
         <p class="tag-source">
             <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line48">line 48</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line50">line 50</a>
             </span>
         </p>
     
@@ -1443,7 +1443,7 @@ To remove a task from a project task list, the user needs manage permissions on 
         <p class="tag-source">
             <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line152">line 152</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line154">line 154</a>
             </span>
         </p>
     
@@ -1643,7 +1643,7 @@ To remove a task from a project task list, the user needs manage permissions on 
         <p class="tag-source">
             <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line121">line 121</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line123">line 123</a>
             </span>
         </p>
     
@@ -1844,7 +1844,7 @@ To update a project task list, the user needs manage permissions on the project-
         <p class="tag-source">
             <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line79">line 79</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line81">line 81</a>
             </span>
         </p>
     
@@ -2045,7 +2045,7 @@ To update the order of project task lists, the user needs manage permissions on 
         <p class="tag-source">
             <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line103">line 103</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line105">line 105</a>
             </span>
         </p>
     
