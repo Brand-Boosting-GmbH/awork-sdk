@@ -41,33 +41,16 @@ export class Companies {
     }
 
     /**
-     * @typedef {('central'|'other')} PhoneSubType
+     * @typedef {Object} CompaniesCreateModel
+     * @property {String} name The company name.
+     * @property {String} [description] The company description.
+     * @property {String} [industry] The company´s industry.
      */
 
     /**
-     * @typedef {('central'|'invoice'|'other')} EmailSubType
-     */
-
-    /**
-     * @typedef {('central'|'invoice'|'other')} AddressSubType
-     */
-
-    /**
-     * @typedef {('primary'|'other')} UrlSubType
-     */
-
-    /**
-     * @typedef {Object} CompanyCreateModel
-     * @property {String} [label] The label of the contact info. 
-     * @property {String} [value] The value of the contact info.
-     * @property {('phone'|'email'|'adress'|'custom')} type The type of the contact info.
-     * @property {(PhoneSubType|EmailSubType|AddressSubType|UrlSubType)} The subtype of the contact info.
-     * @property
-     */
-
-    /**
-     * 
-     * @param {Company} company 
+     * Creates a new company.
+     * @param {CompaniesCreateModel} company The model to create a new company.
+     * @returns {Promise<Company>}
      */
     async create(company) {
         const response = await this._client.post(`/companies`, company)
@@ -76,8 +59,14 @@ export class Companies {
     }
 
     /**
-     * 
-     * @param {Company} company 
+     * @typedef {CompaniesCreateModel} CompaniesUpdateModel
+     */
+
+    /**
+     * Updates the company with the specified id.
+     * @param {String} companyId The id of the company.
+     * @param {CompaniesUpdateModel} company The model to update a company.
+     * @returns {Promise<Company>}
      */
     async update(companyId, company) {
         const response = await this._client.put(`/companies/${companyId}`, company)
@@ -92,22 +81,21 @@ export class Companies {
      */
 
     /**
-     * 
-     * @param {String} companyId 
-     * @param {DeleteCompanyOptions} options 
-     * @returns 
+     * There are several ways to delete a company. Look into the property description of the post model to get detailed information. If the post is executed without a model, the default process 'delete-only-company' will be executed.
+     * @param {String} companyId The id of the company.
+     * @param {DeleteCompanyOptions} [options] The model to delete a company.
+     * @returns {Promise<void>}
      */
     async delete(companyId, options) {
         await this._client.post(`/companies/${companyId}/`, options)
     }
 
     /**
-     * 
-     * @param {String} companyId 
+     * Returns company contact informations.
+     * @param {String} companyId The id of the company.
      * @returns {CompaniesContactInfos}
      */
     contactInfo (companyId) {
         return new CompaniesContactInfos(this._client, companyId)
     }
-
 }
