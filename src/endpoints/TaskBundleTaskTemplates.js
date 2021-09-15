@@ -24,7 +24,7 @@ export class TaskBundleTaskTemplates {
      * @param {String} taskTemplateId The id of the task template.
      * @returns {Promise<TaskTemplate>}
      */
-    async get (taskTemplateId) {
+    async asyncget (taskTemplateId) {
         const response = await this._client.get(`/taskbundles/${this._taskBundleId}/tasktemplates/${taskTemplateId}`)
         const data = response.data()
         return new TaskTemplate(data)
