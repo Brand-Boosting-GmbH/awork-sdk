@@ -77,7 +77,11 @@ export class TaskBundleTaskListTemplates {
      * @param {Number} order The order of the list.
      */
     updateOrder(taskListTemplateId: string, order: number): Promise<void>;
-    taskTemplates(taskListTemplateId: any): TaskBundleTaskListTemplatesTaskTemplates;
+    /**
+     * Returns the {@link TaskBundleTaskListTemplatesTaskTemplates} Endpoint with the specified task bundle Id and task list template Id.
+     * @param {String} projectId The id of the task list template.
+     * @returns {ProjectProjectStatus}
+     */
+    taskTemplates(taskListTemplateId: any): any;
 }
 import { TaskListTemplate } from "../model/TaskListTemplate";
-import { TaskBundleTaskListTemplatesTaskTemplates } from "./TaskBundleTaskListTemplatesTaskTemplates";
