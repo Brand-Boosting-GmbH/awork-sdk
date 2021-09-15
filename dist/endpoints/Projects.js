@@ -17,6 +17,8 @@ var _ProjectProjectStatuses = require("./ProjectProjectStatuses");
 
 var _TaskDependency = require("../model/TaskDependency");
 
+var _Autopilots = require("./Autopilots");
+
 /**
  * Class corresponding to Aworks Projects Endpoints
  * @category Endpoints
@@ -188,6 +190,16 @@ class Projects {
 
   projectStatus(projectId) {
     return new _ProjectProjectStatuses.ProjectProjectStatuses(this._client, projectId);
+  }
+  /**
+   * Returns the {@link Autopilots} Endpoint with the specified project Id.
+   * @param {String} projectId The id of the project.
+   * @returns {Autopilots}
+   */
+
+
+  autopilot(projectId) {
+    return new _Autopilots.Autopilots(this._client, projectId);
   }
 
 }

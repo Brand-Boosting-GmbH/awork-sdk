@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> model/Comment.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="Absences.html">Absences</a></li><li><a href="ApiUsers.html">ApiUsers</a></li><li><a href="Autopilots.html">Autopilots</a></li><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="Companies.html">Companies</a></li><li><a href="EntityComments.html">EntityComments</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectProjectStatuses.html">ProjectProjectStatuses</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectStatuses.html">ProjectStatuses</a></li><li><a href="ProjectTemplateProjectStatuses.html">ProjectTemplateProjectStatuses</a></li><li><a href="ProjectTemplates.html">ProjectTemplates</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="TaskBundles.html">TaskBundles</a></li><li><a href="TaskBundleTaskListTemplates.html">TaskBundleTaskListTemplates</a></li><li><a href="TaskBundleTaskListTemplatesTaskTemplates.html">TaskBundleTaskListTemplatesTaskTemplates</a></li><li><a href="TaskBundleTaskTemplates.html">TaskBundleTaskTemplates</a></li><li><a href="TaskDependencies.html">TaskDependencies</a></li><li><a href="global.html#TaskLists">TaskLists</a></li><li><a href="TaskListTasks.html">TaskListTasks</a></li><li><a href="TaskTemplates.html">TaskTemplates</a></li><li><a href="TaskTemplateSubTaskTemplates.html">TaskTemplateSubTaskTemplates</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TemporaryFiles.html">TemporaryFiles</a></li><li><a href="TimeReports.html">TimeReports</a></li><li><a href="TypesOfWorks.html">TypesOfWorks</a></li><li><a href="UserContactInfos.html">UserContactInfos</a></li><li><a href="Users.html">Users</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Absence.html">Absence</a></li><li><a href="ApiUser.html">ApiUser</a></li><li><a href="Autopilot.html">Autopilot</a></li><li><a href="ClientApplication.html">ClientApplication</a></li><li><a href="Comment.html">Comment</a></li><li><a href="Company.html">Company</a></li><li><a href="CompanyContactInfo.html">CompanyContactInfo</a></li><li><a href="EntityFile.html">EntityFile</a></li><li><a href="ExtendedUser.html">ExtendedUser</a></li><li><a href="FileVersion.html">FileVersion</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectMember.html">ProjectMember</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectStatus.html">ProjectStatus</a></li><li><a href="ProjectTemplate.html">ProjectTemplate</a></li><li><a href="ProjectType.html">ProjectType</a></li><li><a href="global.html#Recurrency">Recurrency</a></li><li><a href="SubTaskTemplate.html">SubTaskTemplate</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBundle.html">TaskBundle</a></li><li><a href="TaskDependency.html">TaskDependency</a></li><li><a href="TaskListTemplate.html">TaskListTemplate</a></li><li><a href="TaskRecurrency.html">TaskRecurrency</a></li><li><a href="TaskTemplate.html">TaskTemplate</a></li><li><a href="Team.html">Team</a></li><li><a href="TimeReport.html">TimeReport</a></li><li><a href="TypeOfWork.html">TypeOfWork</a></li><li><a href="User.html">User</a></li><li><a href="UserContactInfo.html">UserContactInfo</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Awork.html">Awork</a></li><li><a href="Client.html">Client</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>model/Comment.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Comment Model
+ * @category Models
+ * @class
+ */
+ export class Comment {
+    /**
+     * @typedef {Comment &amp; {_plain?: true}} CommentLike
+     */
+
+    /**
+     * Model constructor
+     * @param {CommentLike} data 
+     */
+    constructor(data) {
+        /** @private */
+        this._data = data || {}
+    }
+
+    /**
+     * The message of the comment. Required.
+     * @type {String} maxLength: 65000
+     */
+    get message () {
+        return this._data.message
+    }
+
+    /**
+     * The id of the user who created the comment. If not set, defaults to the current user.
+     * @type {String} uuid
+     */
+    get userId () {
+        return this._data.userId
+    }
+
+    /**
+     * The preview URLs to show a preview for.
+     * @type {Array&lt;String>}
+     */
+    get previews () {
+        return this._data.previews
+    }
+
+    /**
+     * The id of the comment.
+     * @type {String} uuid
+     */
+    get id () {
+        return this._data.id
+    }
+
+    /**
+     * The id of the entity of the comment. Required.
+     * @type {String} uuid
+     */
+    get entityId () {
+        return this._data.entityId
+    }
+
+    /**
+     * The type of the entity of the comment. Required.
+     * @type {('companies'|'files'|'projects'|'tasks')} nullable
+     */
+    get entityType () {
+        return this._data.entityType
+    }
+
+    /**
+     * The date this object was created.
+     * @type {String} date-time
+     */
+    get createdOn () {
+        return this._data.createdOn
+    }
+
+    /**
+     * The id of the user who created this object.
+     * @type {String} uuid
+     */
+    get createdBy () {
+        return this._data.createdBy
+    }
+
+    get user () {
+        return this._data.user
+    }
+
+    /**
+     * @type {String} uuid
+     */
+    get userId () {
+        return this._data.user.id
+    }
+
+    /**
+     * @type {String} nullable
+     */
+    get userFirstName () {
+        return this._data.user.firstName
+    }
+
+    /**
+     * @type {String} nullable
+     */
+    get userLastName () {
+        return this._data.user.lastName
+    }
+
+    /**
+     * @type {Boolean}
+     */
+    get userHasImage () {
+        return this._data.user.hasImage
+    }
+
+    /**
+     * @type {String} nullable
+     */
+    get userKey () {
+        return this._data.user.key
+    }
+
+    get project () {
+        return this._data.project
+    }
+
+    /**
+     * @type {String} uuid
+     */
+    get projectId () {
+        return this._data.project.id
+    }
+
+    /**
+     * @type {String} nullable
+     */
+    get projectName () {
+        return this._data.project.name
+    }
+
+    /**
+     * @type {String} nullable
+     */
+    get projectProjectTypeIcon () {
+        return this._data.project.projectTypeIcon
+    }
+
+    /**
+     * @type {String} nullable
+     */
+    get projectProjectCompanyProfileImageUrl () {
+        return this._data.project.projectCompanyProfileImageUrl
+    }
+
+    get entity () {
+        return this._data.entity
+    }
+
+    /**
+     * @type {String} uuid
+     */
+    get entityId () {
+        return this._data.entity.id
+    }
+
+    /**
+     * @type {String} nullable
+     */
+    get entityName () {
+        return this._data.entity.name
+    }
+
+    /**
+     * @type {String} nullable
+     */
+    get entityProjectTypeIcon () {
+        return this._data.entity.projectTypeIcon
+    }
+
+    /**
+     * @type {String} nullable
+     */
+    get entityProjectCompanyProfileImageUrl () {
+        return this._data.entity.projectCompanyProfileImageUrl
+    }
+
+    /**
+     * The date this object was last modified.
+     * @type {String} date-time
+     */
+    get updatedOn () {
+        return this._data.updatedOn
+    }
+
+    /**
+     * The id of the user who last modified this object.
+     * @type {String} uuid
+     */
+    get updatedBy () {
+        return this._data.updatedBy
+    }
+
+    /**
+     * A mention is the tag of a user on a specific comment, so the user is notified.
+     */
+    get mentions () {
+        return this._data.mentions
+    }
+
+    /**
+     * @typedef {Object} MentionsUsersObject
+     * @property {String} id uuid
+     * @property {String} fistName nullable
+     * @property {String} lastName nullable
+     * @property {Boolean} hasImage
+     * @property {String} key nullable
+     */
+
+    /**
+     * All users, which has been mentioned on the comment.
+     * @type {Array&lt;MentionsUsersObject>}
+     */
+    get mentionsUsers () {
+        return this._data.mentions.users
+    }
+
+    /**
+     * If every user was able to receive the mention notification. If not, one of the users had no permissions to.
+     * @type {Boolean}
+     */
+    get mentionsEveryUserHadPermissions () {
+        return this._data.mentions.everyUserHadPermissions
+    }
+
+    /**
+     * @typedef {Object} ReactionsObject
+     * @property {Array&lt;String>} userIds All users ids that reacted with the emoji.
+     * @property {String} emoji The moji used as a reaction.
+     */
+
+    /**
+     * The reactions on a comment.
+     * @type {Array&lt;ReactionsObject>}
+     */
+    get reactions () {
+        return this._data.reactions
+    }
+
+    /**
+     * The formatted and proccessed version of the comment message. E.g. mentions are in a human readable format. The formatted comment message is styled with html.
+     * @type {String} nullable
+     */
+    get formattedMessage () {
+        return this._data.formattedMessage
+    }
+
+    /**
+     * The formatted and proccessed version of the comment message. E.g. mentions are in a human readable format. The formatted comment message is not styled.
+     * @type {String} nullable
+     */
+    get plainFormattedMessage () {
+        return this._data.plainFormattedMessage
+    }
+
+    /**
+     * The version of the entity.
+     * @type {Integer} int64
+     */
+    get resourceVersion () {
+        return this._data.resourceVersion
+    }
+
+    toPlainObject() {
+        return {
+            message: this._data.message,
+            userId: this._data.userId,
+            previews: this._data.previews,
+            id: this._data.id,
+            entityId: this._data.entityId,
+            entityType: this._data.entityType,
+            createdOn: this._data.createdOn,
+            createdBy: this._data.createdBy,
+            user: {
+                id: this._data.user.id,
+                firstName: this._data.user.firstName,
+                lastName: this._data.user.lastName,
+                hasImage: this._data.user.hasImage,
+                key: this._data.user.key
+            },
+            project: {
+                id: this._data.project.id,
+                name: this._data.project.name,
+                projectTypeIcon: this._data.project.projectTypeIcon,
+                projectCompanyProfileImageUrl: this._data.project.projectCompanyProfileImageUrl
+            },
+            entity: {
+                id: this._data.entity.id,
+                name: this._data.entity.name,
+                projectTypeIcon: this._data.entity.projectTypeIcon,
+                projectCompanyProfileImageUrl: this._data.entity.projectCompanyProfileImageUrl
+            },
+            mentions: {
+                users: this._data.mentions.users,
+                everyUserHadPermissions: this._data.mentions.everyUserHadPermissions
+            },
+            reactions: this._data.reactions,
+            formattedMessage: this._data.formattedMessage,
+            plainFormattedMessage: this._data.plainFormattedMessage,
+            resoureVersion: this._data.resourceVersion
+        }
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>

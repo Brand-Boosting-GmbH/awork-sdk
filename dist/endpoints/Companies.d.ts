@@ -26,47 +26,65 @@ export class Companies {
      */
     list(options?: ListOptions): Promise<Array<Company>>;
     /**
-     * @typedef {('central'|'other')} PhoneSubType
+     * @typedef {Object} CompaniesCreateModel
+     * @property {String} name The company name.
+     * @property {String} [description] The company description.
+     * @property {String} [industry] The company´s industry.
      */
     /**
-     * @typedef {('central'|'invoice'|'other')} EmailSubType
+     * Creates a new company.
+     * @param {CompaniesCreateModel} company The model to create a new company.
+     * @returns {Promise<Company>}
+     */
+    create(company: {
+        /**
+         * The company name.
+         */
+        name: string;
+        /**
+         * The company description.
+         */
+        description?: string;
+        /**
+         * The company´s industry.
+         */
+        industry?: string;
+    }): Promise<Company>;
+    /**
+     * @typedef {CompaniesCreateModel} CompaniesUpdateModel
      */
     /**
-     * @typedef {('central'|'invoice'|'other')} AddressSubType
+     * Updates the company with the specified id.
+     * @param {String} companyId The id of the company.
+     * @param {CompaniesUpdateModel} company The model to update a company.
+     * @returns {Promise<Company>}
      */
-    /**
-     * @typedef {('primary'|'other')} UrlSubType
-     */
-    /**
-     * @typedef {Object} CompanyCreateModel
-     * @property {String} [label] The label of the contact info.
-     * @property {String} [value] The value of the contact info.
-     * @property {('phone'|'email'|'adress'|'custom')} type The type of the contact info.
-     * @property {(PhoneSubType|EmailSubType|AddressSubType|UrlSubType)} The subtype of the contact info.
-     * @property
-     */
-    /**
-     *
-     * @param {Company} company
-     */
-    create(company: Company): Promise<Company>;
-    /**
-     *
-     * @param {Company} company
-     */
-    update(companyId: any, company: Company): Promise<Company>;
+    update(companyId: string, company: {
+        /**
+         * The company name.
+         */
+        name: string;
+        /**
+         * The company description.
+         */
+        description?: string;
+        /**
+         * The company´s industry.
+         */
+        industry?: string;
+    }): Promise<Company>;
     /**
      * @typedef {Object} DeleteCompanyOptions
      * @property {String} moveToCompany Moves all related objects to this company. Related projects and tasks (including their time entries) will be connected to this company. Have to set if 'DeleteOperation' contains 'move'.
      * @property {('move'|'delete-all-without-timeentries')} deleteOperation Defines the operation to delete a company. Possible operations are 'move': Move related objects to another company. 'delete-only-company': Delete only the company. Related objects loose the company information. 'delete-all-without-timeentries': Delete all related objects apart from time entries. 'delete-all': Delete all.
      */
     /**
-     *
-     * @param {String} companyId
-     * @param {DeleteCompanyOptions} options
-     * @returns
+     * There are several ways to delete a company. Look into the property description of the post model to get detailed information. If the post is executed without a model, the default process 'delete-only-company' will be executed.
+     * @param {String} companyId The id of the company.
+     * @param {DeleteCompanyOptions} [options] The model to delete a company.
+     * @returns {Promise<void>}
      */
-    delete(companyId: string, options: {
+    delete(companyId: string, options?: {
         /**
          * Moves all related objects to this company. Related projects and tasks (including their time entries) will be connected to this company. Have to set if 'DeleteOperation' contains 'move'.
          */
@@ -77,8 +95,8 @@ export class Companies {
         deleteOperation: ('move' | 'delete-all-without-timeentries');
     }): Promise<void>;
     /**
-     *
-     * @param {String} companyId
+     * Returns company contact informations.
+     * @param {String} companyId The id of the company.
      * @returns {CompaniesContactInfos}
      */
     contactInfo(companyId: string): CompaniesContactInfos;

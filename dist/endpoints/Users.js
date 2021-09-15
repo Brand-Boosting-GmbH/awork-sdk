@@ -171,7 +171,7 @@ class Users {
     return response.data().key;
   }
   /**
-   * Returns the contact infos of the user with the specified id.
+   * Returns user contact informations.
    * @param {String} userId The id of the user.
    * @returns 
    */
