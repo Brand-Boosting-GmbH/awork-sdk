@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> endpoints/UserContactInfos.js</title>
+  <title> endpoints/TaskListTasks.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>endpoints/UserContactInfos.js</h1>
+                    <h1>endpoints/TaskListTasks.js</h1>
                 </header>
                 
 
@@ -85,126 +85,57 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
-import { User } from '../model/User'
-import { UserContactInfo } from "../model/UserContactInfo"
+            <pre class="prettyprint source linenums"><code>import { Task } from "../model/Task"
 
 /**
- * Class corresponding to Aworks project related part of the UserContactInfos Endpoints
+ * Class corresponding to Aworks tasks related part of the Tasklists Endpoints
  * @category Endpoints
- * @see [UserContactInfos in Awork API Docs](https://openapi.awork.io/#/UserContactInfos)
+ * @see [Tasklists in Awork API Docs](https://openapi.awork.io/#/Tasklists)
  */
- export class UserContactInfos {
-    
+export class TaskListTasks {
     /**
-    * Endpoint constructor
-    * @param {import('../client/index').Client} client 
-    * @param {String} userId The id of the user.
-    */
-   constructor(client, userId) {
-       /** @private */
-       this._client = client
-       /** @private */
-       this._userId = userId
-   }
-
-   /**
-    * Returns the contact infos of the user with the specified id.
-    * @param {String} contactInfoId The id of the contact info.
-    * @returns {Promise&lt;UserContactInfo>}
-    */
-   async get(contactInfoId) {
-       const response = await this._client.get(`/users/${this._userId}/contactinfo/${contactInfoId}`)
-       const data = response.data()
-       return new UserContactInfo(data)
-   }
-
-   /**
-    * Returns the contact infos of the user with the specified id.
-    * @param {ListOptions} options Pagination and filtering options
-    * @returns {Promise&lt;Array&lt;UserContactInfo>>}
-    */
-   async list(options) {
-        const response = await this._client.get(`/users/${this._userId}/contactinfo`, options)
-        const data = response.data()
-        return data.map(d => new UserContactInfo(d))
-   }
-
-    /**
-     * @typedef {('work'|'mobile'|'home'|'work Fax'|'fax'|'other')} PhoneSubType
+     * Endpoint constructor
+     * @param {import('../client/index').Client} client 
+     * @param {String} entityName Currently only 'projects' supported.
+     * @param {String} entityId The id of the entity. (projectId)
+     * @param {String} taskListId The id of the task list.
      */
-
-    /**
-     * @typedef {('work'|'private'|'other')} EmailSubType
-     */
-
-    /**
-     * @typedef {('work'|'home'|'other')} AddressSubType
-     */
-
-    /**
-     * @typedef {('work'|'private'|'gitHub'|'other')} UrlSubType
-     */
-
-    /**
-     * @typedef {('skype'|'whatsapp'|'other')} MessengerSubType
-     */
-
-    /**
-     * @typedef {('facebook'|'twitter'|'xing'|'linkedIn'|'instagram'|'pinterest'|'other')} SocialSubType
-     */
-
-   /**
-     * @typedef {Object} UserContactInfoCreateModel
-     * @property {String} label The label of the contact info. Only necessary if type 'custom' is used.
-     * @property {String} value The value of the contact info.
-     * @property {('phone'|'email'|'adress'|'messenger'|'social'|'urls')} type The type of the contact info.
-     * @property {(PhoneSubType|EmailSubType|AddressSubType|MessengerSubType|SocialSubType|UrlSubType)} subtype The subtype of the contact info.
-     * @property {String} addressLine1 The first Address line of the address.
-     * @property {String} addressLine2 The second address line of the contact info.
-     * @property {String} zipCode The Zipcode of the contact info.
-     * @property {String} city The city of the contact info.
-     * @property {String} state The state of the contact info.
-     * @property {String} country The 2 letter iso code of the country.
-     * @property {Boolean} isAdress Flags whether this contactinfo is an address or not. If its an address, the address fields are required.
-     */
-
-   /**
-    * Creates a new contact info for the user with the specified id.
-    * @param {UserContactInfoCreateModel} userContactInfoCreateModel The model to create a user contact information.
-    * @returns {Promise&lt;UserContactInfo>}
-    */
-    async create(userContactInfoCreateModel) {
-        const response = await this._client.post(`/users/${this._userId}/contactinfo`, userContactInfoCreateModel)
-        const data = response.data()
-        return new UserContactInfo(data)
-   }
-
-   /**
-    * @typedef {UserContactInfoCreateModel} UserContactInfoUpdateModel
-    */
-
-   /**
-    * Updates the contact info of the user with the specified id.
-    * @param {String} contactInfoId The id of the contact info.
-    * @param {UserContactInfoUpdateModel} userContactInfoUpdateModel The model to update a user contact information.
-    * @returns 
-    */
-   async update(contactInfoId) {
-        const response = await this._client.put(`/users/${this._userId}/contactinfo/${contactInfoId}`)
-        const data = response.data()
-        return new UserContactInfo(data)
+    constructor (client, entityName, entityId, taskListId) {
+        /**@private */
+        this._client = client
+        /**@private */
+        this._entityName = entityName
+        /**@private */
+        this._entityId = entityId
+        /**@private */
+        this._taskListId = taskListId
     }
 
     /**
-     * Deletes the contact info of the user with the specified id.
-     * @param {String} contactInfoId The id of the contact info.
+     * Returns the task with the specified id in the specified task list.
+     * To get a project task from the project task list, the user needs read permissions on the project-planning-data feature or the current user must be assigned to the task with the specified id. For a private task list no permissions are required.
+     * @param {String} taskId The id of the task.
+     * @returns {Promise&lt;Task>}
+     */
+    async get (taskId) {
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/tasklists/${this._taskListId}/tasks/${taskId}`)
+        const data = response.data()
+        return new Task(data)
+    }
+
+    /**
+     * Updates the order of a task in a task list.
+     * To update the order of tasks in a project task list, the user needs manage permissions on the project-planning-data feature.
+     * @param {String} taskId The id of the task.
+     * @param {Number} order The order of the task in the list.
      * @returns {Promise&lt;void>}
      */
-   async delete(contactInfoId) {
-        await this._client.delete(`/users/${this._userId}/contactinfo/${contactInfoId}`)
+    async updateOrder (taskId, order) {
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${this._taskListId}/tasks/${taskId}`, {order: order})
+        return response.data()
     }
- }</code></pre>
+
+}</code></pre>
         </article>
     </section>
 

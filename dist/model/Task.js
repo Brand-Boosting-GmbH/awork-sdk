@@ -218,281 +218,82 @@ class Task {
   get assignee() {
     return this._data.assignee;
   }
-  /**
-   * The id of the project this task is assigned to. 
-   * Only set if this is a project task.
-   * In this case, it is equal to the EntityId.
-   * 
-   * @type {String} uuid
-   * @readonly
-   * @memberof Task
-   */
-
 
   get projectId() {
     return this._data.projectId;
   }
-  /**
-   * @typedef {Project}
-   * @property {String} id uuid
-   * @property {String} name nullable
-   * @property {String} key nullable
-   * @property {Object} projectStatus
-   * @property {Object} company
-   * @property {Object} projectType
-   * @property {Array} tags
-   * @property {Array} teams
-   * @property {Boolean} hasImage
-   * 
-   * The project of the task.
-   * @type {Project}
-   * @readonly
-   * @memberof Task
-   */
-
 
   get project() {
     return this._data.project;
   }
-  /**
-   * Whether this task has an attachment.
-   * 
-   * @type {Boolean}
-   * @readonly
-   * @memberof Task
-   */
-
 
   get hasAttachment() {
     return this._data.hasAttachment;
   }
-  /**
-   * @typedef {List}
-   * @property {String} name nullable
-   * @property {Number} order double
-   * @property {String} id uuid
-   * @property {Boolean} isArchived
-   * @property {String} createdOn date-time
-   * @property {String} createdBy uuid
-   * @property {String} updatedOn date-time
-   * @property {String} updatedBy uuid
-   * @property {Number} orderOfTask double
-   * 
-   * The lists to which the task is assigned to.
-   * @type {Array<List>}
-   * @readonly
-   * @memberof Task
-   */
-
 
   get lists() {
     return this._data.lists;
   }
-  /**
-   * The id of the entity this task is assigned to. 
-   * This is the id of the project if this is a project task, 
-   * or the id of a user if this is a private task.
-   * 
-   * @type {String} uuid
-   * @readonly
-   * @memberof Task
-   */
-
 
   get entityId() {
     return this._data.entityId;
   }
-  /**
-   * @typedef {Tag}
-   * @property {String} id uuid
-   * @property {String} name nullable
-   * @property {String} color nullable
-   * @property {String} entityId uuid
-   * @property {String} createdOn date-time
-   * @property {String} createdBy uuid
-   * @property {String} updatedOn date-time
-   * @property {String} updatedBy uuid
-   * 
-   * The lists to which the task is assigned to.
-   * @type {Array<Tag>}
-   * @readonly
-   * @memberof Task
-   */
-
 
   get tags() {
     return this._data.tags;
   }
-  /**
-   * The date this task was created.
-   * 
-   * @type {String} date-time
-   * @readonly
-   * @memberof Task
-   */
-
 
   get createdOn() {
     return this._data.createdOn;
   }
-  /**
-  * The id of the user who created this task.
-  * 
-  * @type {String} uuid
-  * @readonly
-  * @memberof Task
-  */
-
 
   get createdBy() {
     return this._data.createdBy;
   }
-  /**
-   * The date this task was last modified.
-   * 
-   * @type {String} date-time
-   * @readonly
-   * @memberof Task
-   */
-
 
   get updatedOn() {
     return this._data.updatedOn;
   }
-  /**
-   * The id of the user who last modified this task.
-   * 
-   * @type {String} uuid
-   * @readonly
-   * @memberof Task
-   */
-
 
   get updatedBy() {
     return this._data.updatedBy;
   }
-  /**
-   * The date the task was set to closed.
-   * 
-   * @type {String} date-time
-   * @readonly
-   * @memberof Task
-   */
-
 
   get closedOn() {
     return this._data.closedOn;
   }
-  /**
-   * The user who closed the task.
-   * 
-   * @type {String} uuid
-   * @readonly
-   * @memberof Task
-   */
-
 
   get closedBy() {
     return this._data.closedBy;
   }
-  /**
-   * The order of the task in a task status column.
-   * 
-   * @type {Number} double
-   * @readonly
-   * @memberof Task
-   */
-
 
   get order() {
     return this._data.order;
   }
-  /**
-   * When the task was created by a recurrency rule, 
-   * the id is the link to the template of which the task was created.
-   * 
-   * @type {String} uuid
-   * @readonly
-   * @memberof Task
-   */
-
 
   get createdFromTaskId() {
     return this._data.createdFromTaskId;
   }
-  /**
-   * If the task is a recurrency template 
-   * (used to create new tasks by a recurrency rule), the flag is true.
-   * 
-   * @type {Boolean}
-   * @readonly
-   * @memberof Task
-   */
-
 
   get isRecurring() {
     return this._data.isRecurring;
   }
-  /**
-   * The summed up duration of all time trackings for this task.
-   * 
-   * @type {Number} int32
-   * @readonly
-   * @memberof Task
-   */
-
 
   get trackedDuration() {
     return this._data.trackedDuration;
   }
-  /**
-   * @typedef {EntityInformation}
-   * @property {String} description
-   * 
-   * The entity to which the task is linked.
-   * 
-   * @type {EntityInformation} nullable
-   * @readonly
-   * @memberof Task
-   */
-
 
   get entityInformation() {
     return this._data.entityInformation;
   }
-  /**
-   * The version of the entity continuously 
-   * incremented by 1 on every update of the entity.
-   * 
-   * @type {Number} int64
-   * @readonly
-   * @memberof Task
-   */
-
 
   get resourceVersion() {
     return this._data.resourceVersion;
   }
-  /**
-   * The number of subtasks which are already done.
-   * 
-   * @type {Number} int32
-   * @readonly
-   * @memberof Task
-   */
-
 
   get subtasksDoneCount() {
     return this._data.subtasksDoneCount;
   }
-  /**
-   * The total number of subtasks.
-   * 
-   * @type {Number} int32
-   * @readonly
-   * @memberof Task
-   */
-
 
   get subtasksCount() {
     return this._data.subtasksCount;

@@ -197,205 +197,26 @@ export class Task {
      * @type {Assignee}
      */
     get assignee(): any;
-    /**
-     * The id of the project this task is assigned to.
-     * Only set if this is a project task.
-     * In this case, it is equal to the EntityId.
-     *
-     * @type {String} uuid
-     * @readonly
-     * @memberof Task
-     */
-    readonly get projectId(): string;
-    /**
-     * @typedef {Project}
-     * @property {String} id uuid
-     * @property {String} name nullable
-     * @property {String} key nullable
-     * @property {Object} projectStatus
-     * @property {Object} company
-     * @property {Object} projectType
-     * @property {Array} tags
-     * @property {Array} teams
-     * @property {Boolean} hasImage
-     *
-     * The project of the task.
-     * @type {Project}
-     * @readonly
-     * @memberof Task
-     */
-    readonly get project(): any;
-    /**
-     * Whether this task has an attachment.
-     *
-     * @type {Boolean}
-     * @readonly
-     * @memberof Task
-     */
-    readonly get hasAttachment(): boolean;
-    /**
-     * @typedef {List}
-     * @property {String} name nullable
-     * @property {Number} order double
-     * @property {String} id uuid
-     * @property {Boolean} isArchived
-     * @property {String} createdOn date-time
-     * @property {String} createdBy uuid
-     * @property {String} updatedOn date-time
-     * @property {String} updatedBy uuid
-     * @property {Number} orderOfTask double
-     *
-     * The lists to which the task is assigned to.
-     * @type {Array<List>}
-     * @readonly
-     * @memberof Task
-     */
-    readonly get lists(): any[];
-    /**
-     * The id of the entity this task is assigned to.
-     * This is the id of the project if this is a project task,
-     * or the id of a user if this is a private task.
-     *
-     * @type {String} uuid
-     * @readonly
-     * @memberof Task
-     */
-    readonly get entityId(): string;
-    /**
-     * @typedef {Tag}
-     * @property {String} id uuid
-     * @property {String} name nullable
-     * @property {String} color nullable
-     * @property {String} entityId uuid
-     * @property {String} createdOn date-time
-     * @property {String} createdBy uuid
-     * @property {String} updatedOn date-time
-     * @property {String} updatedBy uuid
-     *
-     * The lists to which the task is assigned to.
-     * @type {Array<Tag>}
-     * @readonly
-     * @memberof Task
-     */
-    readonly get tags(): any[];
-    /**
-     * The date this task was created.
-     *
-     * @type {String} date-time
-     * @readonly
-     * @memberof Task
-     */
-    readonly get createdOn(): string;
-    /**
-    * The id of the user who created this task.
-    *
-    * @type {String} uuid
-    * @readonly
-    * @memberof Task
-    */
-    readonly get createdBy(): string;
-    /**
-     * The date this task was last modified.
-     *
-     * @type {String} date-time
-     * @readonly
-     * @memberof Task
-     */
-    readonly get updatedOn(): string;
-    /**
-     * The id of the user who last modified this task.
-     *
-     * @type {String} uuid
-     * @readonly
-     * @memberof Task
-     */
-    readonly get updatedBy(): string;
-    /**
-     * The date the task was set to closed.
-     *
-     * @type {String} date-time
-     * @readonly
-     * @memberof Task
-     */
-    readonly get closedOn(): string;
-    /**
-     * The user who closed the task.
-     *
-     * @type {String} uuid
-     * @readonly
-     * @memberof Task
-     */
-    readonly get closedBy(): string;
-    /**
-     * The order of the task in a task status column.
-     *
-     * @type {Number} double
-     * @readonly
-     * @memberof Task
-     */
-    readonly get order(): number;
-    /**
-     * When the task was created by a recurrency rule,
-     * the id is the link to the template of which the task was created.
-     *
-     * @type {String} uuid
-     * @readonly
-     * @memberof Task
-     */
-    readonly get createdFromTaskId(): string;
-    /**
-     * If the task is a recurrency template
-     * (used to create new tasks by a recurrency rule), the flag is true.
-     *
-     * @type {Boolean}
-     * @readonly
-     * @memberof Task
-     */
-    readonly get isRecurring(): boolean;
-    /**
-     * The summed up duration of all time trackings for this task.
-     *
-     * @type {Number} int32
-     * @readonly
-     * @memberof Task
-     */
-    readonly get trackedDuration(): number;
-    /**
-     * @typedef {EntityInformation}
-     * @property {String} description
-     *
-     * The entity to which the task is linked.
-     *
-     * @type {EntityInformation} nullable
-     * @readonly
-     * @memberof Task
-     */
-    readonly get entityInformation(): any;
-    /**
-     * The version of the entity continuously
-     * incremented by 1 on every update of the entity.
-     *
-     * @type {Number} int64
-     * @readonly
-     * @memberof Task
-     */
-    readonly get resourceVersion(): number;
-    /**
-     * The number of subtasks which are already done.
-     *
-     * @type {Number} int32
-     * @readonly
-     * @memberof Task
-     */
-    readonly get subtasksDoneCount(): number;
-    /**
-     * The total number of subtasks.
-     *
-     * @type {Number} int32
-     * @readonly
-     * @memberof Task
-     */
-    readonly get subtasksCount(): number;
+    get projectId(): any;
+    get project(): any;
+    get hasAttachment(): any;
+    get lists(): any;
+    get entityId(): any;
+    get tags(): any;
+    get createdOn(): any;
+    get createdBy(): any;
+    get updatedOn(): any;
+    get updatedBy(): any;
+    get closedOn(): any;
+    get closedBy(): any;
+    get order(): any;
+    get createdFromTaskId(): any;
+    get isRecurring(): any;
+    get trackedDuration(): any;
+    get entityInformation(): any;
+    get resourceVersion(): any;
+    get subtasksDoneCount(): any;
+    get subtasksCount(): any;
     toPlainObject(): {
         name: any;
         description: any;

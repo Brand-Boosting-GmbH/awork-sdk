@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> ProjectTemplates</title>
+  <title> TaskLists</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Class</p>
-                    <h1>ProjectTemplates</h1>
+                    <h1>TaskLists</h1>
                 </header>
                 
 
@@ -85,9 +85,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ProjectTemplates<span class="signature">(client)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>TaskLists<span class="signature">(client, entityName, entityId)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class corresponding to Aworks ProjectTemplates Endpoints</div>
+            <div class="class-description">Class corresponding to Aworks TaskLists Endpoints</div>
         
     
 </header>
@@ -106,12 +106,12 @@
 
 
     
-    <h4 class="name" id="ProjectTemplates">
-        <a class="href-link" href="#ProjectTemplates">#</a>
+    <h4 class="name" id="TaskLists">
+        <a class="href-link" href="#TaskLists">#</a>
         
         <span class="code-name">
             
-                new ProjectTemplates<span class="signature">(client)</span><span class="type-signature"></span>
+                new TaskLists<span class="signature">(client, entityName, entityId)</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -179,6 +179,56 @@
 
 
         
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>entityName</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">'projects'</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">Currently only 'projects' supported.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>entityId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The id of the entity (project)</td>
+</tr>
+
+
+        
         </tbody>
     </table>
 </div>
@@ -218,7 +268,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>[ProjectTemplates in Awork API Docs](https://openapi.awork.io/#/ProjectTemplates)</li>
+            <li>[TaskLists in Awork API Docs](https://openapi.awork.io/#/TaskLists)</li>
         </ul>
     </dd>
     
@@ -227,9 +277,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ProjectTemplates.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ProjectTemplates.js.html">endpoints/ProjectTemplates.js</a>, <a href="endpoints_ProjectTemplates.js.html#line10">line 10</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -271,7 +321,7 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            <dt><a href="ProjectTemplates.html">ProjectTemplates</a></dt>
+            <dt><a href="global.html#TaskLists">TaskLists</a></dt>
             <dd></dd>
         </dl>
     
@@ -293,8 +343,8 @@
 
 
     
-    <h4 class="name" id="create">
-        <a class="href-link" href="#create">#</a>
+    <h4 class="name" id="addTasks">
+        <a class="href-link" href="#addTasks">#</a>
         
             
                 <span class='tag'>async</span>
@@ -302,7 +352,7 @@
         
         <span class="code-name">
             
-                create<span class="signature">(projectTemplate)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ProjectTemplate.html">ProjectTemplate</a>>}</span>
+                addTasks<span class="signature">(taskListId, tasksToAdd)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;({taskId: String, order: Number})>>}</span>
             
         </span>
     </h4>
@@ -311,7 +361,8 @@
     
     
     <div class="description">
-        Creates a new project template.
+        Adds the tasks to the task list with the specified id. 
+To add a new task to a project task list, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
     </div>
     
 
@@ -349,13 +400,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projectTemplate</code></td>
+      <td class="name"><code>taskListId</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#ProjectTemplateCreateModel">ProjectTemplateCreateModel</a></span>
+<span class="param-type">String</span>
 
 
   
@@ -365,7 +416,32 @@
 
   
 
-  <td class="description last">The model to create a project template.</td>
+  <td class="description last">The id of the task list.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>tasksToAdd</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Array.&lt;<a href="global.html#AddTaskModel">AddTaskModel</a>></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The ids of the tasks to add to the list.</td>
 </tr>
 
 
@@ -411,9 +487,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ProjectTemplates.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ProjectTemplates.js.html">endpoints/ProjectTemplates.js</a>, <a href="endpoints_ProjectTemplates.js.html#line58">line 58</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line140">line 140</a>
             </span>
         </p>
     
@@ -448,7 +524,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="ProjectTemplate.html">ProjectTemplate</a>></span>
+<span class="param-type">Promise.&lt;Array.&lt;({taskId: String, order: Number})>></span>
 
 
     </div>
@@ -468,8 +544,8 @@
 
 
     
-    <h4 class="name" id="delete">
-        <a class="href-link" href="#delete">#</a>
+    <h4 class="name" id="create">
+        <a class="href-link" href="#create">#</a>
         
             
                 <span class='tag'>async</span>
@@ -477,7 +553,7 @@
         
         <span class="code-name">
             
-                delete<span class="signature">(projectTemplateId)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
+                create<span class="signature">(taskList)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>}</span>
             
         </span>
     </h4>
@@ -486,7 +562,8 @@
     
     
     <div class="description">
-        Deletes the project template with the specified id.
+        Creates a new task list.
+To create a new project task list, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
     </div>
     
 
@@ -524,13 +601,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projectTemplateId</code></td>
+      <td class="name"><code>taskList</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">String</span>
+<span class="param-type"><a href="global.html#TaskListCreateModel">TaskListCreateModel</a></span>
 
 
   
@@ -540,7 +617,7 @@
 
   
 
-  <td class="description last">The id of the project template.</td>
+  <td class="description last">The model to create a new task list.</td>
 </tr>
 
 
@@ -586,9 +663,222 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ProjectTemplates.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ProjectTemplates.js.html">endpoints/ProjectTemplates.js</a>, <a href="endpoints_ProjectTemplates.js.html#line85">line 85</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line66">line 66</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="delete">
+        <a class="href-link" href="#delete">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                delete<span class="signature">(taskListId, deleteTasks)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Deletes the task list with the specified id.
+To delete project task list, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>taskListId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The id of the task list.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>deleteTasks</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Boolean</span>
+
+
+  
+  </td>
+
+  
+
+  
+      <td class="default">
+      
+          false
+      
+      </td>
+  
+
+  <td class="description last">Whether all tasks in this list should be deleted. If false or not set, the tasks will just be removed from the list.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line92">line 92</a>
             </span>
         </p>
     
@@ -652,7 +942,7 @@
         
         <span class="code-name">
             
-                get<span class="signature">(projectTemplateId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ProjectTemplate.html">ProjectTemplate</a>>}</span>
+                get<span class="signature">(taskListId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>}</span>
             
         </span>
     </h4>
@@ -661,7 +951,8 @@
     
     
     <div class="description">
-        Returns the project template with the specified id and the related statuses.
+        Returns the task list with the specified id.
+The permission check in this function is dynamically based on the entity name. In the cases where the user tries to get the project task lists, the user needs read permissions on the project-planning-data feature. In cases where the user tries to get a private task list, permissions are not necessary.
     </div>
     
 
@@ -699,7 +990,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projectTemplateId</code></td>
+      <td class="name"><code>taskListId</code></td>
   
 
   <td class="type">
@@ -715,7 +1006,7 @@
 
   
 
-  <td class="description last">The id of the project template.</td>
+  <td class="description last">The id of the task list.</td>
 </tr>
 
 
@@ -761,9 +1052,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ProjectTemplates.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ProjectTemplates.js.html">endpoints/ProjectTemplates.js</a>, <a href="endpoints_ProjectTemplates.js.html#line28">line 28</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line32">line 32</a>
             </span>
         </p>
     
@@ -798,7 +1089,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="ProjectTemplate.html">ProjectTemplate</a>></span>
+<span class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></span>
 
 
     </div>
@@ -827,7 +1118,7 @@
         
         <span class="code-name">
             
-                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="ProjectTemplate.html">ProjectTemplate</a>>>}</span>
+                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>>}</span>
             
         </span>
     </h4>
@@ -836,7 +1127,8 @@
     
     
     <div class="description">
-        Returns all existing project types.
+        Returns all task lists of the entity with the specified id. 
+The permission check in this function is dynamically based on the entity name. In the cases where the user tries to get the project task lists, the user needs read permissions on the project-planning-data feature. In cases where the user tries to get the private task lists, permissions are not necessary.
     </div>
     
 
@@ -882,7 +1174,7 @@
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#ListOptions">ListOptions</a></span>
+<span class="param-type">AdvancedListOptions</span>
 
 
   
@@ -902,7 +1194,7 @@
 
   
 
-  <td class="description last">Pagination and filtering options</td>
+  <td class="description last">Pagination, filtering and show archived option.</td>
 </tr>
 
 
@@ -948,9 +1240,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ProjectTemplates.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ProjectTemplates.js.html">endpoints/ProjectTemplates.js</a>, <a href="endpoints_ProjectTemplates.js.html#line39">line 39</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line48">line 48</a>
             </span>
         </p>
     
@@ -985,7 +1277,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;Array.&lt;<a href="ProjectTemplate.html">ProjectTemplate</a>>></span>
+<span class="param-type">Promise.&lt;Array.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>></span>
 
 
     </div>
@@ -1005,179 +1297,8 @@
 
 
     
-    <h4 class="name" id="projectStatus">
-        <a class="href-link" href="#projectStatus">#</a>
-        
-        <span class="code-name">
-            
-                projectStatus<span class="signature">(projectTemplateId)</span><span class="type-signature"> &rarr; {<a href="ProjectTemplateProjectStatuses.html">ProjectTemplateProjectStatuses</a>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Returns the <a href="ProjectTemplateProjectStatuses.html">ProjectTemplateProjectStatuses</a> Endpoint with the specified project template Id.
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>projectTemplateId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">The id of the project template</td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_ProjectTemplates.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_ProjectTemplates.js.html">endpoints/ProjectTemplates.js</a>, <a href="endpoints_ProjectTemplates.js.html#line121">line 121</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type"><a href="ProjectTemplateProjectStatuses.html">ProjectTemplateProjectStatuses</a></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="taskBundle">
-        <a class="href-link" href="#taskBundle">#</a>
+    <h4 class="name" id="removeTasks">
+        <a class="href-link" href="#removeTasks">#</a>
         
             
                 <span class='tag'>async</span>
@@ -1185,7 +1306,7 @@
         
         <span class="code-name">
             
-                taskBundle<span class="signature">(projectTemplateId)</span><span class="type-signature"> &rarr; {Promise.&lt;String>}</span>
+                removeTasks<span class="signature">(taskListId, tasksToRemove)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
             
         </span>
     </h4>
@@ -1194,7 +1315,8 @@
     
     
     <div class="description">
-        Returns the task bundle id which is linked to the template.
+        Removes the tasks from the task list with the specified id.
+To remove a task from a project task list, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
     </div>
     
 
@@ -1232,7 +1354,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projectTemplateId</code></td>
+      <td class="name"><code>taskListId</code></td>
   
 
   <td class="type">
@@ -1248,7 +1370,32 @@
 
   
 
-  <td class="description last">The id of the project template.</td>
+  <td class="description last">The id of the task list.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>tasksToRemove</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Array.&lt;String></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The ids of the tasks to remove from the list.</td>
 </tr>
 
 
@@ -1294,9 +1441,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ProjectTemplates.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ProjectTemplates.js.html">endpoints/ProjectTemplates.js</a>, <a href="endpoints_ProjectTemplates.js.html#line111">line 111</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line152">line 152</a>
             </span>
         </p>
     
@@ -1331,7 +1478,207 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;String></span>
+<span class="param-type">Promise.&lt;void></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="setArchived">
+        <a class="href-link" href="#setArchived">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                setArchived<span class="signature">(taskListId, archiveOptions)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Archives or unarchives the task list with the specified id. An archived task list still exists but is not editable anymore.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>taskListId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The id of the task list.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>archiveOptions</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="global.html#TaskListArchiveModel">TaskListArchiveModel</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The model to archive the task list.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
+            <span>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line121">line 121</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></span>
 
 
     </div>
@@ -1360,7 +1707,7 @@
         
         <span class="code-name">
             
-                update<span class="signature">(projectTemplateId, projectTemplate)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ProjectTemplate.html">ProjectTemplate</a>>}</span>
+                update<span class="signature">(taskListId, taskList)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>}</span>
             
         </span>
     </h4>
@@ -1369,7 +1716,8 @@
     
     
     <div class="description">
-        Updates the project template with the specified id.
+        Updates a task list.
+To update a project task list, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
     </div>
     
 
@@ -1407,7 +1755,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projectTemplateId</code></td>
+      <td class="name"><code>taskListId</code></td>
   
 
   <td class="type">
@@ -1423,7 +1771,7 @@
 
   
 
-  <td class="description last">The id of the project template.</td>
+  <td class="description last">The id of the task list.</td>
 </tr>
 
 
@@ -1432,13 +1780,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projectTemplate</code></td>
+      <td class="name"><code>taskList</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#ProjectTemplateUpdateModel">ProjectTemplateUpdateModel</a></span>
+<span class="param-type">Object</span>
 
 
   
@@ -1448,7 +1796,7 @@
 
   
 
-  <td class="description last">The model to update a project template with.</td>
+  <td class="description last">The model used to update the task list with the specified id.</td>
 </tr>
 
 
@@ -1494,9 +1842,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ProjectTemplates.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ProjectTemplates.js.html">endpoints/ProjectTemplates.js</a>, <a href="endpoints_ProjectTemplates.js.html#line74">line 74</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line79">line 79</a>
             </span>
         </p>
     
@@ -1531,7 +1879,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="ProjectTemplate.html">ProjectTemplate</a>></span>
+<span class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></span>
 
 
     </div>
@@ -1551,8 +1899,8 @@
 
 
     
-    <h4 class="name" id="updateProjectStatusOrder">
-        <a class="href-link" href="#updateProjectStatusOrder">#</a>
+    <h4 class="name" id="updateOrder">
+        <a class="href-link" href="#updateOrder">#</a>
         
             
                 <span class='tag'>async</span>
@@ -1560,7 +1908,7 @@
         
         <span class="code-name">
             
-                updateProjectStatusOrder<span class="signature">(projectTemplateId, projectStatusOrder)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
+                updateOrder<span class="signature">(taskListId, order)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
             
         </span>
     </h4>
@@ -1569,7 +1917,8 @@
     
     
     <div class="description">
-        Updates the order of a project status.
+        Updates the order of a task list.
+To update the order of project task lists, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
     </div>
     
 
@@ -1607,7 +1956,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projectTemplateId</code></td>
+      <td class="name"><code>taskListId</code></td>
   
 
   <td class="type">
@@ -1623,7 +1972,7 @@
 
   
 
-  <td class="description last">The id of the project template.</td>
+  <td class="description last">The id of the task list.</td>
 </tr>
 
 
@@ -1632,13 +1981,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>projectStatusOrder</code></td>
+      <td class="name"><code>order</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#ProjectStatusOrder">ProjectStatusOrder</a></span>
+<span class="param-type">Number</span>
 
 
   
@@ -1648,7 +1997,7 @@
 
   
 
-  <td class="description last">The project status with updated order.</td>
+  <td class="description last">The order of the list.</td>
 </tr>
 
 
@@ -1694,9 +2043,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_ProjectTemplates.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskLists.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_ProjectTemplates.js.html">endpoints/ProjectTemplates.js</a>, <a href="endpoints_ProjectTemplates.js.html#line101">line 101</a>
+                <a href="endpoints_TaskLists.js.html">endpoints/TaskLists.js</a>, <a href="endpoints_TaskLists.js.html#line103">line 103</a>
             </span>
         </p>
     
