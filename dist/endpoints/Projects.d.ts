@@ -162,7 +162,7 @@ export class Projects {
      * @param {TaskBundleAddToProjectModel} taskBundelToBeAdded The model to add the task bundle to the project.
      * @returns {Promise<void>}
      */
-    addToProject(projectId: string, taskBundelToBeAdded: {
+    addTaskBundle(projectId: string, taskBundelToBeAdded: {
         /**
          * The id of the task bundle to add to the entity.
          */
@@ -176,6 +176,12 @@ export class Projects {
          */
         defaultTaskListIdForEmails: string;
     }): Promise<void>;
+    /**
+     * Returns all task dependencies for a specific project. To get all dependencies of a project, the user needs project planning permissions on that project.
+     * @param {String} projectId The id of the project.
+     * @returns {Promise<Array<TaskDependency>>}
+     */
+    taskDependencyList(projectId: string): Promise<Array<TaskDependency>>;
     /**
      * Returns the {@link ProjectMembers} Endpoint with the specified project Id.
      * @param {String} projectId The id of the project.
@@ -196,5 +202,6 @@ export class Projects {
     projectStatus(projectId: string): any;
 }
 import { Project } from "../model/Project";
+import { TaskDependency } from "../model/TaskDependency";
 import { ProjectMembers } from "./ProjectMembers";
 import { EntityFiles } from "./EntityFiles";

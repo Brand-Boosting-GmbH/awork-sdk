@@ -111,5 +111,12 @@ export class Tasks {
      * @memberof Tasks
      */
     getRecurrency(taskId: string): any;
+    /**
+     * Returns all task dependencies for a specific task. To get all dependencies of a task, the user needs project planning permissions on that project or be assigned to that task.
+     * @param {String} taskId The id of the task.
+     * @returns {Promise<Array<TaskDependency>>}
+     */
+    taskDependencyList(taskId: string): Promise<Array<TaskDependency>>;
 }
 import { Task } from "../model/Task";
+import { TaskDependency } from "../model/TaskDependency";

@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> endpoints/UserContactInfos.js</title>
+  <title> model/TaskDependency.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>endpoints/UserContactInfos.js</h1>
+                    <h1>model/TaskDependency.js</h1>
                 </header>
                 
 
@@ -85,126 +85,95 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
-import { User } from '../model/User'
-import { UserContactInfo } from "../model/UserContactInfo"
-
-/**
- * Class corresponding to Aworks project related part of the UserContactInfos Endpoints
- * @category Endpoints
- * @see [UserContactInfos in Awork API Docs](https://openapi.awork.io/#/UserContactInfos)
+            <pre class="prettyprint source linenums"><code>/**
+ * TaskDependency Model
+ * 
+ * Describes the dependency between two tasks. One Task is the predecessor and one task is the successor.
+ * @category Models
+ * @class
  */
- export class UserContactInfos {
-    
+
+export class TaskDependency {
     /**
-    * Endpoint constructor
-    * @param {import('../client/index').Client} client 
-    * @param {String} userId The id of the user.
-    */
-   constructor(client, userId) {
-       /** @private */
-       this._client = client
-       /** @private */
-       this._userId = userId
-   }
-
-   /**
-    * Returns the contact infos of the user with the specified id.
-    * @param {String} contactInfoId The id of the contact info.
-    * @returns {Promise&lt;UserContactInfo>}
-    */
-   async get(contactInfoId) {
-       const response = await this._client.get(`/users/${this._userId}/contactinfo/${contactInfoId}`)
-       const data = response.data()
-       return new UserContactInfo(data)
-   }
-
-   /**
-    * Returns the contact infos of the user with the specified id.
-    * @param {ListOptions} options Pagination and filtering options
-    * @returns {Promise&lt;Array&lt;UserContactInfo>>}
-    */
-   async list(options) {
-        const response = await this._client.get(`/users/${this._userId}/contactinfo`, options)
-        const data = response.data()
-        return data.map(d => new UserContactInfo(d))
-   }
-
-    /**
-     * @typedef {('work'|'mobile'|'home'|'work Fax'|'fax'|'other')} PhoneSubType
+     * @typedef {TaskDependency &amp; {_plain?: true}} TaskDependencyLike
      */
 
     /**
-     * @typedef {('work'|'private'|'other')} EmailSubType
+     * Model constructor
+     * @param {TaskDependencyLike} data 
      */
-
-    /**
-     * @typedef {('work'|'home'|'other')} AddressSubType
-     */
-
-    /**
-     * @typedef {('work'|'private'|'gitHub'|'other')} UrlSubType
-     */
-
-    /**
-     * @typedef {('skype'|'whatsapp'|'other')} MessengerSubType
-     */
-
-    /**
-     * @typedef {('facebook'|'twitter'|'xing'|'linkedIn'|'instagram'|'pinterest'|'other')} SocialSubType
-     */
-
-   /**
-     * @typedef {Object} UserContactInfoCreateModel
-     * @property {String} label The label of the contact info. Only necessary if type 'custom' is used.
-     * @property {String} value The value of the contact info.
-     * @property {('phone'|'email'|'adress'|'messenger'|'social'|'urls')} type The type of the contact info.
-     * @property {(PhoneSubType|EmailSubType|AddressSubType|MessengerSubType|SocialSubType|UrlSubType)} subtype The subtype of the contact info.
-     * @property {String} addressLine1 The first Address line of the address.
-     * @property {String} addressLine2 The second address line of the contact info.
-     * @property {String} zipCode The Zipcode of the contact info.
-     * @property {String} city The city of the contact info.
-     * @property {String} state The state of the contact info.
-     * @property {String} country The 2 letter iso code of the country.
-     * @property {Boolean} isAdress Flags whether this contactinfo is an address or not. If its an address, the address fields are required.
-     */
-
-   /**
-    * Creates a new contact info for the user with the specified id.
-    * @param {UserContactInfoCreateModel} userContactInfoCreateModel The model to create a user contact information.
-    * @returns {Promise&lt;UserContactInfo>}
-    */
-    async create(userContactInfoCreateModel) {
-        const response = await this._client.post(`/users/${this._userId}/contactinfo`, userContactInfoCreateModel)
-        const data = response.data()
-        return new UserContactInfo(data)
-   }
-
-   /**
-    * @typedef {UserContactInfoCreateModel} UserContactInfoUpdateModel
-    */
-
-   /**
-    * Updates the contact info of the user with the specified id.
-    * @param {String} contactInfoId The id of the contact info.
-    * @param {UserContactInfoUpdateModel} userContactInfoUpdateModel The model to update a user contact information.
-    * @returns 
-    */
-   async update(contactInfoId) {
-        const response = await this._client.put(`/users/${this._userId}/contactinfo/${contactInfoId}`)
-        const data = response.data()
-        return new UserContactInfo(data)
+    constructor(data) {
+        this.data = data || {}
     }
 
     /**
-     * Deletes the contact info of the user with the specified id.
-     * @param {String} contactInfoId The id of the contact info.
-     * @returns {Promise&lt;void>}
+     * The Id of the predecessor. One task can have multiple predecessor.
+     * @type {String} uuid
      */
-   async delete(contactInfoId) {
-        await this._client.delete(`/users/${this._userId}/contactinfo/${contactInfoId}`)
+    get predecessorId () {
+        return this.data.predecessorId
     }
- }</code></pre>
+
+    /**
+     * The Id of the successor. One task can have one successor.
+     * @type {String} uuid
+     */
+    get successorId () {
+        return this._data.successorId
+    }
+
+    /**
+     * The id of the task dependency.
+     * @type {String}
+     */
+    get id () {
+        return this._data.id
+    }
+
+    /**
+     * The date this task dependency was created.
+     * @type {String} date-time
+     */
+    get createdOn () {
+        return this._data.createdOn
+    }
+
+    /**
+     * The id of the user who created this task dependency.
+     * @type {String} uuid
+     */
+    get createdBy () {
+        return this._data.createdBy
+    }
+
+    /**
+     * The date this task dependency was last modified.
+     * @type {String} date-time
+     */
+    get updatedOn () {
+        return this._data.updatedOn
+    }
+
+    /**
+     * The id of the user who last modified this task dependency.
+     * @type {String} uuid
+     */
+    get updatedBy () {
+        return this._data.updatedBy
+    }
+
+    toPlainObject() {
+        return {
+            predecessor: this._data.predecessor,
+            successor: this._data.successor,
+            id: this._data.id,
+            createdOn: this._data.createdOn,
+            createdBy: this._data.createdBy,
+            updatedOn: this._data.updatedOn,
+            updatedBy: this._data.updatedBy
+        }
+    }
+}</code></pre>
         </article>
     </section>
 

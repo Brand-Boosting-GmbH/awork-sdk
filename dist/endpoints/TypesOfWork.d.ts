@@ -57,6 +57,7 @@ export class TypesOfWorks {
      * Changes the properties of an existing type of work. A change will also effect all related tasks and time entries.
      * @param {String} typeOfWorkId The id of the type of work.
      * @param {TypeOfWorkUpdateModel} typeOfWork The model to update the type of work.
+     * @returns {Promise<TypeOfWork>}
      */
     update(typeOfWorkId: string, typeOfWork: {
         /**

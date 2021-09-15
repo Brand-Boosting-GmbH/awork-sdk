@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Client</title>
+  <title> TaskDependency</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Class</p>
-                    <h1>Client</h1>
+                    <h1>TaskDependency</h1>
                 </header>
                 
 
@@ -85,9 +85,11 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Client<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>TaskDependency<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Client class used to perform the http requests</div>
+            <div class="class-description">TaskDependency Model
+
+Describes the dependency between two tasks. One Task is the predecessor and one task is the successor.</div>
         
     
 </header>
@@ -106,12 +108,12 @@
 
 
     
-    <h4 class="name" id="Client">
-        <a class="href-link" href="#Client">#</a>
+    <h4 class="name" id="TaskDependency">
+        <a class="href-link" href="#TaskDependency">#</a>
         
         <span class="code-name">
             
-                new Client<span class="signature">()</span><span class="type-signature"></span>
+                new TaskDependency<span class="signature">(data)</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -119,134 +121,9 @@
 
     
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="client_index.js.html" class="button">View Source</a>
-            <span>
-                <a href="client_index.js.html">client/index.js</a>, <a href="client_index.js.html#line30">line 30</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </div>
-                </div>
-            </div>
-        
-    
+    <div class="description">
+        Model constructor
     </div>
-    
-    
-
-    
-
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="Client.html">Client</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class='vertical-section'>
-            <h1>Methods</h1>
-            <div class="members">
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="get">
-        <a class="href-link" href="#get">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                get<span class="signature">(path, params)</span><span class="type-signature"> &rarr; {AworkResponse}</span>
-            
-        </span>
-    </h4>
-    
-
-    
     
 
 
@@ -283,38 +160,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>path</code></td>
+      <td class="name"><code>data</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>params</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Object</span>
+<span class="param-type">TaskDependencyLike</span>
 
 
   
@@ -370,9 +222,9 @@
 
     
         <p class="tag-source">
-            <a href="client_index.js.html" class="button">View Source</a>
+            <a href="model_TaskDependency.js.html" class="button">View Source</a>
             <span>
-                <a href="client_index.js.html">client/index.js</a>, <a href="client_index.js.html#line56">line 56</a>
+                <a href="model_TaskDependency.js.html">model/TaskDependency.js</a>, <a href="model_TaskDependency.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -395,28 +247,574 @@
 
 
 
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
 
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
+
+
+
+                    </div>
+                </div>
+            </div>
         
-<span class="param-type">AworkResponse</span>
-
-
+    
     </div>
     
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="TaskDependency.html">TaskDependency</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="createdBy">
+    <a class="href-link" href="#createdBy">#</a>
+    
+    <span class="code-name">
+        createdBy
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the user who created this task dependency.
 </div>
 
-                
-        </div>
-    </div>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TaskDependency.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TaskDependency.js.html">model/TaskDependency.js</a>, <a href="model_TaskDependency.js.html#line58">line 58</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="createdOn">
+    <a class="href-link" href="#createdOn">#</a>
+    
+    <span class="code-name">
+        createdOn
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The date this task dependency was created.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TaskDependency.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TaskDependency.js.html">model/TaskDependency.js</a>, <a href="model_TaskDependency.js.html#line50">line 50</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="id">
+    <a class="href-link" href="#id">#</a>
+    
+    <span class="code-name">
+        id
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the task dependency.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TaskDependency.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TaskDependency.js.html">model/TaskDependency.js</a>, <a href="model_TaskDependency.js.html#line42">line 42</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="predecessorId">
+    <a class="href-link" href="#predecessorId">#</a>
+    
+    <span class="code-name">
+        predecessorId
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The Id of the predecessor. One task can have multiple predecessor.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TaskDependency.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TaskDependency.js.html">model/TaskDependency.js</a>, <a href="model_TaskDependency.js.html#line26">line 26</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="successorId">
+    <a class="href-link" href="#successorId">#</a>
+    
+    <span class="code-name">
+        successorId
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The Id of the successor. One task can have one successor.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TaskDependency.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TaskDependency.js.html">model/TaskDependency.js</a>, <a href="model_TaskDependency.js.html#line34">line 34</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="updatedBy">
+    <a class="href-link" href="#updatedBy">#</a>
+    
+    <span class="code-name">
+        updatedBy
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the user who last modified this task dependency.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TaskDependency.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TaskDependency.js.html">model/TaskDependency.js</a>, <a href="model_TaskDependency.js.html#line74">line 74</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="updatedOn">
+    <a class="href-link" href="#updatedOn">#</a>
+    
+    <span class="code-name">
+        updatedOn
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The date this task dependency was last modified.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TaskDependency.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TaskDependency.js.html">model/TaskDependency.js</a>, <a href="model_TaskDependency.js.html#line66">line 66</a>
+            </span>
+        </p>
+    
+</dl>
+
 
 
 
@@ -425,6 +823,8 @@
             
             </div>
         </div>
+    
+
     
 
     
