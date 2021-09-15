@@ -1,5 +1,7 @@
 import '../globalTypedef'
 import { TaskListTemplate } from "../model/TaskListTemplate"
+import { TaskListTasks } from "./TaskListTasks"
+
 
 /**
  * Class corresponding to Aworks TaskLists Endpoints
