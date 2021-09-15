@@ -2,6 +2,7 @@ import '../globalTypedef'
 import { TaskBundle } from '../model/TaskBundle'
 import { TaskBundleTaskListTemplates } from './TaskBundleTaskListTemplates'
 import { TaskBundleTaskTemplates } from './TaskBundleTaskTemplates'
+import { Task } from '../model/Task'
 
 /**
  * Class corresponding to Aworks TaskBundles Endpoints
@@ -101,13 +102,53 @@ export class TaskBundles {
         return new TaskBundle(data)
     }
 
+    /**
+     * @typedef {Object} TaskBundleCreateModel
+     * @property {String} name The name of the task bundle. Required if its not related to a task bundle.
+     * @property {String} description The description of the task bundle.
+     * @property {Icon} icon The icon of the task bundle.
+     * @property {String} projectTemplateId The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
+     */
+
+    /**
+     * Creates a new task bundle from the specified project.
+     * @param {String} projectId The id of the project of which the new task bundle will be created.
+     * @param {TaskBundleCreateModel} taskBundle The model to create the task bundle.
+     * @returns {Promise<Task>}
+     */
+    async createFromProject (projectId, taskBundle) {
+        const response = await this._client.post(`/taskbundles/fromproject/${projectId}`, taskBundle)
+        const data = response.data()
+        return new Task(data)
+    }
+
+    /**
+     * Creates a new task bundle from the specified task list.
+     * @param {String} taskListId The id of the task list of which the new task bundle will be created.
+     * @param {TaskBundleCreateModel} taskBundle The model to create the task bundle.
+     * @returns {Promise<Task>}
+     */
+    async createFromTaskList (taskListId, taskBundle) {
+        const response = await this._client.post(`/taskbundles/fromtasklist/${taskListId}`, taskBundle)
+        const data = response.data()
+        return new Task(data)
+    }
+
+    /**
+     * Returns the {@link TaskBundleTaskListTemplates} Endpoint with the specified task bundle Id.
+     * @param {String} projectId The id of the task bundle.
+     * @returns {ProjectProjectStatus}
+     */
     taskListTemplates (taskBundleId) {
         return new TaskBundleTaskListTemplates(this._client, taskBundleId)
     }
 
+    /**
+     * Returns the {@link TaskBundleTaskTemplates} Endpoint with the specified task bundle Id.
+     * @param {String} projectId The id of the task bundle.
+     * @returns {ProjectProjectStatus}
+     */
     taskTemplates (taskBundleId) {
         return new TaskBundleTaskTemplates(this._client, taskBundleId)
     }
-
-
 }

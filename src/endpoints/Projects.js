@@ -111,6 +111,23 @@ export class Projects {
     }
 
     /**
+     * @typedef {Object} TaskBundleAddToProjectModel
+     * @property {String} taskBundleId The id of the task bundle to add to the entity.
+     * @property {String} projectTemplateId The id of the project template to get the task bundle from.
+     * @property {String} defaultTaskListIdForEmails nullable
+     */
+
+    /**
+     * Adds the task bundle to the project with the specified id.
+     * @param {String} projectId The id of the project to add the task bundle.
+     * @param {TaskBundleAddToProjectModel} taskBundelToBeAdded The model to add the task bundle to the project.
+     * @returns {Promise<void>}
+     */
+    async addToProject (projectId, taskBundelToBeAdded) {
+        await this._client.post(`/projects/${projectId}/addtaskbundle`, taskBundelToBeAdded)
+    }
+
+    /**
      * Returns the {@link ProjectMembers} Endpoint with the specified project Id.
      * @param {String} projectId The id of the project.
      * @returns {ProjectMembers}
@@ -129,7 +146,7 @@ export class Projects {
     }
 
     /**
-     * Returns the {@link ProjectProjectStatus} Endpoint with the specified project Id.
+     * Returns the {@link ProjectProjectStatuses} Endpoint with the specified project Id.
      * @param {String} projectId The id of the project.
      * @returns {ProjectProjectStatus}
      */
