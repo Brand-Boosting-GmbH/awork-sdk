@@ -16,6 +16,10 @@ export class EntityComments {
      constructor(client) {
         /** @private */
         this._client = client
+        /** @private */
+        this._entityName = entityName
+        /** @private */
+        this._entityId = entityId
     }
 
     /**
