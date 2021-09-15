@@ -115,6 +115,8 @@ export class ProjectTemplates {
      * @returns {ProjectTemplateProjectStatuses}
      */
     projectStatus(projectTemplateId: string): ProjectTemplateProjectStatuses;
+    automations(projectTemplateId: any): ProjectTemplateAutomations;
 }
 import { ProjectTemplate } from "../model/ProjectTemplate";
 import { ProjectTemplateProjectStatuses } from "./ProjectTemplateProjectStatuses";
+import { ProjectTemplateAutomations } from "./ProjectTemplateAutomations";

@@ -11,6 +11,8 @@ var _ProjectTemplate = require("../model/ProjectTemplate");
 
 var _ProjectTemplateProjectStatuses = require("./ProjectTemplateProjectStatuses");
 
+var _ProjectTemplateAutomations = require("./ProjectTemplateAutomations");
+
 /**
  * Class corresponding to Aworks ProjectTemplates Endpoints
  * @category Endpoints
@@ -136,6 +138,10 @@ class ProjectTemplates {
 
   projectStatus(projectTemplateId) {
     return new _ProjectTemplateProjectStatuses.ProjectTemplateProjectStatuses(this._client, projectTemplateId);
+  }
+
+  automations(projectTemplateId) {
+    return new _ProjectTemplateAutomations.ProjectTemplateAutomations(this._client, projectTemplateId);
   }
 
 }
