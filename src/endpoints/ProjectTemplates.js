@@ -1,6 +1,7 @@
 import '../globalTypedef'
 import { ProjectTemplate } from "../model/ProjectTemplate"
 import { ProjectTemplateProjectStatuses } from './ProjectTemplateProjectStatuses'
+import { ProjectTemplateAutomations } from './ProjectTemplateAutomations'
 
 /**
  * Class corresponding to Aworks ProjectTemplates Endpoints
@@ -120,5 +121,9 @@ export class ProjectTemplates {
      */
     projectStatus (projectTemplateId) {
         return new ProjectTemplateProjectStatuses(this._client, projectTemplateId)
+    }
+
+    automations (projectTemplateId) {
+        return new ProjectTemplateAutomations(this._client, projectTemplateId)
     }
 }
