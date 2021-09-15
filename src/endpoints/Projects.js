@@ -3,6 +3,8 @@ import { Project } from "../model/Project"
 import { ProjectMembers } from "./ProjectMembers"
 import { EntityFiles } from "./EntityFiles"
 import { ProjectProjectStatuses } from "./ProjectProjectStatuses"
+import { TaskDependency } from '../model/TaskDependency'
+
 
 /**
  * Class corresponding to Aworks Projects Endpoints
@@ -123,9 +125,20 @@ export class Projects {
      * @param {TaskBundleAddToProjectModel} taskBundelToBeAdded The model to add the task bundle to the project.
      * @returns {Promise<void>}
      */
-    async addToProject (projectId, taskBundelToBeAdded) {
+    async addTaskBundle (projectId, taskBundelToBeAdded) {
         await this._client.post(`/projects/${projectId}/addtaskbundle`, taskBundelToBeAdded)
     }
+
+    /**
+     * Returns all task dependencies for a specific project. To get all dependencies of a project, the user needs project planning permissions on that project.
+     * @param {String} projectId The id of the project.
+     * @returns {Promise<Array<TaskDependency>>}
+     */
+     async taskDependencyList (projectId) {
+        const response = await this._client.get(`/projects/${projectId}/taskdependencies`)
+        const data = response.data()
+        return data.map(d => new TaskDependency(d))
+      }
 
     /**
      * Returns the {@link ProjectMembers} Endpoint with the specified project Id.

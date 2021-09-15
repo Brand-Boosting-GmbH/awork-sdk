@@ -1,5 +1,6 @@
 import { Task } from '../model/Task';
-import { TaskRecurrency } from '../model/TaskRecurrency';
+import { TaskRecurrency } from '../model/TaskRecurrency'
+import { TaskDependency } from '../model/TaskDependency'
 
 export class Tasks {
     constructor(client) {
@@ -181,5 +182,17 @@ export class Tasks {
       const response = await this._client.post(`/tasks/${taskId}/recurrency`);
       const data = response.data();
       return new TaskRecurrency(data);
+    }
+
+
+    /**
+     * Returns all task dependencies for a specific task. To get all dependencies of a task, the user needs project planning permissions on that project or be assigned to that task.
+     * @param {String} taskId The id of the task.
+     * @returns {Promise<Array<TaskDependency>>}
+     */
+    async taskDependencyList (taskId) {
+      const response = await this._client.get(`/tasks/${taskId}/taskdependencies`)
+      const data = response.data()
+      return data.map(d => new TaskDependency(d))
     }
   }
