@@ -30,7 +30,7 @@ export class TaskListTasks {
      * @param {String} taskId The id of the task.
      * @returns {Promise<Task>}
      */
-    get (taskId) {
+    async get (taskId) {
         const response = await this._client.get(`/${this._entityName}/${this._entityId}/tasklists/${this._taskListId}/tasks/${taskId}`)
         const data = response.data()
         return new Task(data)
@@ -43,7 +43,7 @@ export class TaskListTasks {
      * @param {Number} order The order of the task in the list.
      * @returns {Promise<void>}
      */
-    updateOrder (taskId, order) {
+    async updateOrder (taskId, order) {
         const response = await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${this._taskListId}/tasks/${taskId}`, {order: order})
         return response.data()
     }
