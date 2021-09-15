@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Companies</title>
+  <title> TaskListTasks</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Class</p>
-                    <h1>Companies</h1>
+                    <h1>TaskListTasks</h1>
                 </header>
                 
 
@@ -85,9 +85,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Companies<span class="signature">(client)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>TaskListTasks<span class="signature">(client, entityName, entityId, taskListId)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class corresponding to Aworks Companies Endpoints</div>
+            <div class="class-description">Class corresponding to Aworks tasks related part of the Tasklists Endpoints</div>
         
     
 </header>
@@ -106,12 +106,12 @@
 
 
     
-    <h4 class="name" id="Companies">
-        <a class="href-link" href="#Companies">#</a>
+    <h4 class="name" id="TaskListTasks">
+        <a class="href-link" href="#TaskListTasks">#</a>
         
         <span class="code-name">
             
-                new Companies<span class="signature">(client)</span><span class="type-signature"></span>
+                new TaskListTasks<span class="signature">(client, entityName, entityId, taskListId)</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -179,6 +179,81 @@
 
 
         
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>entityName</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">Currently only 'projects' supported.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>entityId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The id of the entity. (projectId)</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>taskListId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The id of the task list.</td>
+</tr>
+
+
+        
         </tbody>
     </table>
 </div>
@@ -218,7 +293,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>[Companies in Awork API Docs](https://openapi.awork.io/#/Companies)</li>
+            <li>[Tasklists in Awork API Docs](https://openapi.awork.io/#/Tasklists)</li>
         </ul>
     </dd>
     
@@ -227,9 +302,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_Companies.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskListTasks.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line9">line 9</a>
+                <a href="endpoints_TaskListTasks.js.html">endpoints/TaskListTasks.js</a>, <a href="endpoints_TaskListTasks.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -271,7 +346,7 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            <dt><a href="Companies.html">Companies</a></dt>
+            <dt><a href="TaskListTasks.html">TaskListTasks</a></dt>
             <dd></dd>
         </dl>
     
@@ -293,509 +368,6 @@
 
 
     
-    <h4 class="name" id="contactInfo">
-        <a class="href-link" href="#contactInfo">#</a>
-        
-        <span class="code-name">
-            
-                contactInfo<span class="signature">(companyId)</span><span class="type-signature"> &rarr; {<a href="CompaniesContactInfos.html">CompaniesContactInfos</a>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>companyId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_Companies.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line109">line 109</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type"><a href="CompaniesContactInfos.html">CompaniesContactInfos</a></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="create">
-        <a class="href-link" href="#create">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                create<span class="signature">(company)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>company</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="Company.html">Company</a></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_Companies.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line72">line 72</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="delete">
-        <a class="href-link" href="#delete">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                delete<span class="signature">(companyId, options)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>companyId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>options</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="global.html#DeleteCompanyOptions">DeleteCompanyOptions</a></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_Companies.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line100">line 100</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
     <h4 class="name" id="get">
         <a class="href-link" href="#get">#</a>
         
@@ -805,7 +377,7 @@
         
         <span class="code-name">
             
-                get<span class="signature">(companyId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Company.html">Company</a>>}</span>
+                get<span class="signature">(taskId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Task.html">Task</a>>}</span>
             
         </span>
     </h4>
@@ -814,7 +386,8 @@
     
     
     <div class="description">
-        Returns the company with the specified id.
+        Returns the task with the specified id in the specified task list.
+To get a project task from the project task list, the user needs read permissions on the project-planning-data feature or the current user must be assigned to the task with the specified id. For a private task list no permissions are required.
     </div>
     
 
@@ -852,7 +425,7 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>companyId</code></td>
+      <td class="name"><code>taskId</code></td>
   
 
   <td class="type">
@@ -868,7 +441,7 @@
 
   
 
-  <td class="description last">The id of the company.</td>
+  <td class="description last">The id of the task.</td>
 </tr>
 
 
@@ -914,9 +487,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_Companies.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskListTasks.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line26">line 26</a>
+                <a href="endpoints_TaskListTasks.js.html">endpoints/TaskListTasks.js</a>, <a href="endpoints_TaskListTasks.js.html#line33">line 33</a>
             </span>
         </p>
     
@@ -951,7 +524,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="Company.html">Company</a>></span>
+<span class="param-type">Promise.&lt;<a href="Task.html">Task</a>></span>
 
 
     </div>
@@ -971,8 +544,8 @@
 
 
     
-    <h4 class="name" id="list">
-        <a class="href-link" href="#list">#</a>
+    <h4 class="name" id="updateOrder">
+        <a class="href-link" href="#updateOrder">#</a>
         
             
                 <span class='tag'>async</span>
@@ -980,7 +553,7 @@
         
         <span class="code-name">
             
-                list<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="Company.html">Company</a>>>}</span>
+                updateOrder<span class="signature">(taskId, order)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
             
         </span>
     </h4>
@@ -989,7 +562,8 @@
     
     
     <div class="description">
-        Returns all companies.
+        Updates the order of a task in a task list.
+To update the order of tasks in a project task list, the user needs manage permissions on the project-planning-data feature.
     </div>
     
 
@@ -1014,8 +588,6 @@
             <th>Type</th>
 
             
-            <th>Attributes</th>
-            
 
             
 
@@ -1029,33 +601,48 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>options</code></td>
+      <td class="name"><code>taskId</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#ListOptions">ListOptions</a></span>
+<span class="param-type">String</span>
 
 
   
   </td>
 
   
-      <td class="attributes">
-      
-          &lt;optional><br>
-      
 
-      
+  
 
+  <td class="description last">The id of the task.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>order</code></td>
+  
+
+  <td class="type">
+  
       
-      </td>
+<span class="param-type">Number</span>
+
+
+  
+  </td>
+
   
 
   
 
-  <td class="description last">Pagination and filtering options</td>
+  <td class="description last">The order of the task in the list.</td>
 </tr>
 
 
@@ -1101,9 +688,9 @@
 
     
         <p class="tag-source">
-            <a href="endpoints_Companies.js.html" class="button">View Source</a>
+            <a href="endpoints_TaskListTasks.js.html" class="button">View Source</a>
             <span>
-                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line37">line 37</a>
+                <a href="endpoints_TaskListTasks.js.html">endpoints/TaskListTasks.js</a>, <a href="endpoints_TaskListTasks.js.html#line46">line 46</a>
             </span>
         </p>
     
@@ -1138,7 +725,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;Array.&lt;<a href="Company.html">Company</a>>></span>
+<span class="param-type">Promise.&lt;void></span>
 
 
     </div>
@@ -1148,154 +735,6 @@
                 
         </div>
     </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="update">
-        <a class="href-link" href="#update">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                update<span class="signature">(company)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>company</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="Company.html">Company</a></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="endpoints_Companies.js.html" class="button">View Source</a>
-            <span>
-                <a href="endpoints_Companies.js.html">endpoints/Companies.js</a>, <a href="endpoints_Companies.js.html#line82">line 82</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> endpoints/Users.js</title>
+  <title> endpoints/TaskLists.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>endpoints/Users.js</h1>
+                    <h1>endpoints/TaskLists.js</h1>
                 </header>
                 
 
@@ -86,167 +86,166 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import '../globalTypedef'
-import { User } from "../model/User"
-import { ExtendedUser } from "../model/ExtendedUser"
+import { TaskListTemplate } from "../model/TaskListTemplate"
 
 /**
- * Class corresponding to Aworks Users Endpoints
+ * Class corresponding to Aworks TaskLists Endpoints
  * @category Endpoints
- * @see [Users in Awork API Docs](https://openapi.awork.io/#/Users)
+ * @see [TaskLists in Awork API Docs](https://openapi.awork.io/#/TaskLists)
  */
-export class Users {
+
+export class TaskLists {
     /**
      * Endpoint constructor
-     * @param {import('../client/index').Client} client 
+     * @param {import('../client/index').Client} client
+     * @param {('projects')} entityName Currently only 'projects' supported.
+     * @param {String} entityId The id of the entity (project)
      */
-     constructor(client) {
-        /**
-         * @private
-         */
+     constructor(client, entityName, entityId) {
+        /**@private*/
         this._client = client
+        /**@private */
+        this._entityName = entityName
+        /**@private */
+        this._entityId = entityId
     }
 
-    //  TODO/me !!!
-
     /**
-     * Returns the user with the specified id.
-     * @param {String} userId The id of the user.
-     * @returns {Promise&lt;User>}
+     * Returns the task list with the specified id.
+     * The permission check in this function is dynamically based on the entity name. In the cases where the user tries to get the project task lists, the user needs read permissions on the project-planning-data feature. In cases where the user tries to get a private task list, permissions are not necessary.
+     * @param {String} taskListId The id of the task list.
+     * @returns {Promise&lt;TaskListTemplate>}
      */
-    async get(userId) {
-        const response = await this._client.get(`/users/${userId}`)
+    async get (taskListId) {
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}`, options)
         const data = response.data()
-        return new User(data)
+        return new TaskListTemplate(data)
     }
 
     /**
-     * Returns all users with their details like status, contact info and more. Returns all users if the user has read permissions on the feature user-master-data, otherwise returns only his own user. Archived users are excluded by default. You can include them by setting the 'showArchived' query parameter. If the permissions have UserTeamsData Feature, the filter for teams is applied. Beware that this will also include API users in the response.
-     * @param {ListOptions} [options] Pagination and filtering options
-     * @param {Boolean} [showArchived] Include archived users in the results. Not required. False by default.
-     * @returns {Promise&lt;Array&lt;User>>}
+     * @typedef {ListOptions &amp; {showArchived: Boolean}} AdvancedListOptions
      */
-    async list(options, showArchived = false) {
-        const response = await this._client.get('/users', options, showArchived)
+
+    /**
+     * Returns all task lists of the entity with the specified id. 
+     * The permission check in this function is dynamically based on the entity name. In the cases where the user tries to get the project task lists, the user needs read permissions on the project-planning-data feature. In cases where the user tries to get the private task lists, permissions are not necessary.
+     * @param {AdvancedListOptions} [options] Pagination, filtering and show archived option.
+     * @returns {Promise&lt;Array&lt;TaskListTemplate>>}
+     */
+    async list (options) {
+        const response = await this._client.get(`/${this._entityName}/${this._entityId}/tasklists`, options)
         const data = response.data()
-        return data.map(d => new User(d))
+        return data.map(d => new TaskListTemplate(d))
     }
 
     /**
-     * @typedef {Object} UserCreateModel
-     * @property {String} [firstName] The firstname of the user.
-     * @property {String} [lastName] The lastname of the user.
-     * @property {String} [birthDate] The birthdate of the user.
-     * @property {String} [gender] The gender of the user.
-     * @property {String} [title] The title of the user.
-     * @property {String} [position] The position of the user.
-     * @property {String} [language] The language preference of the user in ISO 639-1 format.
-     * @property {Integer} [capacityPerWeek] The capacity of the user per week in seconds.
-     * @property {String} [accountId] The account id of the user.
+     * @typedef {Object} TaskListCreateModel
+     * @property {String} name The name of the task list.
+     * @property {Number} order The order of the task list.
      */
 
     /**
-     * Creates a new user. The user's key is assigned automatically and can be changed later.
-     * @param {UserCreateModel} userCreateModel The model to create a user.
-     * @returns {Promise&lt;User>}
+     * Creates a new task list.
+     * To create a new project task list, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
+     * @param {TaskListCreateModel} taskList The model to create a new task list.
+     * @returns {Promise&lt;TaskListTemplate>}
      */
-    async create(userCreateModel) {
-        const response = await this._client.post('/users', userCreateModel)
+    async create (taskList) {
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/tasklists`, taskList)
         const data = response.data()
-        return new User(data)
+        return new TaskListTemplate(data)
     }
 
     /**
-     * @typedef {Object} UserUpdateModel
-     * @property {String} [firstName] The firstname of the user.
-     * @property {String} [lastName] The lastname of the user.
-     * @property {String} [birthDate] The birthdate of the user.
-     * @property {String} [gender] The gender of the user.
-     * @property {String} [title] The title of the user.
-     * @property {String} [position] The position of the user.
-     * @property {String} [language] The language preference of the user in ISO 639-1 format.
-     * @property {Integer} [capacityPerWeek] The capacity of the user per week in seconds.
+     * Updates a task list.
+     * To update a project task list, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
+     * @param {String} taskListId The id of the task list.
+     * @param {{name: String}} taskList The model used to update the task list with the specified id.
+     * @returns {Promise&lt;TaskListTemplate>}
      */
-
-    /**
-     * Updates the user with the specified id.
-     * @param {String} userId The id of the user.
-     * @param {UserUpdateModel} userUpdateModel The model to update a user.
-     * @returns {Promise&lt;User>}
-     */
-    async update(userId, userUpdateModel) {
-        const response = await this._client.put(`/users/${userId}`, userUpdateModel)
+    async update (taskListId, taskList) {
+        const response = await this._client.put(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}`, taskList)
         const data = response.data()
-        return new User(data)
+        return new TaskListTemplate(data)
     }
 
     /**
-     * Deletes the user with the specified id.
-     * @param {String} userId The id of the user.
+     * Deletes the task list with the specified id.
+     * To delete project task list, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
+     * @param {String} taskListId The id of the task list.
+     * @param {Boolean} deleteTasks Whether all tasks in this list should be deleted. If false or not set, the tasks will just be removed from the list.
      * @returns {Promise&lt;void>}
      */
-    async delete(userId) {
-        await this._client.delete(`/users/${userId}`)
+    async delete (taskListId, deleteTasks = false) {
+        await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/delete`, {deleteTasks: deleteTasks})
     }
 
-    //  TODO/me !!!
-
     /**
-     * Deactivates the user with the specified id. A deactivated user can no longer sign in. It is only possible if the user is not the last admin user.
-     * @param {String} userId The id of the user.
+     * Updates the order of a task list.
+     * To update the order of project task lists, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
+     * @param {String} taskListId The id of the task list.
+     * @param {Number} order The order of the list.
      * @returns {Promise&lt;void>}
      */
-    async deactivate(userId) {
-        await this._client.post(`/users/${userId}/deactivate`)
+    async updateOrder (taskListId, order) {
+        await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/updateorder`, {order: order})
     }
 
     /**
-     * Activates the user with the specified id. The user is then allowed to sign in again and will be notified via email.
-     * @param {String} userId The id of the user.
-     * @returns {Promise&lt;void>}
+     * @typedef {Object} TaskListArchiveModel
+     * @property {Boolean} isArchived Flags the entity as archived.
+     * @property {('task-to-done'|'task-remove'|'task-move'|'task-delete')} [taskOperation] The operation for tasks which are not yet done. The operation is required if you set a list to archived. Can be: task-to-done: Set tasks to 'Done' or the first status of type 'done'. task-remove: Remove tasks from this task list. task-move: Move tasks to another list. task-delete: Deletes the non done tasks.
+     * @property {String} [taskListId] Only necessary if TaskOperation is set to 'task-move'. The id of the task list where all non done tasks should moved to.
+     * @property {Boolean} [deleteTimeTrackings] Only necessary if TaskOperation is set to 'task-delete'. Set to true to delete also the related time trackings of all non done tasks.
      */
-    async activate(userId) {
-        await this._client.post(`/users/${userId}/activate`)
-    }
 
     /**
-     * Archives or unarchives the user with the specified id. Archived objects can not be used any longer but still exist for being referenced by other entities.
-     * @param {String} userId The id of the user which will be changed.
-     * @param {Boolean} isArchived Flags the entity as archived.
-     * @returns 
+     * Archives or unarchives the task list with the specified id. An archived task list still exists but is not editable anymore.
+     * @param {String} taskListId The id of the task list.
+     * @param {TaskListArchiveModel} archiveOptions The model to archive the task list.
+     * @return {Promise&lt;TaskListTemplate>}
      */
-    async setArchived(userId, isArchived) {
-        const response = await this._client.post(`/users/${userId}/setarchived`, {isArchived: isArchived})
+    async setArchived (taskListId, archiveOptions) {
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/setarchived`, archiveOptions)
         const data = response.data()
-        return new ExtendedUser(data)
+        return new TaskListTemplate(data)
     }
 
     /**
-     * Checks whether the specified user key is valid and unique.
-     * @returns {Promise&lt;String>}
+     * @typedef {Object} AddTaskModel
+     * @property {String} taskId The task id added to the list.
+     * @property {Number} order The order of the task in the list.
      */
-    async isKeyValid() {
-        const response = await this._client.post('/users/iskeyvalid')
-        return response.data().key
+
+    /**
+     * Adds the tasks to the task list with the specified id. 
+     * To add a new task to a project task list, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
+     * @param {String} taskListId The id of the task list.
+     * @param {Array&lt;AddTaskModel>} tasksToAdd The ids of the tasks to add to the list.
+     * @returns {Promise&lt;Array&lt;({taskId: String, order: Number})>>}
+     */
+    async addTasks (taskListId, tasksToAdd) {
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/addtasks`, tasksToAdd)
+        return response.data()
     }
 
     /**
-     * Sets the user key of the user with the specified id.
-     * @param {String} userId The id of the user.
-     * @returns {Promise&lt;>} 
+     * Removes the tasks from the task list with the specified id.
+     * To remove a task from a project task list, the user needs manage permissions on the project-planning-data feature. For a private task list no permissions are required.
+     * @param {String} taskListId The id of the task list.
+     * @param {Array&lt;String>} tasksToRemove The ids of the tasks to remove from the list.
+     * @returns {Promise&lt;void>}
      */
-    async setkey(userId) {
-        const response = await this._client.post(`/users/${userId}/setkey`)
-        return response.data().key
+    async removeTasks (taskListId, tasksToRemove) {
+        await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/removetasks`, tasksToRemove)
     }
 
-    /**
-     * Returns the contact infos of the user with the specified id.
-     * @param {String} userId The id of the user.
-     * @returns 
-     */
-    contactInfo(userId) {
-        return new UserContactInfos(this._client, userId)
+    tasks (taskListId) {
+        return new TaskListTasks(this._client, this._entityName, this._entityId, taskListId)
     }
+
+
+
 }</code></pre>
         </article>
     </section>
