@@ -1,0 +1,7214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> TimeEntry</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Endpoints</h2><h3>Classes</h3><ul><li><a href="Absences.html">Absences</a></li><li><a href="ApiUsers.html">ApiUsers</a></li><li><a href="Autopilots.html">Autopilots</a></li><li><a href="ClientApplications.html">ClientApplications</a></li><li><a href="Companies.html">Companies</a></li><li><a href="EntityComments.html">EntityComments</a></li><li><a href="EntityFiles.html">EntityFiles</a></li><li><a href="EntityTimeEntries.html">EntityTimeEntries</a></li><li><a href="FileVersions.html">FileVersions</a></li><li><a href="ProjectMembers.html">ProjectMembers</a></li><li><a href="ProjectProjectStatuses.html">ProjectProjectStatuses</a></li><li><a href="ProjectRoles.html">ProjectRoles</a></li><li><a href="Projects.html">Projects</a></li><li><a href="ProjectStatuses.html">ProjectStatuses</a></li><li><a href="ProjectTemplateProjectStatuses.html">ProjectTemplateProjectStatuses</a></li><li><a href="ProjectTemplates.html">ProjectTemplates</a></li><li><a href="ProjectTypes.html">ProjectTypes</a></li><li><a href="TaskBundles.html">TaskBundles</a></li><li><a href="TaskBundleTaskListTemplates.html">TaskBundleTaskListTemplates</a></li><li><a href="TaskBundleTaskListTemplatesTaskTemplates.html">TaskBundleTaskListTemplatesTaskTemplates</a></li><li><a href="TaskBundleTaskTemplates.html">TaskBundleTaskTemplates</a></li><li><a href="TaskDependencies.html">TaskDependencies</a></li><li><a href="global.html#TaskLists">TaskLists</a></li><li><a href="TaskListTasks.html">TaskListTasks</a></li><li><a href="TaskTemplates.html">TaskTemplates</a></li><li><a href="TaskTemplateSubTaskTemplates.html">TaskTemplateSubTaskTemplates</a></li><li><a href="Teams.html">Teams</a></li><li><a href="TemporaryFiles.html">TemporaryFiles</a></li><li><a href="TimeReports.html">TimeReports</a></li><li><a href="TypesOfWorks.html">TypesOfWorks</a></li><li><a href="UserContactInfos.html">UserContactInfos</a></li><li><a href="Users.html">Users</a></li></ul></div><div class="category"><h2>Models</h2><h3>Classes</h3><ul><li><a href="Absence.html">Absence</a></li><li><a href="ApiUser.html">ApiUser</a></li><li><a href="Autopilot.html">Autopilot</a></li><li><a href="ClientApplication.html">ClientApplication</a></li><li><a href="Comment.html">Comment</a></li><li><a href="Company.html">Company</a></li><li><a href="CompanyContactInfo.html">CompanyContactInfo</a></li><li><a href="EntityFile.html">EntityFile</a></li><li><a href="EntityTimeEntry.html">EntityTimeEntry</a></li><li><a href="ExtendedUser.html">ExtendedUser</a></li><li><a href="FileVersion.html">FileVersion</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectMember.html">ProjectMember</a></li><li><a href="ProjectRole.html">ProjectRole</a></li><li><a href="ProjectStatus.html">ProjectStatus</a></li><li><a href="ProjectTemplate.html">ProjectTemplate</a></li><li><a href="ProjectType.html">ProjectType</a></li><li><a href="global.html#Recurrency">Recurrency</a></li><li><a href="SubTaskTemplate.html">SubTaskTemplate</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBundle.html">TaskBundle</a></li><li><a href="TaskDependency.html">TaskDependency</a></li><li><a href="TaskListTemplate.html">TaskListTemplate</a></li><li><a href="TaskRecurrency.html">TaskRecurrency</a></li><li><a href="TaskTemplate.html">TaskTemplate</a></li><li><a href="Team.html">Team</a></li><li><a href="TimeEntry.html">TimeEntry</a></li><li><a href="TimeReport.html">TimeReport</a></li><li><a href="TypeOfWork.html">TypeOfWork</a></li><li><a href="User.html">User</a></li><li><a href="UserContactInfo.html">UserContactInfo</a></li></ul></div><div class="category"><h2>Util</h2><h3>Classes</h3><ul><li><a href="Awork.html">Awork</a></li><li><a href="Client.html">Client</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Class</p>
+                    <h1>TimeEntry</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>TimeEntry<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">TimeEntry Model</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
+
+
+    
+    <h4 class="name" id="TimeEntry">
+        <a class="href-link" href="#TimeEntry">#</a>
+        
+        <span class="code-name">
+            
+                new TimeEntry<span class="signature">(data)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Model constructor
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>data</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">TimeEntryLike</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line6">line 6</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="TimeEntry.html">TimeEntry</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="createdBy">
+    <a class="href-link" href="#createdBy">#</a>
+    
+    <span class="code-name">
+        createdBy
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the user who created this time tracking.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line473">line 473</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="createdOn">
+    <a class="href-link" href="#createdOn">#</a>
+    
+    <span class="code-name">
+        createdOn
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The date this time tracking was created.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line481">line 481</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="duration">
+    <a class="href-link" href="#duration">#</a>
+    
+    <span class="code-name">
+        duration
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The duration of the time tracking in seconds. Required when the time tracking has already been completed and EndTime has not been set.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line441">line 441</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeLocalDays">
+    <a class="href-link" href="#endTimeLocalDays">#</a>
+    
+    <span class="code-name">
+        endTimeLocalDays
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line361">line 361</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeLocalHours">
+    <a class="href-link" href="#endTimeLocalHours">#</a>
+    
+    <span class="code-name">
+        endTimeLocalHours
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line368">line 368</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeLocalMilliseconds">
+    <a class="href-link" href="#endTimeLocalMilliseconds">#</a>
+    
+    <span class="code-name">
+        endTimeLocalMilliseconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line375">line 375</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeLocalMinutes">
+    <a class="href-link" href="#endTimeLocalMinutes">#</a>
+    
+    <span class="code-name">
+        endTimeLocalMinutes
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line382">line 382</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeLocalSeconds">
+    <a class="href-link" href="#endTimeLocalSeconds">#</a>
+    
+    <span class="code-name">
+        endTimeLocalSeconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line389">line 389</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeLocalTicks">
+    <a class="href-link" href="#endTimeLocalTicks">#</a>
+    
+    <span class="code-name">
+        endTimeLocalTicks
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int64, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line354">line 354</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeLocalTotalDays">
+    <a class="href-link" href="#endTimeLocalTotalDays">#</a>
+    
+    <span class="code-name">
+        endTimeLocalTotalDays
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line396">line 396</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeLocalTotalHours">
+    <a class="href-link" href="#endTimeLocalTotalHours">#</a>
+    
+    <span class="code-name">
+        endTimeLocalTotalHours
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line403">line 403</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeLocalTotalMilliseconds">
+    <a class="href-link" href="#endTimeLocalTotalMilliseconds">#</a>
+    
+    <span class="code-name">
+        endTimeLocalTotalMilliseconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line410">line 410</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeLocalTotalMinutes">
+    <a class="href-link" href="#endTimeLocalTotalMinutes">#</a>
+    
+    <span class="code-name">
+        endTimeLocalTotalMinutes
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line417">line 417</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeLocalTotalSeconds">
+    <a class="href-link" href="#endTimeLocalTotalSeconds">#</a>
+    
+    <span class="code-name">
+        endTimeLocalTotalSeconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line424">line 424</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeUtcDays">
+    <a class="href-link" href="#endTimeUtcDays">#</a>
+    
+    <span class="code-name">
+        endTimeUtcDays
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line188">line 188</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeUtcHours">
+    <a class="href-link" href="#endTimeUtcHours">#</a>
+    
+    <span class="code-name">
+        endTimeUtcHours
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line195">line 195</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeUtcMilliseconds">
+    <a class="href-link" href="#endTimeUtcMilliseconds">#</a>
+    
+    <span class="code-name">
+        endTimeUtcMilliseconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line202">line 202</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeUtcMinutes">
+    <a class="href-link" href="#endTimeUtcMinutes">#</a>
+    
+    <span class="code-name">
+        endTimeUtcMinutes
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line209">line 209</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeUtcSeconds">
+    <a class="href-link" href="#endTimeUtcSeconds">#</a>
+    
+    <span class="code-name">
+        endTimeUtcSeconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line216">line 216</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeUtcTicks">
+    <a class="href-link" href="#endTimeUtcTicks">#</a>
+    
+    <span class="code-name">
+        endTimeUtcTicks
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int64, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line181">line 181</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeUtcTotalDays">
+    <a class="href-link" href="#endTimeUtcTotalDays">#</a>
+    
+    <span class="code-name">
+        endTimeUtcTotalDays
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line223">line 223</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeUtcTotalHours">
+    <a class="href-link" href="#endTimeUtcTotalHours">#</a>
+    
+    <span class="code-name">
+        endTimeUtcTotalHours
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line230">line 230</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeUtcTotalMilliseconds">
+    <a class="href-link" href="#endTimeUtcTotalMilliseconds">#</a>
+    
+    <span class="code-name">
+        endTimeUtcTotalMilliseconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line237">line 237</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeUtcTotalMinutes">
+    <a class="href-link" href="#endTimeUtcTotalMinutes">#</a>
+    
+    <span class="code-name">
+        endTimeUtcTotalMinutes
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line244">line 244</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="endTimeUtcTotalSeconds">
+    <a class="href-link" href="#endTimeUtcTotalSeconds">#</a>
+    
+    <span class="code-name">
+        endTimeUtcTotalSeconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line251">line 251</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="id">
+    <a class="href-link" href="#id">#</a>
+    
+    <span class="code-name">
+        id
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the time tracking.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line465">line 465</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="isBillable">
+    <a class="href-link" href="#isBillable">#</a>
+    
+    <span class="code-name">
+        isBillable
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    Whether the time tracking is billable or not.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line24">line 24</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="isBilled">
+    <a class="href-link" href="#isBilled">#</a>
+    
+    <span class="code-name">
+        isBilled
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    Whether the time tracking is billed or not.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line32">line 32</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="locationLatitude">
+    <a class="href-link" href="#locationLatitude">#</a>
+    
+    <span class="code-name">
+        locationLatitude
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The latitude value of the geo-location.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line77">line 77</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="locationLongitude">
+    <a class="href-link" href="#locationLongitude">#</a>
+    
+    <span class="code-name">
+        locationLongitude
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The logitude value of the geo-location.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line69">line 69</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="note">
+    <a class="href-link" href="#note">#</a>
+    
+    <span class="code-name">
+        note
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The note of the time tracking.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line56">line 56</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="projectId">
+    <a class="href-link" href="#projectId">#</a>
+    
+    <span class="code-name">
+        projectId
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the project.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line48">line 48</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="startDateLocal">
+    <a class="href-link" href="#startDateLocal">#</a>
+    
+    <span class="code-name">
+        startDateLocal
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The date (in Local) when the time tracking was started.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line260">line 260</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="startDateUtc">
+    <a class="href-link" href="#startDateUtc">#</a>
+    
+    <span class="code-name">
+        startDateUtc
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The date (in UTC) when the time tracking was started.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line85">line 85</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeLocalDays">
+    <a class="href-link" href="#startTimeLocalDays">#</a>
+    
+    <span class="code-name">
+        startTimeLocalDays
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line279">line 279</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeLocalHours">
+    <a class="href-link" href="#startTimeLocalHours">#</a>
+    
+    <span class="code-name">
+        startTimeLocalHours
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line286">line 286</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeLocalMilliseconds">
+    <a class="href-link" href="#startTimeLocalMilliseconds">#</a>
+    
+    <span class="code-name">
+        startTimeLocalMilliseconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line293">line 293</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeLocalMinutes">
+    <a class="href-link" href="#startTimeLocalMinutes">#</a>
+    
+    <span class="code-name">
+        startTimeLocalMinutes
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line300">line 300</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeLocalSeconds">
+    <a class="href-link" href="#startTimeLocalSeconds">#</a>
+    
+    <span class="code-name">
+        startTimeLocalSeconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line307">line 307</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeLocalTicks">
+    <a class="href-link" href="#startTimeLocalTicks">#</a>
+    
+    <span class="code-name">
+        startTimeLocalTicks
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int64, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line272">line 272</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeLocalTotalDays">
+    <a class="href-link" href="#startTimeLocalTotalDays">#</a>
+    
+    <span class="code-name">
+        startTimeLocalTotalDays
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line314">line 314</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeLocalTotalHours">
+    <a class="href-link" href="#startTimeLocalTotalHours">#</a>
+    
+    <span class="code-name">
+        startTimeLocalTotalHours
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line321">line 321</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeLocalTotalMilliseconds">
+    <a class="href-link" href="#startTimeLocalTotalMilliseconds">#</a>
+    
+    <span class="code-name">
+        startTimeLocalTotalMilliseconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line328">line 328</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeLocalTotalMinutes">
+    <a class="href-link" href="#startTimeLocalTotalMinutes">#</a>
+    
+    <span class="code-name">
+        startTimeLocalTotalMinutes
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line335">line 335</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeLocalTotalSeconds">
+    <a class="href-link" href="#startTimeLocalTotalSeconds">#</a>
+    
+    <span class="code-name">
+        startTimeLocalTotalSeconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line342">line 342</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeUtcDays">
+    <a class="href-link" href="#startTimeUtcDays">#</a>
+    
+    <span class="code-name">
+        startTimeUtcDays
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line105">line 105</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeUtcHours">
+    <a class="href-link" href="#startTimeUtcHours">#</a>
+    
+    <span class="code-name">
+        startTimeUtcHours
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line112">line 112</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeUtcMilliseconds">
+    <a class="href-link" href="#startTimeUtcMilliseconds">#</a>
+    
+    <span class="code-name">
+        startTimeUtcMilliseconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line119">line 119</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeUtcMinutes">
+    <a class="href-link" href="#startTimeUtcMinutes">#</a>
+    
+    <span class="code-name">
+        startTimeUtcMinutes
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line126">line 126</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeUtcSeconds">
+    <a class="href-link" href="#startTimeUtcSeconds">#</a>
+    
+    <span class="code-name">
+        startTimeUtcSeconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line133">line 133</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeUtcTicks">
+    <a class="href-link" href="#startTimeUtcTicks">#</a>
+    
+    <span class="code-name">
+        startTimeUtcTicks
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int64, readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line98">line 98</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeUtcTotalDays">
+    <a class="href-link" href="#startTimeUtcTotalDays">#</a>
+    
+    <span class="code-name">
+        startTimeUtcTotalDays
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line140">line 140</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeUtcTotalHours">
+    <a class="href-link" href="#startTimeUtcTotalHours">#</a>
+    
+    <span class="code-name">
+        startTimeUtcTotalHours
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line147">line 147</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeUtcTotalMilliseconds">
+    <a class="href-link" href="#startTimeUtcTotalMilliseconds">#</a>
+    
+    <span class="code-name">
+        startTimeUtcTotalMilliseconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line154">line 154</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeUtcTotalMinutes">
+    <a class="href-link" href="#startTimeUtcTotalMinutes">#</a>
+    
+    <span class="code-name">
+        startTimeUtcTotalMinutes
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line161">line 161</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="startTimeUtcTotalSeconds">
+    <a class="href-link" href="#startTimeUtcTotalSeconds">#</a>
+    
+    <span class="code-name">
+        startTimeUtcTotalSeconds
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    double,  readOnly
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line168">line 168</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type"><a href="global.html#AssigneeObject">AssigneeObject</a></span>
+
+
+    </span>
+
+<h4 class="name" id="taskAssignee">
+    <a class="href-link" href="#taskAssignee">#</a>
+    
+    <span class="code-name">
+        taskAssignee
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line699">line 699</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="taskAssigneeId">
+    <a class="href-link" href="#taskAssigneeId">#</a>
+    
+    <span class="code-name">
+        taskAssigneeId
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    uuid
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line683">line 683</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="taskBaseType">
+    <a class="href-link" href="#taskBaseType">#</a>
+    
+    <span class="code-name">
+        taskBaseType
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    nullable
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line632">line 632</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="taskClosedOn">
+    <a class="href-link" href="#taskClosedOn">#</a>
+    
+    <span class="code-name">
+        taskClosedOn
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    date-time
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line746">line 746</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="taskCreatedBy">
+    <a class="href-link" href="#taskCreatedBy">#</a>
+    
+    <span class="code-name">
+        taskCreatedBy
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    uuid
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line770">line 770</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="taskId">
+    <a class="href-link" href="#taskId">#</a>
+    
+    <span class="code-name">
+        taskId
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the task.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line40">line 40</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="taskid">
+    <a class="href-link" href="#taskid">#</a>
+    
+    <span class="code-name">
+        taskid
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    uuid
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line611">line 611</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="taskKey">
+    <a class="href-link" href="#taskKey">#</a>
+    
+    <span class="code-name">
+        taskKey
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    nullable
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line625">line 625</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="taskName">
+    <a class="href-link" href="#taskName">#</a>
+    
+    <span class="code-name">
+        taskName
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    nullable
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line618">line 618</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="taskPlannedDuration">
+    <a class="href-link" href="#taskPlannedDuration">#</a>
+    
+    <span class="code-name">
+        taskPlannedDuration
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line732">line 732</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type"><a href="global.html#ProjectObject">ProjectObject</a></span>
+
+
+    </span>
+
+<h4 class="name" id="taskProject">
+    <a class="href-link" href="#taskProject">#</a>
+    
+    <span class="code-name">
+        taskProject
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line718">line 718</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="taskProjectId">
+    <a class="href-link" href="#taskProjectId">#</a>
+    
+    <span class="code-name">
+        taskProjectId
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    uuid
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line725">line 725</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Integer</span>
+
+
+    </span>
+
+<h4 class="name" id="taskRemainingDuration">
+    <a class="href-link" href="#taskRemainingDuration">#</a>
+    
+    <span class="code-name">
+        taskRemainingDuration
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    int32
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line739">line 739</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Array.&lt;<a href="global.html#TaskTagsObject">TaskTagsObject</a>></span>
+
+
+    </span>
+
+<h4 class="name" id="taskTags">
+    <a class="href-link" href="#taskTags">#</a>
+    
+    <span class="code-name">
+        taskTags
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line763">line 763</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type"><a href="global.html#TaskStatusObject">TaskStatusObject</a></span>
+
+
+    </span>
+
+<h4 class="name" id="taskTaskStatus">
+    <a class="href-link" href="#taskTaskStatus">#</a>
+    
+    <span class="code-name">
+        taskTaskStatus
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line647">line 647</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="taskTaskStatusId">
+    <a class="href-link" href="#taskTaskStatusId">#</a>
+    
+    <span class="code-name">
+        taskTaskStatusId
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    uuid
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line654">line 654</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type"><a href="global.html#TaskTypeObject">TaskTypeObject</a></span>
+
+
+    </span>
+
+<h4 class="name" id="taskTaskType">
+    <a class="href-link" href="#taskTaskType">#</a>
+    
+    <span class="code-name">
+        taskTaskType
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line676">line 676</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="taskTypeOfWorkId">
+    <a class="href-link" href="#taskTypeOfWorkId">#</a>
+    
+    <span class="code-name">
+        taskTypeOfWorkId
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    uuid
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line661">line 661</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="timezone">
+    <a class="href-link" href="#timezone">#</a>
+    
+    <span class="code-name">
+        timezone
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The original timezone of the time tracking. The format of the timezone is the IANA standard
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line433">line 433</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="typeOfWorkIcon">
+    <a class="href-link" href="#typeOfWorkIcon">#</a>
+    
+    <span class="code-name">
+        typeOfWorkIcon
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    nullable
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line523">line 523</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="typeOfWorkId">
+    <a class="href-link" href="#typeOfWorkId">#</a>
+    
+    <span class="code-name">
+        typeOfWorkId
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the type of work.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line449">line 449</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="typeOfWorkid">
+    <a class="href-link" href="#typeOfWorkid">#</a>
+    
+    <span class="code-name">
+        typeOfWorkid
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    uuid
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line509">line 509</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="typeOfWorkIsArchived">
+    <a class="href-link" href="#typeOfWorkIsArchived">#</a>
+    
+    <span class="code-name">
+        typeOfWorkIsArchived
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line530">line 530</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="typeOfWorkName">
+    <a class="href-link" href="#typeOfWorkName">#</a>
+    
+    <span class="code-name">
+        typeOfWorkName
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    nullable
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line516">line 516</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="updatedBy">
+    <a class="href-link" href="#updatedBy">#</a>
+    
+    <span class="code-name">
+        updatedBy
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the user who last updated this time tracking.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line489">line 489</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="updatedOn">
+    <a class="href-link" href="#updatedOn">#</a>
+    
+    <span class="code-name">
+        updatedOn
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The date this time tracking was last modified.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line497">line 497</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="userFirstName">
+    <a class="href-link" href="#userFirstName">#</a>
+    
+    <span class="code-name">
+        userFirstName
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    nullable
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line549">line 549</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="userHasImage">
+    <a class="href-link" href="#userHasImage">#</a>
+    
+    <span class="code-name">
+        userHasImage
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line563">line 563</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="userId">
+    <a class="href-link" href="#userId">#</a>
+    
+    <span class="code-name">
+        userId
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    The id of the user.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line457">line 457</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="userid">
+    <a class="href-link" href="#userid">#</a>
+    
+    <span class="code-name">
+        userid
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    uuid
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line542">line 542</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="userKey">
+    <a class="href-link" href="#userKey">#</a>
+    
+    <span class="code-name">
+        userKey
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    nullable
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line570">line 570</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="userLastName">
+    <a class="href-link" href="#userLastName">#</a>
+    
+    <span class="code-name">
+        userLastName
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    nullable
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line556">line 556</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Array.&lt;<a href="global.html#UserTagsObject">UserTagsObject</a>></span>
+
+
+    </span>
+
+<h4 class="name" id="userTags">
+    <a class="href-link" href="#userTags">#</a>
+    
+    <span class="code-name">
+        userTags
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line587">line 587</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Array.&lt;<a href="global.html#TeamsObject">TeamsObject</a>></span>
+
+
+    </span>
+
+<h4 class="name" id="userTeams">
+    <a class="href-link" href="#userTeams">#</a>
+    
+    <span class="code-name">
+        userTeams
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="model_TimeEntry.js.html" class="button">View Source</a>
+            <span>
+                <a href="model_TimeEntry.js.html">model/TimeEntry.js</a>, <a href="model_TimeEntry.js.html#line599">line 599</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>

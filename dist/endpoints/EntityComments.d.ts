@@ -13,6 +13,10 @@ export class EntityComments {
     constructor(client: import('../client/index').Client);
     /** @private */
     private _client;
+    /** @private */
+    private _entityName;
+    /** @private */
+    private _entityId;
     /**
      * Returns the comment with the specified id of the entity with the specified id.
      * @param {String} commentId The id of the comment.

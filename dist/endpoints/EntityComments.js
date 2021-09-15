@@ -24,6 +24,12 @@ class EntityComments {
   constructor(client) {
     /** @private */
     this._client = client;
+    /** @private */
+
+    this._entityName = entityName;
+    /** @private */
+
+    this._entityId = entityId;
   }
   /**
    * Returns the comment with the specified id of the entity with the specified id.
