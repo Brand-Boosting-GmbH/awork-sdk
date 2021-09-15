@@ -151,6 +151,32 @@ export class Projects {
         deleteTimeTrackings?: boolean;
     }): Promise<void>;
     /**
+     * @typedef {Object} TaskBundleAddToProjectModel
+     * @property {String} taskBundleId The id of the task bundle to add to the entity.
+     * @property {String} projectTemplateId The id of the project template to get the task bundle from.
+     * @property {String} defaultTaskListIdForEmails nullable
+     */
+    /**
+     * Adds the task bundle to the project with the specified id.
+     * @param {String} projectId The id of the project to add the task bundle.
+     * @param {TaskBundleAddToProjectModel} taskBundelToBeAdded The model to add the task bundle to the project.
+     * @returns {Promise<void>}
+     */
+    addToProject(projectId: string, taskBundelToBeAdded: {
+        /**
+         * The id of the task bundle to add to the entity.
+         */
+        taskBundleId: string;
+        /**
+         * The id of the project template to get the task bundle from.
+         */
+        projectTemplateId: string;
+        /**
+         * nullable
+         */
+        defaultTaskListIdForEmails: string;
+    }): Promise<void>;
+    /**
      * Returns the {@link ProjectMembers} Endpoint with the specified project Id.
      * @param {String} projectId The id of the project.
      * @returns {ProjectMembers}
@@ -163,7 +189,7 @@ export class Projects {
      */
     files(projectId: string): EntityFiles;
     /**
-     * Returns the {@link ProjectProjectStatus} Endpoint with the specified project Id.
+     * Returns the {@link ProjectProjectStatuses} Endpoint with the specified project Id.
      * @param {String} projectId The id of the project.
      * @returns {ProjectProjectStatus}
      */

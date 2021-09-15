@@ -94,9 +94,73 @@ export class TaskBundles {
      * @returns {Promise<TaskBundle>}
      */
     copy(taskBundleId: string): Promise<TaskBundle>;
-    taskListTemplates(taskBundleId: any): TaskBundleTaskListTemplates;
-    taskTemplates(taskBundleId: any): TaskBundleTaskTemplates;
+    /**
+     * @typedef {Object} TaskBundleCreateModel
+     * @property {String} name The name of the task bundle. Required if its not related to a task bundle.
+     * @property {String} description The description of the task bundle.
+     * @property {Icon} icon The icon of the task bundle.
+     * @property {String} projectTemplateId The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
+     */
+    /**
+     * Creates a new task bundle from the specified project.
+     * @param {String} projectId The id of the project of which the new task bundle will be created.
+     * @param {TaskBundleCreateModel} taskBundle The model to create the task bundle.
+     * @returns {Promise<Task>}
+     */
+    createFromProject(projectId: string, taskBundle: {
+        /**
+         * The name of the task bundle. Required if its not related to a task bundle.
+         */
+        name: string;
+        /**
+         * The description of the task bundle.
+         */
+        description: string;
+        /**
+         * The icon of the task bundle.
+         */
+        icon: Icon;
+        /**
+         * The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
+         */
+        projectTemplateId: string;
+    }): Promise<Task>;
+    /**
+     * Creates a new task bundle from the specified task list.
+     * @param {String} taskListId The id of the task list of which the new task bundle will be created.
+     * @param {TaskBundleCreateModel} taskBundle The model to create the task bundle.
+     * @returns {Promise<Task>}
+     */
+    createFromTaskList(taskListId: string, taskBundle: {
+        /**
+         * The name of the task bundle. Required if its not related to a task bundle.
+         */
+        name: string;
+        /**
+         * The description of the task bundle.
+         */
+        description: string;
+        /**
+         * The icon of the task bundle.
+         */
+        icon: Icon;
+        /**
+         * The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
+         */
+        projectTemplateId: string;
+    }): Promise<Task>;
+    /**
+     * Returns the {@link TaskBundleTaskListTemplates} Endpoint with the specified task bundle Id.
+     * @param {String} projectId The id of the task bundle.
+     * @returns {ProjectProjectStatus}
+     */
+    taskListTemplates(taskBundleId: any): any;
+    /**
+     * Returns the {@link TaskBundleTaskTemplates} Endpoint with the specified task bundle Id.
+     * @param {String} projectId The id of the task bundle.
+     * @returns {ProjectProjectStatus}
+     */
+    taskTemplates(taskBundleId: any): any;
 }
 import { TaskBundle } from "../model/TaskBundle";
-import { TaskBundleTaskListTemplates } from "./TaskBundleTaskListTemplates";
-import { TaskBundleTaskTemplates } from "./TaskBundleTaskTemplates";
+import { Task } from "../model/Task";

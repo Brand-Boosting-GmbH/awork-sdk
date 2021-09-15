@@ -110,6 +110,12 @@ class TaskBundleTaskListTemplates {
       order: order
     });
   }
+  /**
+   * Returns the {@link TaskBundleTaskListTemplatesTaskTemplates} Endpoint with the specified task bundle Id and task list template Id.
+   * @param {String} projectId The id of the task list template.
+   * @returns {ProjectProjectStatus}
+   */
+
 
   taskTemplates(taskListTemplateId) {
     return new _TaskBundleTaskListTemplatesTaskTemplates.TaskBundleTaskListTemplatesTaskTemplates(this._client, this._taskBundleId, taskListTemplateId);
