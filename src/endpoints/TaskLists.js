@@ -29,7 +29,7 @@ export class TaskLists {
      * @param {String} taskListId The id of the task list.
      * @returns {Promise<TaskListTemplate>}
      */
-    get (taskListId) {
+    async get (taskListId) {
         const response = await this._client.get(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}`, options)
         const data = response.data()
         return new TaskListTemplate(data)
