@@ -9,6 +9,8 @@ require("../globalTypedef");
 
 var _Comment = require("../model/Comment");
 
+var _EntityFiles = require("./EntityFiles");
+
 /**
  * Class corresponding to Aworks Comments Endpoints
  * @category Endpoints
@@ -135,7 +137,7 @@ class EntityComments {
 
 
   files(commentId) {
-    return new EntityFiles(this._client, 'comments', commentId);
+    return new _EntityFiles.EntityFiles(this._client, 'comments', commentId);
   }
 
 }

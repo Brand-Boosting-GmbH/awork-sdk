@@ -114,6 +114,7 @@ export class EntityComments {
      * @param {String} commentId The id of the comment.
      * @returns {EntityFiles}
      */
-    files(commentId: string): any;
+    files(commentId: string): EntityFiles;
 }
 import { Comment } from "../model/Comment";
+import { EntityFiles } from "./EntityFiles";
