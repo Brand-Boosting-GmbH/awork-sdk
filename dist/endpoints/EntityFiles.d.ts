@@ -158,10 +158,10 @@ export class EntityFiles {
      */
     /**
      * @param {String} fileId The id of the file.
-     * @param {DownloadOptions} options The download options.
+     * @param {DownloadOptions} [options] The download options.
      * @returns {String} binary
      */
-    download(fileId: string, options: {
+    download(fileId: string, options?: {
         /**
          * Set width to resize.
          */

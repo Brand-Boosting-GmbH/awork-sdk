@@ -69,6 +69,10 @@ class TimeEntry {
     return this._data.note;
   } //LOCATION
 
+  /**
+   * Holds longitude and latitude values of the geo-location.
+   */
+
 
   get location() {
     return this._data.location;
@@ -100,6 +104,10 @@ class TimeEntry {
   get startDateUtc() {
     return this._data.startDateUtc;
   } //START-TIME-UTC
+
+  /**
+   * The start time in UTC when the time tracking was started.
+   */
 
 
   get startTimeUtc() {
@@ -193,6 +201,10 @@ class TimeEntry {
   get startTimeUtcTotalSeconds() {
     return this._data.startTimeUtc.totalSeconds;
   } //END-TIME-UTC
+
+  /**
+   * The end time in UTC when the time tracking ended.
+   */
 
 
   get endTimeUtc() {
@@ -297,6 +309,10 @@ class TimeEntry {
     return this._data.startDateLocal;
   } //START-TIME-LOCAL
 
+  /**
+   * The start time local when the time tracking was started.
+   */
+
 
   get startTimeLocal() {
     return this._data.startTimeLocal;
@@ -389,6 +405,10 @@ class TimeEntry {
   get startTimeLocalTotalSeconds() {
     return this._data.startTimeLocal.totalSeconds;
   } //END-TIME-LOCAL    
+
+  /**
+   * The end time in local when the time tracking ended.
+   */
 
 
   get endTimeLocal() {
@@ -565,6 +585,10 @@ class TimeEntry {
     return this._data.updatedOn;
   } //TYPE-OF-WORK
 
+  /**
+   * The type of work of the time entry.
+   */
+
 
   get typeOfWork() {
     return this._data.typeOfWork;
@@ -601,6 +625,10 @@ class TimeEntry {
   get typeOfWorkIsArchived() {
     return this._data.typeOfWork.isArchived;
   } //USER
+
+  /**
+   * The user which is assigned to the time entry.
+   */
 
 
   get user() {
@@ -665,18 +693,17 @@ class TimeEntry {
     return this._data.user.tags;
   }
   /**
-   * @typedef {Object} TeamsObject
-   * @property {String} id uuid
-   */
-
-  /**
-   * @type {Array<TeamsObject>}
+   * @type {Array<{id: String}>}
    */
 
 
   get userTeams() {
     return this._data.user.teams;
-  } //TASK    
+  } //TASK   
+
+  /**
+   * The task of the time entry.
+   */
 
 
   get task() {
@@ -736,7 +763,7 @@ class TimeEntry {
 
 
   get taskTaskStatusId() {
-    return this._data.task.taskStatusIs;
+    return this._data.task.taskStatusId;
   }
   /**
    * @type {String} uuid
@@ -864,22 +891,259 @@ class TimeEntry {
 
   get taskCreatedBy() {
     return this._data.task.createdBy;
-  }
+  } //PROJECT
+
+  /**
+   * The project of the time entry.
+   */
+
 
   get project() {
     return this._data.project;
   }
+  /**
+   * @type {String} uuid
+   */
+
+
+  get projectid() {
+    return this._data.project.id;
+  }
+  /**
+   * @type {String} nullable
+   */
+
+
+  get projectName() {
+    return this._data.project.name;
+  }
+  /**
+   * @type {String} nullable
+   */
+
+
+  get projectKey() {
+    return this._data.project.key;
+  }
+  /**
+   * @typedef {Object} ProjectStatusObject
+   * @property {String} id uuid
+   * @property {String} name nullable
+   * @property {String} description nullable
+   * @property {String} type nullable
+   * @property {Boolean} isArchived
+   */
+
+  /**
+   * @type {ProjectStatusObject}
+   */
+
+
+  get projectProjectStatus() {
+    return this._data.project.projectStatus;
+  }
+  /**
+   * @typedef {Object} CompanyObject
+   * @property {String} id uuid
+   * @property {String} name nullable
+   * @property {Boolean} hasImage
+   * @property {String} description nullable
+   */
+
+  /**
+   * @type {CompanyObject}
+   */
+
+
+  get projectCompany() {
+    return this._data.project.company;
+  }
+  /**
+   * @typedef {TaskTypeObject} ProjectTypeObject
+   */
+
+  /**
+   * @type {ProjectTypeObject}
+   */
+
+
+  get projectProjectType() {
+    return this._data.project.projectType;
+  }
+  /**
+   * @typedef {Object} ProjectTagsObject
+   * @property {String} id uuid
+   * @property {String} name nullable
+   * @property {String} color nullable
+   * @property {String} entityId uuid
+   */
+
+  /**
+   * @type {Array<ProjectTagsObject>} nullable
+   */
+
+
+  get projectTags() {
+    return this._data.project.tags;
+  }
+  /**
+   * @type {Array<{id: String}>} nullable
+   */
+
+
+  get projectTeams() {
+    return this._data.project.teams;
+  }
+  /**
+   * The end date (in UTC) of the time tracking.
+   * @type {String} date-time
+   */
+
 
   get endDateUtc() {
     return this._data.endDateUtc;
   }
+  /**
+   * The end date (in Local) of the time tracking.
+   * @type {String} date-time
+   */
+
 
   get endDateLocal() {
     return this._data.endDateLocal;
   }
+  /**
+   * The version of the entity continuously incremented by 1 on every update of the entity.
+   * @type {Integer} int64
+   */
+
 
   get resourceVersion() {
     return this._data.resourceVersion;
+  }
+
+  toPlainObject() {
+    return {
+      isBillable: this._data.isBillable,
+      isBilled: this._data.isBilled,
+      taskId: this._data.taskId,
+      projectId: this._data.projectId,
+      note: this._data.note,
+      location: {
+        longitude: this._data.location.longitude,
+        latitude: this._data.location.latitude
+      },
+      startDateUtc: this._data.startDateUtc,
+      startTimeUtc: {
+        ticks: this._data.startTimeUtc.ticks,
+        days: this._data.startTimeUtc.days,
+        hours: this._data.startTimeUtc.hours,
+        milliseconds: this._data.startTimeUtc.milliseconds,
+        minutes: this._data.startTimeUtc.minutes,
+        seconds: this._data.startTimeUtc.seconds,
+        totalDays: this._data.startTimeUtc.totalDays,
+        totalHours: this._data.startTimeUtc.totalHours,
+        totalMilliseconds: this._data.startTimeUtc.totalMilliseconds,
+        totalMinutes: this._data.startTimeUtc.totalMinutes,
+        totalSeconds: this._data.startTimeUtc.totalSeconds
+      },
+      endTimeUtc: {
+        ticks: this._data.endTimeUtc.ticks,
+        days: this._data.endTimeUtc.days,
+        hours: this._data.endTimeUtc.hours,
+        milliseconds: this._data.endTimeUtc.milliseconds,
+        minutes: this._data.endTimeUtc.minutes,
+        seconds: this._data.endTimeUtc.seconds,
+        totalDays: this._data.endTimeUtc.totalDays,
+        totalHours: this._data.endTimeUtc.totalHours,
+        totalMilliseconds: this._data.endTimeUtc.totalMilliseconds,
+        totalMinutes: this._data.endTimeUtc.totalMinutes,
+        totalSeconds: this._data.endTimeUtc.totalSeconds
+      },
+      startDateLocal: this._data.startDateLocal,
+      startTimeLocal: {
+        ticks: this._data.startTimeLocal.ticks,
+        days: this._data.startTimeLocal.days,
+        hours: this._data.startTimeLocal.hours,
+        milliseconds: this._data.startTimeLocal.milliseconds,
+        minutes: this._data.startTimeLocal.minutes,
+        seconds: this._data.startTimeLocal.seconds,
+        totalDays: this._data.startTimeLocal.totalDays,
+        totalHours: this._data.startTimeLocal.totalHours,
+        totalMilliseconds: this._data.startTimeLocal.totalMilliseconds,
+        totalMinutes: this._data.startTimeLocal.totalMinutes,
+        totalSeconds: this._data.startTimeLocal.totalSeconds
+      },
+      endTimeLocal: {
+        ticks: this._data.endTimeLocal.ticks,
+        days: this._data.endTimeLocal.days,
+        hours: this._data.endTimeLocal.hours,
+        milliseconds: this._data.endTimeLocal.milliseconds,
+        minutes: this._data.endTimeLocal.minutes,
+        seconds: this._data.endTimeLocal.seconds,
+        totalDays: this._data.endTimeLocal.totalDays,
+        totalHours: this._data.endTimeLocal.totalHours,
+        totalMilliseconds: this._data.endTimeLocal.totalMilliseconds,
+        totalMinutes: this._data.endTimeLocal.totalMinutes,
+        totalSeconds: this._data.endTimeLocal.totalSeconds
+      },
+      timezone: this._data.timezone,
+      duration: this._data.duration,
+      typeOfWorkId: this._data.typeOfWorkId,
+      userId: this._data.userId,
+      id: this._data.id,
+      createdBy: this._data.createdBy,
+      createdOn: this._data.createdOn,
+      updatedBy: this._data.updatedBy,
+      updatedOn: this._data.updatedOn,
+      typeOfWork: {
+        id: this._data.typeOfWorkId.id,
+        name: this._data.typeOfWorkId.name,
+        icon: this._data.typeOfWorkId.icon,
+        isArchived: this._data.typeOfWorkId.isArchived
+      },
+      user: {
+        id: this._data.user.id,
+        firstName: this._data.user.firstName,
+        lastName: this._data.user.lastName,
+        hasImage: this._data.user.hasImage,
+        key: this._data.user.key,
+        tags: this._data.user.tags,
+        team: this._data.user.team
+      },
+      task: {
+        id: this._data.task.id,
+        name: this._data.task.name,
+        key: this._data.task.key,
+        baseType: this._data.task.baseType,
+        taskStatus: this._data.task.taskStatus,
+        tastStatusId: this._data.task.taskStatusId,
+        typeOfWorkId: this._data.task.typeOfWorkId,
+        taskType: this._data.task.taskType,
+        assigneeId: this._data.task.assigneeId,
+        assignee: this._data.task.assignee,
+        project: this._data.task.project,
+        projectId: this._data.task.projectId,
+        plannedDuration: this._data.task.plannedDuration,
+        remainingDuration: this._data.task.remainingDuration,
+        closedOn: this._data.task.closedOn,
+        tags: this._data.task.tags,
+        createdBy: this._data.task.createdBy
+      },
+      project: {
+        id: this._data.project.id,
+        name: this._data.project.name,
+        key: this._data.project.key,
+        projectStatus: this._data.project.projectStatus,
+        company: this._data.project.company,
+        projectType: this._data.project.projectType,
+        tags: this._data.project.tags,
+        teams: this._data.project.teams
+      },
+      endDateUtc: this._data.endDateUtc,
+      endDateLocal: this._data.project.endDateLocal,
+      resourceVersion: this._data.project.resourceVersion
+    };
   }
 
 }

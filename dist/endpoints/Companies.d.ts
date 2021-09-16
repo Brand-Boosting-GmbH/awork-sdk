@@ -106,6 +106,12 @@ export class Companies {
      * @returns {EntityFiles}
      */
     files(companyId: string): EntityFiles;
+    /**
+     * Returns the {@link EntityImages} Endpoint with the specified company Id.
+     * @param {String} projectId The id of the company.
+     * @returns {EntityImages}
+     */
+    images(companyId: any): any;
 }
 import { Company } from "../model/Company";
 import { CompaniesContactInfos } from "./CompaniesContactInfos";

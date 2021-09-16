@@ -41,6 +41,9 @@ export class TimeEntry {
      * @type {String} nullable
      */
     get note(): string;
+    /**
+     * Holds longitude and latitude values of the geo-location.
+     */
     get location(): any;
     /**
      * The logitude value of the geo-location.
@@ -57,6 +60,9 @@ export class TimeEntry {
      * @type {String} date-time
      */
     get startDateUtc(): string;
+    /**
+     * The start time in UTC when the time tracking was started.
+     */
     get startTimeUtc(): any;
     /**
      * @type {Integer} int64, readOnly
@@ -102,6 +108,9 @@ export class TimeEntry {
      * @type {Number} double,  readOnly
      */
     get startTimeUtcTotalSeconds(): number;
+    /**
+     * The end time in UTC when the time tracking ended.
+     */
     get endTimeUtc(): any;
     /**
      * @type {Integer} int64, readOnly
@@ -152,6 +161,9 @@ export class TimeEntry {
      * @type {String} date-time
      */
     get startDateLocal(): string;
+    /**
+     * The start time local when the time tracking was started.
+     */
     get startTimeLocal(): any;
     /**
      * @type {Integer} int64, readOnly
@@ -197,6 +209,9 @@ export class TimeEntry {
      * @type {Number} double,  readOnly
      */
     get startTimeLocalTotalSeconds(): number;
+    /**
+     * The end time in local when the time tracking ended.
+     */
     get endTimeLocal(): any;
     /**
      * @type {Integer} int64, readOnly
@@ -287,6 +302,9 @@ export class TimeEntry {
      * @type {String} date-time
      */
     get updatedOn(): string;
+    /**
+     * The type of work of the time entry.
+     */
     get typeOfWork(): any;
     /**
      * @type {String} uuid
@@ -304,6 +322,9 @@ export class TimeEntry {
      * @type {Boolean}
      */
     get typeOfWorkIsArchived(): boolean;
+    /**
+     * The user which is assigned to the time entry.
+     */
     get user(): any;
     /**
      * @type {String} uuid
@@ -364,18 +385,14 @@ export class TimeEntry {
         name: string;
     }[];
     /**
-     * @typedef {Object} TeamsObject
-     * @property {String} id uuid
-     */
-    /**
-     * @type {Array<TeamsObject>}
+     * @type {Array<{id: String}>}
      */
     get userTeams(): {
-        /**
-         * uuid
-         */
         id: string;
     }[];
+    /**
+     * The task of the time entry.
+     */
     get task(): any;
     /**
      * @type {String} uuid
@@ -599,8 +616,266 @@ export class TimeEntry {
      * @type {String} uuid
      */
     get taskCreatedBy(): string;
+    /**
+     * The project of the time entry.
+     */
     get project(): any;
-    get endDateUtc(): any;
-    get endDateLocal(): any;
+    /**
+     * @type {String} uuid
+     */
+    get projectid(): string;
+    /**
+     * @type {String} nullable
+     */
+    get projectName(): string;
+    /**
+     * @type {String} nullable
+     */
+    get projectKey(): string;
+    /**
+     * @typedef {Object} ProjectStatusObject
+     * @property {String} id uuid
+     * @property {String} name nullable
+     * @property {String} description nullable
+     * @property {String} type nullable
+     * @property {Boolean} isArchived
+     */
+    /**
+     * @type {ProjectStatusObject}
+     */
+    get projectProjectStatus(): {
+        /**
+         * uuid
+         */
+        id: string;
+        /**
+         * nullable
+         */
+        name: string;
+        /**
+         * nullable
+         */
+        description: string;
+        /**
+         * nullable
+         */
+        type: string;
+        isArchived: boolean;
+    };
+    /**
+     * @typedef {Object} CompanyObject
+     * @property {String} id uuid
+     * @property {String} name nullable
+     * @property {Boolean} hasImage
+     * @property {String} description nullable
+     */
+    /**
+     * @type {CompanyObject}
+     */
+    get projectCompany(): {
+        /**
+         * uuid
+         */
+        id: string;
+        /**
+         * nullable
+         */
+        name: string;
+        hasImage: boolean;
+        /**
+         * nullable
+         */
+        description: string;
+    };
+    /**
+     * @typedef {TaskTypeObject} ProjectTypeObject
+     */
+    /**
+     * @type {ProjectTypeObject}
+     */
+    get projectProjectType(): {
+        /**
+         * uuid
+         */
+        id: string;
+        /**
+         * nullable
+         */
+        name: string;
+        /**
+         * nullable
+         */
+        icon: string;
+        isArchived: boolean;
+    };
+    /**
+     * @typedef {Object} ProjectTagsObject
+     * @property {String} id uuid
+     * @property {String} name nullable
+     * @property {String} color nullable
+     * @property {String} entityId uuid
+     */
+    /**
+     * @type {Array<ProjectTagsObject>} nullable
+     */
+    get projectTags(): {
+        /**
+         * uuid
+         */
+        id: string;
+        /**
+         * nullable
+         */
+        name: string;
+        /**
+         * nullable
+         */
+        color: string;
+        /**
+         * uuid
+         */
+        entityId: string;
+    }[];
+    /**
+     * @type {Array<{id: String}>} nullable
+     */
+    get projectTeams(): {
+        id: string;
+    }[];
+    /**
+     * The end date (in UTC) of the time tracking.
+     * @type {String} date-time
+     */
+    get endDateUtc(): string;
+    /**
+     * The end date (in Local) of the time tracking.
+     * @type {String} date-time
+     */
+    get endDateLocal(): string;
+    /**
+     * The version of the entity continuously incremented by 1 on every update of the entity.
+     * @type {Integer} int64
+     */
     get resourceVersion(): any;
+    toPlainObject(): {
+        isBillable: any;
+        isBilled: any;
+        taskId: any;
+        projectId: any;
+        note: any;
+        location: {
+            longitude: any;
+            latitude: any;
+        };
+        startDateUtc: any;
+        startTimeUtc: {
+            ticks: any;
+            days: any;
+            hours: any;
+            milliseconds: any;
+            minutes: any;
+            seconds: any;
+            totalDays: any;
+            totalHours: any;
+            totalMilliseconds: any;
+            totalMinutes: any;
+            totalSeconds: any;
+        };
+        endTimeUtc: {
+            ticks: any;
+            days: any;
+            hours: any;
+            milliseconds: any;
+            minutes: any;
+            seconds: any;
+            totalDays: any;
+            totalHours: any;
+            totalMilliseconds: any;
+            totalMinutes: any;
+            totalSeconds: any;
+        };
+        startDateLocal: any;
+        startTimeLocal: {
+            ticks: any;
+            days: any;
+            hours: any;
+            milliseconds: any;
+            minutes: any;
+            seconds: any;
+            totalDays: any;
+            totalHours: any;
+            totalMilliseconds: any;
+            totalMinutes: any;
+            totalSeconds: any;
+        };
+        endTimeLocal: {
+            ticks: any;
+            days: any;
+            hours: any;
+            milliseconds: any;
+            minutes: any;
+            seconds: any;
+            totalDays: any;
+            totalHours: any;
+            totalMilliseconds: any;
+            totalMinutes: any;
+            totalSeconds: any;
+        };
+        timezone: any;
+        duration: any;
+        typeOfWorkId: any;
+        userId: any;
+        id: any;
+        createdBy: any;
+        createdOn: any;
+        updatedBy: any;
+        updatedOn: any;
+        typeOfWork: {
+            id: any;
+            name: any;
+            icon: any;
+            isArchived: any;
+        };
+        user: {
+            id: any;
+            firstName: any;
+            lastName: any;
+            hasImage: any;
+            key: any;
+            tags: any;
+            team: any;
+        };
+        task: {
+            id: any;
+            name: any;
+            key: any;
+            baseType: any;
+            taskStatus: any;
+            tastStatusId: any;
+            typeOfWorkId: any;
+            taskType: any;
+            assigneeId: any;
+            assignee: any;
+            project: any;
+            projectId: any;
+            plannedDuration: any;
+            remainingDuration: any;
+            closedOn: any;
+            tags: any;
+            createdBy: any;
+        };
+        project: {
+            id: any;
+            name: any;
+            key: any;
+            projectStatus: any;
+            company: any;
+            projectType: any;
+            tags: any;
+            teams: any;
+        };
+        endDateUtc: any;
+        endDateLocal: any;
+        resourceVersion: any;
+    };
 }

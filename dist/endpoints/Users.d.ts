@@ -165,15 +165,29 @@ export class Users {
     /**
      * Sets the user key of the user with the specified id.
      * @param {String} userId The id of the user.
-     * @returns {Promise<>}
+     * @returns {Promise<String>}
      */
-    setkey(userId: string): Promise<any>;
+    setkey(userId: string): Promise<string>;
     /**
-     * Returns user contact informations.
+     * Returns the {@link UserContactInfos} Endpoint with the specified project Id.
      * @param {String} userId The id of the user.
-     * @returns
+     * @returns {UserContactInfos}
      */
-    contactInfo(userId: string): any;
+    contactInfo(userId: string): UserContactInfos;
+    /**
+     * The last time entry is always the last one that was started. Time entries which are started in the future are ignored. If a time entry does not have a start time, 12.00 am is automatically assumed as the start time for comparison with other time entries from the same day.
+     * @param {String} userId The id of the user. Not required if the me route is used.
+     * @returns {Promise<TimeEntry>}
+     */
+    lastTimeEntries(userId: string): Promise<TimeEntry>;
+    /**
+     * Returns the {@link EntityImages} Endpoint with the specified user Id.
+     * @param {String} usersId The id of the user.
+     * @returns {EntityImages}
+     */
+    images(usersId: string): any;
 }
 import { User } from "../model/User";
 import { ExtendedUser } from "../model/ExtendedUser";
+import { UserContactInfos } from "./UserContactInfos";
+import { TimeEntry } from "../model/TimeEntry";

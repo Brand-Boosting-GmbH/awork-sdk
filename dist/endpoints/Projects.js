@@ -23,6 +23,8 @@ var _ProjectAutomations = require("./ProjectAutomations");
 
 var _ProjectMilestone = require("../model/ProjectMilestone");
 
+var _EntityImages = require("./EntityImages");
+
 /**
  * Class corresponding to Aworks Projects Endpoints
  * @category Endpoints
@@ -226,6 +228,16 @@ class Projects {
 
   automations(projectId) {
     return new _ProjectAutomations.ProjectAutomations(this._client, projectId);
+  }
+  /**
+   * Returns the {@link EntityImages} Endpoint with the specified project Id.
+   * @param {String} projectId The id of the project.
+   * @returns {EntityImages}
+   */
+
+
+  images(projectId) {
+    return new _EntityImages.EntityImages(this._client, 'projects', projectId);
   }
 
 }

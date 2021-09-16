@@ -218,6 +218,12 @@ export class Projects {
      * @returns {ProjectAutomations}
      */
     automations(projectId: string): ProjectAutomations;
+    /**
+     * Returns the {@link EntityImages} Endpoint with the specified project Id.
+     * @param {String} projectId The id of the project.
+     * @returns {EntityImages}
+     */
+    images(projectId: string): any;
 }
 import { Project } from "../model/Project";
 import { TaskDependency } from "../model/TaskDependency";

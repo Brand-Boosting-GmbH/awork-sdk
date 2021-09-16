@@ -193,12 +193,12 @@ class EntityFiles {
 
   /**
    * @param {String} fileId The id of the file.
-   * @param {DownloadOptions} options The download options.
+   * @param {DownloadOptions} [options] The download options.
    * @returns {String} binary
    */
 
 
-  async download(fileId, options) {
+  async download(fileId, options = {}) {
     const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${fileId}/download`, options);
     return response.data();
   }

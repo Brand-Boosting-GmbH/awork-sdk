@@ -11,6 +11,8 @@ var _CompaniesContactInfos = require("./CompaniesContactInfos");
 
 var _EntityFiles = require("./EntityFiles");
 
+var _EntityImages = require("./EntityImages");
+
 /**
  * Class corresponding to Aworks Companies Endpoints
  * @category Endpoints
@@ -123,6 +125,16 @@ class Companies {
 
   files(companyId) {
     return new _EntityFiles.EntityFiles(this._client, 'companies', companyId);
+  }
+  /**
+   * Returns the {@link EntityImages} Endpoint with the specified company Id.
+   * @param {String} projectId The id of the company.
+   * @returns {EntityImages}
+   */
+
+
+  images(companyId) {
+    return new _EntityImages.EntityImages(this._client, 'companies', companyId);
   }
 
 }
