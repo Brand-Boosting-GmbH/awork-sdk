@@ -37,7 +37,7 @@ test('awork project lifecycle', async () => {
 
 
 test('awork webhooks WiP', async () => {
-    const res = await awork.client.get('/autopilot/availablealerts')
+    const res = await awork.client.get('/companies/tags')
     console.log(res.data())   
 })
 

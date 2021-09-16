@@ -3,6 +3,7 @@ import { ProjectTemplate } from "../model/ProjectTemplate"
 import { ProjectTemplateProjectStatuses } from './ProjectTemplateProjectStatuses'
 import { ProjectTemplateAutomations } from './ProjectTemplateAutomations'
 
+
 /**
  * Class corresponding to Aworks ProjectTemplates Endpoints
  * @category Endpoints
@@ -123,6 +124,11 @@ export class ProjectTemplates {
         return new ProjectTemplateProjectStatuses(this._client, projectTemplateId)
     }
 
+    /**
+     * Returns the {@link ProjectTemplateAutomations} Endpoint with the specified project template Id.
+     * @param {String} projectTemplateId The id of the project template
+     * @returns {ProjectTemplateAutomations}
+     */
     automations (projectTemplateId) {
         return new ProjectTemplateAutomations(this._client, projectTemplateId)
     }

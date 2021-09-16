@@ -5,6 +5,8 @@ import { EntityFiles } from "./EntityFiles"
 import { ProjectProjectStatuses } from "./ProjectProjectStatuses"
 import { TaskDependency } from '../model/TaskDependency'
 import { Autopilots } from './Autopilots'
+import { ProjectAutomations } from './ProjectAutomations'
+
 
 /**
  * Class corresponding to Aworks Projects Endpoints
@@ -163,7 +165,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {ProjectProjectStatus}
      */
-    projectStatus (projectId) {
+    projectStatuses (projectId) {
         return new ProjectProjectStatuses(this._client, projectId)
     }
 
@@ -172,7 +174,16 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {Autopilots}
      */
-    autopilot (projectId) {
+    autopilots (projectId) {
         return new Autopilots(this._client, projectId)
-    }    
+    }
+
+    /**
+     * Returns the {@link ProjectAutomations} Endpoint with the specified project Id.
+     * @param {String} projectId The id of the project.
+     * @returns {ProjectAutomations}
+     */
+    automations (projectId) {
+        return new ProjectAutomations(this._client, projectId)
+    }
 }
