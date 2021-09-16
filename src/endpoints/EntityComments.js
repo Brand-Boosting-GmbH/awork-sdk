@@ -1,5 +1,6 @@
 import '../globalTypedef'
 import { Comment } from "../model/Comment"
+import { EntityFiles } from './EntityFiles'
 
 /**
  * Class corresponding to Aworks Comments Endpoints
