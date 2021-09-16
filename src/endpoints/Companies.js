@@ -1,5 +1,6 @@
 import { Company } from "../model/Company"
 import { CompaniesContactInfos } from "./CompaniesContactInfos"
+import { EntityFiles } from "./EntityFiles"
 
 /**
  * Class corresponding to Aworks Companies Endpoints
@@ -97,5 +98,14 @@ export class Companies {
      */
     contactInfo (companyId) {
         return new CompaniesContactInfos(this._client, companyId)
+    }
+
+    /**
+     * Returns the {@link EntityFiles} Endpoint with the specified company Id and entityType 'companies'.
+     * @param {String} companyId The id of the company.
+     * @returns {EntityFiles}
+     */
+     files (companyId) {
+        return new EntityFiles(this._client, 'companies', companyId)
     }
 }

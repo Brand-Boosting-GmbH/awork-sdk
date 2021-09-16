@@ -1,6 +1,8 @@
 import { Task } from '../model/Task';
 import { TaskRecurrency } from '../model/TaskRecurrency'
 import { TaskDependency } from '../model/TaskDependency'
+import { EntityFiles } from "./EntityFiles"
+
 
 export class Tasks {
     constructor(client) {
@@ -194,5 +196,14 @@ export class Tasks {
       const response = await this._client.get(`/tasks/${taskId}/taskdependencies`)
       const data = response.data()
       return data.map(d => new TaskDependency(d))
+    }
+
+    /**
+     * Returns the {@link EntityFiles} Endpoint with the specified task Id and entityType 'tasks'.
+     * @param {String} taskId The id of the project.
+     * @returns {EntityFiles}
+     */
+     files (taskId) { 
+      return new EntityFiles(this._client, 'tasks', taskId)
     }
   }

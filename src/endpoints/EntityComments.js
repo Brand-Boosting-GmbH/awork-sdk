@@ -110,4 +110,13 @@ export class EntityComments {
     async react(commentId, reaction) {
         await this._client.post(`/${entityName}/${entityId}/comments/${commentId}/react`)
     }
+
+    /**
+     * Returns the {@link EntityFiles} Endpoint with the specified comment Id and entityType 'comments'.
+     * @param {String} commentId The id of the comment.
+     * @returns {EntityFiles}
+     */
+     files (commentId) {
+        return new EntityFiles(this._client, 'comments', commentId)
+    }
 }

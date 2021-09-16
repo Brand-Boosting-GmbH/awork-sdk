@@ -371,14 +371,6 @@ export class Project {
         return this._data.teams
     }
 
-
-
-
-    
-    
-
-
-
     toPlainObject() {
         return {
             name: this._data.name,
