@@ -8,6 +8,8 @@ import { Autopilots } from './Autopilots'
 import { ProjectAutomations } from './ProjectAutomations'
 import { ProjectMilestone } from '../model/ProjectMilestone'
 import { EntityImages } from './EntityImages'
+import { ProjectTasks } from './ProjectTasks'
+
 
 /**
  * Class corresponding to Aworks Projects Endpoints
@@ -206,5 +208,14 @@ export class Projects {
      */
     images (projectId) {
         return new EntityImages(this._client, 'projects', projectId)
+    }
+
+    /**
+     * Returns the {@link ProjectTasks} Endpoint with the specified project Id.
+     * @param {String} projectId The id of the project.
+     * @returns {ProjectTasks}
+     */
+    tasks (projectId) {
+        return new ProjectTasks(this._client, projectId)
     }
 }

@@ -6,7 +6,7 @@ import { EntityFile } from "../model/EntityFile";
  * @category Endpoints
  * @see [Files in Awork API Docs](https://openapi.awork.io/#/Files)
  */
- export class Files {
+ export class EntityImages {
     
     /**
     * Endpoint constructor
