@@ -109,5 +109,11 @@ export class EntityComments {
          */
         operation: string;
     }): Promise<void>;
+    /**
+     * Returns the {@link EntityFiles} Endpoint with the specified comment Id and entityType 'comments'.
+     * @param {String} commentId The id of the comment.
+     * @returns {EntityFiles}
+     */
+    files(commentId: string): any;
 }
 import { Comment } from "../model/Comment";

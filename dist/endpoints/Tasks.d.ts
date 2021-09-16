@@ -117,6 +117,13 @@ export class Tasks {
      * @returns {Promise<Array<TaskDependency>>}
      */
     taskDependencyList(taskId: string): Promise<Array<TaskDependency>>;
+    /**
+     * Returns the {@link EntityFiles} Endpoint with the specified task Id and entityType 'tasks'.
+     * @param {String} taskId The id of the project.
+     * @returns {EntityFiles}
+     */
+    files(taskId: string): EntityFiles;
 }
 import { Task } from "../model/Task";
 import { TaskDependency } from "../model/TaskDependency";
+import { EntityFiles } from "./EntityFiles";
