@@ -11,6 +11,8 @@ var _TaskRecurrency = require("../model/TaskRecurrency");
 
 var _TaskDependency = require("../model/TaskDependency");
 
+var _EntityFiles = require("./EntityFiles");
+
 class Tasks {
   constructor(client) {
     this._client = client;
@@ -211,6 +213,16 @@ class Tasks {
     const response = await this._client.get(`/tasks/${taskId}/taskdependencies`);
     const data = response.data();
     return data.map(d => new _TaskDependency.TaskDependency(d));
+  }
+  /**
+   * Returns the {@link EntityFiles} Endpoint with the specified task Id and entityType 'tasks'.
+   * @param {String} taskId The id of the project.
+   * @returns {EntityFiles}
+   */
+
+
+  files(taskId) {
+    return new _EntityFiles.EntityFiles(this._client, 'tasks', taskId);
   }
 
 }

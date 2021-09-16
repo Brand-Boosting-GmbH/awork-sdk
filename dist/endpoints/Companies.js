@@ -9,6 +9,8 @@ var _Company = require("../model/Company");
 
 var _CompaniesContactInfos = require("./CompaniesContactInfos");
 
+var _EntityFiles = require("./EntityFiles");
+
 /**
  * Class corresponding to Aworks Companies Endpoints
  * @category Endpoints
@@ -111,6 +113,16 @@ class Companies {
 
   contactInfo(companyId) {
     return new _CompaniesContactInfos.CompaniesContactInfos(this._client, companyId);
+  }
+  /**
+   * Returns the {@link EntityFiles} Endpoint with the specified company Id and entityType 'companies'.
+   * @param {String} companyId The id of the company.
+   * @returns {EntityFiles}
+   */
+
+
+  files(companyId) {
+    return new _EntityFiles.EntityFiles(this._client, 'companies', companyId);
   }
 
 }

@@ -100,6 +100,13 @@ export class Companies {
      * @returns {CompaniesContactInfos}
      */
     contactInfo(companyId: string): CompaniesContactInfos;
+    /**
+     * Returns the {@link EntityFiles} Endpoint with the specified company Id and entityType 'companies'.
+     * @param {String} companyId The id of the company.
+     * @returns {EntityFiles}
+     */
+    files(companyId: string): EntityFiles;
 }
 import { Company } from "../model/Company";
 import { CompaniesContactInfos } from "./CompaniesContactInfos";
+import { EntityFiles } from "./EntityFiles";

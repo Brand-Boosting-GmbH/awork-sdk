@@ -45,7 +45,7 @@ export class Comment {
      * The type of the entity of the comment. Required.
      * @type {('companies'|'files'|'projects'|'tasks')} nullable
      */
-    get entityType(): "files" | "companies" | "projects" | "tasks";
+    get entityType(): "files" | "projects" | "companies" | "tasks";
     /**
      * The date this object was created.
      * @type {String} date-time
