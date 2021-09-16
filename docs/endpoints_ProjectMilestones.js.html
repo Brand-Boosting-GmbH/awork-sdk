@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/ApiUser.js</title>
+  <title> endpoints/ProjectMilestones.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/ApiUser.js</h1>
+                    <h1>endpoints/ProjectMilestones.js</h1>
                 </header>
                 
 
@@ -85,102 +85,86 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * ApiUser Model
- * @category Models
- * @class
+            <pre class="prettyprint source linenums"><code>import { ProjectMilestone } from "../model/ProjectMilestone"
+import '../globalTypedef'
+
+/**
+ * Class corresponding to Aworks ProjectMilestones Endpoints.
+ * @category Endpoints
+ * @see [ProjectMilestones in Awork API Docs](https://openapi.awork.io/#/ProjectMilestones)
  */
- export class ApiUser {
-    /**
-     * @typedef {ApiUser &amp; {_plain?: true}} ApiUserLike
-     */
 
+export class ProjectMilestones {
     /**
-     * Model constructor
-     * @param {ApiUserLike} data 
+     * Endpoint constructor
+     * @param {import('../client/index').Client} client 
      */
-    constructor(data) {
-        /** @private */
-        this._data = data || {}
+    constructor(client) {
+        /** @private*/
+        this._client = client
     }
 
     /**
-     * The name of the API user.
-     * @type {String} nullable
+     * Returns all project milestones the user is allowed to see.
+     * The user only gets returned all milestones of projects he has 'read' permissions of feature 'project-planning-data' for.
+     * @param {ListOptions} [options] Pagination and filtering options.
+     * @returns {Promise&lt;Array&lt;ProjectMilestone>>}
      */
-    get name () {
-        return this._data.name
+    async list (options) {
+        const response = await this._client.get('/projectmilestones', options)
+        const data = response.data()
+        return data.map(d => new ProjectMilestone(d))
     }
 
     /**
-     * The role the user should be in. If no role is specified, the user will become an admin.
-     * @type {String} uuid
+     * @typedef {Object} ProjectMilestoneCreateModel
+     * @property {String} name The name of the milestone.
+     * @property {String} color The color of the milestone.
+     * @property {String} dueDate The date the milestone is due.
+     * @property {String} projectId The id of the project the milestone is related to.
      */
-    get roleId () {
-        return this._data.roleId
+
+    /**
+     * Creates a new project milestone.
+     * The user needs 'write' permissions of feature 'project-planning-data' to get the data.
+     * @param {ProjectMilestoneCreateModel} milestone The model to create a project milstone.
+     * @returns {Promise&lt;ProjectMilestone>}>
+     */
+    async create (milestone) {
+        const response = await this._client.post('/projectmilestones', milestone)
+        const data = response.data()
+        return new ProjectMilestone(data)
     }
 
     /**
-     * The client id this API user belongs to.
-     * @type {String} nullable
+     * @typedef {Object} ProjectMilestoneUpdateModel
+     * @property {String} name The name of the milestone.
+     * @property {String} color The color of the milestone.
+     * @property {String} dueDate The date the milestone is due.
      */
-    get clientId () {
-        return this._data.clientId
+
+    /**
+     * Updates the specified project milestone. The user needs 'write' permissions of feature 'project-planning-data' to get the data.
+     * @param {String} milestoneId The id of the project milestone.
+     * @param {ProjectMilestoneUpdateModel} milestone The model to update a project milestone.
+     * @returns {Promise&lt;ProjectMilestone>}
+     */
+    async update (milestoneId, milestone) {
+        const response = await this._client.put(`/projectmilestones/${milestoneId}`, milestone)
+        const data = response.data()
+        return new ProjectMilestone(data)
     }
 
     /**
-     * The id of the API user.
-     * @type {String} uuid
+     * Deletes the project milestone with the specified id.
+     * The user needs 'write' permissions of feature 'project-planning-data' to get the data.
+     * @param {String} milestoneId The id of the project milestone.
+     * @returns {Promise&lt;void>}
      */
-    get id () {
-        return this._data.id
+    async delete (milestoneId) {
+        await this._client.delete(`/projectmilestones/${milestoneId}`)
     }
-
-    /**
-     * The date this user was created.
-     * @type {String} date-time
-     */
-    get createdOn () {
-        return this._data.createdOn
-    }
-
-    /**
-     * The id of the user who created this user.
-     * @type {String} uuid
-     */
-    get createdBy () {
-        return this._data.createdBy
-    }
-
-    /**
-     * The date where this user was last updated.
-     * @type {String} date-time
-     */
-    get updatedOn () {
-        return this._data.updatedOn
-    }
-
-    /**
-     * The id of the user who updated the entity.
-     * @type {String} uuid
-     */
-    get updatedBy () {
-        return this._data.updated
-    }
-
-    toPlainObject () {
-        return {
-            id: this._data.id,
-            name: this._data.name,
-            roleId: this._data.roleId,
-            clientId: this._data.clientId,
-            createdOn: this._data.createdOn,
-            createdBy: this._data.createdBy,
-            updatedOn: this._data.updatedOn,
-            updatedBy: this._data.updatedBy
-        }
-    }
- }</code></pre>
+}</code></pre>
         </article>
     </section>
 

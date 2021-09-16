@@ -183,6 +183,12 @@ export class Projects {
      */
     taskDependencyList(projectId: string): Promise<Array<TaskDependency>>;
     /**
+     * Returns all project milestones of the specified project. The user needs 'read' permissions of feature 'project-planning-data' to get the data.
+     * @param {String} projectId The id of the project.
+     * @returns {Promise<Array<ProjectMilestone>>}
+     */
+    milestoneList(projectId: string): Promise<Array<ProjectMilestone>>;
+    /**
      * Returns the {@link ProjectMembers} Endpoint with the specified project Id.
      * @param {String} projectId The id of the project.
      * @returns {ProjectMembers}
@@ -215,6 +221,7 @@ export class Projects {
 }
 import { Project } from "../model/Project";
 import { TaskDependency } from "../model/TaskDependency";
+import { ProjectMilestone } from "../model/ProjectMilestone";
 import { ProjectMembers } from "./ProjectMembers";
 import { EntityFiles } from "./EntityFiles";
 import { Autopilots } from "./Autopilots";

@@ -21,6 +21,8 @@ var _Autopilots = require("./Autopilots");
 
 var _ProjectAutomations = require("./ProjectAutomations");
 
+var _ProjectMilestone = require("../model/ProjectMilestone");
+
 /**
  * Class corresponding to Aworks Projects Endpoints
  * @category Endpoints
@@ -161,6 +163,18 @@ class Projects {
     const response = await this._client.get(`/projects/${projectId}/taskdependencies`);
     const data = response.data();
     return data.map(d => new _TaskDependency.TaskDependency(d));
+  }
+  /**
+   * Returns all project milestones of the specified project. The user needs 'read' permissions of feature 'project-planning-data' to get the data.
+   * @param {String} projectId The id of the project.
+   * @returns {Promise<Array<ProjectMilestone>>}
+   */
+
+
+  async milestoneList(projectId) {
+    const response = await this._client.get(`projects/${projectId}/milestones`);
+    const data = response.data();
+    return data.map(d => new _ProjectMilestone.ProjectMilestone(d));
   }
   /**
    * Returns the {@link ProjectMembers} Endpoint with the specified project Id.
