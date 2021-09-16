@@ -139,6 +139,12 @@ class ProjectTemplates {
   projectStatus(projectTemplateId) {
     return new _ProjectTemplateProjectStatuses.ProjectTemplateProjectStatuses(this._client, projectTemplateId);
   }
+  /**
+   * Returns the {@link ProjectTemplateAutomations} Endpoint with the specified project template Id.
+   * @param {String} projectTemplateId The id of the project template
+   * @returns {ProjectTemplateAutomations}
+   */
+
 
   automations(projectTemplateId) {
     return new _ProjectTemplateAutomations.ProjectTemplateAutomations(this._client, projectTemplateId);

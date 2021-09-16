@@ -74,5 +74,26 @@ export class ProjectTemplateAutomations {
             }>;
         };
     }): Promise<Automation>;
+    /**
+     * Deletes the specified automation with its trigger and all its values. To delete the the automation the user needs to have 'write' permissions of the feature 'project-manage-config' globally. If the 'removeFromProject' boolean is set to true, all automations in projects of that project template created from that automation template are deleted aswell.
+     * @param {String} automationId The id of the automation.
+     * @param {Boolean} removefromProjects Whether to delete the automation also from all projects of the projecttemplate.
+     * @returns {Promise<void>}
+     */
+    delete(automationId: string, removefromProjects: boolean): Promise<void>;
+    /**
+     * Reapplies the automation to all projects of this specifc project template.
+     * Returns NotFound if the automation doesnt exist. To execute this you need to have 'write' permissions of the feature 'project-manage-config' globally.
+     * @param {String} automationId The id of the automation.
+     * @returns {Promise<void>}
+     */
+    reApply(automationId: string): Promise<void>;
+    /**
+     * Returns the {@link ProjectTemplateActions} Endpoint with the specified project template Id.
+     * @param {String} projectTemplateId The id of the project template
+     * @returns {ProjectTemplateActions}
+     */
+    actions(automationId: any): ProjectTemplateActions;
 }
 import { Automation } from "../model/Automation";
+import { ProjectTemplateActions } from "./ProjectTemplateActions";

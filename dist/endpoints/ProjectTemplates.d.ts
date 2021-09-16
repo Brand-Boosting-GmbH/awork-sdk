@@ -115,7 +115,12 @@ export class ProjectTemplates {
      * @returns {ProjectTemplateProjectStatuses}
      */
     projectStatus(projectTemplateId: string): ProjectTemplateProjectStatuses;
-    automations(projectTemplateId: any): ProjectTemplateAutomations;
+    /**
+     * Returns the {@link ProjectTemplateAutomations} Endpoint with the specified project template Id.
+     * @param {String} projectTemplateId The id of the project template
+     * @returns {ProjectTemplateAutomations}
+     */
+    automations(projectTemplateId: string): ProjectTemplateAutomations;
 }
 import { ProjectTemplate } from "../model/ProjectTemplate";
 import { ProjectTemplateProjectStatuses } from "./ProjectTemplateProjectStatuses";

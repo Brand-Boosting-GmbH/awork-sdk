@@ -199,16 +199,23 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {ProjectProjectStatus}
      */
-    projectStatus(projectId: string): any;
+    projectStatuses(projectId: string): any;
     /**
      * Returns the {@link Autopilots} Endpoint with the specified project Id.
      * @param {String} projectId The id of the project.
      * @returns {Autopilots}
      */
-    autopilot(projectId: string): Autopilots;
+    autopilots(projectId: string): Autopilots;
+    /**
+     * Returns the {@link ProjectAutomations} Endpoint with the specified project Id.
+     * @param {String} projectId The id of the project.
+     * @returns {ProjectAutomations}
+     */
+    automations(projectId: string): ProjectAutomations;
 }
 import { Project } from "../model/Project";
 import { TaskDependency } from "../model/TaskDependency";
 import { ProjectMembers } from "./ProjectMembers";
 import { EntityFiles } from "./EntityFiles";
 import { Autopilots } from "./Autopilots";
+import { ProjectAutomations } from "./ProjectAutomations";
