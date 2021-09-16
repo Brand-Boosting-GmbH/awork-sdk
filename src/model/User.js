@@ -235,8 +235,8 @@
             capacityPerWeek: this._data.capacityPerWeek,
             key: this._data.key,
             status: {
-                invitationAccepted: this._data.invitationAccepted,
-                isDeactivated: this._data.isDeactivated
+                invitationAccepted: this._data.status.invitationAccepted,
+                isDeactivated: this._data.status.isDeactivated
             },
             createdOn: this._data.createdOn,
             createdBy: this._data.createdBy,

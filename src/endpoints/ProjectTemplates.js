@@ -2,7 +2,7 @@ import '../globalTypedef'
 import { ProjectTemplate } from "../model/ProjectTemplate"
 import { ProjectTemplateProjectStatuses } from './ProjectTemplateProjectStatuses'
 import { ProjectTemplateAutomations } from './ProjectTemplateAutomations'
-
+import { EntityImages } from './EntityImages'
 
 /**
  * Class corresponding to Aworks ProjectTemplates Endpoints
@@ -131,5 +131,14 @@ export class ProjectTemplates {
      */
     automations (projectTemplateId) {
         return new ProjectTemplateAutomations(this._client, projectTemplateId)
+    }
+
+    /**
+     * Returns the {@link EntityImages} Endpoint with the specified project tempate Id.
+     * @param {String} projectTemplateId The id of the project template.
+     * @returns {EntityImages}
+     */
+    images (projectTemplateId) {
+    return new EntityImages(this._client, 'projecttemplates', projectTemplateId)
     }
 }

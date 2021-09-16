@@ -7,7 +7,7 @@ import { TaskDependency } from '../model/TaskDependency'
 import { Autopilots } from './Autopilots'
 import { ProjectAutomations } from './ProjectAutomations'
 import { ProjectMilestone } from '../model/ProjectMilestone'
-
+import { EntityImages } from './EntityImages'
 
 /**
  * Class corresponding to Aworks Projects Endpoints
@@ -197,5 +197,14 @@ export class Projects {
      */
     automations (projectId) {
         return new ProjectAutomations(this._client, projectId)
+    }
+
+    /**
+     * Returns the {@link EntityImages} Endpoint with the specified project Id.
+     * @param {String} projectId The id of the project.
+     * @returns {EntityImages}
+     */
+    images (projectId) {
+        return new EntityImages(this._client, 'projects', projectId)
     }
 }

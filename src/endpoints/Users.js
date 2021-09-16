@@ -1,6 +1,9 @@
 import '../globalTypedef'
 import { User } from "../model/User"
 import { ExtendedUser } from "../model/ExtendedUser"
+import { TimeEntry } from "../model/TimeEntry"
+import { UserContactInfos } from './UserContactInfos'
+import { EntityImages } from './EntityImages'
 
 /**
  * Class corresponding to Aworks Users Endpoints
@@ -145,7 +148,7 @@ export class Users {
     /**
      * Sets the user key of the user with the specified id.
      * @param {String} userId The id of the user.
-     * @returns {Promise<>} 
+     * @returns {Promise<String>} 
      */
     async setkey(userId) {
         const response = await this._client.post(`/users/${userId}/setkey`)
@@ -153,11 +156,31 @@ export class Users {
     }
 
     /**
-     * Returns user contact informations.
+     * Returns the {@link UserContactInfos} Endpoint with the specified project Id.
      * @param {String} userId The id of the user.
-     * @returns 
+     * @returns {UserContactInfos}
      */
     contactInfo(userId) {
         return new UserContactInfos(this._client, userId)
+    }
+
+    /**
+     * The last time entry is always the last one that was started. Time entries which are started in the future are ignored. If a time entry does not have a start time, 12.00 am is automatically assumed as the start time for comparison with other time entries from the same day.
+     * @param {String} userId The id of the user. Not required if the me route is used.
+     * @returns {Promise<TimeEntry>}
+     */
+    async lastTimeEntries(userId) {
+        const response = await this._client.get(`/users/${userId}/timeentries/last`)
+        const data = response.data()
+        return new TimeEntry(data)
+    }
+
+    /**
+     * Returns the {@link EntityImages} Endpoint with the specified user Id.
+     * @param {String} usersId The id of the user.
+     * @returns {EntityImages}
+     */
+     images (usersId) {
+        return new EntityImages(this._client, 'users', usersId)
     }
 }
