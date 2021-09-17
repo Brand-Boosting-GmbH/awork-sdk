@@ -4,6 +4,7 @@ import { ExtendedUser } from "../model/ExtendedUser"
 import { TimeEntry } from "../model/TimeEntry"
 import { UserContactInfos } from './UserContactInfos'
 import { EntityImages } from './EntityImages'
+import { UserSubtasks } from './UserSubtasks'
 
 /**
  * Class corresponding to Aworks Users Endpoints
@@ -182,5 +183,14 @@ export class Users {
      */
      images (usersId) {
         return new EntityImages(this._client, 'users', usersId)
+    }
+
+    /**
+     * Returns the {@link UserSubtasks} Endpoint with the specified user Id.
+     * @param {String} userId The id of the user.
+     * @returns {UserSubtasks}
+     */
+    userSubtasks (userId) {
+        return new UserSubtasks(this._client, userId )
     }
 }

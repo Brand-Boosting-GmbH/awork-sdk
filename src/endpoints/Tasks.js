@@ -1,8 +1,10 @@
-import { Task } from '../model/Task';
+import { Task } from '../model/Task'
 import { TaskRecurrency } from '../model/TaskRecurrency'
 import { TaskDependency } from '../model/TaskDependency'
 import { EntityFiles } from "./EntityFiles"
-
+import { SubTasks } from './SubTasks'
+import { ProjectSubtasks } from './ProjectSubtasks'
+import { UserSubtasks } from "./UserSubtasks";
 
 export class Tasks {
     constructor(client) {
@@ -31,7 +33,6 @@ export class Tasks {
       return new Task(data);
     }
     
-    
     /**
      * Update a task
      *
@@ -45,7 +46,6 @@ export class Tasks {
       const data = response.data();
       return new Task(data);
     }
-  
     
     /**
      * Assigns users to tasks
@@ -200,10 +200,37 @@ export class Tasks {
 
     /**
      * Returns the {@link EntityFiles} Endpoint with the specified task Id and entityType 'tasks'.
-     * @param {String} taskId The id of the project.
+     * @param {String} taskId The id of the task.
      * @returns {EntityFiles}
      */
      files (taskId) { 
       return new EntityFiles(this._client, 'tasks', taskId)
+    }
+
+    /**
+     * Returns the {@link SubTasks} Endpoint with the specified task Id.
+     * @param {String} taskId The id of the task.
+     * @returns {SubTasks}
+     */
+    subtasks (taskId) {
+      return new SubTasks(this._client, taskId)
+    }
+
+    /**
+     * Returns the {@link ProjectsSubtasks} Endpoint with the specified task Id.
+     * @param {String} taskId The id of the task.
+     * @returns {ProjectSubtasks}
+     */
+    projectSubtasks (taskId) {
+      return new ProjectSubtasks(this._client, taskId)
+    }
+
+    /**
+     * Returns the {@link UserSubtasks} Endpoint with the specified task Id.
+     * @param {String} taskId The id of the task.
+     * @returns {UserSubtasks}
+     */
+    userSubtasks (taskId) {
+      return new UserSubtasks(this._client, taskId)
     }
   }
