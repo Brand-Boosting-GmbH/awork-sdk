@@ -111,8 +111,9 @@ export class Companies {
      * @param {String} projectId The id of the company.
      * @returns {EntityImages}
      */
-    images(companyId: any): any;
+    images(companyId: any): EntityImages;
 }
 import { Company } from "../model/Company";
 import { CompaniesContactInfos } from "./CompaniesContactInfos";
 import { EntityFiles } from "./EntityFiles";
+import { EntityImages } from "./EntityImages";

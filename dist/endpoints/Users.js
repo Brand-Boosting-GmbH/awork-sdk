@@ -17,6 +17,10 @@ var _UserContactInfos = require("./UserContactInfos");
 
 var _EntityImages = require("./EntityImages");
 
+var _UserPrivateTasksSubtasks = require("./UserPrivateTasksSubtasks");
+
+var _UserOtherPrivateTasksSubtasks = require("./UserOtherPrivateTasksSubtasks");
+
 /**
  * Class corresponding to Aworks Users Endpoints
  * @category Endpoints
@@ -207,6 +211,26 @@ class Users {
 
   images(usersId) {
     return new _EntityImages.EntityImages(this._client, 'users', usersId);
+  }
+  /**
+   * Returns the {@link UserPrivateTasksSubtasks} Endpoint with the specified user Id.
+   * @param {String} userId The id of the user.
+   * @returns {UserPrivateTasksSubtasks}
+   */
+
+
+  userPrivateTasksSubtasks(userId) {
+    return new _UserPrivateTasksSubtasks.UserPrivateTasksSubtasks(this._client, userId);
+  }
+  /**
+   * Returns the {@link UserOtherPrivateTasksSubtasks} Endpoint with the specified user Id.
+   * @param {String} userId The id of the user.
+   * @returns {UserOtherPrivateTasksSubtasks}
+   */
+
+
+  userOtherPrivateTasksSubtasks(userId) {
+    return new _UserOtherPrivateTasksSubtasks.UserOtherPrivateTasksSubtasks(this._client, userId);
   }
 
 }

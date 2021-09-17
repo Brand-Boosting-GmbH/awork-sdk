@@ -223,7 +223,19 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {EntityImages}
      */
-    images(projectId: string): any;
+    images(projectId: string): EntityImages;
+    /**
+     * Returns the {@link ProjectTasks} Endpoint with the specified project Id.
+     * @param {String} projectId The id of the project.
+     * @returns {ProjectTasks}
+     */
+    tasks(projectId: string): ProjectTasks;
+    /**
+     * Returns the {@link ProjectsSubtasks} Endpoint with the specified project Id.
+     * @param {String} projectId The id of the project.
+     * @returns {ProjectsSubtasks}
+     */
+    projectSubtasks(projectId: string): any;
 }
 import { Project } from "../model/Project";
 import { TaskDependency } from "../model/TaskDependency";
@@ -232,3 +244,5 @@ import { ProjectMembers } from "./ProjectMembers";
 import { EntityFiles } from "./EntityFiles";
 import { Autopilots } from "./Autopilots";
 import { ProjectAutomations } from "./ProjectAutomations";
+import { EntityImages } from "./EntityImages";
+import { ProjectTasks } from "./ProjectTasks";

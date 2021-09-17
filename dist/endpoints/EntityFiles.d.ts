@@ -7,8 +7,8 @@ export class EntityFiles {
     /**
     * Endpoint constructor
     * @param {import('../client/index').Client} client
-    * @param {('projects'|'companies'|'tasks'|'comments')} entityName
-    * @param {String} entityId
+    * @param {('projects'|'companies'|'tasks'|'comments')} entityName The name of the entity.
+    * @param {String} entityId The id of the entity.
     */
     constructor(client: import('../client/index').Client, entityName: ('projects' | 'companies' | 'tasks' | 'comments'), entityId: string);
     /**

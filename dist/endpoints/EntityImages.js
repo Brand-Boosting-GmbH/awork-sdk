@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Files = void 0;
+exports.EntityImages = void 0;
 
 require("../globalTypedef");
 
@@ -14,7 +14,7 @@ var _EntityFile = require("../model/EntityFile");
  * @category Endpoints
  * @see [Files in Awork API Docs](https://openapi.awork.io/#/Files)
  */
-class Files {
+class EntityImages {
   /**
   * Endpoint constructor
   * @param {import('../client/index').Client} client 
@@ -96,4 +96,4 @@ class Files {
 
 }
 
-exports.Files = Files;
+exports.EntityImages = EntityImages;

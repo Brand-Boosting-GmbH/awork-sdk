@@ -185,9 +185,24 @@ export class Users {
      * @param {String} usersId The id of the user.
      * @returns {EntityImages}
      */
-    images(usersId: string): any;
+    images(usersId: string): EntityImages;
+    /**
+     * Returns the {@link UserPrivateTasksSubtasks} Endpoint with the specified user Id.
+     * @param {String} userId The id of the user.
+     * @returns {UserPrivateTasksSubtasks}
+     */
+    userPrivateTasksSubtasks(userId: string): UserPrivateTasksSubtasks;
+    /**
+     * Returns the {@link UserOtherPrivateTasksSubtasks} Endpoint with the specified user Id.
+     * @param {String} userId The id of the user.
+     * @returns {UserOtherPrivateTasksSubtasks}
+     */
+    userOtherPrivateTasksSubtasks(userId: string): UserOtherPrivateTasksSubtasks;
 }
 import { User } from "../model/User";
 import { ExtendedUser } from "../model/ExtendedUser";
 import { UserContactInfos } from "./UserContactInfos";
 import { TimeEntry } from "../model/TimeEntry";
+import { EntityImages } from "./EntityImages";
+import { UserPrivateTasksSubtasks } from "./UserPrivateTasksSubtasks";
+import { UserOtherPrivateTasksSubtasks } from "./UserOtherPrivateTasksSubtasks";

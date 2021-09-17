@@ -25,6 +25,10 @@ var _ProjectMilestone = require("../model/ProjectMilestone");
 
 var _EntityImages = require("./EntityImages");
 
+var _ProjectTasks = require("./ProjectTasks");
+
+var _ProjectSubtasks = require("./ProjectSubtasks");
+
 /**
  * Class corresponding to Aworks Projects Endpoints
  * @category Endpoints
@@ -238,6 +242,26 @@ class Projects {
 
   images(projectId) {
     return new _EntityImages.EntityImages(this._client, 'projects', projectId);
+  }
+  /**
+   * Returns the {@link ProjectTasks} Endpoint with the specified project Id.
+   * @param {String} projectId The id of the project.
+   * @returns {ProjectTasks}
+   */
+
+
+  tasks(projectId) {
+    return new _ProjectTasks.ProjectTasks(this._client, projectId);
+  }
+  /**
+   * Returns the {@link ProjectsSubtasks} Endpoint with the specified project Id.
+   * @param {String} projectId The id of the project.
+   * @returns {ProjectsSubtasks}
+   */
+
+
+  projectSubtasks(projectId) {
+    return new _ProjectSubtasks.ProjectSubtasks(this._client, projectId);
   }
 
 }
