@@ -22,5 +22,16 @@ export class EntityTimeEntries {
      * @returns {Promise<EntityTimeEntry>}
      */
     get(): Promise<EntityTimeEntry>;
+    /**
+     * Gets the summed up tracked time duration for all projects and tasks.
+     * @returns {Promise<Array<EntityTimeEntry>>}
+     */
+    list(): Promise<Array<EntityTimeEntry>>;
+    /**
+     * The entityName parameter defines the main entity of which to fetch the time entries.
+     * @returns {Promise<Array<TimeEntry>>}
+     */
+    timeEntries(): Promise<Array<TimeEntry>>;
 }
 import { EntityTimeEntry } from "../model/EntityTimeEntry";
+import { TimeEntry } from "../model/TimeEntry";

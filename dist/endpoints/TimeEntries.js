@@ -119,7 +119,7 @@ class TimeEntries {
    */
 
 
-  async delete(timeEntry) {
+  async deleteTimeEntries(timeEntry) {
     await this._client.post('/timeentries/delete', {
       ids: timeEntry
     });

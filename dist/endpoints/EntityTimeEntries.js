@@ -46,25 +46,25 @@ class EntityTimeEntries {
   }
   /**
    * Gets the summed up tracked time duration for all projects and tasks.
-   * @returns {Promise<EntityTimeEntry>}
+   * @returns {Promise<Array<EntityTimeEntry>>}
    */
 
 
-  async get() {
-    const response = await this._client.get(`/${entityName}/trackedtime`);
+  async list() {
+    const response = await this._client.get(`${this._userPrefix}/otherprivatetasks/${this._taskId}/subtasks`, options);
     const data = response.data();
-    return new _EntityTimeEntry.EntityTimeEntry(data);
+    return data.map(d => new _EntityTimeEntry.EntityTimeEntry(d));
   }
   /**
    * The entityName parameter defines the main entity of which to fetch the time entries.
-   * @returns {Promise<TimeEntry>}
+   * @returns {Promise<Array<TimeEntry>>}
    */
 
 
-  async get() {
-    const response = await this._client.get(`/${entityName}/${entityId}/timeentries`);
+  async timeEntries() {
+    const response = await this._client.get(`${this._userPrefix}/otherprivatetasks/${this._taskId}/subtasks`, options);
     const data = response.data();
-    return new _TimeEntry.TimeEntry(data);
+    return data.map(d => new _TimeEntry.TimeEntry(d));
   }
 
 }

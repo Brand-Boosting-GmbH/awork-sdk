@@ -194,6 +194,12 @@ export class TimeEntries {
      */
     delete(timeEntryId: string): Promise<void>;
     /**
+     * Deletes the time entries with the specified ids. Depending on the time entry, the calling users has to have several permissions to delete the time entries. No permissions are required if the calling user is owner of this time entry. If the calling user is not the creator of the time entry and the time entry is connected to a project, 'write' permissions on the 'project-timetracking' feature are necessary. If the time entry is connected to a task, the user needs to be assignee of this task or the user needs permissions on: 'project-planning-data' if it is a project task. If the time entry is billed, Admin permissions are required.
+     * @param {Array<String>} timeEntry The ids of the time entries, which should be deleted.
+     * @returns {Promise<void>}
+     */
+    deleteTimeEntries(timeEntry: Array<string>): Promise<void>;
+    /**
      * Sets the time entries with the specified ids to billed. Depending on the time entry, the calling users has to have several permissions to edit the time entries. No permissions are required if the calling user is owner of this time entry. If the calling user is not the creator of the time entry and the time entry is connected to a project, 'write' permissions on the 'project-timetracking' feature are necessary. If the time entry is connected to a task, the user needs to be assignee of this task or the user needs permissions on: 'project-planning-data' if it is a project task. If the time entry is billed, the permissions can be ignored because there is no change.
      * @param {Array<String>} timeEntry The ids of the time entries, which should be set to billed.
      * @returns {Promise<void>}
