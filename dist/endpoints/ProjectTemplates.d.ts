@@ -126,8 +126,9 @@ export class ProjectTemplates {
      * @param {String} projectTemplateId The id of the project template.
      * @returns {EntityImages}
      */
-    images(projectTemplateId: string): any;
+    images(projectTemplateId: string): EntityImages;
 }
 import { ProjectTemplate } from "../model/ProjectTemplate";
 import { ProjectTemplateProjectStatuses } from "./ProjectTemplateProjectStatuses";
 import { ProjectTemplateAutomations } from "./ProjectTemplateAutomations";
+import { EntityImages } from "./EntityImages";
