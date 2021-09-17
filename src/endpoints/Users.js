@@ -4,7 +4,8 @@ import { ExtendedUser } from "../model/ExtendedUser"
 import { TimeEntry } from "../model/TimeEntry"
 import { UserContactInfos } from './UserContactInfos'
 import { EntityImages } from './EntityImages'
-import { UserSubtasks } from './UserSubtasks'
+import { UserPrivateTasksSubtasks } from './UserPrivateTasksSubtasks'
+import { UserOtherPrivateTasksSubtasks } from './UserOtherPrivateTasksSubtasks'
 
 /**
  * Class corresponding to Aworks Users Endpoints
@@ -186,11 +187,20 @@ export class Users {
     }
 
     /**
-     * Returns the {@link UserSubtasks} Endpoint with the specified user Id.
+     * Returns the {@link UserPrivateTasksSubtasks} Endpoint with the specified user Id.
      * @param {String} userId The id of the user.
-     * @returns {UserSubtasks}
+     * @returns {UserPrivateTasksSubtasks}
      */
-    userSubtasks (userId) {
-        return new UserSubtasks(this._client, userId )
+    userPrivateTasksSubtasks (userId) {
+        return new UserPrivateTasksSubtasks(this._client, userId )
+    }
+
+    /**
+     * Returns the {@link UserOtherPrivateTasksSubtasks} Endpoint with the specified user Id.
+     * @param {String} userId The id of the user.
+     * @returns {UserOtherPrivateTasksSubtasks}
+     */
+    userOtherPrivateTasksSubtasks (userId) {
+        return new UserOtherPrivateTasksSubtasks(this._client, userId )
     }
 }

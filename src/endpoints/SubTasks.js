@@ -1,7 +1,8 @@
 import '../globalTypedef'
 import { SubTask } from '../model/SubTask'
 import { ProjectSubtasks } from './ProjectSubtasks'
-import { UserSubtasks } from './UserSubtasks'
+import { UserPrivateTasksSubtasks } from './UserPrivateTasksSubtasks'
+import { UserOtherPrivateTasksSubtasks } from './UserOtherPrivateTasksSubtasks'
 
 /**
  * Class corresponding to Aworks SubTasks Endpoints
@@ -97,11 +98,20 @@ export class SubTasks {
     }
 
     /**
-     * Returns the {@link UserSubtasks} Endpoint with the specified subtask id.
+     * Returns the {@link UserPrivateTasksSubtasks} Endpoint with the specified subtask id.
      * @param {String} subtaskId The id of the subtask.
-     * @returns {UserSubtasks}
+     * @returns {UserPrivateTasksSubtasks}
      */
-    userSubtasks (subtaskId) {
-        return new UserSubtasks(this._client, subtaskId)
+     userPrivateTasksSubtasks (subtaskId) {
+        return new UserPrivateTasksSubtasks(this._client, subtaskId)
+    }
+
+    /**
+     * Returns the {@link UserOtherPrivateTasksSubtasks} Endpoint with the specified subtask id.
+     * @param {String} subtaskId The id of the subtask.
+     * @returns {UserOtherPrivateTasksSubtasks}
+     */
+    userOtherPrivateTasksSubtasks (subtaskId) {
+        return new UserOtherPrivateTasksSubtasks(this._client, subtaskId)
     }
 }
