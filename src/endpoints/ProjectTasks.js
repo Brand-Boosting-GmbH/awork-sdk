@@ -13,7 +13,7 @@ export class ProjectTasks {
      * @param {String} taskId The id of the task.
      * @returns {Promise<Task>}
      */
-    get (taskId) {
+    async get (taskId) {
         const response = await this._client.get(`/projects/${this._projectId}/projecttasks/${taskId}`)
         const data = response.data()
         return new Task(data)
