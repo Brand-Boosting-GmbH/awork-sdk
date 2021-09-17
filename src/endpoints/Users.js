@@ -23,9 +23,7 @@ export class Users {
          */
         this._client = client
     }
-
-    //  TODO/me !!!
-
+    
     /**
      * Returns the user with the specified id.
      * @param {String} userId The id of the user.

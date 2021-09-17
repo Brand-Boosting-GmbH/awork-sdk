@@ -105,7 +105,7 @@ export class TimeEntries {
      * @param {Array<String>} timeEntry The ids of the time entries, which should be deleted.
      * @returns {Promise<void>}
      */
-    async delete(timeEntry) {
+    async deleteTimeEntries(timeEntry) {
         await this._client.post('/timeentries/delete', {ids: timeEntry})
     }
 
