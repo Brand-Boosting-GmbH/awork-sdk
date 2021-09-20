@@ -14,7 +14,7 @@ import '../globalTypedef'
    constructor(client) {
        /** @private */
        this._client = client
-   }
+    }
 
    /**
      * @typedef {Object} FileDownloadOptions
