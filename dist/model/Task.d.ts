@@ -178,7 +178,7 @@ export class Task {
         isArchived: boolean;
     };
     /**
-     * @typedef {Object} TagsObject
+     * @typedef {Object} AssigneeTagsObject
      * @property {String} id
      * @property {String} name nullable
      * @property {String} color nullable
@@ -191,7 +191,7 @@ export class Task {
      * @property {String} lastName nullable
      * @property {Boolean} hasImage
      * @property {String} key nullable
-     * @property {Array<TagsObject>} tags The Tags of the user.
+     * @property {Array<AssigneeTagsObject>} tags The Tags of the user.
      * @property {Array<{id: String}>} teams The ids of the team the user is associated to.
      * /
      
@@ -209,26 +209,236 @@ export class Task {
      * @typedef {Object} ProjectObject
      * @property {String} id uuid
      * @property {String} name nullable
-     * @property {String} key The unique key of the project.
+     * @property {String} key The unique key of the project
+     * @property {{id: String, name: String, description: String, type: String, isArchived: Boolean}} projectStatus
+     * @property {{id: String, name: String, hasImage: Boolean, description: String, tags: Array<Object>}} company The Tags of the company.
+     * @property {{id: String, name: String, icon: String, isArchived: Boolean}} hasImage Whether the project has an image.
      */
-    get project(): any;
-    get hasAttachment(): any;
-    get lists(): any;
-    get entityId(): any;
-    get tags(): any;
-    get createdOn(): any;
-    get createdBy(): any;
-    get updatedOn(): any;
-    get updatedBy(): any;
-    get closedOn(): any;
-    get closedBy(): any;
-    get order(): any;
-    get createdFromTaskId(): any;
-    get isRecurring(): any;
+    /**
+     * @type {ProjectObject}
+     */
+    get project(): {
+        /**
+         * uuid
+         */
+        id: string;
+        /**
+         * nullable
+         */
+        name: string;
+        /**
+         * The unique key of the project
+         */
+        key: string;
+        projectStatus: {
+            id: string;
+            name: string;
+            description: string;
+            type: string;
+            isArchived: boolean;
+        };
+        /**
+         * The Tags of the company.
+         */
+        company: {
+            id: string;
+            name: string;
+            hasImage: boolean;
+            description: string;
+            tags: Array<any>;
+        };
+        /**
+         * Whether the project has an image.
+         */
+        hasImage: {
+            id: string;
+            name: string;
+            icon: string;
+            isArchived: boolean;
+        };
+    };
+    /**
+     * Whether this task has an attachment.
+     * @type {Boolean}
+     */
+    get hasAttachment(): boolean;
+    /**
+     * @typedef {Object} ListsObject
+     * @property {String} name The name of the list.
+     * @property {Number} order The order of the list.
+     * @property {String} id The id of the task list.
+     * @property {Boolean} isArchived Whether the task list has been archived.
+     * @property {String} createdOn The date this task list was created.
+     * @property {String} createdBy The id of the user who created this task list.
+     * @property {String} updatedOn The date this task list was last modified.
+     * @property {String} updatedBy The id of the user who last modified this task list.
+     * @property {Number} orderOfTask The order of the task in the list.
+     */
+    /**
+     * The lists to which the task is assigned to.
+     * @type {Array<ListsObject>}
+     */
+    get lists(): {
+        /**
+         * The name of the list.
+         */
+        name: string;
+        /**
+         * The order of the list.
+         */
+        order: number;
+        /**
+         * The id of the task list.
+         */
+        id: string;
+        /**
+         * Whether the task list has been archived.
+         */
+        isArchived: boolean;
+        /**
+         * The date this task list was created.
+         */
+        createdOn: string;
+        /**
+         * The id of the user who created this task list.
+         */
+        createdBy: string;
+        /**
+         * The date this task list was last modified.
+         */
+        updatedOn: string;
+        /**
+         * The id of the user who last modified this task list.
+         */
+        updatedBy: string;
+        /**
+         * The order of the task in the list.
+         */
+        orderOfTask: number;
+    }[];
+    /**
+     * The id of the entity this task is assigned to. This is the id of the project if this is a project task, or the id of a user if this is a private task.
+     * @type {String}
+     */
+    get entityId(): string;
+    /**
+     * @typedef {Object} TagsListObject
+     * @property {String} id uuid
+     * @property {String} name nullable
+     * @property {String} color nullable
+     * @property {String} entityId uuid
+     * @property {String} createdOn date-time
+     * @property {String} createdBy uuid
+     * @property {String} updatedOn date-time
+     * @property {String} updatedBy uuid
+     */
+    /**
+     * The list of tags.
+     * @type {Array<TagsListObject>}
+     */
+    get tags(): {
+        /**
+         * uuid
+         */
+        id: string;
+        /**
+         * nullable
+         */
+        name: string;
+        /**
+         * nullable
+         */
+        color: string;
+        /**
+         * uuid
+         */
+        entityId: string;
+        /**
+         * date-time
+         */
+        createdOn: string;
+        /**
+         * uuid
+         */
+        createdBy: string;
+        /**
+         * date-time
+         */
+        updatedOn: string;
+        /**
+         * uuid
+         */
+        updatedBy: string;
+    }[];
+    /**
+     * The date this was created.
+     * @type {String} date-time
+     */
+    get createdOn(): string;
+    /**
+     * The id of the user who created this task.
+     * @type {String} uuid
+     */
+    get createdBy(): string;
+    /**
+     * The date this task was last modified.
+     * @type {String} date-time
+     */
+    get updatedOn(): string;
+    /**
+     * The id of the user who last modified this task.
+     * @type {String} uuid
+     */
+    get updatedBy(): string;
+    /**
+     * The date the task was set to closed.
+     * @type {String} date-time
+     */
+    get closedOn(): string;
+    /**
+     * The user who closed the task.
+     * @type {String}
+     */
+    get closedBy(): string;
+    /**
+     * The order of the task in a task status column.
+     * @type {Number} double
+     */
+    get order(): number;
+    /**
+     * When the task was created by a recurrency rule, the id is the link to the template of which the task was created.
+     * @type {String} uuid
+     */
+    get createdFromTaskId(): string;
+    /**
+     * If the task is a recurrency template (used to create new tasks by a recurrency rule), the flag is true.
+     * @type {Boolean}
+     */
+    get isRecurring(): boolean;
+    /**
+     * The summed up duration of all time trackings for this task.
+     * @type {Integer} nullable
+     */
     get trackedDuration(): any;
+    /**
+     * The entity to which the task is linked.
+     * @type {Object}
+     */
     get entityInformation(): any;
+    /**
+     * The version of the entity continuously incremented by 1 on every update of the entity.
+     * @type {Integer} int64
+     */
     get resourceVersion(): any;
+    /**
+     * The number of subtasks which are already done.
+     * @type {Integer} int32
+     */
     get subtasksDoneCount(): any;
+    /**
+     * The total number of subtasks.
+     * @type {Integer} int32
+     */
     get subtasksCount(): any;
     toPlainObject(): {
         name: any;
