@@ -37,7 +37,11 @@ test('awork project lifecycle', async () => {
 
 
 test('awork webhooks WiP', async () => {
-    const res = await awork.client.get('/companies/tags')
+    const res = await awork.client.get('/companies/54fd50e2-071a-ec11-ae72-0050f26748f5')
     console.log(res.data())   
+})
+
+test('awork', async () => {
+    //await awork.users.create({firstName: 'John', lastName: 'Smith'})
 })
 

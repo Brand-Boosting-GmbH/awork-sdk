@@ -3,6 +3,8 @@ import { Companies } from "./endpoints/Companies"
 import { Projects } from "./endpoints/Projects"
 import { Teams } from "./endpoints/Teams"
 import { Tasks } from "./endpoints/Tasks"
+import { Users } from "./endpoints/Users"
+
 
 
 /**
@@ -65,6 +67,13 @@ export class Awork {
      */
      get tasks() {
         return new Tasks(this.client)
+    }
+
+    /**
+     * @returns {Users}
+     */
+    get users() {
+        return new Users(this.client)
     }
 
 }
