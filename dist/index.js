@@ -15,6 +15,8 @@ var _Teams = require("./endpoints/Teams");
 
 var _Tasks = require("./endpoints/Tasks");
 
+var _Users = require("./endpoints/Users");
+
 /**
  * @typedef {Object} FilterQuery
  */
@@ -79,6 +81,14 @@ class Awork {
 
   get tasks() {
     return new _Tasks.Tasks(this.client);
+  }
+  /**
+   * @returns {Users}
+   */
+
+
+  get users() {
+    return new _Users.Users(this.client);
   }
 
 }

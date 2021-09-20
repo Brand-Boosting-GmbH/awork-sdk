@@ -15,6 +15,8 @@ var _ProjectTemplateAutomations = require("./ProjectTemplateAutomations");
 
 var _EntityImages = require("./EntityImages");
 
+var _ProjectTemplateTaskStatuses = require("./ProjectTemplateTaskStatuses");
+
 /**
  * Class corresponding to Aworks ProjectTemplates Endpoints
  * @category Endpoints
@@ -160,6 +162,16 @@ class ProjectTemplates {
 
   images(projectTemplateId) {
     return new _EntityImages.EntityImages(this._client, 'projecttemplates', projectTemplateId);
+  }
+  /**
+   * Returns the {@link ProjectTemplateTaskStatuses} Endpoint with the specified project tempate Id.
+   * @param {String} projectTemplateId The id of the project template.
+   * @returns {ProjectTemplateTaskStatuses}
+   */
+
+
+  taskStatuses(projectTemplateId) {
+    return new _ProjectTemplateTaskStatuses.ProjectTemplateTaskStatuses(this._client, projectTemplateId);
   }
 
 }
