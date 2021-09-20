@@ -1,11 +1,21 @@
 import { Task } from '../model/Task'
 import '../globalTypedef'
+import { ProjectTaskStatuses } from './ProjectTaskStatuses'
 
 
 export class ProjectTasks {
+    /**
+    * Endpoint constructor
+    * @param {import('../client/index').Client} client
+    * @param {String} projectId The id of the project.
+    */
     constructor (client, projectId) {
+        /**@private */
         this._client = client
+        /**@private */
         this._projectId = projectId
+        /** @private */
+       this._projectsPrefix = `/projects/${this._projectId}`
     }
 
     /**
@@ -25,8 +35,40 @@ export class ProjectTasks {
      * @returns {Promise<Array<Task>>}
      */
      async list (options) {
-        const response = await this._client.get(`/projects/${this._projectId}/projecttasks`, options)
+        const response = await this._client.get(`${this._projectsPrefix}/projecttasks`, options)
         const data = response.data()
         return data.map(d => new Task(d))
     }
+
+    /**
+     * Returns all tags of the project tasks.
+     * @returns {Promise<Array<String>>}
+     */
+    async tagList () {
+        const response = await this._client.get(`/projects/projecttasks/tags`)
+        return response.data()
+    }
+
+    taskStatuses () {
+        return new ProjectTaskStatuses(this._client, this._projectId)
+    }
+
+    /**
+     * @typedef {Object} ChangeProjectModel
+     * @property {String} projectId The id of the project the task is assigned to.
+     * @property {String} taskStatusId The id of the new status the task is assigned to.
+     */
+
+    /**
+     * Changes the project of the task with the specified id. It change also the tracked time sum of the new project and the previous project. The related time trackings of this task will also be moved into the new project.
+     * @param {String} taskId The id of the task. 
+     * @param {ChangeProjectModel} change The model to change the project.
+     * @return {Promise<void>}
+     */
+    async changeProject (taskId, change) {
+        const response = await this._client.post(`projects/${this.projectId}/projecttasks/${taskId}/changeproject`, change)
+        return response.data()
+    }
+
+    
 }

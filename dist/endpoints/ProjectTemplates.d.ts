@@ -127,8 +127,15 @@ export class ProjectTemplates {
      * @returns {EntityImages}
      */
     images(projectTemplateId: string): EntityImages;
+    /**
+     * Returns the {@link ProjectTemplateTaskStatuses} Endpoint with the specified project tempate Id.
+     * @param {String} projectTemplateId The id of the project template.
+     * @returns {ProjectTemplateTaskStatuses}
+     */
+    taskStatuses(projectTemplateId: string): ProjectTemplateTaskStatuses;
 }
 import { ProjectTemplate } from "../model/ProjectTemplate";
 import { ProjectTemplateProjectStatuses } from "./ProjectTemplateProjectStatuses";
 import { ProjectTemplateAutomations } from "./ProjectTemplateAutomations";
 import { EntityImages } from "./EntityImages";
+import { ProjectTemplateTaskStatuses } from "./ProjectTemplateTaskStatuses";

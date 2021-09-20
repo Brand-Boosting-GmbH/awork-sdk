@@ -1,6 +1,8 @@
 import { Client } from '../src/client'
 import { Projects } from '../src/endpoints/Projects'
 import { API_KEY } from './credentials'
+import { Companies } from '../src/endpoints/Companies'
+
 
 /**
  * @todo TODO: rewrite these tests to be real value
@@ -43,6 +45,16 @@ test('test get files of a project', async () => {
     const projects = new Projects(client)
     const files = projects.files('518a7e68-fd0b-ec11-b563-dc984023d47e')
     console.log(await files.list())
+    // console.log(await members.get('b4486823-9986-ea11-a94c-00155d314c5a'))
+
+    expect(1).toBe(1)
+})
+
+test('test get filesss of a project', async () => {
+    const client = new Client(API_KEY)
+    const company = new Companies(client)
+    const test = await company.create({name:'hallo',description:'testeteete'})
+    console.log(test)
     // console.log(await members.get('b4486823-9986-ea11-a94c-00155d314c5a'))
 
     expect(1).toBe(1)
