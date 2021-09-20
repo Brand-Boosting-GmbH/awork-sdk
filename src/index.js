@@ -2,6 +2,8 @@ import { Client } from "./client"
 import { Companies } from "./endpoints/Companies"
 import { Projects } from "./endpoints/Projects"
 import { Teams } from "./endpoints/Teams"
+import { Tasks } from "./endpoints/Tasks"
+
 
 /**
  * Awork Class
@@ -36,6 +38,13 @@ export class Awork {
      */
     get teams() {
         return new Teams(this.client)
+    }
+
+    /**
+     * @returns {Tasks}
+     */
+     get tasks() {
+        return new Tasks(this.client)
     }
 
 }
