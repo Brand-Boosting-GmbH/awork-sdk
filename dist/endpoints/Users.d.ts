@@ -9,16 +9,15 @@ export class Users {
      * @param {import('../client/index').Client} client
      */
     constructor(client: import('../client/index').Client);
-    /**
-     * @private
-     */
+    /** @private */
     private _client;
+    /** @private */
+    private _userPrefix;
     /**
      * Returns the user with the specified id.
-     * @param {String} userId The id of the user.
      * @returns {Promise<User>}
      */
-    get(userId: string): Promise<User>;
+    get(): Promise<User>;
     /**
      * Returns all users with their details like status, contact info and more. Returns all users if the user has read permissions on the feature user-master-data, otherwise returns only his own user. Archived users are excluded by default. You can include them by setting the 'showArchived' query parameter. If the permissions have UserTeamsData Feature, the filter for teams is applied. Beware that this will also include API users in the response.
      * @param {ListOptions} [options] Pagination and filtering options
@@ -176,10 +175,9 @@ export class Users {
     contactInfo(userId: string): UserContactInfos;
     /**
      * The last time entry is always the last one that was started. Time entries which are started in the future are ignored. If a time entry does not have a start time, 12.00 am is automatically assumed as the start time for comparison with other time entries from the same day.
-     * @param {String} userId The id of the user. Not required if the me route is used.
      * @returns {Promise<TimeEntry>}
      */
-    lastTimeEntries(userId: string): Promise<TimeEntry>;
+    lastTimeEntries(): Promise<TimeEntry>;
     /**
      * Returns the {@link EntityImages} Endpoint with the specified user Id.
      * @param {String} usersId The id of the user.
@@ -198,6 +196,12 @@ export class Users {
      * @returns {UserOtherPrivateTasksSubtasks}
      */
     userOtherPrivateTasksSubtasks(userId: string): UserOtherPrivateTasksSubtasks;
+    /**
+     * Returns the {@link TimeTrackings} Endpoint with the specified user Id.
+     * @param {String} userId The id of the user.
+     * @returns {TimeTrackings}
+     */
+    timeTrackings(userId: string): TimeTrackings;
 }
 import { User } from "../model/User";
 import { ExtendedUser } from "../model/ExtendedUser";
@@ -206,3 +210,4 @@ import { TimeEntry } from "../model/TimeEntry";
 import { EntityImages } from "./EntityImages";
 import { UserPrivateTasksSubtasks } from "./UserPrivateTasksSubtasks";
 import { UserOtherPrivateTasksSubtasks } from "./UserOtherPrivateTasksSubtasks";
+import { TimeTrackings } from "./TimeTrackings";

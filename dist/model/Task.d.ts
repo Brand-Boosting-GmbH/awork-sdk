@@ -16,12 +16,12 @@ export class Task {
     });
     _data: any;
     /**
-     * The name of the Task. Required.
+     * The name of the task. Required.
      * @type {String} nullable
      */
     get name(): string;
     /**
-     * The description of the Task.
+     * The description of the task.
      * @type {String} nullable
      */
     get description(): string;
@@ -42,19 +42,19 @@ export class Task {
     get dueOn(): string;
     /**
      * The lane order defines the vertical position in the gant planner.
-     * @type {Number} nullable
+     * @type {Integer} nullable
      */
-    get laneOrder(): number;
+    get laneOrder(): any;
     /**
      * The expected planned workload of the task, in seconds.
-     * @type {Number} nullable
+     * @type {Integer} nullable
      */
-    get plannedDuration(): number;
+    get plannedDuration(): any;
     /**
      * The expected remaining duration from the original planned effort of the task, in seconds.
-     * @type {Number} nullable
+     * @type {Integer} nullable
      */
-    get remainingDuration(): number;
+    get remainingDuration(): any;
     /**
     * The Id of the task.
     * @type {String} uuid
@@ -67,9 +67,9 @@ export class Task {
     get key(): string;
     /**
      * The numerical part of the key.
-     * @type {Number}
+     * @type {Integer}
      */
-    get numberCount(): number;
+    get numberCount(): any;
     /**
      * The base type of the task. Can be 'private' for a private task or 'projecttask' for a project task.
      * @type {String} nullable
@@ -178,26 +178,39 @@ export class Task {
         isArchived: boolean;
     };
     /**
-     * The id of the user assigned to this task, or null if none is assigned.
-     * @type {String} uuid
+     * @typedef {Object} TagsObject
+     * @property {String} id
+     * @property {String} name nullable
+     * @property {String} color nullable
+     * @property {String} entityId
      */
-    get assigneeId(): string;
     /**
      * @typedef {Object} Assignee
      * @property {String} id uuid
      * @property {String} firstName nullable
      * @property {String} lastName nullable
      * @property {Boolean} hasImage
-     * @property {Array} tags
-     * @property {Array} teams
+     * @property {String} key nullable
+     * @property {Array<TagsObject>} tags The Tags of the user.
+     * @property {Array<{id: String}>} teams The ids of the team the user is associated to.
      * /
      
     /**
-     * The assignee of the task.
-     * @type {Assignee}
+     * The list assigned users of this task, or empty if not user was assigned.
+     * @type {Array<Assignee>}
      */
-    get assignee(): any;
-    get projectId(): any;
+    get assignees(): any;
+    /**
+     * The id of the project this task is assigned to. Only set if this is a project task. In this case, it is equal to the EntityId.
+     * @type {String} uuid
+     */
+    get projectId(): string;
+    /**
+     * @typedef {Object} ProjectObject
+     * @property {String} id uuid
+     * @property {String} name nullable
+     * @property {String} key The unique key of the project.
+     */
     get project(): any;
     get hasAttachment(): any;
     get lists(): any;
