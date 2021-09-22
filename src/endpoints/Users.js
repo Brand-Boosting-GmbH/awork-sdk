@@ -7,6 +7,7 @@ import { EntityImages } from './EntityImages'
 import { UserPrivateTasksSubtasks } from './UserPrivateTasksSubtasks'
 import { UserOtherPrivateTasksSubtasks } from './UserOtherPrivateTasksSubtasks'
 import { TimeTrackings } from './TimeTrackings'
+import { EntityTags } from './EntityTags'
 
 /**
  * Class corresponding to Aworks Users Endpoints
@@ -208,5 +209,14 @@ export class Users {
      */
     timeTrackings (userId) {
         return new TimeTrackings(this._client, userId )
+    }
+
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified user Id and name.
+     * @param {String} userId The id of the users.
+     * @returns 
+     */
+    entityTags (userId) {
+        return new EntityTags(this._client, 'users', userId)
     }
 }

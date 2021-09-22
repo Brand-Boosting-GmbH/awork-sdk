@@ -2,6 +2,7 @@ import { Company } from "../model/Company"
 import { CompaniesContactInfos } from "./CompaniesContactInfos"
 import { EntityFiles } from "./EntityFiles"
 import { EntityImages } from "./EntityImages"
+import { EntityTags } from "./EntityTags"
 
 /**
  * Class corresponding to Aworks Companies Endpoints
@@ -126,5 +127,14 @@ export class Companies {
      */
      images (companyId) {
         return new EntityImages(this._client, 'companies', companyId)
+    }
+
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified company Id and name.
+     * @param {String} companyId The id of the company.
+     * @returns 
+     */
+    entityTags (companyId) {
+        return new EntityTags(this._client, 'companies', companyId)
     }
 }
