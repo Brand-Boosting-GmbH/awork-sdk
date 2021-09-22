@@ -397,6 +397,12 @@ export class Tasks {
      * @returns {UserOtherPrivateTasksSubtasks}
      */
     userOtherPrivateTasksSubtasks(taskId: string): UserOtherPrivateTasksSubtasks;
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified task Id and name.
+     * @param {String} taskId The id of the task.
+     * @returns
+     */
+    entityTags(taskId: string): any;
 }
 import { Task } from "../model/Task";
 import { TaskRecurrency } from "../model/TaskRecurrency";

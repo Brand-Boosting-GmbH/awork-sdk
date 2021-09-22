@@ -21,6 +21,8 @@ var _UserPrivateTasksSubtasks = require("./UserPrivateTasksSubtasks");
 
 var _UserOtherPrivateTasksSubtasks = require("./UserOtherPrivateTasksSubtasks");
 
+var _EntityTags = require("./EntityTags");
+
 class Tasks {
   constructor(client) {
     this._client = client;
@@ -339,6 +341,16 @@ class Tasks {
 
   userOtherPrivateTasksSubtasks(taskId) {
     return new _UserOtherPrivateTasksSubtasks.UserOtherPrivateTasksSubtasks(this._client, taskId);
+  }
+  /**
+   * Returns the {@link EntityTags} Endpoint with the specified task Id and name.
+   * @param {String} taskId The id of the task.
+   * @returns 
+   */
+
+
+  entityTags(taskId) {
+    return new _EntityTags.EntityTags(this._client, 'tasks', taskId);
   }
 
 }

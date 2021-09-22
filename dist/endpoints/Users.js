@@ -23,6 +23,8 @@ var _UserOtherPrivateTasksSubtasks = require("./UserOtherPrivateTasksSubtasks");
 
 var _TimeTrackings = require("./TimeTrackings");
 
+var _EntityTags = require("./EntityTags");
+
 /**
  * Class corresponding to Aworks Users Endpoints
  * @category Endpoints
@@ -241,6 +243,16 @@ class Users {
 
   timeTrackings(userId) {
     return new _TimeTrackings.TimeTrackings(this._client, userId);
+  }
+  /**
+   * Returns the {@link EntityTags} Endpoint with the specified user Id and name.
+   * @param {String} userId The id of the users.
+   * @returns 
+   */
+
+
+  entityTags(userId) {
+    return new _EntityTags.EntityTags(this._client, 'users', userId);
   }
 
 }

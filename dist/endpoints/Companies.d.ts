@@ -117,6 +117,12 @@ export class Companies {
      * @returns {EntityImages}
      */
     images(companyId: any): EntityImages;
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified company Id and name.
+     * @param {String} companyId The id of the company.
+     * @returns
+     */
+    entityTags(companyId: string): any;
 }
 import { Company } from "../model/Company";
 import { CompaniesContactInfos } from "./CompaniesContactInfos";

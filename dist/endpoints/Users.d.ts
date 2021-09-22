@@ -202,6 +202,12 @@ export class Users {
      * @returns {TimeTrackings}
      */
     timeTrackings(userId: string): TimeTrackings;
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified user Id and name.
+     * @param {String} userId The id of the users.
+     * @returns
+     */
+    entityTags(userId: string): any;
 }
 import { User } from "../model/User";
 import { ExtendedUser } from "../model/ExtendedUser";

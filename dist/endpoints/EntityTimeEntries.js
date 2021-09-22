@@ -40,7 +40,7 @@ class EntityTimeEntries {
 
 
   async get() {
-    const response = await this._client.get(`/${entityName}/${entityId}/trackedtime`);
+    const response = await this._client.get(`/${this._entityName}/${this._entityId}/trackedtime`);
     const data = response.data();
     return new _EntityTimeEntry.EntityTimeEntry(data);
   }
