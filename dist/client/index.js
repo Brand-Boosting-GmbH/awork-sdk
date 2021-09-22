@@ -65,7 +65,7 @@ class Client {
     const response = await this.http.get(path, {
       params,
       headers
-    });
+    }).catch(e => console.log(e));
     return new AworkResponse(response.status, response.headers, response.data);
   }
 
@@ -74,7 +74,7 @@ class Client {
     const response = await this.http.post(path, data, {
       params,
       headers
-    });
+    }).catch(e => console.log(e));
     return new AworkResponse(response.status, response.headers, response.data);
   }
 

@@ -3,7 +3,7 @@
  * @category Endpoints
  * @see [UserPrivateTasksSubtasks in Awork API Docs](https://openapi.awork.io/#/UserPrivateTasksSubtasks)
  */
-export class MeUserPrivateSubtasks extends UserPrivateTasksSubtasks {
+export class MeTimeTrackings extends TimeTrackings {
     /**
     * Endpoint constructor
     * @param {import('../client/index').Client} client
@@ -11,5 +11,9 @@ export class MeUserPrivateSubtasks extends UserPrivateTasksSubtasks {
     * @param {String} subtaskId The id of the subtask.
     */
     constructor(client: import('../client/index').Client, taskId: string, subtaskId: string);
+    /** @private */
+    private _taskId;
+    /** @private */
+    private _subtaskId;
 }
-import { UserPrivateTasksSubtasks } from "./UserPrivateTasksSubtasks";
+import { TimeTrackings } from "./TimeTrackings";

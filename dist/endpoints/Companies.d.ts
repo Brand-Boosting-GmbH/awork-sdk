@@ -95,6 +95,11 @@ export class Companies {
         deleteOperation: ('move' | 'delete-all-without-timeentries');
     }): Promise<void>;
     /**
+     * Returns all company industries that are currently in use.
+     * @returns {Promise<Array>String>>}
+     */
+    industries(): Promise<any[]>;
+    /**
      * Returns company contact informations.
      * @param {String} companyId The id of the company.
      * @returns {CompaniesContactInfos}

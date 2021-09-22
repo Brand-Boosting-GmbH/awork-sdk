@@ -357,10 +357,10 @@ export class Tasks {
     /**
      * Returns the existing recurrency rule for one task. Read permissions for this task are required. Returns 404 if no rule exists.
      * @param {String} taskId The id of the task.
-     * @return {_TaskRecurrency.TaskRecurrency}
+     * @return {Promise<TaskRecurrency>}
      * @memberof Tasks
      */
-    getRecurrency(taskId: string): any;
+    getRecurrency(taskId: string): Promise<TaskRecurrency>;
     /**
      * Returns all task dependencies for a specific task. To get all dependencies of a task, the user needs project planning permissions on that project or be assigned to that task.
      * @param {String} taskId The id of the task.
@@ -399,6 +399,7 @@ export class Tasks {
     userOtherPrivateTasksSubtasks(taskId: string): UserOtherPrivateTasksSubtasks;
 }
 import { Task } from "../model/Task";
+import { TaskRecurrency } from "../model/TaskRecurrency";
 import { TaskDependency } from "../model/TaskDependency";
 import { EntityFiles } from "./EntityFiles";
 import { SubTasks } from "./SubTasks";

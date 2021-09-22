@@ -3,18 +3,18 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.MeUserPrivateSubtasks = void 0;
+exports.MeTimeTrackings = void 0;
 
 require("../globalTypedef");
 
-var _UserPrivateTasksSubtasks = require("./UserPrivateTasksSubtasks");
+var _TimeTrackings = require("./TimeTrackings");
 
 /**
  * Class corresponding to Aworks UserPrivateTasksSubtasks Endpoints
  * @category Endpoints
  * @see [UserPrivateTasksSubtasks in Awork API Docs](https://openapi.awork.io/#/UserPrivateTasksSubtasks)
  */
-class MeUserPrivateSubtasks extends _UserPrivateTasksSubtasks.UserPrivateTasksSubtasks {
+class MeTimeTrackings extends _TimeTrackings.TimeTrackings {
   /**
   * Endpoint constructor
   * @param {import('../client/index').Client} client
@@ -37,4 +37,4 @@ class MeUserPrivateSubtasks extends _UserPrivateTasksSubtasks.UserPrivateTasksSu
 
 }
 
-exports.MeUserPrivateSubtasks = MeUserPrivateSubtasks;
+exports.MeTimeTrackings = MeTimeTrackings;

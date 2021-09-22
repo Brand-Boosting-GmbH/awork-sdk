@@ -268,7 +268,7 @@ class Tasks {
   /**
    * Returns the existing recurrency rule for one task. Read permissions for this task are required. Returns 404 if no rule exists.
    * @param {String} taskId The id of the task.
-   * @return {_TaskRecurrency.TaskRecurrency} 
+   * @return {Promise<TaskRecurrency>} 
    * @memberof Tasks
    */
 

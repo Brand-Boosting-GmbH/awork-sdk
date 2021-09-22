@@ -55,6 +55,24 @@ var _Webhooks = require("./endpoints/Webhooks");
 
 var _TypesOfWork = require("./endpoints/TypesOfWork");
 
+var _MeAssignedTasks = require("./endpoints/MeAssignedTasks");
+
+var _MeDashboards = require("./endpoints/MeDashboards");
+
+var _MeProjectTasks = require("./endpoints/MeProjectTasks");
+
+var _MeTaskViews = require("./endpoints/MeTaskViews");
+
+var _MeTimeTrackings = require("./endpoints/MeTimeTrackings");
+
+var _MeUserOtherPrivateSubtasks = require("./endpoints/MeUserOtherPrivateSubtasks");
+
+var _MePrivateSubtasks = require("./endpoints/MePrivateSubtasks");
+
+var _MeUsers = require("./endpoints/MeUsers");
+
+var _MeUsersPrivateTasks = require("./endpoints/MeUsersPrivateTasks");
+
 /**
  * @typedef {Object} FilterQuery
  */
@@ -302,6 +320,20 @@ class Awork {
 
   get tasks() {
     return new _Tasks.Tasks(this.client);
+  }
+
+  get me() {
+    return {
+      AssignedTasks: new _MeAssignedTasks.MeAssignedTasks(this.client),
+      Dashboards: new _MeDashboards.MeDashboards(this.client),
+      ProjectTasks: new _MeProjectTasks.MeProjectTasks(this.client),
+      TaskViews: new _MeTaskViews.MeTaskViews(this.client),
+      TimeTrackings: new _MeTimeTrackings.MeTimeTrackings(this.client),
+      UserOtherPrivateSubtasks: new _MeUserOtherPrivateSubtasks.MeUserPrivateSubtasks(this.client),
+      UserPrivateSubtasks: new _MeUserOtherPrivateSubtasks.MeUserPrivateSubtasks(this.client),
+      Users: new _MeUsers.MeUsers(this.client),
+      UsersPrivateTasks: new _MeUsersPrivateTasks.MeUsersPrivateTasks(this.client)
+    };
   }
 
 }
