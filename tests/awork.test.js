@@ -20,3 +20,7 @@ test('teams', async () => {
     const res = await awork.client.get(`tasks/tags`)
     console.log(res.data())
 })
+
+test('teamsss', async () => {
+    await awork.users.list()
+})

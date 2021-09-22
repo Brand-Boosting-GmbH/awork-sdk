@@ -29,7 +29,6 @@ import { MeProjectTasks } from "./endpoints/MeProjectTasks"
 import { MeTaskViews } from "./endpoints/MeTaskViews"
 import { MeTimeTrackings} from "./endpoints/MeTimeTrackings"
 import { MeUserPrivateSubtasks } from "./endpoints/MeUserOtherPrivateSubtasks"
-import { MePrivateSubtasks} from "./endpoints/MePrivateSubtasks"
 import { MeUsers} from "./endpoints/MeUsers"
 import { MeUsersPrivateTasks} from "./endpoints/MeUsersPrivateTasks"
 
@@ -268,15 +267,15 @@ export class Awork {
 
     get me () {
         return {
-            AssignedTasks: new MeAssignedTasks(this.client),
-            Dashboards: new MeDashboards(this.client),
-            ProjectTasks: new MeProjectTasks(this.client),
-            TaskViews: new MeTaskViews(this.client),
-            TimeTrackings: new MeTimeTrackings(this.client),
-            UserOtherPrivateSubtasks: new MeUserPrivateSubtasks(this.client),
-            UserPrivateSubtasks: new MeUserPrivateSubtasks(this.client),
-            Users: new MeUsers(this.client),
-            UsersPrivateTasks: new MeUsersPrivateTasks(this.client)
+            assignedTasks: new MeAssignedTasks(this.client),
+            dashboards: new MeDashboards(this.client),
+            projectTasks: new MeProjectTasks(this.client),
+            taskViews: new MeTaskViews(this.client),
+            timeTrackings: new MeTimeTrackings(this.client),
+            userOtherPrivateSubtasks: new MeUserPrivateSubtasks(this.client),
+            userPrivateSubtasks: new MeUserPrivateSubtasks(this.client),
+            users: new MeUsers(this.client),
+            usersPrivateTasks: new MeUsersPrivateTasks(this.client)
         }
     }
 }
