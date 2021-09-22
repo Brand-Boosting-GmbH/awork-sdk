@@ -23,6 +23,8 @@ var _UserOtherPrivateTasksSubtasks = require("./UserOtherPrivateTasksSubtasks");
 
 var _EntityTags = require("./EntityTags");
 
+var _Setting = require("../model/Setting");
+
 class Tasks {
   constructor(client) {
     this._client = client;
@@ -101,37 +103,21 @@ class Tasks {
     return new _Task.Task(data);
   }
   /**
-   * @typedef {Object} AssignUsersModel
-   * @property {String} userId The id of the user to assign.
-   * @property {tring} taskId The id of the task.
-   */
-
-  /**
-   * Assigns users to tasks. If another user is already assigned to the task, the user will be replaced with the new user. Returns 204 NoContent if all tasks have been assigned successfully. Returns 207 MultiStatus if at least one task could not be assigned, including the reasons. The required permissions depend on the base type of the task. If the task is a project task, 'write' permissions on the 'project-planning-data' feature are required. For a user's private task, no special permissions are required.
-   * @param {AssignUsersModel} payload The model used to assign users.
+   * This method is used to assign users to a task. You always need to pass all users you want to assign. If an already assigned user is not in the passed user id list, he/she gets unassigned.
+   * @param {string} taskId The id of the task.
+   * @param {Array<String>} userIds An array with user ids.
    * @returns {Promise<void>}
    */
 
 
-  async assignUsers(payload) {
-    const response = await this._client.post(`/tasks/assignusers`, payload);
+  async setAssignees(taskId, userIds) {
+    const response = await this._client.post(`/tasks/${taskId}/setAssignees`, userIds);
     return response.data();
   }
   /**
    * @typedef {AssignUsersModel} UnassignUsersModel
    */
 
-  /**
-   * Unassigns users from tasks. Returns 204 NoContent if all tasks have been unassigned successfully. Returns 207 MultiStatus if at least one task could not be unassigned, including the reasons.
-   * @param {Array<UnassignUsersModel>} payload The model used to unassign users.
-   * @returns {Promise<void>}
-   */
-
-
-  async unassignUsers(payload) {
-    const response = await this._client.post(`/tasks/unassignusers`, payload);
-    return response.data();
-  }
   /**
    * @typedef {Object} AssignUserByEmailModel
    * @property {String} taskId The id of the task.
@@ -291,6 +277,41 @@ class Tasks {
     const response = await this._client.get(`/tasks/${taskId}/taskdependencies`);
     const data = response.data();
     return data.map(d => new _TaskDependency.TaskDependency(d));
+  }
+  /**
+   * Returns the setting of a task.
+   * @param {Boolean} enabled Whether the setting is active or not.
+   * @param {String} type The setting type. For multi-user assignment: allow-multi-user-assignment
+   * @return {Promise<Setting>} 
+   */
+
+
+  async settings(enabled, type) {
+    const response = await this._client.post(`/tasks/settings`, {}, {
+      enabled: enabled,
+      type: type
+    });
+    const data = response.data();
+    return new _Setting.Setting(data);
+  }
+  /**
+   * @typedef {Object} BatchAssignUsersModel
+   * @property {Boolean} removeOldAssignments Whether to keep existing assignment or replace them. Default = true
+   * @property {Array} userIds List of user ids to assign to the tasks.
+   * @property {Array} taskIds List of task ids to assign the users to.
+   */
+
+  /**
+   * Batch endpoint to assign users to multiple tasks. Used to be assignuser.  Set removeOldAssignments to false if you want to keep existing task assignments.
+   * @param {BatchAssignUsersModel} assignUserModel The model to assign users to multiple tasks.
+   * @param {String} operation assignusers
+   * @returns {Promise<void>}
+   */
+
+
+  async batchAssignUsers(operation, assignUserModel) {
+    const response = await this._client.post(`/tasks/batch/${operation}`, assignUserModel);
+    return response.data();
   }
   /**
    * Returns the {@link EntityFiles} Endpoint with the specified task Id and entityType 'tasks'.

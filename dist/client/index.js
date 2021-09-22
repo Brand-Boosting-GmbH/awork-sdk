@@ -9,6 +9,35 @@ var _axios = _interopRequireDefault(require("axios"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+class AworkError {
+  constructor(error) {
+    this.data = error.response.data ? error.response.data : null;
+    this.status = error.response.status;
+    this.statusText = error.response.statusText;
+  }
+
+  get code() {
+    return this.data.code;
+  }
+
+  get description() {
+    return this.data.description;
+  }
+
+  get link() {
+    return this.data.link;
+  }
+
+  get space() {
+    return this.data.space;
+  }
+
+  get validationErrors() {
+    return this.data.validationErrors;
+  }
+
+}
+
 class AworkResponse {
   constructor(status, headers, data) {
     this._status = status;
@@ -65,7 +94,9 @@ class Client {
     const response = await this.http.get(path, {
       params,
       headers
-    }).catch(e => console.log(e));
+    }).catch(e => {
+      throw new AworkError(e);
+    });
     return new AworkResponse(response.status, response.headers, response.data);
   }
 
@@ -74,7 +105,9 @@ class Client {
     const response = await this.http.post(path, data, {
       params,
       headers
-    }).catch(e => console.log(e));
+    }).catch(e => {
+      throw new AworkError(e);
+    });
     return new AworkResponse(response.status, response.headers, response.data);
   }
 
@@ -83,6 +116,8 @@ class Client {
     const response = await this.http.put(path, data, {
       params,
       headers
+    }).catch(e => {
+      throw new AworkError(e);
     });
     return new AworkResponse(response.status, response.headers, response.data);
   }
@@ -91,6 +126,8 @@ class Client {
     const response = await this.http.delete(path, {
       params,
       headers
+    }).catch(e => {
+      throw new AworkError(e);
     });
     return new AworkResponse(response.status, response.headers, response.data);
   }

@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> model/FileVersion.js</title>
+  <title> model/Setting.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>model/FileVersion.js</h1>
+                    <h1>model/Setting.js</h1>
                 </header>
                 
 
@@ -86,120 +86,55 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * FileVersion Model
+ * Setting Model
  * @category Models
  * @class
  */
-export class FileVersion {
+export class Setting {
     /**
-     * @typedef {FileVersion &amp; {_plain?: true}} FileVersionLike
+     * @typedef {Setting &amp; {_plain?: true}} SettingLike
      */
 
     /**
      * Model constructor
-     * @param {FileVersionLike} data 
+     * @param {SettingLike} data 
      */
-    constructor (data) {
-        /** @private */
+    constructor(data) {
+        /** @private*/
         this._data = data
     }
 
     /**
-     * The id of the file version.
-     * @type {String} uuid
+     * Type of the setting. 
+     * @type {String}
      */
-    get id () {
-        return this._data.id
+    get type () {
+        return this._data.type
     }
 
     /**
-     * The id of the file this version belongs to.
-     * @type {String} uuid
+     * Wheter the setting is enabled.
+     * @type {boolean}
      */
-    get fileInfoId () {
-        return this._data.fileInfoId
+    get enabled () {
+        return this._data.enabled
     }
 
     /**
-     * The version of the file.
-     * @type {Number} double
+     * The id of the workspace.
+     * @type {string} uuid
      */
-    get version () {
-        return this._data.version
-    }
-
-    /**
-     * The size of the file, in bytes.
-     * @type {Number} int64
-     */
-    get size () {
-        return this._data.size
-    }
-
-    /**
-     * The width if this is an image file.
-     * @type {Number} double, nullable
-     */
-    get width () {
-        return this._data.width
-    }
-
-    /**
-     * The height if this is an image file.
-     * @type {Number} double, nullable
-     */
-      get height () {
-        return this._data.height
-    }
-
-    /**
-     * The date this file version was created.
-     * @type {String} date-time
-     */
-    get createdOn () {
-        return this._data.createdOn
-    }
-
-    /**
-     * The id of the user who created this file version.
-     * @type {String} uuid
-     */
-    get createdBy () {
-        return this._data.createdBy
-    }
-
-    /**
-     * The date the file version was last modified.
-     * @type {String} date-time
-     */
-    get updatedOn () {
-        return this._data.updatedOn
-    }
-
-    /**
-     * The id of the user who last modified this file version.
-     * @type {String} uuid
-     */
-    get updatedBy () {
-        return this._data.updatedBy
+    get workspaceId () {
+        return this._data.workspaceId
     }
 
     toPlainObject() {
         return {
-            id : this._data.id,
-            fileInfoId: this._data.fileInfoId,
-            version: this._data.version,
-            size: this._data.size,
-            width: this._data.width,
-            height: this._data.height,
-            createdOn: this._data.createdOn,
-            createdBy: this._data.createdBy,
-            updatedOn: this._data.updatedOn,
-            updatedBy: this._data.updatedBy
+            type: this._data.type,
+            enabled: this._data.enabled,
+            workspaceId: this._data.workspaceId
         }
     }
-
-
 }</code></pre>
         </article>
     </section>

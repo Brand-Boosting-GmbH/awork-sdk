@@ -42,6 +42,19 @@ class TaskTemplates {
     const response = await this._client.get(`tasktemplates/${taskTemplateId}/recurrency`);
     return new _Recurrency.Recurrency(response.data());
   }
+  /**
+   * This method is used to assign users to a task template that belongs to a task bundle. You always need to pass all users you want to assign. If an already assigned user is not in the passed user id list, he/she gets unassigned.
+   * Users need write permissions for the feature 'task-manage-config'.    
+   * @param {string} taskTemplateId The id of the task template.
+   * @param {Array<String>} userIds An array with user ids.
+   * @returns {Promise<void>}
+   */
+
+
+  async setAssignees(taskTemplateId, userIds) {
+    const response = await this._client.post(`tasktemplates/${taskTemplateId}/setAssignees`, userIds);
+    return response.data();
+  }
 
   subTaskTemplates(taskTemplateId) {
     return new _TaskTemplateSubTaskTemplates.TaskTemplateSubTaskTemplates(this._client, taskTemplateId);
