@@ -93,6 +93,15 @@ export class Companies {
     }
 
     /**
+     * Returns all company industries that are currently in use.
+     * @returns {Promise<Array>String>>}
+     */
+    async industries () {
+        const response = await this._client.get(`/companies/industries`)
+        return response.data()
+    }
+
+    /**
      * Returns company contact informations.
      * @param {String} companyId The id of the company.
      * @returns {CompaniesContactInfos}

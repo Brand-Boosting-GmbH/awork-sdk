@@ -1,12 +1,12 @@
 import '../globalTypedef'
-import { UserPrivateTasksSubtasks } from './UserPrivateTasksSubtasks'
+import { TimeTrackings } from './TimeTrackings'
 
 /**
  * Class corresponding to Aworks UserPrivateTasksSubtasks Endpoints
  * @category Endpoints
  * @see [UserPrivateTasksSubtasks in Awork API Docs](https://openapi.awork.io/#/UserPrivateTasksSubtasks)
  */
-export class MeUserPrivateSubtasks extends UserPrivateTasksSubtasks {
+export class MeTimeTrackings extends TimeTrackings {
 
      /**
      * Endpoint constructor

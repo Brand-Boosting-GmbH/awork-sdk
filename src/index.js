@@ -23,6 +23,24 @@ import { TimeReports } from "./endpoints/TimeReports"
 import { Users } from "./endpoints/Users"
 import { Webhooks } from "./endpoints/Webhooks"
 import { TypesOfWork, TypesOfWorks } from "./endpoints/TypesOfWork"
+import { MeAssignedTasks } from "./endpoints/MeAssignedTasks"
+import { MeDashboards } from "./endpoints/MeDashboards"
+import { MeProjectTasks } from "./endpoints/MeProjectTasks"
+import { MeTaskViews } from "./endpoints/MeTaskViews"
+import { MeTimeTrackings} from "./endpoints/MeTimeTrackings"
+import { MeUserPrivateSubtasks } from "./endpoints/MeUserOtherPrivateSubtasks"
+import { MePrivateSubtasks} from "./endpoints/MePrivateSubtasks"
+import { MeUsers} from "./endpoints/MeUsers"
+import { MeUsersPrivateTasks} from "./endpoints/MeUsersPrivateTasks"
+
+
+
+
+
+
+
+
+
 
 /**
  * @typedef {Object} FilterQuery
@@ -246,5 +264,19 @@ export class Awork {
      */
      get tasks() {
         return new Tasks(this.client)
+    }
+
+    get me () {
+        return {
+            AssignedTasks: new MeAssignedTasks(this.client),
+            Dashboards: new MeDashboards(this.client),
+            ProjectTasks: new MeProjectTasks(this.client),
+            TaskViews: new MeTaskViews(this.client),
+            TimeTrackings: new MeTimeTrackings(this.client),
+            UserOtherPrivateSubtasks: new MeUserPrivateSubtasks(this.client),
+            UserPrivateSubtasks: new MeUserPrivateSubtasks(this.client),
+            Users: new MeUsers(this.client),
+            UsersPrivateTasks: new MeUsersPrivateTasks(this.client)
+        }
     }
 }

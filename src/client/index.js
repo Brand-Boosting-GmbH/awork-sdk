@@ -54,13 +54,13 @@ export class Client {
      * @returns {AworkResponse}
      */
     async get(path, params = {}, headers = {}) {
-        const response = await this.http.get(path, { params, headers })
+        const response = await this.http.get(path, { params, headers }).catch(e => console.log(e))
         return new AworkResponse(response.status, response.headers, response.data)
     }
 
     async post(path, payload, params = {}, headers = {}) {
         let data = Client.getPlainObject(payload)
-        const response = await this.http.post(path, data, { params, headers })
+        const response = await this.http.post(path, data, { params, headers }).catch(e => console.log(e))
         return new AworkResponse(response.status, response.headers, response.data)
     }
 
