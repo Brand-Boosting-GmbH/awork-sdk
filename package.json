@@ -1,12 +1,12 @@
 {
     "name": "@brandboostinggmbh/awork-sdk",
-    "version": "0.2.7",
+    "version": "0.2.8",
     "description": "",
     "main": "index.js",
     "scripts": {
         "test": "jest",
         "gen-docs": "jsdoc src -r -c conf.json -d \"./docs\" -t ./node_modules/better-docs",
-        "build": "babel src --out-dir dist --plugins @babel/plugin-transform-modules-commonjs && npx -p typescript tsc src/**/*.js --declaration --allowJs --emitDeclarationOnly --outDir dist",
+        "build": "babel src --out-dir dist --plugins @babel/plugin-transform-modules-commonjs && npx -p typescript tsc src/**.js --declaration --allowJs --emitDeclarationOnly --outDir dist",
         "declaration:build": "tsc -p declaration.tsconfig.json"
     },
     "author": "",
