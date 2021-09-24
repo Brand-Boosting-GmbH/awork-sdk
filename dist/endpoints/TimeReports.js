@@ -39,7 +39,7 @@ class TimeReports {
   }
   /**
    * Returns all time reports of a user. Returns time reports the user created as well as the shared time reports of other users.
-   * @param {ListOptions} [options] Pagination and filtering options
+   * @param {import('../global').ListOptions} [options] Pagination and filtering options
    * @returns {Promise<Array<TimeReport>>}
    */
 

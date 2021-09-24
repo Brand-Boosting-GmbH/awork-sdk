@@ -27,9 +27,9 @@ export class ProjectSubtasks {
     get(): Promise<SubTask>;
     /**
      * Returns the subtasks for a project task with the specified id. To retrieve the subtasks of a project task either 'read' permissions on the 'project-planning-data' feature are required or the user needs to be assigned.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {SubTask}
      */
-    list(options?: ListOptions): SubTask;
+    list(options?: import('../global').ListOptions): SubTask;
 }
 import { SubTask } from "../model/SubTask";

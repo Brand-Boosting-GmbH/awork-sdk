@@ -58,7 +58,7 @@ class ProjectTypes {
    * @typedef {Object} ProjectTypeCreateModel The model to change the project type.
    * @property {String} [name] The names of the project type.
    * @property {String} [description] A short description of the project type.
-   * @property {Icon} [icon] The identifier of the project type icon.
+   * @property {import('../global').Icon} [icon] The identifier of the project type icon.
    */
 
   /**

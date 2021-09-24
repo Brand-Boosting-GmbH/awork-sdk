@@ -19,10 +19,10 @@ export class Webhooks {
     get(webhookId: string): Promise<any>;
     /**
      * Returns all configured webhooks of the workspace.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Webhook>>}
      */
-    list(options?: ListOptions): Promise<Array<Webhook>>;
+    list(options?: import('../global').ListOptions): Promise<Array<Webhook>>;
     /**
      * @typedef {Object} WebhookCreateModel
      * @property {String} name The name of this webhook event. Required.

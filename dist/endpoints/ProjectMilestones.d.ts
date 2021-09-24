@@ -14,10 +14,10 @@ export class ProjectMilestones {
     /**
      * Returns all project milestones the user is allowed to see.
      * The user only gets returned all milestones of projects he has 'read' permissions of feature 'project-planning-data' for.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<ProjectMilestone>>}
      */
-    list(options?: ListOptions): Promise<Array<ProjectMilestone>>;
+    list(options?: import('../global').ListOptions): Promise<Array<ProjectMilestone>>;
     /**
      * @typedef {Object} ProjectMilestoneCreateModel
      * @property {String} name The name of the milestone.

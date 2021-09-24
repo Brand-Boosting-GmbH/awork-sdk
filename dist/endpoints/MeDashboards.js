@@ -27,7 +27,7 @@ class MeDashboards {
   }
   /**
    * Returns the dashboards of the current user.
-   * @param {ListOptions} options Pagination and filtering options
+   * @param {import('../global').ListOptions} options Pagination and filtering options
    * @returns {Promise<Array<Dashboard>>}
    */
 

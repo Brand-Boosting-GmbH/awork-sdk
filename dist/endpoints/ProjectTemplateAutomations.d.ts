@@ -22,10 +22,10 @@ export class ProjectTemplateAutomations {
     get(automationId: string): Promise<Automation>;
     /**
      * Returns all automations of the projecttemplate with the specified id. To get the automation data the user needs the 'read' permissons of the feature 'project-manage-config' globally.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Automation>>}
      */
-    list(options?: ListOptions): Promise<Array<Automation>>;
+    list(options?: import('../global').ListOptions): Promise<Array<Automation>>;
     /**
      * @typedef {Object} AutomationCreateModel
      * @property {String} type The type of the trigger.

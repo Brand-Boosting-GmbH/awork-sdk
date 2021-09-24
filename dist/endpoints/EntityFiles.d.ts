@@ -31,10 +31,10 @@ export class EntityFiles {
     get(fileId: string): Promise<EntityFile>;
     /**
      * Returns all files of the entity with the specified id.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<EntityFile>>}
      */
-    list(options?: ListOptions): Promise<Array<EntityFile>>;
+    list(options?: import('../global').ListOptions): Promise<Array<EntityFile>>;
     /**
      * @typedef {Object} FileMetaData
      * @property {String} [name] The user-specified name of the file.

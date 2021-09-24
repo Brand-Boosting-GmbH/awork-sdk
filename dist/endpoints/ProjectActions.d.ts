@@ -25,10 +25,10 @@ export class ProjectActions {
     get(actionId: string): Promise<Action>;
     /**
      * Gets all actions including their values of an automation. The user needs to be owner of the project or needs permission 'read' of the feature 'project-master-data' globally or in the project.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Action>>}
      */
-    list(options?: ListOptions): Promise<Array<Action>>;
+    list(options?: import('../global').ListOptions): Promise<Array<Action>>;
     /**
      * @typedef {Object} ActionValue
      * @property {String} name The name of the action value.

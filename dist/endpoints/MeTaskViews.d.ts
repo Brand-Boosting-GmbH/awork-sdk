@@ -87,10 +87,10 @@ export class MeTaskViews extends TaskViews {
     unsubscribe(taskViewId: string): Promise<void>;
     /**
      * Applies the filter of a task view the current user subscribed to and returns all matching tasks.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<Task>>}
      */
-    tasks(options?: ListOptions): Promise<Array<Task>>;
+    tasks(options?: import('../global').ListOptions): Promise<Array<Task>>;
 }
 import { TaskViews } from "./TaskViews";
 import { TaskView } from "../model/TaskView";

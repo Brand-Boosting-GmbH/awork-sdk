@@ -56,7 +56,7 @@ class EntityTimeEntries {
   /**
    * @typedef {Object} TagsModel
    * @property {String} name maxLength: 40
-   * @property {String} [color] nullable
+   * @property {import('../global').Color} [color] nullable
    */
 
   /**

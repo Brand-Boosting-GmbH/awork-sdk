@@ -21,10 +21,10 @@ export class TypesOfWorks {
     get(typeOfWorkId: string): Promise<TypeOfWork>;
     /**
      * Returns all type of work.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<TypeOfWork>>}
      */
-    list(options?: ListOptions): Promise<Array<TypeOfWork>>;
+    list(options?: import('../global').ListOptions): Promise<Array<TypeOfWork>>;
     /**
      * @typedef {Object} TypeOfWorkCreateModel
      * @property {String} name The name of the type of work.

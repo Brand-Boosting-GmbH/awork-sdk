@@ -25,10 +25,10 @@ export class TaskBundleTaskListTemplatesTaskTemplates {
     get(taskTemplateId: string): Promise<TaskTemplate>;
     /**
      * Returns the task templates in the specified task list template.
-     * @param {ListOptions} options Pagination and filtering options.
+     * @param {import('../global').ListOptions} options Pagination and filtering options.
      * @returns {Promise<Array<TaskTemplate>>}
      */
-    list(options: ListOptions): Promise<Array<TaskTemplate>>;
+    list(options: import('../global').ListOptions): Promise<Array<TaskTemplate>>;
     /**
      * To update the order of tasks in a project task list, the user needs manage permissions on the project-planning-data feature.
      * @param {String} taskTemplateId The id of the task.

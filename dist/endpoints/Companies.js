@@ -45,7 +45,7 @@ class Companies {
   }
   /**
    * Returns all companies.
-   * @param {ListOptions} [options] Pagination and filtering options 
+   * @param {import('../global').ListOptions} [options] Pagination and filtering options 
    * @returns {Promise<Array<Company>>}
    */
 

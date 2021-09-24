@@ -41,7 +41,7 @@ class ProjectTasks {
   }
   /**
    * Returns all project tasks of the project with the specified id. To get the task with the specified id 'read' permissions on the feature project-planning-data are necessary. Otherwise returns only assigned tasks.
-   * @param {ListOptions} [options] Pagination and filtering options.
+   * @param {import('../global').ListOptions} [options] Pagination and filtering options.
    * @returns {Promise<Array<Task>>}
    */
 

@@ -22,10 +22,10 @@ export class UserContactInfos {
     get(contactInfoId: string): Promise<UserContactInfo>;
     /**
      * Returns the contact infos of the user with the specified id.
-     * @param {ListOptions} options Pagination and filtering options
+     * @param {import('../global').ListOptions} options Pagination and filtering options
      * @returns {Promise<Array<UserContactInfo>>}
      */
-    list(options: ListOptions): Promise<Array<UserContactInfo>>;
+    list(options: import('../global').ListOptions): Promise<Array<UserContactInfo>>;
     /**
      * @typedef {('work'|'mobile'|'home'|'work Fax'|'fax'|'other')} PhoneSubType
      */

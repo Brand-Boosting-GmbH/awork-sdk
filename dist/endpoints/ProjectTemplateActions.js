@@ -45,7 +45,7 @@ class ProjectTemplateActions {
   }
   /**
    * Returns all actions for a specific automation of a project template including all its values. The user needs 'read' permissions of the feature 'project-manage-config' to view action data.
-   * @param {ListOptions} [options] Pagination and filtering options.
+   * @param {import('../global').ListOptions} [options] Pagination and filtering options.
    * @returns {Promise<Array<Action>>}
    */
 

@@ -47,7 +47,7 @@ class UsersAssignedTasks {
   }
   /**
   * Returns all tasks assigned to a user. If a user gets his own tasks, the private tasks are part of the result as well. If you need only tasks of projects in status 'progress', set the 'inProgress' parameter to 'true'.
-  * @param {ListOptions} [options] Pagination and filtering options
+  * @param {import('../global').ListOptions} [options] Pagination and filtering options
   * @returns {Promise<Array<Task>>}
   */
 
@@ -69,7 +69,7 @@ class UsersAssignedTasks {
   }
   /**
   * Returns all tasks the user is allowed to see. This contains project tasks if the user has "project-planning" permissions, all assigned tasks and also private tasks created by the user and assigned to other users.
-  * @param {ListOptions} [options] Pagination and filtering options
+  * @param {import('../global').ListOptions} [options] Pagination and filtering options
   * @returns {Promise<Array<Task>>}
   */
 

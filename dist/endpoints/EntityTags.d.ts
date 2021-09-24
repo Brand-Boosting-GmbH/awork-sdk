@@ -30,7 +30,7 @@ export class EntityTimeEntries {
     /**
      * @typedef {Object} TagsModel
      * @property {String} name maxLength: 40
-     * @property {String} [color] nullable
+     * @property {import('../global').Color} [color] nullable
      */
     /**
      * Adds a batch of new tags to the entity with the specified id. The request fails if one of the tags is invalid (e.g. empty or duplicate). To create the tags the user needs 'write' permissions on the specified entity.
@@ -45,7 +45,7 @@ export class EntityTimeEntries {
         /**
          * nullable
          */
-        color?: string;
+        color?: import('../global').Color;
     }): Promise<Array<Tag>>;
     /**
      * @typedef {Object} UpdateTagsModel
@@ -73,7 +73,7 @@ export class EntityTimeEntries {
             /**
              * nullable
              */
-            color?: string;
+            color?: import('../global').Color;
         };
     }): Promise<Tag>;
     /**
@@ -89,7 +89,7 @@ export class EntityTimeEntries {
         /**
          * nullable
          */
-        color?: string;
+        color?: import('../global').Color;
     }): Promise<void>;
     /**
      * Removes tag from the entity with the specified id. To delete the tags the user needs 'write' permissions on the specified entity. Returns 204 NoContent if tag has been removed successfully.
@@ -104,7 +104,7 @@ export class EntityTimeEntries {
         /**
          * nullable
          */
-        color?: string;
+        color?: import('../global').Color;
     }): Promise<void>;
 }
 import { Tag } from "../model/Tag";

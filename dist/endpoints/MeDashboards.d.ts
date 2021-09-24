@@ -15,9 +15,9 @@ export class MeDashboards {
     private _client;
     /**
      * Returns the dashboards of the current user.
-     * @param {ListOptions} options Pagination and filtering options
+     * @param {import('../global').ListOptions} options Pagination and filtering options
      * @returns {Promise<Array<Dashboard>>}
      */
-    list(options: ListOptions): Promise<Array<Dashboard>>;
+    list(options: import('../global').ListOptions): Promise<Array<Dashboard>>;
 }
 import { Dashboard } from "../model/Dashboard";

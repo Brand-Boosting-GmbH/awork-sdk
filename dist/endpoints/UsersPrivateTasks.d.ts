@@ -26,16 +26,16 @@ export class UsersPrivateTasks {
     get(): Promise<Task>;
     /**
      * Returns all private tasks of the user with the specified id.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<Task>>}
      */
-    list(options?: ListOptions): Promise<Array<Task>>;
+    list(options?: import('../global').ListOptions): Promise<Array<Task>>;
     /**
      * Returns the task statuses for private tasks.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<PrivateTasksTaskStatus>>}
      */
-    taskStatuses(options?: ListOptions): Promise<Array<PrivateTasksTaskStatus>>;
+    taskStatuses(options?: import('../global').ListOptions): Promise<Array<PrivateTasksTaskStatus>>;
 }
 import { Task } from "../model/Task";
 import { PrivateTasksTaskStatus } from "../model/PrivateTasksTaskStatus";

@@ -46,7 +46,7 @@ class Teams {
   }
   /**
    * Returns all teams for an admin. For everyone else just returns teams they are in. If the include query params aren't set or false, the specified collection property is null in the response. If the include param is true, but there are no entities in the collection, an empty collection is returned.
-   * @param {ListOptions} [options] Pagination and filtering options
+   * @param {import('../global').ListOptions} [options] Pagination and filtering options
    * @returns {Promise<Array<Team>>}
    */
 
@@ -59,8 +59,8 @@ class Teams {
   /**
    * @typedef {Object} TeamCreateModel
    * @property {String} name The team name.
-   * @property {Icon} [icon] The team icon. Optional.
-   * @property {Color} [color] The team color. Optional.
+   * @property {import('../global').Icon} [icon] The team icon. Optional.
+   * @property {import('../global').Color} [color] The team color. Optional.
    */
 
   /**

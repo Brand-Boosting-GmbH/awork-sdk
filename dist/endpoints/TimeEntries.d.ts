@@ -245,9 +245,9 @@ export class TimeEntries {
     }): Promise<void>;
     /**
      * Returns the last time entry of each user. The last time entry of each user is always the last one that was started. Time entires which are started in the future are ignored. If a time entry does not have a start time, 12.00 am is automatically assumed as the start time for comparison with other time entries from the same day.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<TimeEntry>>}
      */
-    lastTimeEntries(options?: ListOptions): Promise<Array<TimeEntry>>;
+    lastTimeEntries(options?: import('../global').ListOptions): Promise<Array<TimeEntry>>;
 }
 import { TimeEntry } from "../model/TimeEntry";

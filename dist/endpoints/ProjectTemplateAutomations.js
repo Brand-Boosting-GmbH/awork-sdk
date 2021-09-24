@@ -43,7 +43,7 @@ class ProjectTemplateAutomations {
   }
   /**
    * Returns all automations of the projecttemplate with the specified id. To get the automation data the user needs the 'read' permissons of the feature 'project-manage-config' globally.
-   * @param {ListOptions} [options] Pagination and filtering options.
+   * @param {import('../global').ListOptions} [options] Pagination and filtering options.
    * @returns {Promise<Array<Automation>>}
    */
 

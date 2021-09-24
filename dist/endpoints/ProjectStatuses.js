@@ -37,7 +37,7 @@ class ProjectStatuses {
   }
   /**
    * Returns all project statuses.
-   * @param {ListOptions} [options] Pagination and filtering options.
+   * @param {import('../global').ListOptions} [options] Pagination and filtering options.
    * @returns {Array<Promise<ProjectStatus>>}
    */
 

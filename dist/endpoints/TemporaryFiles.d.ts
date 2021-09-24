@@ -21,10 +21,10 @@ export class TemporaryFiles {
     get(fileId: string): Promise<EntityFile>;
     /**
      * Returns the meta information of all temporary files of the current user.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<EntityFile>>}
      */
-    list(options?: ListOptions): Promise<Array<EntityFile>>;
+    list(options?: import('../global').ListOptions): Promise<Array<EntityFile>>;
     /**
      * @typedef {Object} FileMetaData
      * @property {String} [name] The user-specified name of the temporary file.

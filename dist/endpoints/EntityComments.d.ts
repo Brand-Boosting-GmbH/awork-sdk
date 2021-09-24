@@ -25,10 +25,10 @@ export class EntityComments {
     get(commentId: string): Promise<Comment>;
     /**
      * Returns all comments of the entity with the specified id.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Comment>}
      */
-    list(options?: ListOptions): Promise<Comment>;
+    list(options?: import('../global').ListOptions): Promise<Comment>;
     /**
      * @typedef {Object} CommentCreateModel
      * @property {String} message The message of the comment.
