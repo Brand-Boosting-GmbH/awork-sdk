@@ -173,7 +173,7 @@ export class Client {
      */
     async get(path, params = {}, headers = {}) {
         const response = await this.http.get(path, { params, headers }).catch(e => {
-            throw new AworkError(e)
+            console.log(e.response)
         })
         return new AworkResponse(response.status, response.headers, response.data)
     }
@@ -181,7 +181,7 @@ export class Client {
     async post(path, payload, params = {}, headers = {}) {
         let data = Client.getPlainObject(payload)
         const response = await this.http.post(path, data, { params, headers }).catch(e => {
-            throw new AworkError(e)
+            throw new AworkError(e).data.validationErrors
         })
         return new AworkResponse(response.status, response.headers, response.data)
     }

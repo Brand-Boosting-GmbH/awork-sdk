@@ -95,7 +95,7 @@ class Client {
       params,
       headers
     }).catch(e => {
-      throw new AworkError(e);
+      console.log(e.response);
     });
     return new AworkResponse(response.status, response.headers, response.data);
   }
@@ -106,7 +106,7 @@ class Client {
       params,
       headers
     }).catch(e => {
-      throw new AworkError(e);
+      throw new AworkError(e).data.validationErrors;
     });
     return new AworkResponse(response.status, response.headers, response.data);
   }

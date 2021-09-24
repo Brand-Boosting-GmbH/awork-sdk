@@ -40,7 +40,7 @@ class Users {
     this._client = client;
     /** @private */
 
-    this._userPrefix = `/users/${this._userId}`;
+    this._userPrefix = `/users`;
   }
   /**
    * Returns the user with the specified id.
@@ -195,14 +195,21 @@ class Users {
   }
   /**
    * The last time entry is always the last one that was started. Time entries which are started in the future are ignored. If a time entry does not have a start time, 12.00 am is automatically assumed as the start time for comparison with other time entries from the same day.
+   * @param {String} userId The id of the user. Only if /users, not /me.
    * @returns {Promise<TimeEntry>}
    */
 
 
-  async lastTimeEntries() {
-    const response = await this._client.get(`${this._userPrefix}/timeentries/last`);
-    const data = response.data();
-    return new _TimeEntry.TimeEntry(data);
+  async lastTimeEntries(userId) {
+    if (this._userPrefix === `/me`) {
+      const response = await this._client.get(`${this._userPrefix}/timeentries/last`);
+      const data = response.data();
+      return new _TimeEntry.TimeEntry(data);
+    } else {
+      const response = await this._client.get(`${this._userPrefix}/${userId}/timeentries/last`);
+      const data = response.data();
+      return new _TimeEntry.TimeEntry(data);
+    }
   }
   /**
    * Returns the {@link EntityImages} Endpoint with the specified user Id.

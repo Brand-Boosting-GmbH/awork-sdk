@@ -175,9 +175,10 @@ export class Users {
     contactInfo(userId: string): UserContactInfos;
     /**
      * The last time entry is always the last one that was started. Time entries which are started in the future are ignored. If a time entry does not have a start time, 12.00 am is automatically assumed as the start time for comparison with other time entries from the same day.
+     * @param {String} userId The id of the user. Only if /users, not /me.
      * @returns {Promise<TimeEntry>}
      */
-    lastTimeEntries(): Promise<TimeEntry>;
+    lastTimeEntries(userId: string): Promise<TimeEntry>;
     /**
      * Returns the {@link EntityImages} Endpoint with the specified user Id.
      * @param {String} usersId The id of the user.
