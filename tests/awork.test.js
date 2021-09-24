@@ -17,10 +17,12 @@ test('awork', async () => {
 })
 
 test('teams', async () => {
-    const res = await awork.client.get(`tasks/tags`)
+    const res = await awork.tasks.create({
+        name: 'testss'
+    })
     console.log(res.data())
 })
 
 test('teamsss', async () => {
-    await awork.users.list()
+    console.log(await awork.users.list())
 })
