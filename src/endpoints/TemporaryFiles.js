@@ -33,7 +33,7 @@ export class TemporaryFiles {
 
     /**
      * Returns the meta information of all temporary files of the current user.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<EntityFile>>}
      */
     async list(options) {

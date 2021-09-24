@@ -31,7 +31,7 @@ export class TaskViews {
     
     /**
      * Returns all task views. Task views that are not shared are not considered.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<TaskView>>}
      */
     async list(options) {

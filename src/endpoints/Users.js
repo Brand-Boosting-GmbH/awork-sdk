@@ -38,7 +38,7 @@ export class Users {
 
     /**
      * Returns all users with their details like status, contact info and more. Returns all users if the user has read permissions on the feature user-master-data, otherwise returns only his own user. Archived users are excluded by default. You can include them by setting the 'showArchived' query parameter. If the permissions have UserTeamsData Feature, the filter for teams is applied. Beware that this will also include API users in the response.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @param {Boolean} [showArchived] Include archived users in the results. Not required. False by default.
      * @returns {Promise<Array<User>>}
      */

@@ -26,7 +26,7 @@ export class ProjectTaskStatuses {
 
     /**
      * Returns all task statuses of the project with the specified id. To get the task statuses, the user need at least read permissions on feature Project-Master-Data.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<TaskStatus>>}
      */
     async list (options) {
@@ -40,7 +40,7 @@ export class ProjectTaskStatuses {
      * @property {String} name The name of the task status.
      * @property {('todo'|'progress'|'review'|'stuck'|'done')} type Specifies the general type of this task status.
      * @property {Number} [order] The order of the task status. If it is null, the task status will be appended after the last task status.
-     * @property {Icon} [icon] The icon of the task status.
+     * @property {import('../global').Icon} [icon] The icon of the task status.
      * 
      */
 

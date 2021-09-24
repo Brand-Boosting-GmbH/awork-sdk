@@ -32,7 +32,7 @@ export class Absences {
 
     /**
      * Returns all absences of all users.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<Absence>>}
      */
     async list(options) {

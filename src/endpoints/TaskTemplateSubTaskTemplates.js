@@ -32,7 +32,7 @@ export class TaskTemplateSubTaskTemplates {
 
     /**
      * To access the task template, 'read' permissions on the 'project-planning-data' feature or on the 'project-manage-config' feature are required.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<SubTaskTemplate>>}
      */
     async list (options) {

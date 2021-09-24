@@ -31,7 +31,7 @@ export class TypesOfWorks {
 
     /**
      * Returns all type of work.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<TypeOfWork>>}
      */
     async list (options) {

@@ -32,7 +32,7 @@ export class TaskBundleTaskTemplates {
 
     /**
      * Returns all task templates of the task bundle with the specified id.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<TaskListTemplate>>}
      */
     async list (options) {

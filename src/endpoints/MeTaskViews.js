@@ -88,7 +88,7 @@ import { Task } from '../model/Task'
 
    /**
     * Applies the filter of a task view the current user subscribed to and returns all matching tasks.
-    * @param {ListOptions} [options] Pagination and filtering options
+    * @param {import('../global').ListOptions} [options] Pagination and filtering options
     * @returns {Promise<Array<Task>>}
     */
    async tasks (options) {

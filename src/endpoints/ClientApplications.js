@@ -32,7 +32,7 @@ export class ClientApplications {
 
     /**
      * Returns all client applications.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<ClientApplication>>}
      */
     async list (options) {

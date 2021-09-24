@@ -36,7 +36,7 @@ export class ProjectTemplates {
 
     /**
      * Returns all existing project types.
-     * @param {ListOptions} [options] Pagination and filtering options 
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options 
      * @returns {Promise<Array<ProjectTemplate>>}
      */
     async list(options) {

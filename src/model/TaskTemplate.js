@@ -133,7 +133,7 @@ export class TaskTemplate {
 
     /**
      * The icon associated with this task type.
-     * @type {Icon} Possible awork icons.
+     * @type {import('../global').Icon} Possible awork icons.
      */
     get taskTypeIcon () {
         return this._data.taskType.icon

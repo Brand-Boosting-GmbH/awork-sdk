@@ -29,7 +29,7 @@ export class Webhooks {
 
     /**
      * Returns all configured webhooks of the workspace.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Webhook>>}
      */
     async list (options) {

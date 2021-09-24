@@ -35,7 +35,7 @@ export class ProjectActions {
 
     /**
      * Gets all actions including their values of an automation. The user needs to be owner of the project or needs permission 'read' of the feature 'project-master-data' globally or in the project.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Action>>}
      */
     async list (options) {
