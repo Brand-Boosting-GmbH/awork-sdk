@@ -22,10 +22,10 @@ export class SubTasks {
     get(subtaskId: string): Promise<SubTask>;
     /**
      * Returns the subtasks for a task with the specified id.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<SubTask>>}
      */
-    list(options?: ListOptions): Promise<Array<SubTask>>;
+    list(options?: import('../global').ListOptions): Promise<Array<SubTask>>;
     /**
      * @typedef {Object} SubTaskCreateModel
      * @property {Boolean} isDone Whether the check list item is done.

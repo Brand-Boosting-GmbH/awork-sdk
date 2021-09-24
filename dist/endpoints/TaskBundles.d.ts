@@ -19,10 +19,10 @@ export class TaskBundles {
     get(taskBundleId: string): Promise<TaskBundle>;
     /**
      * Returns all global task bundles.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<TaskBundle>>}
      */
-    list(options?: ListOptions): Promise<Array<TaskBundle>>;
+    list(options?: import('../global').ListOptions): Promise<Array<TaskBundle>>;
     /**
      * @typedef {Object} TaskBundleModel
      * @property {String} name The name of the task bundle. Required if its not related to a task bundle.
@@ -98,7 +98,7 @@ export class TaskBundles {
      * @typedef {Object} TaskBundleCreateModel
      * @property {String} name The name of the task bundle. Required if its not related to a task bundle.
      * @property {String} description The description of the task bundle.
-     * @property {Icon} icon The icon of the task bundle.
+     * @property {import('../global').Icon} icon The icon of the task bundle.
      * @property {String} projectTemplateId The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
      */
     /**
@@ -119,7 +119,7 @@ export class TaskBundles {
         /**
          * The icon of the task bundle.
          */
-        icon: Icon;
+        icon: import('../global').Icon;
         /**
          * The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
          */
@@ -143,7 +143,7 @@ export class TaskBundles {
         /**
          * The icon of the task bundle.
          */
-        icon: Icon;
+        icon: import('../global').Icon;
         /**
          * The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
          */

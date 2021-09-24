@@ -21,9 +21,9 @@ export class TaskViews {
     get(taskViewId: any): Promise<TaskView>;
     /**
      * Returns all task views. Task views that are not shared are not considered.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<TaskView>>}
      */
-    list(options?: ListOptions): Promise<Array<TaskView>>;
+    list(options?: import('../global').ListOptions): Promise<Array<TaskView>>;
 }
 import { TaskView } from "../model/TaskView";

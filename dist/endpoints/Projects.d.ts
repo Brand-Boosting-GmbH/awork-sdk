@@ -21,10 +21,10 @@ export class Projects {
     get(projectId: string): Promise<Project>;
     /**
      * Returns all projects the user has 'read' permissions of feature 'project-master-data' for.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<Project>>}
      */
-    list(options?: ListOptions): Promise<Array<Project>>;
+    list(options?: import('../global').ListOptions): Promise<Array<Project>>;
     /**
      * @typedef {Object} ProjectCreateModel
      * @property {String} name The name of the Project

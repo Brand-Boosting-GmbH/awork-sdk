@@ -21,10 +21,10 @@ export class Companies {
     get(companyId: string): Promise<Company>;
     /**
      * Returns all companies.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<Company>>}
      */
-    list(options?: ListOptions): Promise<Array<Company>>;
+    list(options?: import('../global').ListOptions): Promise<Array<Company>>;
     /**
      * @typedef {Object} CompaniesCreateModel
      * @property {String} name The company name.

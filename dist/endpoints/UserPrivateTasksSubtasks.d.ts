@@ -29,9 +29,9 @@ export class UserPrivateTasksSubtasks {
     get(): Promise<SubTask>;
     /**
      * Returns the subtasks for a private task with the specified id. The user needs to be assigned to the task.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<SubTask>}
      */
-    list(options?: ListOptions): Promise<SubTask>;
+    list(options?: import('../global').ListOptions): Promise<SubTask>;
 }
 import { SubTask } from "../model/SubTask";

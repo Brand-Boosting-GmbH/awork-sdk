@@ -25,10 +25,10 @@ export class ProjectTemplateActions {
     get(actionId: string): Promise<Action>;
     /**
      * Returns all actions for a specific automation of a project template including all its values. The user needs 'read' permissions of the feature 'project-manage-config' to view action data.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Action>>}
      */
-    list(options?: ListOptions): Promise<Array<Action>>;
+    list(options?: import('../global').ListOptions): Promise<Array<Action>>;
     /**
      * @typedef {Object} ActionValue
      * @property {String} name The name of the action value.

@@ -21,10 +21,10 @@ export class ClientApplications {
     get(clientId: string): Promise<ClientApplication>;
     /**
      * Returns all client applications.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<ClientApplication>>}
      */
-    list(options?: ListOptions): Promise<Array<ClientApplication>>;
+    list(options?: import('../global').ListOptions): Promise<Array<ClientApplication>>;
     /**
      * @typedef {Object} ClientCreateModel The client application is required for the OAuth flow.
      * @property {String} clientId The client application's identifier.

@@ -19,10 +19,10 @@ export class ProjectTasks {
     get(taskId: string): Promise<Task>;
     /**
      * Returns all project tasks of the project with the specified id. To get the task with the specified id 'read' permissions on the feature project-planning-data are necessary. Otherwise returns only assigned tasks.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Task>>}
      */
-    list(options?: ListOptions): Promise<Array<Task>>;
+    list(options?: import('../global').ListOptions): Promise<Array<Task>>;
     /**
      * Returns all tags of the project tasks.
      * @returns {Promise<Array<String>>}

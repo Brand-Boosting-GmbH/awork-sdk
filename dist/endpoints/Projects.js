@@ -59,7 +59,7 @@ class Projects {
   }
   /**
    * Returns all projects the user has 'read' permissions of feature 'project-master-data' for.
-   * @param {ListOptions} [options] Pagination and filtering options
+   * @param {import('../global').ListOptions} [options] Pagination and filtering options
    * @returns {Promise<Array<Project>>}
    */
 

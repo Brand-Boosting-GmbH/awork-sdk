@@ -51,7 +51,7 @@ class UserOtherPrivateTasksSubtasks {
   }
   /**
    * Returns the subtask for other private tasks with the specified id. The user needs to be the creator of the task.
-   * @param {ListOptions} [options] Pagination and filtering options
+   * @param {import('../global').ListOptions} [options] Pagination and filtering options
    * @returns {Promise<Array<SubTask>>}
    */
 

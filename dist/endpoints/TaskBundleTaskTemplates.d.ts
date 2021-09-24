@@ -22,10 +22,10 @@ export class TaskBundleTaskTemplates {
     get(taskTemplateId: string): Promise<TaskTemplate>;
     /**
      * Returns all task templates of the task bundle with the specified id.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<TaskListTemplate>>}
      */
-    list(options?: ListOptions): Promise<Array<any>>;
+    list(options?: import('../global').ListOptions): Promise<Array<any>>;
     /**
      * @typedef {Object} TaskTemplateCreateModel
      * @property {String} name The name of the task created from this template.

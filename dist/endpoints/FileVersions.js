@@ -49,7 +49,7 @@ class FileVersions {
   /**
    * Returns all file versions of the specified entity file.
    * @param {String} fileId
-   * @param {ListOptions} [options] Pagination and filtering options
+   * @param {import('../global').ListOptions} [options] Pagination and filtering options
    * @returns {Array<FileVersion>}
    */
 

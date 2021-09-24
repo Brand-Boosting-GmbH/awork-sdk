@@ -22,10 +22,10 @@ export class TaskBundleTaskListTemplates {
     get(taskListTemplateId: string): Promise<TaskListTemplate>;
     /**
      * Returns all task list templates of the task bundle with the specified id.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<TaskListTemplate>>}
      */
-    list(options?: ListOptions): Promise<Array<TaskListTemplate>>;
+    list(options?: import('../global').ListOptions): Promise<Array<TaskListTemplate>>;
     /**
      * @typedef {Object} TaskListTemplateCreateModel
      * @property {String} name The name of the list.

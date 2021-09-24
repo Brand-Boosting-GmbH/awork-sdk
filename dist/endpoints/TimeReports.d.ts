@@ -21,10 +21,10 @@ export class TimeReports {
     get(timeReportId: string): Promise<TimeReport>;
     /**
      * Returns all time reports of a user. Returns time reports the user created as well as the shared time reports of other users.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<TimeReport>>}
      */
-    list(options?: ListOptions): Promise<Array<TimeReport>>;
+    list(options?: import('../global').ListOptions): Promise<Array<TimeReport>>;
     /**
      * Creates a new time report.
      * @param {TimeReport} timeReport The timereport model.

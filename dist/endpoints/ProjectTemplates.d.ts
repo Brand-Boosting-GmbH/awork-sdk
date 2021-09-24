@@ -21,10 +21,10 @@ export class ProjectTemplates {
     get(projectTemplateId: string): Promise<ProjectTemplate>;
     /**
      * Returns all existing project types.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<ProjectTemplate>>}
      */
-    list(options?: ListOptions): Promise<Array<ProjectTemplate>>;
+    list(options?: import('../global').ListOptions): Promise<Array<ProjectTemplate>>;
     /**
      * @typedef {Object} ProjectTemplateCreateModel
      * @property {String} description Description of the project template.

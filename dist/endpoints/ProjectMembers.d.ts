@@ -25,10 +25,10 @@ export class ProjectMembers {
      * Returns the project members from the project.
      *
      * The user needs 'read' permissions of feature 'project-master-data'.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<ProjectMember>>}
      */
-    list(options?: ListOptions): Promise<Array<ProjectMember>>;
+    list(options?: import('../global').ListOptions): Promise<Array<ProjectMember>>;
     /**
      * @typedef {Object} ProjectMemberCreateModel The model to add the project member.
      * @property {String} userId The id of the member. Required.

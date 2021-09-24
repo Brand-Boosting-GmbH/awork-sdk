@@ -26,7 +26,7 @@ class ProjectMilestones {
   /**
    * Returns all project milestones the user is allowed to see.
    * The user only gets returned all milestones of projects he has 'read' permissions of feature 'project-planning-data' for.
-   * @param {ListOptions} [options] Pagination and filtering options.
+   * @param {import('../global').ListOptions} [options] Pagination and filtering options.
    * @returns {Promise<Array<ProjectMilestone>>}
    */
 

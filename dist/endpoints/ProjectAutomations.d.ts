@@ -22,10 +22,10 @@ export class ProjectAutomations {
     get(automationId: string): Promise<Automation>;
     /**
      * Returns all automations of the project with the specified id. To get the the automation data the user needs to be the owner of the project or have 'read' permissions of the feature 'project-master-data' globally or in his project role.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Automation>>}
      */
-    list(options?: ListOptions): Promise<Array<Automation>>;
+    list(options?: import('../global').ListOptions): Promise<Array<Automation>>;
     /**
      * @typedef {Object} AutomationCreateModel
      * @property {String} type The type of the trigger.

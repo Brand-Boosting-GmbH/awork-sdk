@@ -19,10 +19,10 @@ export class ProjectStatuses {
     get(projectStatusId: string): Array<Promise<ProjectStatus>>;
     /**
      * Returns all project statuses.
-     * @param {ListOptions} [options] Pagination and filtering options.
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Array<Promise<ProjectStatus>>}
      */
-    list(options?: ListOptions): Array<Promise<ProjectStatus>>;
+    list(options?: import('../global').ListOptions): Array<Promise<ProjectStatus>>;
     /**
      * Creates a new project status. For this operation, a projectTemplateId is required.
      * @param {String} projectTemplateId The id of the project template.

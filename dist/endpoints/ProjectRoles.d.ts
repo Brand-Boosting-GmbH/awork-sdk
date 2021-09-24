@@ -21,10 +21,10 @@ export class ProjectRoles {
     get(projectRoleId: string): Promise<ProjectRole>;
     /**
      * Returns all project roles.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<ProjectRole>>}
      */
-    list(options?: ListOptions): Promise<Array<ProjectRole>>;
+    list(options?: import('../global').ListOptions): Promise<Array<ProjectRole>>;
     /**
      * @typedef {Object} ProjectRoleCreateModel The model used to create a project role.
      * @property {String} name The name of the project role. Required.

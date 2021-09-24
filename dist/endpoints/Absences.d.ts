@@ -21,10 +21,10 @@ export class Absences {
     get(absenceId: string): Promise<Absence>;
     /**
      * Returns all absences of all users.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<Absence>>}
      */
-    list(options?: ListOptions): Promise<Array<Absence>>;
+    list(options?: import('../global').ListOptions): Promise<Array<Absence>>;
     /**
      * @typedef {Object} AbsenceCreateModel
      * @property {String} userId The id of the user that created the absence.
