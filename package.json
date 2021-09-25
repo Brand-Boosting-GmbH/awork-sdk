@@ -1,6 +1,6 @@
 {
     "name": "@brandboostinggmbh/awork-sdk",
-    "version": "0.2.9",
+    "version": "0.3.0",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -22,6 +22,7 @@
         "formdata-node": "^4.0.1",
         "jsdoc": "^3.6.7",
         "jsdoc-tsimport-plugin": "^1.0.5",
+        "nanoid": "^3.1.25",
         "npmrc": "^1.1.1",
         "regenerator-runtime": "^0.13.7"
     },
