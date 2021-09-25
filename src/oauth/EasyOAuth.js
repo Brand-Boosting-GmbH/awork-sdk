@@ -14,7 +14,7 @@ export class EasyOAuth {
         let response
         do{
             await new Promise((res) => setTimeout(() => res(), 1000))
-            response = await axios.get(url, { params: { polling: loginId } })
+            response = await axios.get(this._url, { params: { polling: loginId } })
             finished = response.data.finished
         }while(!finished)
         return response.data
@@ -28,6 +28,7 @@ export class EasyOAuth {
         const data = await this._poll(loginId)
         console.log(data)
         win.close()
+        return data
     }
 
 }
