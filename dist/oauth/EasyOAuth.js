@@ -25,7 +25,7 @@ class EasyOAuth {
 
     do {
       await new Promise(res => setTimeout(() => res(), 1000));
-      response = await _axios.default.get(url, {
+      response = await _axios.default.get(this._url, {
         params: {
           polling: loginId
         }
@@ -44,6 +44,7 @@ class EasyOAuth {
     const data = await this._poll(loginId);
     console.log(data);
     win.close();
+    return data;
   }
 
 }
