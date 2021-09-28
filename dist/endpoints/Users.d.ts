@@ -208,7 +208,7 @@ export class Users {
      * @param {String} userId The id of the users.
      * @returns
      */
-    entityTags(userId: string): any;
+    entityTags(userId: string): EntityTags;
 }
 import { User } from "../model/User";
 import { ExtendedUser } from "../model/ExtendedUser";
@@ -218,3 +218,4 @@ import { EntityImages } from "./EntityImages";
 import { UserPrivateTasksSubtasks } from "./UserPrivateTasksSubtasks";
 import { UserOtherPrivateTasksSubtasks } from "./UserOtherPrivateTasksSubtasks";
 import { TimeTrackings } from "./TimeTrackings";
+import { EntityTags } from "./EntityTags";

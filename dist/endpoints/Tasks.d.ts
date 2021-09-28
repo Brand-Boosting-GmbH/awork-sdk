@@ -407,7 +407,7 @@ export class Tasks {
      * @param {String} taskId The id of the task.
      * @returns
      */
-    entityTags(taskId: string): any;
+    entityTags(taskId: string): EntityTags;
 }
 import { Task } from "../model/Task";
 import { TaskRecurrency } from "../model/TaskRecurrency";
@@ -418,3 +418,4 @@ import { SubTasks } from "./SubTasks";
 import { ProjectSubtasks } from "./ProjectSubtasks";
 import { UserPrivateTasksSubtasks } from "./UserPrivateTasksSubtasks";
 import { UserOtherPrivateTasksSubtasks } from "./UserOtherPrivateTasksSubtasks";
+import { EntityTags } from "./EntityTags";

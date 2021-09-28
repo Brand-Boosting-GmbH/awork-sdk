@@ -122,9 +122,10 @@ export class Companies {
      * @param {String} companyId The id of the company.
      * @returns
      */
-    entityTags(companyId: string): any;
+    entityTags(companyId: string): EntityTags;
 }
 import { Company } from "../model/Company";
 import { CompaniesContactInfos } from "./CompaniesContactInfos";
 import { EntityFiles } from "./EntityFiles";
 import { EntityImages } from "./EntityImages";
+import { EntityTags } from "./EntityTags";

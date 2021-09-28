@@ -3,18 +3,18 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.EntityTimeEntries = void 0;
+exports.EntityTags = void 0;
 
 require("../globalTypedef");
 
 var _Tag = require("../model/Tag");
 
 /**
- * Class corresponding to Aworks EntityTimeEntries Endpoints
+ * Class corresponding to Aworks Tags Endpoints
  * @category Endpoints
- * @see [EntityTimeEntries in Awork API Docs](https://openapi.awork.io/#/EntityTimeEntries)
+ * @see [Tags in Awork API Docs](https://openapi.awork.io/#/Tags)
  */
-class EntityTimeEntries {
+class EntityTags {
   /**
    * Endpoint constructor
    * @param {import('../client/index').Client} client 
@@ -114,4 +114,4 @@ class EntityTimeEntries {
 
 }
 
-exports.EntityTimeEntries = EntityTimeEntries;
+exports.EntityTags = EntityTags;
