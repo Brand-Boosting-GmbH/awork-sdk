@@ -13,7 +13,7 @@ $ npm i @brandboostinggmbh/awork-sdk
 After the installation you have to import Awork and create a new Awork object with your api key as parameter:
 
 <pre>
-import { Awork } from '../src/index'
+import { Awork } from '@brandboostinggmbh/awork-sdk/dist'
 const awork = new Awork({ apiKey: YOUR_API_KEY })
 </pre>
 
@@ -32,9 +32,7 @@ Most endpoints include the get, list, create, update and delete methods.
 ##### Get a specific project
 
 <pre>
-await awork.projects.get({
-        projectId: 'c11c1111-111a-ec11-ae11-1111f11111f1'
-})
+await awork.projects.get( YOUR_PROJECT_ID )
 </pre>
 
 ##### Get a list of teams
@@ -62,8 +60,7 @@ await awork.users.create({
 ##### Update a specific task
 
 <pre>
-await awork.tasks.update({
-    taskId: 'b12c3456-123b-ef12-bb12-1234f56789f1',
+await awork.tasks.update( YOUR_TASK_ID, {
     plannedDuration: 3600,
     remainingDuration: 1800,
     name: 'Fly me to the Moon',
@@ -87,7 +84,7 @@ await awork.companies.delete({
 
 ## Documentations:
 
-* [The Docs of the Brand Boosting SDK](https://brand-boosting-gmbh.github.io/awork-sdk/index.html)
+* [The Docs of the Brand Boosting SDK](https://brand-boosting-gmbh.github.io/awork-sdk/index.html) in which you can find all the Endpoints documented in detail.
 
 * [The awork.io Developer Docs](https://developers.awork.io/)
 
