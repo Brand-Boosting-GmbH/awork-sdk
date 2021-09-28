@@ -1,3 +1,5 @@
+import '../globalTypedef'
+
 /**
  * TaskStatus Model
  * @category Models
@@ -59,7 +61,7 @@
 
     /**
      * The icon of the task status.
-     * @type {String} nullable
+     * @type {Icon} nullable
      */
     get icon () {
         return this._data.icon

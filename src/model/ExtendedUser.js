@@ -1,5 +1,5 @@
 import { User } from './User'
-
+import '../globalTypedef'
 
 /**
  * User Model
@@ -33,8 +33,8 @@ import { User } from './User'
      * @typedef {Object} TeamsObject
      * @property {String} id The Id of the team.
      * @property {String} name The name of the team.
-     * @property {String} icon The icon which is assigned to the team.
-     * @property {String} color The color of the team.
+     * @property {Icon} icon The icon which is assigned to the team.
+     * @property {Color} color The color of the team.
      */
 
     /**

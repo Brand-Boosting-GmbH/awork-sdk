@@ -1,3 +1,5 @@
+import '../globalTypedef'
+
 /**
  * ProjectType Model
  * @category Models
@@ -46,7 +48,7 @@
 
     /**
      * The identifier of the project type icon.
-     * @type {String}
+     * @type {Icon}
      */
     get icon () {
         return this._data.icon

@@ -1,3 +1,5 @@
+import '../globalTypedef'
+
 /**
  * Comment Model
  * @category Models
@@ -139,7 +141,7 @@
     }
 
     /**
-     * @type {String} nullable
+     * @type {Icon} nullable
      */
     get projectProjectTypeIcon () {
         return this._data.project.projectTypeIcon
@@ -171,7 +173,7 @@
     }
 
     /**
-     * @type {String} nullable
+     * @type {Icon} nullable
      */
     get entityProjectTypeIcon () {
         return this._data.entity.projectTypeIcon

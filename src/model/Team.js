@@ -1,3 +1,4 @@
+import '../globalTypedef'
 
 /**
  * Team Model
@@ -28,7 +29,7 @@ export class Team {
 
     /**
      * The team description. Optional.
-     * @type {String} nullable
+     * @type {Icon} nullable
      */
     get icon () {
         return this._data.icon
@@ -36,7 +37,7 @@ export class Team {
 
     /**
      * The team type. Optional.
-     * @type {String} nullable
+     * @type {Color} nullable
      */
     get color () {
         return this._data.color

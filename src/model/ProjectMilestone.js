@@ -1,3 +1,5 @@
+import '../globalTypedef'
+
 /**
  * ProjectMilestone Model
  * @category Models
@@ -30,7 +32,7 @@
 
     /**
      * The color of the milestone.
-     * @type {String} nullable
+     * @type {Color} nullable
      */
     get color () {
         return this._data.color

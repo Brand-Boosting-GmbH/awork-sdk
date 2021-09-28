@@ -1,3 +1,5 @@
+import '../globalTypedef'
+
 /**
  * TypeOfWork Model
  * @category Models
@@ -44,7 +46,7 @@ export class TypeOfWork {
 
     /**
      * The icon associated with this task type.
-     * @type {String}
+     * @type {Icon}
      */
     get icon () {
         return this._data.icon

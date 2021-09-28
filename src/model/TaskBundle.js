@@ -1,3 +1,5 @@
+import '../globalTypedef'
+
 /**
  * Taskbundle Model
  * @category Models
@@ -35,7 +37,7 @@ export class TaskBundle {
 
     /**
      * The icon of the task bundle.
-     * @type {String} 
+     * @type {Icon} 
      */
     get icon () {
         return this._data.icon

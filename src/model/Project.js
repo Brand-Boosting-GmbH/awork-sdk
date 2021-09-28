@@ -1,3 +1,5 @@
+import '../globalTypedef'
+
 /**
  * Project Model
  * @category Models
@@ -166,7 +168,7 @@ export class Project {
     }
 
     /**
-     * @type {String} nullable
+     * @type {Icon} nullable
      */
     get projectTypeIcon () {
         return this._data.projectType.icon
@@ -286,7 +288,7 @@ export class Project {
      * @typedef {Object} TagObject
      * @property {String} id uuid
      * @property {String} name nullable
-     * @property {String} color nullable
+     * @property {Color} color nullable
      * @property {String} entityId uuid
      * @property {String} createdOn date-time
      * @property {String} createdBy uuid
@@ -365,7 +367,7 @@ export class Project {
 
     /**
      * The teams the project is associated to.
-     * @type {Array<{id: String, name: String, color: String, icon: String}>} nullable
+     * @type {Array<{id: String, name: String, color: Color, icon: Icon}>} nullable
      */
     get teams () {
         return this._data.teams
