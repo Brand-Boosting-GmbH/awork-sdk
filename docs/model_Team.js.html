@@ -85,7 +85,8 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+
 /**
  * Team Model
  * @category Models
@@ -115,7 +116,7 @@ export class Team {
 
     /**
      * The team description. Optional.
-     * @type {String} nullable
+     * @type {Icon} nullable
      */
     get icon () {
         return this._data.icon
@@ -123,7 +124,7 @@ export class Team {
 
     /**
      * The team type. Optional.
-     * @type {String} nullable
+     * @type {Color} nullable
      */
     get color () {
         return this._data.color

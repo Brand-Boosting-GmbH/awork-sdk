@@ -85,7 +85,9 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+
+/**
  * ProjectType Model
  * @category Models
  * @class
@@ -133,7 +135,7 @@
 
     /**
      * The identifier of the project type icon.
-     * @type {String}
+     * @type {Icon}
      */
     get icon () {
         return this._data.icon

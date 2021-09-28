@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TimeReport = void 0;
 
+require("../globalTypedef");
+
 /**
  * TimeReport Model
  * @category Models
@@ -270,7 +272,7 @@ class TimeReport {
    * @typedef {Object} TagObject
    * @property {String} id uuid
    * @property {String} name nullable
-   * @property {String} color nullable
+   * @property {Color} color nullable
    * @property {String} entityId uuid
    */
 

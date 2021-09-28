@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ProjectMilestone = void 0;
 
+require("../globalTypedef");
+
 /**
  * ProjectMilestone Model
  * @category Models
@@ -36,7 +38,7 @@ class ProjectMilestone {
   }
   /**
    * The color of the milestone.
-   * @type {String} nullable
+   * @type {Color} nullable
    */
 
 

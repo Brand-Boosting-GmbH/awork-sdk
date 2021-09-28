@@ -85,7 +85,9 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+
+/**
  * Taskbundle Model
  * @category Models
  * @class
@@ -122,7 +124,7 @@ export class TaskBundle {
 
     /**
      * The icon of the task bundle.
-     * @type {String} 
+     * @type {Icon} 
      */
     get icon () {
         return this._data.icon

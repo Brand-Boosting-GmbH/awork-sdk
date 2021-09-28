@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Company = void 0;
 
+require("../globalTypedef");
+
 /**
  * Company Model
  * @category Models
@@ -137,7 +139,7 @@ class Company {
    * @typedef {Object} CompanyTags
    * @property {String} id uuid
    * @property {String} name nullable
-   * @property {String} color nullable
+   * @property {Color} color nullable
    * @property {String} entityId uuid
    * @property {String} createdOn date-time
    * @property {String} createdBy uuid

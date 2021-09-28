@@ -27,7 +27,7 @@ export class TaskBundles {
      * @typedef {Object} TaskBundleModel
      * @property {String} name The name of the task bundle. Required if its not related to a task bundle.
      * @property {String} description The description of the task bundle.
-     * @property {String} icon The icon of the task bundle.
+     * @property {Icon} [icon] The icon of the task bundle.
      * @property {String} projectTemplateId The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
      */
     /**
@@ -47,7 +47,7 @@ export class TaskBundles {
         /**
          * The icon of the task bundle.
          */
-        icon: string;
+        icon?: Icon;
         /**
          * The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
          */
@@ -71,7 +71,7 @@ export class TaskBundles {
         /**
          * The icon of the task bundle.
          */
-        icon: string;
+        icon?: Icon;
         /**
          * The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
          */
@@ -98,7 +98,7 @@ export class TaskBundles {
      * @typedef {Object} TaskBundleCreateModel
      * @property {String} name The name of the task bundle. Required if its not related to a task bundle.
      * @property {String} description The description of the task bundle.
-     * @property {import('../global').Icon} icon The icon of the task bundle.
+     * @property {Icon} icon The icon of the task bundle.
      * @property {String} projectTemplateId The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
      */
     /**
@@ -119,7 +119,7 @@ export class TaskBundles {
         /**
          * The icon of the task bundle.
          */
-        icon: import('../global').Icon;
+        icon: Icon;
         /**
          * The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
          */
@@ -143,7 +143,7 @@ export class TaskBundles {
         /**
          * The icon of the task bundle.
          */
-        icon: import('../global').Icon;
+        icon: Icon;
         /**
          * The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
          */

@@ -24,8 +24,8 @@ export class ExtendedUser extends User {
      * @typedef {Object} TeamsObject
      * @property {String} id The Id of the team.
      * @property {String} name The name of the team.
-     * @property {String} icon The icon which is assigned to the team.
-     * @property {String} color The color of the team.
+     * @property {Icon} icon The icon which is assigned to the team.
+     * @property {Color} color The color of the team.
      */
     /**
      * The teams the user is associated to.
@@ -43,11 +43,11 @@ export class ExtendedUser extends User {
         /**
          * The icon which is assigned to the team.
          */
-        icon: string;
+        icon: Icon;
         /**
          * The color of the team.
          */
-        color: string;
+        color: Color;
     }[];
 }
 import { User } from "./User";

@@ -33,9 +33,9 @@ export class TypeOfWork {
     get description(): string;
     /**
      * The icon associated with this task type.
-     * @type {String}
+     * @type {Icon}
      */
-    get icon(): string;
+    get icon(): Icon;
     /**
      * Whether the type of work has been archived.
      * @type {Boolean}
@@ -65,7 +65,7 @@ export class TypeOfWork {
         id: string;
         name: string;
         description: string;
-        icon: string;
+        icon: Icon;
         isArchived: boolean;
         createdOn: string;
         createdBy: string;

@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Team = void 0;
 
+require("../globalTypedef");
+
 /**
  * Team Model
  * @category Models
@@ -34,7 +36,7 @@ class Team {
   }
   /**
    * The team description. Optional.
-   * @type {String} nullable
+   * @type {Icon} nullable
    */
 
 
@@ -43,7 +45,7 @@ class Team {
   }
   /**
    * The team type. Optional.
-   * @type {String} nullable
+   * @type {Color} nullable
    */
 
 

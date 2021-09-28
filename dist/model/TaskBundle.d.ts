@@ -26,9 +26,9 @@ export class TaskBundle {
     get description(): string;
     /**
      * The icon of the task bundle.
-     * @type {String}
+     * @type {Icon}
      */
-    get icon(): string;
+    get icon(): Icon;
     /**
      * The project template id of the task bundle, only necessary for the creation of an empty bundle for a project template.
      * @type {String}

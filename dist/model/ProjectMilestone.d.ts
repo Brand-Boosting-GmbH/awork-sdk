@@ -25,9 +25,9 @@ export class ProjectMilestone {
     get name(): string;
     /**
      * The color of the milestone.
-     * @type {String} nullable
+     * @type {Color} nullable
      */
-    get color(): string;
+    get color(): Color;
     /**
      * The date the milestone is due.
      * @type {String} date-time
@@ -70,7 +70,7 @@ export class ProjectMilestone {
     get updatedBy(): string;
     toPlainObject(): {
         name: string;
-        color: string;
+        color: Color;
         dueDate: string;
         projectId: string;
         id: string;

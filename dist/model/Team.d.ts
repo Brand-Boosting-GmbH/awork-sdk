@@ -23,14 +23,14 @@ export class Team {
     get name(): string;
     /**
      * The team description. Optional.
-     * @type {String} nullable
+     * @type {Icon} nullable
      */
-    get icon(): string;
+    get icon(): Icon;
     /**
      * The team type. Optional.
-     * @type {String} nullable
+     * @type {Color} nullable
      */
-    get color(): string;
+    get color(): Color;
     /**
      * The id of the team.
      * @type {String} uuid

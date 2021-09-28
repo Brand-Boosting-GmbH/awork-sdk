@@ -43,8 +43,8 @@ export class Teams {
     /**
      * @typedef {Object} TeamCreateModel
      * @property {String} name The team name.
-     * @property {import('../global').Icon} [icon] The team icon. Optional.
-     * @property {import('../global').Color} [color] The team color. Optional.
+     * @property {Icon} [icon] The team icon. Optional.
+     * @property {Color} [color] The team color. Optional.
      */
     /**
      * Creates a new team. No validations are done for color and icon property, can be any string. Throws IllegalOperationException if team with the same name already exists.
@@ -59,11 +59,11 @@ export class Teams {
         /**
          * The team icon. Optional.
          */
-        icon?: import('../global').Icon;
+        icon?: Icon;
         /**
          * The team color. Optional.
          */
-        color?: import('../global').Color;
+        color?: Color;
     }): Promise<Team>;
     /**
      * @typedef {TeamCreateModel} TeamUpdateModel
@@ -82,11 +82,11 @@ export class Teams {
         /**
          * The team icon. Optional.
          */
-        icon?: import('../global').Icon;
+        icon?: Icon;
         /**
          * The team color. Optional.
          */
-        color?: import('../global').Color;
+        color?: Color;
     }): Promise<Team>;
     /**
      * Deletes the team with the specified id. Deletes all related UserInTeamEntities and ProjectInTeamEntities as well.

@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.PrivateTasksTaskStatus = void 0;
 
+require("../globalTypedef");
+
 /**
  * PrivateTasksTaskStatus Model
  * @category Models
@@ -69,7 +71,7 @@ class PrivateTasksTaskStatus {
   }
   /**
    * The icon of the task status.
-   * @type {String} uuid
+   * @type {Icon} uuid
    */
 
 

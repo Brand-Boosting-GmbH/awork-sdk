@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TypeOfWork = void 0;
 
+require("../globalTypedef");
+
 /**
  * TypeOfWork Model
  * @category Models
@@ -52,7 +54,7 @@ class TypeOfWork {
   }
   /**
    * The icon associated with this task type.
-   * @type {String}
+   * @type {Icon}
    */
 
 

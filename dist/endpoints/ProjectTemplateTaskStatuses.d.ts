@@ -24,8 +24,7 @@ export class ProjectTemplateTaskStatuses {
      * @property {String} name The name of the task status.
      * @property {('todo'|'progress'|'review'|'stuck'|'done')} type Specifies the general type of this task status.
      * @property {Number} [order] The order of the task status. If it is null, the task status will be appended after the last task status.
-     * @property {import('../global').Icon} [icon] The icon of the task status.
-     *
+     * @property {Icon} [icon] The icon of the task status.
      */
     /**
      * Creates a new task status for the specified project template.
@@ -48,7 +47,7 @@ export class ProjectTemplateTaskStatuses {
         /**
          * The icon of the task status.
          */
-        icon?: import('../global').Icon;
+        icon?: Icon;
     }): Promise<TaskStatus>;
     /**
      * @typedef {TaskStatusCreateModel} TaskStatusUpdateModel
@@ -74,7 +73,7 @@ export class ProjectTemplateTaskStatuses {
         /**
          * The icon of the task status.
          */
-        icon?: import('../global').Icon;
+        icon?: Icon;
     }): Promise<TaskStatus>;
     /**
      * Deletes the project task status with the specified id.

@@ -43,9 +43,9 @@ export class TaskStatus {
     get isPrivate(): boolean;
     /**
      * The icon of the task status.
-     * @type {String} nullable
+     * @type {Icon} nullable
      */
-    get icon(): string;
+    get icon(): Icon;
     /**
      * Is set if the task status is related to a project.
      * @type {String} uuid
@@ -82,7 +82,7 @@ export class TaskStatus {
         type: number;
         order: number;
         isPrivate: boolean;
-        icon: string;
+        icon: Icon;
         projectId: string;
         projectTypeId: string;
         createdOn: string;

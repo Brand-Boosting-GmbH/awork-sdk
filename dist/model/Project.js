@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Project = void 0;
 
+require("../globalTypedef");
+
 /**
  * Project Model
  * @category Models
@@ -188,7 +190,7 @@ class Project {
     return this._data.projectType.isArchived;
   }
   /**
-   * @type {String} nullable
+   * @type {Icon} nullable
    */
 
 
@@ -323,7 +325,7 @@ class Project {
    * @typedef {Object} TagObject
    * @property {String} id uuid
    * @property {String} name nullable
-   * @property {String} color nullable
+   * @property {Color} color nullable
    * @property {String} entityId uuid
    * @property {String} createdOn date-time
    * @property {String} createdBy uuid
@@ -410,7 +412,7 @@ class Project {
   }
   /**
    * The teams the project is associated to.
-   * @type {Array<{id: String, name: String, color: String, icon: String}>} nullable
+   * @type {Array<{id: String, name: String, color: Color, icon: Icon}>} nullable
    */
 
 
