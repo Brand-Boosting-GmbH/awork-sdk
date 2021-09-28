@@ -2,11 +2,11 @@ import '../globalTypedef'
 import { Tag } from "../model/Tag"
 
 /**
- * Class corresponding to Aworks EntityTimeEntries Endpoints
+ * Class corresponding to Aworks Tags Endpoints
  * @category Endpoints
- * @see [EntityTimeEntries in Awork API Docs](https://openapi.awork.io/#/EntityTimeEntries)
+ * @see [Tags in Awork API Docs](https://openapi.awork.io/#/Tags)
  */
-export class EntityTimeEntries {
+export class EntityTags {
     /**
      * Endpoint constructor
      * @param {import('../client/index').Client} client 
