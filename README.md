@@ -84,10 +84,10 @@ await awork.companies.delete({
 
 ## Documentations:
 
-* [The Docs of the Brand Boosting SDK](https://brand-boosting-gmbh.github.io/awork-sdk/index.html) in which you can find all the Endpoints documented in detail.
+* [The Docs of the awork SDK](https://brand-boosting-gmbh.github.io/awork-sdk/index.html) in which you can find all the Endpoints documented in detail.
 
 * [The awork.io Developer Docs](https://developers.awork.io/)
 
-<img title="" src="file:///C:/Users/ChiaraPurger-BrandBo/Desktop/BBBG1-removebg-preview.png" alt="" width="169"><img title="" src="file:///C:/Users/ChiaraPurger-BrandBo/Desktop/blue-complete_w300px.png" alt="" width="176">
+<img title="" src="https://brand-boosting-gmbh.github.io/awork-sdk/assets/brandboosting.png" alt="" width="169"><img title="" src="https://brand-boosting-gmbh.github.io/awork-sdk/assets/awork.png" alt="" width="176">
 
 
