@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TaskBundle = void 0;
 
+require("../globalTypedef");
+
 /**
  * Taskbundle Model
  * @category Models
@@ -43,7 +45,7 @@ class TaskBundle {
   }
   /**
    * The icon of the task bundle.
-   * @type {String} 
+   * @type {Icon} 
    */
 
 

@@ -38,7 +38,7 @@ export class ProjectTypes {
      * @typedef {Object} ProjectTypeCreateModel The model to change the project type.
      * @property {String} [name] The names of the project type.
      * @property {String} [description] A short description of the project type.
-     * @property {import('../global').Icon} [icon] The identifier of the project type icon.
+     * @property {Icon} [icon] The identifier of the project type icon.
      */
     /**
      * Creates a new project type.
@@ -57,7 +57,7 @@ export class ProjectTypes {
         /**
          * The identifier of the project type icon.
          */
-        icon?: import('../global').Icon;
+        icon?: Icon;
     }): Promise<ProjectType>;
     /**
      * @typedef {ProjectTypeCreateModel} ProjectTypeUpdateModel
@@ -80,7 +80,7 @@ export class ProjectTypes {
         /**
          * The identifier of the project type icon.
          */
-        icon?: import('../global').Icon;
+        icon?: Icon;
     }): Promise<ProjectType>;
     /**
      * Deletes the project type with the specified id. If an id of a new type is provided, projects will be updated to reference the new type If no id of type is provided, the type if removed from the projects.

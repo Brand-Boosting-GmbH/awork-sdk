@@ -153,7 +153,7 @@ class TaskTemplate {
   }
   /**
    * The icon associated with this task type.
-   * @type {import('../global').Icon} Possible awork icons.
+   * @type {Icon} Possible awork icons.
    */
 
 

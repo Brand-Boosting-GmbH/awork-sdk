@@ -85,7 +85,9 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+
+/**
  * ProjectMilestone Model
  * @category Models
  * @class
@@ -117,7 +119,7 @@
 
     /**
      * The color of the milestone.
-     * @type {String} nullable
+     * @type {Color} nullable
      */
     get color () {
         return this._data.color

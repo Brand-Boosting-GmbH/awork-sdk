@@ -85,7 +85,9 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+
+/**
  * Comment Model
  * @category Models
  * @class
@@ -226,7 +228,7 @@
     }
 
     /**
-     * @type {String} nullable
+     * @type {Icon} nullable
      */
     get projectProjectTypeIcon () {
         return this._data.project.projectTypeIcon
@@ -258,7 +260,7 @@
     }
 
     /**
-     * @type {String} nullable
+     * @type {Icon} nullable
      */
     get entityProjectTypeIcon () {
         return this._data.entity.projectTypeIcon

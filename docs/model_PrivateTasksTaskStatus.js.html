@@ -85,7 +85,9 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+
+/**
  * PrivateTasksTaskStatus Model
  * @category Models
  * @class
@@ -145,7 +147,7 @@
 
     /**
      * The icon of the task status.
-     * @type {String} uuid
+     * @type {Icon} uuid
      */
     get icon () {
         return this._data.icon

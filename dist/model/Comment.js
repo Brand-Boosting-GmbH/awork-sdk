@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Comment = void 0;
 
+require("../globalTypedef");
+
 /**
  * Comment Model
  * @category Models
@@ -160,7 +162,7 @@ class Comment {
     return this._data.project.name;
   }
   /**
-   * @type {String} nullable
+   * @type {Icon} nullable
    */
 
 
@@ -196,7 +198,7 @@ class Comment {
     return this._data.entity.name;
   }
   /**
-   * @type {String} nullable
+   * @type {Icon} nullable
    */
 
 

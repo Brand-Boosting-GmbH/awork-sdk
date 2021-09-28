@@ -85,7 +85,9 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
+            <pre class="prettyprint source linenums"><code>import '../globalTypedef'
+
+/**
  * TypeOfWork Model
  * @category Models
  * @class
@@ -131,7 +133,7 @@ export class TypeOfWork {
 
     /**
      * The icon associated with this task type.
-     * @type {String}
+     * @type {Icon}
      */
     get icon () {
         return this._data.icon

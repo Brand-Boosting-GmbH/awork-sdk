@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TimeEntry = void 0;
 
+require("../globalTypedef");
+
 /**
  * TimeEntry Model
  * @category Models
@@ -610,7 +612,7 @@ class TimeEntry {
     return this._data.typeOfWork.name;
   }
   /**
-   * @type {String} nullable
+   * @type {Icon} nullable
    */
 
 
@@ -777,7 +779,7 @@ class TimeEntry {
    * @typedef {Object} TaskTypeObject
    * @property {String} id uuid
    * @property {String} name nullable
-   * @property {String} icon nullable
+   * @property {Icon} icon nullable
    * @property {Boolean} isArchived
    */
 
@@ -821,8 +823,8 @@ class TimeEntry {
    * @property {String} key nullable
    * @property {{id: String, name: String, description: String, type: String, isArchived: Boolean}} projectStatus
    * @property {{id: String, name: String, hasImage: String, description: String}} company
-   * @property {{id: String, name: String, icon: String, isArchived: Boolean}} projectType
-   * @property {Array<{id: String, name: String, color: String, entityId: String}>} tags
+   * @property {{id: String, name: String, icon: Icon, isArchived: Boolean}} projectType
+   * @property {Array<{id: String, name: String, color: Color, entityId: String}>} tags
    * @property {Array<{id: String}>} teams
    */
 
@@ -974,7 +976,7 @@ class TimeEntry {
    * @typedef {Object} ProjectTagsObject
    * @property {String} id uuid
    * @property {String} name nullable
-   * @property {String} color nullable
+   * @property {Color} color nullable
    * @property {String} entityId uuid
    */
 

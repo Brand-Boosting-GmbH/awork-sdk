@@ -87,7 +87,7 @@ export class Task {
      * @property {String} type uuid
      * @property {Number} order nullable
      * @property {Boolean} isPrivate
-     * @property {String} icon nullable
+     * @property {Icon} icon nullable
      * @property {String} projectId uuid
      * @property {String} projectTypeId uuid
      * @property {String} createdOn date-time
@@ -120,7 +120,7 @@ export class Task {
         /**
          * nullable
          */
-        icon: string;
+        icon: Icon;
         /**
          * uuid
          */
@@ -155,7 +155,7 @@ export class Task {
      * @typedef {Object} TypeofWork
      * @property {String} id uuid
      * @property {String} name nullable
-     * @property {String} icon nullable
+     * @property {Icon} icon nullable
      * @property {Boolean} isArchived
      */
     /**
@@ -174,14 +174,14 @@ export class Task {
         /**
          * nullable
          */
-        icon: string;
+        icon: Icon;
         isArchived: boolean;
     };
     /**
      * @typedef {Object} AssigneeTagsObject
      * @property {String} id
      * @property {String} name nullable
-     * @property {String} color nullable
+     * @property {Color} color nullable
      * @property {String} entityId
      */
     /**
@@ -212,7 +212,7 @@ export class Task {
      * @property {String} key The unique key of the project
      * @property {{id: String, name: String, description: String, type: String, isArchived: Boolean}} projectStatus
      * @property {{id: String, name: String, hasImage: Boolean, description: String, tags: Array<Object>}} company The Tags of the company.
-     * @property {{id: String, name: String, icon: String, isArchived: Boolean}} hasImage Whether the project has an image.
+     * @property {{id: String, name: String, icon: Icon, isArchived: Boolean}} hasImage Whether the project has an image.
      */
     /**
      * @type {ProjectObject}
@@ -253,7 +253,7 @@ export class Task {
         hasImage: {
             id: string;
             name: string;
-            icon: string;
+            icon: Icon;
             isArchived: boolean;
         };
     };
@@ -325,7 +325,7 @@ export class Task {
      * @typedef {Object} TagsListObject
      * @property {String} id uuid
      * @property {String} name nullable
-     * @property {String} color nullable
+     * @property {Color} color nullable
      * @property {String} entityId uuid
      * @property {String} createdOn date-time
      * @property {String} createdBy uuid
@@ -348,7 +348,7 @@ export class Task {
         /**
          * nullable
          */
-        color: string;
+        color: Color;
         /**
          * uuid
          */

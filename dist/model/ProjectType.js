@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ProjectType = void 0;
 
+require("../globalTypedef");
+
 /**
  * ProjectType Model
  * @category Models
@@ -54,7 +56,7 @@ class ProjectType {
   }
   /**
    * The identifier of the project type icon.
-   * @type {String}
+   * @type {Icon}
    */
 
 

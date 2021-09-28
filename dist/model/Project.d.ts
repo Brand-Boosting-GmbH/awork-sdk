@@ -106,9 +106,9 @@ export class Project {
      */
     get projectTypeIsArchived(): boolean;
     /**
-     * @type {String} nullable
+     * @type {Icon} nullable
      */
-    get projectTypeIcon(): string;
+    get projectTypeIcon(): Icon;
     /**
      * @type {String} nullable
      */
@@ -181,7 +181,7 @@ export class Project {
      * @typedef {Object} TagObject
      * @property {String} id uuid
      * @property {String} name nullable
-     * @property {String} color nullable
+     * @property {Color} color nullable
      * @property {String} entityId uuid
      * @property {String} createdOn date-time
      * @property {String} createdBy uuid
@@ -204,7 +204,7 @@ export class Project {
         /**
          * nullable
          */
-        color: string;
+        color: Color;
         /**
          * uuid
          */
@@ -312,13 +312,13 @@ export class Project {
     get resourceVersion(): number;
     /**
      * The teams the project is associated to.
-     * @type {Array<{id: String, name: String, color: String, icon: String}>} nullable
+     * @type {Array<{id: String, name: String, color: Color, icon: Icon}>} nullable
      */
     get teams(): {
         id: string;
         name: string;
-        color: string;
-        icon: string;
+        color: Color;
+        icon: Icon;
     }[];
     toPlainObject(): {
         name: any;

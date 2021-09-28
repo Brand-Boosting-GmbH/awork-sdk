@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TaskStatus = void 0;
 
+require("../globalTypedef");
+
 /**
  * TaskStatus Model
  * @category Models
@@ -70,7 +72,7 @@ class TaskStatus {
   }
   /**
    * The icon of the task status.
-   * @type {String} nullable
+   * @type {Icon} nullable
    */
 
 

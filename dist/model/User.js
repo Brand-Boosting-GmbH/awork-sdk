@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.User = void 0;
 
+require("../globalTypedef");
+
 /**
  * User Model
  * @category Models
@@ -234,7 +236,7 @@ class User {
    * @typedef {Object} UserTagsObject
    * @property {String} id uuid
    * @property {String} name nullable
-   * @property {String} color nullable
+   * @property {Color} color nullable
    * @property {String} entityId uuid
    * @property {String} createdOn date-time
    * @property {String} createdBy uuid

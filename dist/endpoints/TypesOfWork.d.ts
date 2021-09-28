@@ -29,7 +29,7 @@ export class TypesOfWorks {
      * @typedef {Object} TypeOfWorkCreateModel
      * @property {String} name The name of the type of work.
      * @property {String} description A short description of the type of work.
-     * @property {String} icon The icon ass with this type of work.
+     * @property {Icon} icon The icon ass with this type of work.
      */
     /**
      * Creates a new type of work.
@@ -48,7 +48,7 @@ export class TypesOfWorks {
         /**
          * The icon ass with this type of work.
          */
-        icon: string;
+        icon: Icon;
     }): Promise<TypeOfWork>;
     /**
      * @typedef {TypeOfWorkCreateModel} TypeOfWorkUpdateModel
@@ -71,7 +71,7 @@ export class TypesOfWorks {
         /**
          * The icon ass with this type of work.
          */
-        icon: string;
+        icon: Icon;
     }): Promise<TypeOfWork>;
     /**
      * Deletes the type of work with the specified id. If any tasks, task templates or time entries still use this type, the id of a new type needs to be provided.
