@@ -44,12 +44,13 @@ class Users {
   }
   /**
    * Returns the user with the specified id.
+   * @param {String} userId The id of the user.
    * @returns {Promise<User>}
    */
 
 
-  async get() {
-    const response = await this._client.get(`${this._userPrefix}`);
+  async get(userId) {
+    const response = await this._client.get(`/users/${userId}`);
     const data = response.data();
     return new _User.User(data);
   }
@@ -62,7 +63,9 @@ class Users {
 
 
   async list(options, showArchived = false) {
-    const response = await this._client.get('/users', options, showArchived);
+    const response = await this._client.get('/users', { ...options,
+      showArchived
+    });
     const data = response.data();
     return data.map(d => new _User.User(d));
   }
