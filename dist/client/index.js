@@ -96,6 +96,7 @@ class Client {
       headers
     }).catch(e => {
       console.log(e.response);
+      console.log(e);
     });
     return new AworkResponse(response.status, response.headers, response.data);
   }

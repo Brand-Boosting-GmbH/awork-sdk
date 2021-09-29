@@ -15,9 +15,10 @@ export class Users {
     private _userPrefix;
     /**
      * Returns the user with the specified id.
+     * @param {String} userId The id of the user.
      * @returns {Promise<User>}
      */
-    get(): Promise<User>;
+    get(userId: string): Promise<User>;
     /**
      * Returns all users with their details like status, contact info and more. Returns all users if the user has read permissions on the feature user-master-data, otherwise returns only his own user. Archived users are excluded by default. You can include them by setting the 'showArchived' query parameter. If the permissions have UserTeamsData Feature, the filter for teams is applied. Beware that this will also include API users in the response.
      * @param {import('../global').ListOptions} [options] Pagination and filtering options
