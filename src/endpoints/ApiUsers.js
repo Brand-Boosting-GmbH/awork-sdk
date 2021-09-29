@@ -49,7 +49,7 @@ export class ApiUsers {
      * @returns {Promise<ApiUser>}
      */
     async updated(apiUserId, apiUser) {
-        const response = await this._client.put(`/apiusers/${apiUserId}`, userUpdateModel)
+        const response = await this._client.put(`/apiusers/${apiUserId}`, apiUser)
         const data = response.data()
         return new ApiUser(data)
     }

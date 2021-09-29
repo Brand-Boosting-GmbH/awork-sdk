@@ -66,7 +66,7 @@ export class Client {
             baseURL: basePath,
             headers: {
                 Authorization: `Bearer ${apiKey}`
-            }            
+            }
         })
     }
 
@@ -87,6 +87,7 @@ export class Client {
     async get(path, params = {}, headers = {}) {
         const response = await this.http.get(path, { params, headers }).catch(e => {
             console.log(e.response)
+            console.log(e)
         })
         return new AworkResponse(response.status, response.headers, response.data)
     }

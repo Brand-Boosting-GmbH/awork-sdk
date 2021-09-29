@@ -28,10 +28,11 @@ export class Users {
 
     /**
      * Returns the user with the specified id.
+     * @param {String} userId The id of the user.
      * @returns {Promise<User>}
      */
-    async get() {
-        const response = await this._client.get(`${this._userPrefix}`)
+    async get(userId) {
+        const response = await this._client.get(`/users/${userId}`)
         const data = response.data()
         return new User(data)
     }
@@ -43,7 +44,7 @@ export class Users {
      * @returns {Promise<Array<User>>}
      */
     async list(options, showArchived = false) {
-        const response = await this._client.get('/users', options, showArchived)
+        const response = await this._client.get('/users', { ...options, showArchived})
         const data = response.data()
         return data.map(d => new User(d))
     }
