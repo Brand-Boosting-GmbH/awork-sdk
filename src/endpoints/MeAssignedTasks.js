@@ -14,10 +14,7 @@ import { UsersAssignedTasks } from './UsersAssignedTasks'
     * @param {String} taskId The id of the task.
     */
    constructor (client, taskId) {
-       /** @private */
-       this._client = client
-       /** @private */
-       this._taskId = taskId
+       super(client, taskId)
        /** @private */
        this._userPrefix = `/me`
    }
