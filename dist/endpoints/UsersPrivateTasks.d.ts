@@ -10,20 +10,18 @@ export class UsersPrivateTasks {
     * @param {String} taskId The id of the task.
     * @param {String} userId The id of the user.
     */
-    constructor(client: import('../client/index').Client, taskId: string, userId: string);
+    constructor(client: import('../client/index').Client, userId: string);
     /** @private */
     private _client;
     /** @private */
     private _userId;
-    /** @private */
-    private _taskId;
     /** @private */
     private _userPrefix;
     /**
      * Returns the private task with the specified id.
      * @returns {Promise<Task>}
      */
-    get(): Promise<Task>;
+    get(taskId: any): Promise<Task>;
     /**
      * Returns all private tasks of the user with the specified id.
      * @param {import('../global').ListOptions} [options] Pagination and filtering options

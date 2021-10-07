@@ -21,15 +21,8 @@ class MeUserPrivateSubtasks extends _UserPrivateTasksSubtasks.UserPrivateTasksSu
   * @param {String} taskId The id of the task.
   * @param {String} subtaskId The id of the subtask.
   */
-  constructor(client, taskId, subtaskId) {
-    /** @private */
-    this._client = client;
-    /** @private */
-
-    this._taskId = taskId;
-    /** @private */
-
-    this._subtaskId = subtaskId;
+  constructor(client, taskId) {
+    super(client, taskId);
     /** @private */
 
     this._userPrefix = `/me`;

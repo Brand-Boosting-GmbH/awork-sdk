@@ -9,7 +9,7 @@ export class MeUsersPrivateTasks extends UsersPrivateTasks {
     * @param {import('../client/index').Client} client
     * @param {String} taskId The id of the task.
     */
-    constructor(client: import('../client/index').Client, taskId: string);
+    constructor(client: import('../client/index').Client);
     /**
      * Returns all tags of the private tasks.
      * @returns {Promise<Array<String>>}

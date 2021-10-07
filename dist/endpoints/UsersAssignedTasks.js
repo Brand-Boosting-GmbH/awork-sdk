@@ -21,15 +21,12 @@ class UsersAssignedTasks {
   * @param {String} taskId The id of the task.
   * @param {String} userId The id of the user.
   */
-  constructor(client, taskId, userId) {
+  constructor(client, userId) {
     /** @private */
     this._client = client;
     /** @private */
 
     this._userId = userId;
-    /** @private */
-
-    this._taskId = taskId;
     /** @private */
 
     this._userPrefix = `/users/${this._userId}`;
@@ -40,8 +37,8 @@ class UsersAssignedTasks {
   */
 
 
-  async get() {
-    const response = await this._client.get(`${this._userPrefix}/assignedtasks/${this._taskId}`);
+  async get(taskId) {
+    const response = await this._client.get(`${this._userPrefix}/assignedtasks/${taskId}`);
     const data = response.data();
     return new _Task.Task(data);
   }

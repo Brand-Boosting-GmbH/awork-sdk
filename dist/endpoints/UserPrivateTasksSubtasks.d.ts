@@ -11,7 +11,7 @@ export class UserPrivateTasksSubtasks {
     * @param {String} subtaskId The id of the subtask.
     * @param {String} userId The id of the user.
     */
-    constructor(client: import('../client/index').Client, taskId: string, subtaskId: string, userId: string);
+    constructor(client: import('../client/index').Client, taskId: string, userId: string);
     /** @private */
     private _client;
     /** @private */
@@ -19,14 +19,12 @@ export class UserPrivateTasksSubtasks {
     /** @private */
     private _taskId;
     /** @private */
-    private _subtaskId;
-    /** @private */
     private _userPrefix;
     /**
      * Returns a subtask for a private task with the specified id. The user needs to be assigned to the task.
      * @returns {Promise<SubTask>}
      */
-    get(): Promise<SubTask>;
+    get(subtaskId: any): Promise<SubTask>;
     /**
      * Returns the subtasks for a private task with the specified id. The user needs to be assigned to the task.
      * @param {import('../global').ListOptions} [options] Pagination and filtering options

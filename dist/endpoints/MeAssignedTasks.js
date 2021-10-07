@@ -20,8 +20,8 @@ class MeAssignedTasks extends _UsersAssignedTasks.UsersAssignedTasks {
   * @param {import('../client/index').Client} client
   * @param {String} taskId The id of the task.
   */
-  constructor(client, taskId) {
-    super(client, taskId);
+  constructor(client) {
+    super(client);
     /** @private */
 
     this._userPrefix = `/me`;

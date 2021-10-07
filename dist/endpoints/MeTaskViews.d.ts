@@ -5,14 +5,6 @@
  */
 export class MeTaskViews extends TaskViews {
     /**
-    * Endpoint constructor
-    * @param {import('../client/index').Client} client
-    * @param {String} taskViewId The id of the task view.
-    */
-    constructor(client: import('../client/index').Client, taskViewId: string);
-    /** @private */
-    private _taskViewId;
-    /**
      * @typedef {Object} TaskViewCreateModel
      * @property {String} filter The filter query that is applied to the tasks results. The syntax follows the normal filter conventions that can be used on GET routes
      * @property {String} filterSettings The filter settings to display.
