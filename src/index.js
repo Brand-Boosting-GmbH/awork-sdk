@@ -11,7 +11,7 @@ import { ClientApplications } from "./endpoints/ClientApplications"
 import { Files } from "./endpoints/Files"
 import { ProjectMilestones } from "./endpoints/ProjectMilestones"
 import { ProjectRoles } from "./endpoints/ProjectRoles"
-import { ProjectStatus } from "./model/ProjectStatus"
+import { ProjectStatuses } from "./endpoints/ProjectStatuses"
 import { ProjectTemplates } from "./endpoints/ProjectTemplates"
 import { ProjectTypes } from "./endpoints/ProjectTypes"
 import { TaskBundles } from "./endpoints/TaskBundles"
@@ -147,10 +147,10 @@ export class Awork {
 
     /**
      * The project status endpoints allow you to define statuses for projects. A status defines the current situation of a project. The statuses of a project type have an order which defines the flow the project typically goes through. Statuses can also be unlinked from the typical flow.
-     * @returns {ProjectStatus}
+     * @returns {ProjectStatuses}
      */
     get projectStatuses() {
-        return new ProjectStatus(this.client)
+        return new ProjectStatuses(this.client)
     }
 
     /**
@@ -272,7 +272,7 @@ export class Awork {
             projectTasks: new MeProjectTasks(this.client),
             taskViews: new MeTaskViews(this.client),
             timeTrackings: new MeTimeTrackings(this.client),
-            userOtherPrivateSubtasks: new MeUserPrivateSubtasks(this.client),
+            userOtherPrivateSubtasks: new MeUserOtherPrivateSubtasks(this.client),
             userPrivateSubtasks: new MeUserPrivateSubtasks(this.client),
             users: new MeUsers(this.client),
             usersPrivateTasks: new MeUsersPrivateTasks(this.client)

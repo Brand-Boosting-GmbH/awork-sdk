@@ -15,11 +15,8 @@ import { Task } from '../model/Task'
     * @param {import('../client/index').Client} client
     * @param {String} taskViewId The id of the task view.
     */
-   constructor (client, taskViewId) {
-       /** @private */
-       this._client = client
-       /** @private */
-       this._taskViewId = taskViewId
+   constructor (client) {
+       super(client)
        /** @private */
        this._userPrefix = `/me`
    }

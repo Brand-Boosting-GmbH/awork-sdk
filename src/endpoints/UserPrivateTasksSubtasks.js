@@ -15,15 +15,13 @@ export class UserPrivateTasksSubtasks {
      * @param {String} subtaskId The id of the subtask.
      * @param {String} userId The id of the user.
      */
-    constructor (client, taskId, subtaskId, userId) {
+    constructor (client, taskId, userId) {
         /** @private */
         this._client = client
         /** @private */
         this._userId = userId
         /** @private */
         this._taskId = taskId
-        /** @private */
-        this._subtaskId = subtaskId
         /** @private */
         this._userPrefix = `/users/${this._userId}`
     }
@@ -32,8 +30,8 @@ export class UserPrivateTasksSubtasks {
      * Returns a subtask for a private task with the specified id. The user needs to be assigned to the task.
      * @returns {Promise<SubTask>}
      */
-    async get () {
-        const response = await this._client.get(`${this._userPrefix}/privatetasks/${this._taskId}/subtasks/${this._subtaskId}`)
+    async get (subtaskId) {
+        const response = await this._client.get(`${this._userPrefix}/privatetasks/${this._taskId}/subtasks/${subtaskId}`)
         const data = response.data()
         return new SubTask(data)
     }

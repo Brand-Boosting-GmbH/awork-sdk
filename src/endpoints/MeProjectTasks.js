@@ -14,10 +14,7 @@ import { ProjectTasks } from './ProjectTasks'
     * @param {String} projectId The id of the project.
     */
    constructor (client, projectId) {
-       /** @private */
-       this._client = client
-       /** @private */
-       this._projectId = projectId
+       super(client, projectId)
        /** @private */
        this._projectsPrefix = `/me`
    }

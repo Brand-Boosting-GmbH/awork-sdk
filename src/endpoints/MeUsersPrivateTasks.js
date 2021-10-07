@@ -15,11 +15,8 @@ import { UsersPrivateTasks } from './UsersPrivateTasks'
     * @param {import('../client/index').Client} client
     * @param {String} taskId The id of the task.
     */
-   constructor (client, taskId) {
-       /** @private */
-       this._client = client
-       /** @private */
-       this._taskId = taskId
+   constructor (client) {
+      super(client)
        /** @private */
        this._userPrefix = `me`
    }

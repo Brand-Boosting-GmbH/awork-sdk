@@ -23,16 +23,14 @@ export class UserOtherPrivateTasksSubtasks {
        /** @private */
        this._taskId = taskId
        /** @private */
-       this._subtaskId = subtaskId
-       /** @private */
        this._userPrefix = `/users/${this._userId}`
    }
     /**
      * Returns a subtask for other private tasks with the specified id. The user needs to be the creator of the task.
      * @returns {Promise<SubTask>}
      */
-     async get () {
-        const response = await this._client.get(`${this._userPrefix}/otherprivatetasks/${this._taskId}/subtasks/${this._subtaskId}`)
+     async get (subtaskId) {
+        const response = await this._client.get(`${this._userPrefix}/otherprivatetasks/${this._taskId}/subtasks/${subtaskId}`)
         const data = response.data()
         return new SubTask(data)
     }

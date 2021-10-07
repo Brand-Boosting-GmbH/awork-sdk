@@ -6,7 +6,7 @@ import { UserOtherPrivateTasksSubtasks } from './UserOtherPrivateTasksSubtasks'
  * @category Endpoints
  * @see [UserOtherPrivateTasksSubtasks in Awork API Docs](https://openapi.awork.io/#/UserOtherPrivateTasksSubtasks)
  */
-export class MeUserPrivateSubtasks extends UserOtherPrivateTasksSubtasks {
+export class MeUserOtherPrivateSubtasks extends UserOtherPrivateTasksSubtasks {
 
      /**
      * Endpoint constructor
@@ -14,13 +14,8 @@ export class MeUserPrivateSubtasks extends UserOtherPrivateTasksSubtasks {
      * @param {String} taskId The id of the task.
      * @param {String} subtaskId The id of the subtask.
      */
-    constructor (client, taskId, subtaskId) {
-        /** @private */
-        this._client = client
-        /** @private */
-        this._taskId = taskId
-        /** @private */
-        this._subtaskId = subtaskId
+    constructor (client, taskId) {
+        super(client, taskId)
         /** @private */
         this._userPrefix = `/me`
     }

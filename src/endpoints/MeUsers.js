@@ -14,8 +14,7 @@ export class MeUsers extends Users {
      * @param {import('../client/index').Client} client
      */
     constructor (client) {
-        /** @private */
-        this._client = client
+        super(client)
         /** @private */
         this._userPrefix = `/me`
     }
