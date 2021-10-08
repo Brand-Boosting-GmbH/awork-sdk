@@ -31,7 +31,7 @@ var _ProjectMilestones = require("./endpoints/ProjectMilestones");
 
 var _ProjectRoles = require("./endpoints/ProjectRoles");
 
-var _ProjectStatuses = require("./endpoints/ProjectStatuses");
+var _ProjectStatus = require("./model/ProjectStatus");
 
 var _ProjectTemplates = require("./endpoints/ProjectTemplates");
 
@@ -69,7 +69,7 @@ var _MeUserOtherPrivateSubtasks = require("./endpoints/MeUserOtherPrivateSubtask
 
 var _MeUsers = require("./endpoints/MeUsers");
 
-var _MeUsersPrivateTasks = require("./endpoints/MeUsersPrivateTasks");
+var _MeUserPrivateSubtasks = require("./endpoints/MeUserPrivateSubtasks");
 
 /**
  * @typedef {Object} FilterQuery
@@ -186,12 +186,12 @@ class Awork {
   }
   /**
    * The project status endpoints allow you to define statuses for projects. A status defines the current situation of a project. The statuses of a project type have an order which defines the flow the project typically goes through. Statuses can also be unlinked from the typical flow.
-   * @returns {ProjectStatuses}
+   * @returns {ProjectStatus}
    */
 
 
   get projectStatuses() {
-    return new _ProjectStatuses.ProjectStatuses(this.client);
+    return new _ProjectStatus.ProjectStatus(this.client);
   }
   /**
    * The project templates endpoints allow you to define different templates for projects.
@@ -327,10 +327,10 @@ class Awork {
       projectTasks: new _MeProjectTasks.MeProjectTasks(this.client),
       taskViews: new _MeTaskViews.MeTaskViews(this.client),
       timeTrackings: new _MeTimeTrackings.MeTimeTrackings(this.client),
-      userOtherPrivateSubtasks: new MeUserOtherPrivateSubtasks(this.client),
-      userPrivateSubtasks: new _MeUserOtherPrivateSubtasks.MeUserPrivateSubtasks(this.client),
+      userOtherPrivateSubtasks: new _MeUserOtherPrivateSubtasks.MeUserOtherPrivateSubtasks(this.client),
+      userPrivateSubtasks: new _MeUserPrivateSubtasks.MeUserPrivateSubtasks(this.client),
       users: new _MeUsers.MeUsers(this.client),
-      usersPrivateTasks: new _MeUsersPrivateTasks.MeUsersPrivateTasks(this.client)
+      usersPrivateTasks: new _MeUserPrivateSubtasks.MeUserPrivateSubtasks(this.client)
     };
   }
 
