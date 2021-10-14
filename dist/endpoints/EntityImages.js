@@ -9,6 +9,12 @@ require("../globalTypedef");
 
 var _EntityFile = require("../model/EntityFile");
 
+var _fileType = require("file-type");
+
+var _formData = _interopRequireDefault(require("form-data"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /**
  * Class corresponding to Aworks project related part of the Files Endpoints
  * @category Endpoints
@@ -69,11 +75,11 @@ class EntityImages {
     if (file instanceof Buffer) {
       const {
         ext
-      } = await fromBuffer(file);
+      } = await (0, _fileType.fromBuffer)(file);
       filename = filename || `upload.${ext}`;
     }
 
-    let formData = new FormData();
+    let formData = new _formData.default();
     formData.append('file', file, filename || 'upload');
     formData.append('name', metadata.name || filename || 'upload');
     formData.append('filename', filename || 'upload');
