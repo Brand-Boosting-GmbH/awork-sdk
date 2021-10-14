@@ -1,6 +1,5 @@
 import '../globalTypedef'
 import { EntityFile } from "../model/EntityFile";
-
 import { fromBuffer } from 'file-type'
 import FormData from "form-data"
 
