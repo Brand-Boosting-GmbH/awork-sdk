@@ -10,6 +10,6 @@ export class MeUserPrivateSubtasks extends UserPrivateTasksSubtasks {
     * @param {String} taskId The id of the task.
     * @param {String} subtaskId The id of the subtask.
     */
-    constructor(client: import('../client/index').Client, taskId: string, subtaskId: string);
+    constructor(client: import('../client/index').Client, taskId: string);
 }
 import { UserPrivateTasksSubtasks } from "./UserPrivateTasksSubtasks";
