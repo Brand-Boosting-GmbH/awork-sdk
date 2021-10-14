@@ -2,6 +2,7 @@ import '../globalTypedef'
 import { Comment } from "../model/Comment"
 import { EntityFiles } from './EntityFiles'
 
+
 /**
  * Class corresponding to Aworks Comments Endpoints
  * @category Endpoints
@@ -36,7 +37,7 @@ export class EntityComments {
 
     /**
      * Returns all comments of the entity with the specified id.
-     * @param {ListOptions} [options] Pagination and filtering options
+     * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Comment>}
      */
     async list(options) {
