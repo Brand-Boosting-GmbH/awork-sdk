@@ -36,7 +36,7 @@ export class EntityComments {
 
     /**
      * Returns all comments of the entity with the specified id.
-     * @param {import('../global').ListOptions} [options] Pagination and filtering options
+     * @param {ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Comment>}
      */
     async list(options) {

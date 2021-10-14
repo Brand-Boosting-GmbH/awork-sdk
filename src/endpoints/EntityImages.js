@@ -1,6 +1,10 @@
 import '../globalTypedef'
 import { EntityFile } from "../model/EntityFile";
 
+import { fromBuffer } from 'file-type'
+import FormData from "form-data"
+
+
 /**
  * Class corresponding to Aworks project related part of the Files Endpoints
  * @category Endpoints
