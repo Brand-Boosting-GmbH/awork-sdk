@@ -61,7 +61,7 @@ class EntityTags {
 
   /**
    * Adds a batch of new tags to the entity with the specified id. The request fails if one of the tags is invalid (e.g. empty or duplicate). To create the tags the user needs 'write' permissions on the specified entity.
-   * @param {TagsModel} addTags The model to add tags.
+   * @param {Array<TagsModel>} addTags The model to add tags.
    * @returns {Promise<Array<Tag>>}
    */
 
