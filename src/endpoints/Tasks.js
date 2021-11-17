@@ -324,9 +324,19 @@ export class Tasks {
     /**
      * Returns the {@link EntityTags} Endpoint with the specified task Id and name.
      * @param {String} taskId The id of the task.
-     * @returns 
+     * @returns {EntityTags}
      */
-    entityTags (taskId) {
+    tags (taskId) {
       return new EntityTags(this._client, 'tasks', taskId)
+    }
+
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified task Id and name.
+     * @param {String} taskId The id of the task.
+     * @returns {EntityTags}
+     * @deprecated
+     */
+     entityTags (taskId) {
+      return this.tags(taskId)
     }
   }
