@@ -114,7 +114,7 @@ export class Awork {
      * The temporary file endpoints allow you to upload and update files that do not have a connection to any entity. The files can be linked to an entity later. They don’t show up in awork before they are either linked to a file or marked as a global file. Only the user who uploaded the file has access to the temporary file.
      * @returns {temporaryFiles}
      */
-    get temporaryFiles(): any;
+    get temporaryFiles(): temporaryFiles;
     /**
      * The endpoints can be used for general operations on existing time entries. A time entry can be linked to a task and / or project, although it can also be created for the user themselves without any entity link. If the time entry is linked to a project it is also indirectly linked to the company of that project. Similarly, the time entry is automatically linked to the project of the the task.
      * @returns {TimeEntries}
@@ -124,12 +124,12 @@ export class Awork {
      * The endpoints to manage the time reports.
      * @returns {timeReports}
      */
-    get timeReports(): any;
+    get timeReports(): timeReports;
     /**
      * The type of work endpoints allow you to manage your types of work. They are helpful to describe the type of a task or a time entry.
      * @returns {TypesOfWork}
      */
-    get typesOfWork(): any;
+    get typesOfWork(): TypesOfWork;
     /**
      * The users endpoints allow you to manage the users of your workspace as well as their contact details.
      * @returns {Users}

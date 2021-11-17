@@ -273,7 +273,7 @@ export class TimeReport {
      * The version of the entity continuously incremented by 1 on every update of the entity.
      * @type {Integer} int64
      */
-    get resourceVersion(): any;
+    get resourceVersion(): Integer;
     /**
      * @type {String} date-time
      */

@@ -61,11 +61,11 @@ export class Dashboard {
         /**
          * The column of the widget within the dashboard.
          */
-        column: any;
+        column: Integer;
         /**
          * The order of the widget within the column.
          */
-        order: any;
+        order: Integer;
         /**
          * The settings of the widget.
          */

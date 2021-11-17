@@ -154,13 +154,13 @@ export class TaskBundles {
      * @param {String} projectId The id of the task bundle.
      * @returns {ProjectProjectStatus}
      */
-    taskListTemplates(taskBundleId: any): any;
+    taskListTemplates(taskBundleId: any): ProjectProjectStatus;
     /**
      * Returns the {@link TaskBundleTaskTemplates} Endpoint with the specified task bundle Id.
      * @param {String} projectId The id of the task bundle.
      * @returns {ProjectProjectStatus}
      */
-    taskTemplates(taskBundleId: any): any;
+    taskTemplates(taskBundleId: any): ProjectProjectStatus;
 }
 import { TaskBundle } from "../model/TaskBundle";
 import { Task } from "../model/Task";

@@ -16,7 +16,7 @@ export class Webhooks {
      * @param {String} webhookId The id of the webhook.
      * @returns {Promise<WebHook>}
      */
-    get(webhookId: string): Promise<any>;
+    get(webhookId: string): Promise<WebHook>;
     /**
      * Returns all configured webhooks of the workspace.
      * @param {import('../global').ListOptions} [options] Pagination and filtering options.
@@ -74,7 +74,7 @@ export class Webhooks {
      * @param {WebhookUpdateModel} webhook The model to update a webhook.
      * @returns {Promise<Webhook>}
      */
-    update(webhookId: string, webhook: any): Promise<Webhook>;
+    update(webhookId: string, webhook: WebhookUpdateModel): Promise<Webhook>;
     /**
      * Deletes the webhook with the specified id.
      * @param {String} webhookId The id of the webhook.

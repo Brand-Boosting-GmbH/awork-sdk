@@ -101,7 +101,7 @@ export class ProjectTemplates {
         /**
          * The order value which determines the position of the project status in the flow of the project type. Only accepts 0 and positive values. For independent statuses without successor and predecessor this value is set to null.
          */
-        order: any;
+        order: Integer;
     }): Promise<void>;
     /**
      * Returns the task bundle id which is linked to the template.

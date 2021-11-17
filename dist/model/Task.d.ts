@@ -44,17 +44,17 @@ export class Task {
      * The lane order defines the vertical position in the gant planner.
      * @type {Integer} nullable
      */
-    get laneOrder(): any;
+    get laneOrder(): Integer;
     /**
      * The expected planned workload of the task, in seconds.
      * @type {Integer} nullable
      */
-    get plannedDuration(): any;
+    get plannedDuration(): Integer;
     /**
      * The expected remaining duration from the original planned effort of the task, in seconds.
      * @type {Integer} nullable
      */
-    get remainingDuration(): any;
+    get remainingDuration(): Integer;
     /**
     * The Id of the task.
     * @type {String} uuid
@@ -69,7 +69,7 @@ export class Task {
      * The numerical part of the key.
      * @type {Integer}
      */
-    get numberCount(): any;
+    get numberCount(): Integer;
     /**
      * The base type of the task. Can be 'private' for a private task or 'projecttask' for a project task.
      * @type {String} nullable
@@ -419,7 +419,7 @@ export class Task {
      * The summed up duration of all time trackings for this task.
      * @type {Integer} nullable
      */
-    get trackedDuration(): any;
+    get trackedDuration(): Integer;
     /**
      * The entity to which the task is linked.
      * @type {Object}
@@ -429,17 +429,17 @@ export class Task {
      * The version of the entity continuously incremented by 1 on every update of the entity.
      * @type {Integer} int64
      */
-    get resourceVersion(): any;
+    get resourceVersion(): Integer;
     /**
      * The number of subtasks which are already done.
      * @type {Integer} int32
      */
-    get subtasksDoneCount(): any;
+    get subtasksDoneCount(): Integer;
     /**
      * The total number of subtasks.
      * @type {Integer} int32
      */
-    get subtasksCount(): any;
+    get subtasksCount(): Integer;
     toPlainObject(): {
         name: any;
         description: any;

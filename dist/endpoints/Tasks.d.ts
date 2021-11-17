@@ -58,15 +58,15 @@ export class Tasks {
         /**
          * The lane order defines the vertical position in the gant planner.
          */
-        laneOrder?: any;
+        laneOrder?: Integer;
         /**
          * The expected planned workload of the task, in seconds.
          */
-        plannedDuration?: any;
+        plannedDuration?: Integer;
         /**
          * The expected remaining duration from the original planned effort of the task, in seconds.
          */
-        remainingDuration?: any;
+        remainingDuration?: Integer;
         /**
          * The id of the type of work for this task.
          */
@@ -142,15 +142,15 @@ export class Tasks {
         /**
          * The lane order defines the vertical position in the gant planner.
          */
-        laneOrder?: any;
+        laneOrder?: Integer;
         /**
          * The expected planned workload of the task, in seconds.
          */
-        plannedDuration?: any;
+        plannedDuration?: Integer;
         /**
          * The expected remaining duration from the original planned effort of the task, in seconds.
          */
-        remainingDuration?: any;
+        remainingDuration?: Integer;
     }): Promise<Task>;
     /**
      * This method is used to assign users to a task. You always need to pass all users you want to assign. If an already assigned user is not in the passed user id list, he/she gets unassigned.
@@ -274,7 +274,7 @@ export class Tasks {
      * @param {ChangeTypesModel} payload The model to change the type of work.
      * @returns {Promise<void>}
      */
-    changeTypeOfWork(payload: any): Promise<void>;
+    changeTypeOfWork(payload: ChangeTypesModel): Promise<void>;
     /**
      * @typedef {Object} ChangeBaseTypesModel
      * @property {('private'|'projecttask')} baseType The type the tasks should be migrated to.

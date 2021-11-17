@@ -7,7 +7,7 @@ export class CompaniesContactInfos {
      *
      * @returns {Promise<Array<Company>>}
      */
-    list(): Promise<Array<any>>;
+    list(): Promise<Array<Company>>;
     /**
      *
      * @param {CompanyContactInfo} companyContactInfo

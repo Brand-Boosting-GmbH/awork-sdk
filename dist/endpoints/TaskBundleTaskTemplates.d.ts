@@ -25,7 +25,7 @@ export class TaskBundleTaskTemplates {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<TaskListTemplate>>}
      */
-    list(options?: import('../global').ListOptions): Promise<Array<any>>;
+    list(options?: import('../global').ListOptions): Promise<Array<TaskListTemplate>>;
     /**
      * @typedef {Object} TaskTemplateCreateModel
      * @property {String} name The name of the task created from this template.

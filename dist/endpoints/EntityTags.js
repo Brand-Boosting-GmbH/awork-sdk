@@ -21,7 +21,7 @@ class EntityTags {
    * @param {('companies'|'tasks'|'users')} entityName The name of the entity
    * @param {String} entityId The id of the entity
    */
-  constructor(client) {
+  constructor(client, entityName, entityId) {
     /** @private */
     this._client = client;
     /** @private */

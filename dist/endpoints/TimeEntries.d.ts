@@ -105,7 +105,7 @@ export class TimeEntries {
         /**
          * The duration of the time tracking in seconds. Required when the time tracking has already been completed and EndTime has not been set.
          */
-        duration?: any;
+        duration?: Integer;
         /**
          * The id of the type of work.
          */
@@ -177,7 +177,7 @@ export class TimeEntries {
         /**
          * The duration of the time tracking in seconds. Required when the time tracking has already been completed and EndTime has not been set.
          */
-        duration?: any;
+        duration?: Integer;
         /**
          * The id of the type of work.
          */

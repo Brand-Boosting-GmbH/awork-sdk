@@ -205,7 +205,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {ProjectProjectStatus}
      */
-    projectStatuses(projectId: string): any;
+    projectStatuses(projectId: string): ProjectProjectStatus;
     /**
      * Returns the {@link Autopilots} Endpoint with the specified project Id.
      * @param {String} projectId The id of the project.
@@ -235,7 +235,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {ProjectsSubtasks}
      */
-    projectSubtasks(projectId: string): any;
+    projectSubtasks(projectId: string): ProjectsSubtasks;
 }
 import { Project } from "../model/Project";
 import { TaskDependency } from "../model/TaskDependency";

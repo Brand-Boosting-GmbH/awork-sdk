@@ -67,27 +67,27 @@ export class TimeEntry {
     /**
      * @type {Integer} int64, readOnly
      */
-    get startTimeUtcTicks(): any;
+    get startTimeUtcTicks(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get startTimeUtcDays(): any;
+    get startTimeUtcDays(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get startTimeUtcHours(): any;
+    get startTimeUtcHours(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get startTimeUtcMilliseconds(): any;
+    get startTimeUtcMilliseconds(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get startTimeUtcMinutes(): any;
+    get startTimeUtcMinutes(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get startTimeUtcSeconds(): any;
+    get startTimeUtcSeconds(): Integer;
     /**
      * @type {Number} double,  readOnly
      */
@@ -115,27 +115,27 @@ export class TimeEntry {
     /**
      * @type {Integer} int64, readOnly
      */
-    get endTimeUtcTicks(): any;
+    get endTimeUtcTicks(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get endTimeUtcDays(): any;
+    get endTimeUtcDays(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get endTimeUtcHours(): any;
+    get endTimeUtcHours(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get endTimeUtcMilliseconds(): any;
+    get endTimeUtcMilliseconds(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get endTimeUtcMinutes(): any;
+    get endTimeUtcMinutes(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get endTimeUtcSeconds(): any;
+    get endTimeUtcSeconds(): Integer;
     /**
      * @type {Number} double,  readOnly
      */
@@ -168,27 +168,27 @@ export class TimeEntry {
     /**
      * @type {Integer} int64, readOnly
      */
-    get startTimeLocalTicks(): any;
+    get startTimeLocalTicks(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get startTimeLocalDays(): any;
+    get startTimeLocalDays(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get startTimeLocalHours(): any;
+    get startTimeLocalHours(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get startTimeLocalMilliseconds(): any;
+    get startTimeLocalMilliseconds(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get startTimeLocalMinutes(): any;
+    get startTimeLocalMinutes(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get startTimeLocalSeconds(): any;
+    get startTimeLocalSeconds(): Integer;
     /**
      * @type {Number} double,  readOnly
      */
@@ -216,27 +216,27 @@ export class TimeEntry {
     /**
      * @type {Integer} int64, readOnly
      */
-    get endTimeLocalTicks(): any;
+    get endTimeLocalTicks(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get endTimeLocalDays(): any;
+    get endTimeLocalDays(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get endTimeLocalHours(): any;
+    get endTimeLocalHours(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get endTimeLocalMilliseconds(): any;
+    get endTimeLocalMilliseconds(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get endTimeLocalMinutes(): any;
+    get endTimeLocalMinutes(): Integer;
     /**
      * @type {Integer} int32, readOnly
      */
-    get endTimeLocalSeconds(): any;
+    get endTimeLocalSeconds(): Integer;
     /**
      * @type {Number} double,  readOnly
      */
@@ -266,7 +266,7 @@ export class TimeEntry {
      * The duration of the time tracking in seconds. Required when the time tracking has already been completed and EndTime has not been set.
      * @type {Integer} int32
      */
-    get duration(): any;
+    get duration(): Integer;
     /**
      * The id of the type of work.
      * @type {String} uuid
@@ -565,11 +565,11 @@ export class TimeEntry {
     /**
      * @type {Integer} int32
      */
-    get taskPlannedDuration(): any;
+    get taskPlannedDuration(): Integer;
     /**
      * @type {Integer} int32
      */
-    get taskRemainingDuration(): any;
+    get taskRemainingDuration(): Integer;
     /**
      * @type {String} date-time
      */
@@ -756,7 +756,7 @@ export class TimeEntry {
      * The version of the entity continuously incremented by 1 on every update of the entity.
      * @type {Integer} int64
      */
-    get resourceVersion(): any;
+    get resourceVersion(): Integer;
     toPlainObject(): {
         isBillable: any;
         isBilled: any;

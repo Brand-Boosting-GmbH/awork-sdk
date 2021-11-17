@@ -55,7 +55,7 @@ export class User {
      * The capacity of the user per week in seconds.
      * @type {Integer} int32
      */
-    get capacityPerWeek(): any;
+    get capacityPerWeek(): Integer;
     /**
      * The id of the user.
      * @type {String} uuid
@@ -130,7 +130,7 @@ export class User {
      * The version of the entity continuously incremented by 1 on every update of the entity.
      * @type {Integer} int64
      */
-    get resourceVersion(): any;
+    get resourceVersion(): Integer;
     /**
      * @typedef {Object} UserTagsObject
      * @property {String} id uuid

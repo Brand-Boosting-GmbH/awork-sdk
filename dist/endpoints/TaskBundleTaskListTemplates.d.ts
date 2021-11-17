@@ -82,6 +82,6 @@ export class TaskBundleTaskListTemplates {
      * @param {String} projectId The id of the task list template.
      * @returns {ProjectProjectStatus}
      */
-    taskTemplates(taskListTemplateId: any): any;
+    taskTemplates(taskListTemplateId: any): ProjectProjectStatus;
 }
 import { TaskListTemplate } from "../model/TaskListTemplate";

@@ -10,7 +10,7 @@ export class EntityTags {
      * @param {('companies'|'tasks'|'users')} entityName The name of the entity
      * @param {String} entityId The id of the entity
      */
-    constructor(client: import('../client/index').Client);
+    constructor(client: import('../client/index').Client, entityName: ('companies' | 'tasks' | 'users'), entityId: string);
     /** @private */
     private _client;
     /** @private */

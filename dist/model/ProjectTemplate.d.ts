@@ -96,7 +96,7 @@ export class ProjectTemplate {
         /**
          * int36
          */
-        order: any;
+        order: Integer;
         /**
          * The date this entity was created.
          */

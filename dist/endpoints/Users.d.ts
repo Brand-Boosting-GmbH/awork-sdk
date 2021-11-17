@@ -75,7 +75,7 @@ export class Users {
         /**
          * The capacity of the user per week in seconds.
          */
-        capacityPerWeek?: any;
+        capacityPerWeek?: Integer;
         /**
          * The account id of the user.
          */
@@ -130,7 +130,7 @@ export class Users {
         /**
          * The capacity of the user per week in seconds.
          */
-        capacityPerWeek?: any;
+        capacityPerWeek?: Integer;
     }): Promise<User>;
     /**
      * Deletes the user with the specified id.
