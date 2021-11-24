@@ -10,6 +10,7 @@ import { ProjectMilestone } from '../model/ProjectMilestone'
 import { EntityImages } from './EntityImages'
 import { ProjectTasks } from './ProjectTasks'
 import { ProjectSubtasks } from './ProjectSubtasks'
+import { TaskLists } from './TaskLists'
 
 
 /**
@@ -227,5 +228,14 @@ export class Projects {
      */
     projectSubtasks (projectId) {
         return new ProjectSubtasks(this._client, projectId)
+    }
+
+    /**
+     * Returns the {@link TaskLists} Endpoint with the specified project Id.
+     * @param {String} projectId The id of the project.
+     * @returns {TaskLists}
+     */
+    taskLists (projectId) {
+        return new TaskLists(this._client, 'projects', projectId)
     }
 }
