@@ -45,7 +45,7 @@ export class EntityTags {
     /**
      * @typedef {Object} TagsModel
      * @property {String} name maxLength: 40
-     * @property {Color} [color] nullable
+     * @property {import('../index').Color} [color] nullable
      */
 
     /**
