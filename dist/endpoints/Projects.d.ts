@@ -236,6 +236,12 @@ export class Projects {
      * @returns {ProjectsSubtasks}
      */
     projectSubtasks(projectId: string): ProjectsSubtasks;
+    /**
+     * Returns the {@link TaskLists} Endpoint with the specified project Id.
+     * @param {String} projectId The id of the project.
+     * @returns {TaskLists}
+     */
+    taskLists(projectId: string): TaskLists;
 }
 import { Project } from "../model/Project";
 import { TaskDependency } from "../model/TaskDependency";
@@ -246,3 +252,4 @@ import { Autopilots } from "./Autopilots";
 import { ProjectAutomations } from "./ProjectAutomations";
 import { EntityImages } from "./EntityImages";
 import { ProjectTasks } from "./ProjectTasks";
+import { TaskLists } from "./TaskLists";

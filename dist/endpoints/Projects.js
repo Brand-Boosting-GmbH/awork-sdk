@@ -29,6 +29,8 @@ var _ProjectTasks = require("./ProjectTasks");
 
 var _ProjectSubtasks = require("./ProjectSubtasks");
 
+var _TaskLists = require("./TaskLists");
+
 /**
  * Class corresponding to Aworks Projects Endpoints
  * @category Endpoints
@@ -262,6 +264,16 @@ class Projects {
 
   projectSubtasks(projectId) {
     return new _ProjectSubtasks.ProjectSubtasks(this._client, projectId);
+  }
+  /**
+   * Returns the {@link TaskLists} Endpoint with the specified project Id.
+   * @param {String} projectId The id of the project.
+   * @returns {TaskLists}
+   */
+
+
+  taskLists(projectId) {
+    return new _TaskLists.TaskLists(this._client, 'projects', projectId);
   }
 
 }
