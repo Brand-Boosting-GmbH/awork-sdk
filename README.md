@@ -1,12 +1,12 @@
 # Awork SDK
 
 An (almost) complete JavaScript API wrapper for project management software [Awork](https://awork.io).
-The goal of this project is to provide an comprehensive set of tools to interact with the Awork REST SDK when working with JavaScript.
+The goal of this project is to provide a comprehensive set of tools to interact with the Awork REST SDK when working with JavaScript.
 This library can be imported as a CommonJS or ES module and supports autocompletion via .d.ts files.
 
 Please be aware: Awork is a product of HQLabs GmbH. This project is maintained by [Brand Boosting GmbH](https://brand-boosting.de) and is not endorsed by HQLabs GmbH in any way.
 
-## Ressources:
+## Resources:
 
 * [Awork SDK Reference](https://brand-boosting-gmbh.github.io/awork-sdk/index.html) (every endpoint in detail)
 
@@ -14,12 +14,12 @@ Please be aware: Awork is a product of HQLabs GmbH. This project is maintained b
 
 ## Found a bug?
 
-This library is quite new and there may be bugs. [Please open a issue](https://github.com/Brand-Boosting-GmbH/awork-sdk/issues) if you think you encountered a bug.
+This library is quite new and there may be bugs. [Please open an issue](https://github.com/Brand-Boosting-GmbH/awork-sdk/issues) if you think you encountered a bug.
 
 ## ToDos
 
 We are trying to maintain this project as actively as possible.
-[Please open a issue](https://github.com/Brand-Boosting-GmbH/awork-sdk/issues) if you have a specific feature request.
+[Please open an issue](https://github.com/Brand-Boosting-GmbH/awork-sdk/issues) if you have a specific feature request.
 
 - [ ] Documenting the OAuthClient and OAuthServer Class
 - [ ] EasyOAuth Service for serverless applications
