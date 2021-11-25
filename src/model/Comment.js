@@ -141,7 +141,7 @@ import '../globalTypedef'
     }
 
     /**
-     * @type {Icon} nullable
+     * @type {import('../index').Icon} nullable
      */
     get projectProjectTypeIcon () {
         return this._data.project.projectTypeIcon
@@ -173,7 +173,7 @@ import '../globalTypedef'
     }
 
     /**
-     * @type {Icon} nullable
+     * @type {import('../index').Icon} nullable
      */
     get entityProjectTypeIcon () {
         return this._data.entity.projectTypeIcon

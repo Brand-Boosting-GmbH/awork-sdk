@@ -61,7 +61,7 @@ import '../globalTypedef'
 
     /**
      * The icon of the task status.
-     * @type {Icon} nullable
+     * @type {import('../index').Icon} nullable
      */
     get icon () {
         return this._data.icon

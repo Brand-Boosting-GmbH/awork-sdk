@@ -539,7 +539,7 @@ import '../globalTypedef'
     }
 
     /**
-     * @type {Icon} nullable
+     * @type {import('../index').Icon} nullable
      */
     get typeOfWorkIcon () {
         return this._data.typeOfWork.icon
@@ -688,7 +688,7 @@ import '../globalTypedef'
      * @typedef {Object} TaskTypeObject
      * @property {String} id uuid
      * @property {String} name nullable
-     * @property {Icon} icon nullable
+     * @property {import('../index').Icon} icon nullable
      * @property {Boolean} isArchived
      */
 
@@ -729,8 +729,8 @@ import '../globalTypedef'
      * @property {String} key nullable
      * @property {{id: String, name: String, description: String, type: String, isArchived: Boolean}} projectStatus
      * @property {{id: String, name: String, hasImage: String, description: String}} company
-     * @property {{id: String, name: String, icon: Icon, isArchived: Boolean}} projectType
-     * @property {Array<{id: String, name: String, color: Color, entityId: String}>} tags
+     * @property {{id: String, name: String, icon:import('../index').Icon, isArchived: Boolean}} projectType
+     * @property {Array<{id: String, name: String, color: import('../index').Color, entityId: String}>} tags
      * @property {Array<{id: String}>} teams
      */
 
@@ -869,7 +869,7 @@ import '../globalTypedef'
      * @typedef {Object} ProjectTagsObject
      * @property {String} id uuid
      * @property {String} name nullable
-     * @property {Color} color nullable
+     * @property {import('../index').Color} color nullable
      * @property {String} entityId uuid
      */
 

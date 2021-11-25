@@ -44,7 +44,7 @@ export class TypesOfWorks {
      * @typedef {Object} TypeOfWorkCreateModel
      * @property {String} name The name of the type of work.
      * @property {String} description A short description of the type of work.
-     * @property {Icon} icon The icon ass with this type of work.
+     * @property {import('../index').Icon} icon The icon ass with this type of work.
      */
 
     /**

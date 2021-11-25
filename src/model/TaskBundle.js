@@ -37,7 +37,7 @@ export class TaskBundle {
 
     /**
      * The icon of the task bundle.
-     * @type {Icon} 
+     * @type {import('../index').Icon} 
      */
     get icon () {
         return this._data.icon

@@ -29,7 +29,7 @@ export class Team {
 
     /**
      * The team description. Optional.
-     * @type {Icon} nullable
+     * @type {import('../index').Icon} nullable
      */
     get icon () {
         return this._data.icon
@@ -37,7 +37,7 @@ export class Team {
 
     /**
      * The team type. Optional.
-     * @type {Color} nullable
+     * @type {import('../index').Color} nullable
      */
     get color () {
         return this._data.color

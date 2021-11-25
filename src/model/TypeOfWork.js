@@ -46,7 +46,7 @@ export class TypeOfWork {
 
     /**
      * The icon associated with this task type.
-     * @type {Icon}
+     * @type {import('../index').Icon}
      */
     get icon () {
         return this._data.icon

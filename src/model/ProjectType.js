@@ -48,7 +48,7 @@ import '../globalTypedef'
 
     /**
      * The identifier of the project type icon.
-     * @type {Icon}
+     * @type {import('../index').Icon}
      */
     get icon () {
         return this._data.icon
