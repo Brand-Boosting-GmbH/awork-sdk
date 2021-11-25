@@ -48,7 +48,7 @@ class ProjectTemplateTaskStatuses {
    * @property {String} name The name of the task status.
    * @property {('todo'|'progress'|'review'|'stuck'|'done')} type Specifies the general type of this task status.
    * @property {Number} [order] The order of the task status. If it is null, the task status will be appended after the last task status.
-   * @property {Icon} [icon] The icon of the task status.
+   * @property {import('../index').Icon} [icon] The icon of the task status.
    */
 
   /**

@@ -153,7 +153,7 @@ class TaskTemplate {
   }
   /**
    * The icon associated with this task type.
-   * @type {Icon} Possible awork icons.
+   * @type {import('../index').Icon} Possible awork icons.
    */
 
 

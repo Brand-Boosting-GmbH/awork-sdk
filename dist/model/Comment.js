@@ -162,7 +162,7 @@ class Comment {
     return this._data.project.name;
   }
   /**
-   * @type {Icon} nullable
+   * @type {import('../index').Icon} nullable
    */
 
 
@@ -198,7 +198,7 @@ class Comment {
     return this._data.entity.name;
   }
   /**
-   * @type {Icon} nullable
+   * @type {import('../index').Icon} nullable
    */
 
 

@@ -43,9 +43,9 @@ export class TaskStatus {
     get isPrivate(): boolean;
     /**
      * The icon of the task status.
-     * @type {Icon} nullable
+     * @type {import('../index').Icon} nullable
      */
-    get icon(): Icon;
+    get icon(): import("../index").Icon;
     /**
      * Is set if the task status is related to a project.
      * @type {String} uuid
@@ -82,7 +82,7 @@ export class TaskStatus {
         type: number;
         order: number;
         isPrivate: boolean;
-        icon: Icon;
+        icon: import("../index").Icon;
         projectId: string;
         projectTypeId: string;
         createdOn: string;

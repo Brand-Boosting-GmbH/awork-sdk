@@ -72,9 +72,9 @@ export class Awork {
     get projectRoles(): ProjectRoles;
     /**
      * The project status endpoints allow you to define statuses for projects. A status defines the current situation of a project. The statuses of a project type have an order which defines the flow the project typically goes through. Statuses can also be unlinked from the typical flow.
-     * @returns {ProjectStatus}
+     * @returns {ProjectStatuses}
      */
-    get projectStatuses(): ProjectStatus;
+    get projectStatuses(): ProjectStatuses;
     /**
      * The project templates endpoints allow you to define different templates for projects.
      * @returns {ProjectTemplates}
@@ -190,7 +190,7 @@ import { Companies } from "./endpoints/Companies";
 import { Files } from "./endpoints/Files";
 import { ProjectMilestones } from "./endpoints/ProjectMilestones";
 import { ProjectRoles } from "./endpoints/ProjectRoles";
-import { ProjectStatus } from "./model/ProjectStatus";
+import { ProjectStatuses } from "./endpoints/ProjectStatuses";
 import { ProjectTemplates } from "./endpoints/ProjectTemplates";
 import { ProjectTypes } from "./endpoints/ProjectTypes";
 import { TaskDependencies } from "./endpoints/TaskDependencies";

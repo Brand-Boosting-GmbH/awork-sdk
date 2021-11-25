@@ -315,9 +315,9 @@ export class TimeEntry {
      */
     get typeOfWorkName(): string;
     /**
-     * @type {Icon} nullable
+     * @type {import('../index').Icon} nullable
      */
-    get typeOfWorkIcon(): Icon;
+    get typeOfWorkIcon(): import("../index").Icon;
     /**
      * @type {Boolean}
      */
@@ -447,7 +447,7 @@ export class TimeEntry {
      * @typedef {Object} TaskTypeObject
      * @property {String} id uuid
      * @property {String} name nullable
-     * @property {Icon} icon nullable
+     * @property {import('../index').Icon} icon nullable
      * @property {Boolean} isArchived
      */
     /**
@@ -465,7 +465,7 @@ export class TimeEntry {
         /**
          * nullable
          */
-        icon: Icon;
+        icon: import('../index').Icon;
         isArchived: boolean;
     };
     /**
@@ -509,8 +509,8 @@ export class TimeEntry {
      * @property {String} key nullable
      * @property {{id: String, name: String, description: String, type: String, isArchived: Boolean}} projectStatus
      * @property {{id: String, name: String, hasImage: String, description: String}} company
-     * @property {{id: String, name: String, icon: Icon, isArchived: Boolean}} projectType
-     * @property {Array<{id: String, name: String, color: Color, entityId: String}>} tags
+     * @property {{id: String, name: String, icon:import('../index').Icon, isArchived: Boolean}} projectType
+     * @property {Array<{id: String, name: String, color: import('../index').Color, entityId: String}>} tags
      * @property {Array<{id: String}>} teams
      */
     /**
@@ -545,13 +545,13 @@ export class TimeEntry {
         projectType: {
             id: string;
             name: string;
-            icon: Icon;
+            icon: import('../index').Icon;
             isArchived: boolean;
         };
         tags: Array<{
             id: string;
             name: string;
-            color: Color;
+            color: import('../index').Color;
             entityId: string;
         }>;
         teams: Array<{
@@ -705,14 +705,14 @@ export class TimeEntry {
         /**
          * nullable
          */
-        icon: Icon;
+        icon: import('../index').Icon;
         isArchived: boolean;
     };
     /**
      * @typedef {Object} ProjectTagsObject
      * @property {String} id uuid
      * @property {String} name nullable
-     * @property {Color} color nullable
+     * @property {import('../index').Color} color nullable
      * @property {String} entityId uuid
      */
     /**
@@ -730,7 +730,7 @@ export class TimeEntry {
         /**
          * nullable
          */
-        color: Color;
+        color: import('../index').Color;
         /**
          * uuid
          */

@@ -56,7 +56,7 @@ class ProjectType {
   }
   /**
    * The identifier of the project type icon.
-   * @type {Icon}
+   * @type {import('../index').Icon}
    */
 
 

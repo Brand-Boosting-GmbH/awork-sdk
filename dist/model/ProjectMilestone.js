@@ -38,7 +38,7 @@ class ProjectMilestone {
   }
   /**
    * The color of the milestone.
-   * @type {Color} nullable
+   * @type {import('../index').Color} nullable
    */
 
 

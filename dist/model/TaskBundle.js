@@ -45,7 +45,7 @@ class TaskBundle {
   }
   /**
    * The icon of the task bundle.
-   * @type {Icon} 
+   * @type {import('../index').Icon} 
    */
 
 

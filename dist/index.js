@@ -31,8 +31,6 @@ var _ProjectMilestones = require("./endpoints/ProjectMilestones");
 
 var _ProjectRoles = require("./endpoints/ProjectRoles");
 
-var _ProjectStatus = require("./model/ProjectStatus");
-
 var _ProjectTemplates = require("./endpoints/ProjectTemplates");
 
 var _ProjectTypes = require("./endpoints/ProjectTypes");
@@ -70,6 +68,8 @@ var _MeUserOtherPrivateSubtasks = require("./endpoints/MeUserOtherPrivateSubtask
 var _MeUsers = require("./endpoints/MeUsers");
 
 var _MeUserPrivateSubtasks = require("./endpoints/MeUserPrivateSubtasks");
+
+var _ProjectStatuses = require("./endpoints/ProjectStatuses");
 
 /**
  * @typedef {Object} FilterQuery
@@ -186,12 +186,12 @@ class Awork {
   }
   /**
    * The project status endpoints allow you to define statuses for projects. A status defines the current situation of a project. The statuses of a project type have an order which defines the flow the project typically goes through. Statuses can also be unlinked from the typical flow.
-   * @returns {ProjectStatus}
+   * @returns {ProjectStatuses}
    */
 
 
   get projectStatuses() {
-    return new _ProjectStatus.ProjectStatus(this.client);
+    return new _ProjectStatuses.ProjectStatuses(this.client);
   }
   /**
    * The project templates endpoints allow you to define different templates for projects.

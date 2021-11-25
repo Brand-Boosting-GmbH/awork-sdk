@@ -24,7 +24,7 @@ export class ProjectTaskStatuses {
      * @property {String} name The name of the task status.
      * @property {('todo'|'progress'|'review'|'stuck'|'done')} type Specifies the general type of this task status.
      * @property {Number} [order] The order of the task status. If it is null, the task status will be appended after the last task status.
-     * @property {Icon} [icon] The icon of the task status.
+     * @property {import('../index').Icon} [icon] The icon of the task status.
      *
      */
     /**
@@ -48,7 +48,7 @@ export class ProjectTaskStatuses {
         /**
          * The icon of the task status.
          */
-        icon?: Icon;
+        icon?: import('../index').Icon;
     }): Promise<TaskStatus>;
     /**
      * Creates new task statuses from the project template for the the specified project.
@@ -80,7 +80,7 @@ export class ProjectTaskStatuses {
         /**
          * The icon of the task status.
          */
-        icon?: Icon;
+        icon?: import('../index').Icon;
     }): Promise<TaskStatus>;
     /**
      * Deletes the project's task status with the specified id. To delete the task status, the user need write permissions on feature Project-Master-Data. If the status still has related tasks, it's necessary to provide another task status to move the tasks to.

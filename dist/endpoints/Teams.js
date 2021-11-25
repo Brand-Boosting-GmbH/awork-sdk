@@ -59,8 +59,8 @@ class Teams {
   /**
    * @typedef {Object} TeamCreateModel
    * @property {String} name The team name.
-   * @property {Icon} [icon] The team icon. Optional.
-   * @property {Color} [color] The team color. Optional.
+   * @property {import('../index').Icon} [icon] The team icon. Optional.
+   * @property {import('../index').Color} [color] The team color. Optional.
    */
 
   /**

@@ -36,7 +36,7 @@ class Team {
   }
   /**
    * The team description. Optional.
-   * @type {Icon} nullable
+   * @type {import('../index').Icon} nullable
    */
 
 
@@ -45,7 +45,7 @@ class Team {
   }
   /**
    * The team type. Optional.
-   * @type {Color} nullable
+   * @type {import('../index').Color} nullable
    */
 
 

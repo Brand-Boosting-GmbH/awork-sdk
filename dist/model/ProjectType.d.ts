@@ -35,9 +35,9 @@ export class ProjectType {
     get description(): string;
     /**
      * The identifier of the project type icon.
-     * @type {Icon}
+     * @type {import('../index').Icon}
      */
-    get icon(): Icon;
+    get icon(): import("../index").Icon;
     /**
      * Whether this type is archived. It can no longer be used to create projects, but existing ones will continue using it.
      * @type {Boolean}

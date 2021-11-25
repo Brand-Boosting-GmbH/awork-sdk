@@ -106,9 +106,9 @@ export class Project {
      */
     get projectTypeIsArchived(): boolean;
     /**
-     * @type {Icon} nullable
+     * @type {import('../index').Icon} nullable
      */
-    get projectTypeIcon(): Icon;
+    get projectTypeIcon(): import("../index").Icon;
     /**
      * @type {String} nullable
      */
@@ -181,7 +181,7 @@ export class Project {
      * @typedef {Object} TagObject
      * @property {String} id uuid
      * @property {String} name nullable
-     * @property {Color} color nullable
+     * @property {import('../index').Color} color nullable
      * @property {String} entityId uuid
      * @property {String} createdOn date-time
      * @property {String} createdBy uuid
@@ -204,7 +204,7 @@ export class Project {
         /**
          * nullable
          */
-        color: Color;
+        color: import('../index').Color;
         /**
          * uuid
          */
@@ -312,13 +312,13 @@ export class Project {
     get resourceVersion(): number;
     /**
      * The teams the project is associated to.
-     * @type {Array<{id: String, name: String, color: Color, icon: Icon}>} nullable
+     * @type {Array<{id: String, name: String, color: Color, icon:import('../index').Icon}>} nullable
      */
     get teams(): {
         id: string;
         name: string;
         color: Color;
-        icon: Icon;
+        icon: import('../index').Icon;
     }[];
     toPlainObject(): {
         name: any;

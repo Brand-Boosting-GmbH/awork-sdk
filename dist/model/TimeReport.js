@@ -272,7 +272,7 @@ class TimeReport {
    * @typedef {Object} TagObject
    * @property {String} id uuid
    * @property {String} name nullable
-   * @property {Color} color nullable
+   * @property {import('../index').Color} color nullable
    * @property {String} entityId uuid
    */
 

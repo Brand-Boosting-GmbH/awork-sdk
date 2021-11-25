@@ -9,24 +9,51 @@ var _axios = _interopRequireDefault(require("axios"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Error Class used by {@link Client}
+ * @todo extends Error
+ * @category Util
+ * @class
+ */
 class AworkError {
   constructor(error) {
     this.data = error.response.data ? error.response.data : null;
     this.status = error.response.status;
     this.statusText = error.response.statusText;
   }
+  /**
+   * HTTP Response Code#
+   * @type {String|Number}
+   */
+
 
   get code() {
     return this.data.code;
   }
+  /**
+   * Error Description
+   * @type {String}
+   */
+
 
   get description() {
     return this.data.description;
   }
+  /**
+   * Error Link
+   * @type {String}
+   */
+
 
   get link() {
     return this.data.link;
   }
+  /**
+   * An random awesome space fact preventing you from going insane
+   * when debugging
+   * @type {String}
+   */
+
 
   get space() {
     return this.data.space;
@@ -95,8 +122,7 @@ class Client {
       params,
       headers
     }).catch(e => {
-      console.log(e.response);
-      console.log(e);
+      throw new AworkError(e);
     });
     return new AworkResponse(response.status, response.headers, response.data);
   }
@@ -107,7 +133,7 @@ class Client {
       params,
       headers
     }).catch(e => {
-      throw new AworkError(e).data.validationErrors;
+      throw new AworkError(e);
     });
     return new AworkResponse(response.status, response.headers, response.data);
   }

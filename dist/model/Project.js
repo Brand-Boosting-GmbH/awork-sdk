@@ -190,7 +190,7 @@ class Project {
     return this._data.projectType.isArchived;
   }
   /**
-   * @type {Icon} nullable
+   * @type {import('../index').Icon} nullable
    */
 
 
@@ -325,7 +325,7 @@ class Project {
    * @typedef {Object} TagObject
    * @property {String} id uuid
    * @property {String} name nullable
-   * @property {Color} color nullable
+   * @property {import('../index').Color} color nullable
    * @property {String} entityId uuid
    * @property {String} createdOn date-time
    * @property {String} createdBy uuid
@@ -412,7 +412,7 @@ class Project {
   }
   /**
    * The teams the project is associated to.
-   * @type {Array<{id: String, name: String, color: Color, icon: Icon}>} nullable
+   * @type {Array<{id: String, name: String, color: Color, icon:import('../index').Icon}>} nullable
    */
 
 

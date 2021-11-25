@@ -139,7 +139,7 @@ class Company {
    * @typedef {Object} CompanyTags
    * @property {String} id uuid
    * @property {String} name nullable
-   * @property {Color} color nullable
+   * @property {import('../index').Color} color nullable
    * @property {String} entityId uuid
    * @property {String} createdOn date-time
    * @property {String} createdBy uuid

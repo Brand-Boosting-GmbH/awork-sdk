@@ -88,9 +88,9 @@ export class TaskTemplate {
     get taskTypeDescription(): string;
     /**
      * The icon associated with this task type.
-     * @type {Icon} Possible awork icons.
+     * @type {import('../index').Icon} Possible awork icons.
      */
-    get taskTypeIcon(): Icon;
+    get taskTypeIcon(): import("../index").Icon;
     /**
      * Whether the task type has been archived.
      * @type {Boolean}

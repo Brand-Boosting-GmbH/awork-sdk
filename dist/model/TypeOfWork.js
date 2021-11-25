@@ -54,7 +54,7 @@ class TypeOfWork {
   }
   /**
    * The icon associated with this task type.
-   * @type {Icon}
+   * @type {import('../index').Icon}
    */
 
 

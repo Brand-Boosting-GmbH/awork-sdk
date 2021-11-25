@@ -71,7 +71,7 @@ class PrivateTasksTaskStatus {
   }
   /**
    * The icon of the task status.
-   * @type {Icon} uuid
+   * @type {import('../index').Icon} uuid
    */
 
 

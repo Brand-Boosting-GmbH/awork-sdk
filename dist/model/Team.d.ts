@@ -23,14 +23,14 @@ export class Team {
     get name(): string;
     /**
      * The team description. Optional.
-     * @type {Icon} nullable
+     * @type {import('../index').Icon} nullable
      */
-    get icon(): Icon;
+    get icon(): import("../index").Icon;
     /**
      * The team type. Optional.
-     * @type {Color} nullable
+     * @type {import('../index').Color} nullable
      */
-    get color(): Color;
+    get color(): import("../index").Color;
     /**
      * The id of the team.
      * @type {String} uuid

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> endpoints/TaskListTasks.js</title>
+  <title> AworkError</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -75,69 +73,482 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Source</p>
-                    <h1>endpoints/TaskListTasks.js</h1>
+                    <p>Class</p>
+                    <h1>AworkError</h1>
                 </header>
                 
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>import { Task } from "../model/Task"
+        <h2><span class="attribs"><span class="type-signature"></span></span>AworkError<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">Error Class used by <a href="Client.html">Client</a></div>
+        
+    
+</header>
 
-/**
- * Class corresponding to Aworks tasks related part of the Tasklists Endpoints
- * @category Endpoints
- * @see [Tasklists in Awork API Docs](https://openapi.awork.io/#/Tasklists)
- */
-export class TaskListTasks {
-    /**
-     * Endpoint constructor
-     * @param {import('../client/index').Client} client 
-     * @param {String} entityName Currently only 'projects' supported.
-     * @param {String} entityId The id of the entity. (projectId)
-     * @param {String} taskListId The id of the task list.
-     */
-    constructor (client, entityName, entityId, taskListId) {
-        /**@private */
-        this._client = client
-        /**@private */
-        this._entityName = entityName
-        /**@private */
-        this._entityId = entityId
-        /**@private */
-        this._taskListId = taskListId
-    }
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
 
-    /**
-     * Returns the task with the specified id in the specified task list.
-     * To get a project task from the project task list, the user needs read permissions on the project-planning-data feature or the current user must be assigned to the task with the specified id. For a private task list no permissions are required.
-     * @param {String} taskId The id of the task.
-     * @returns {Promise&lt;Task>}
-     */
-    async get (taskId) {
-        const response = await this._client.get(`/${this._entityName}/${this._entityId}/tasklists/${this._taskListId}/tasks/${taskId}`)
-        const data = response.data()
-        return new Task(data)
-    }
 
-    /**
-     * Updates the order of a task in a task list.
-     * To update the order of tasks in a project task list, the user needs manage permissions on the project-planning-data feature.
-     * @param {String} taskId The id of the task.
-     * @param {Number} order The order of the task in the list.
-     * @returns {Promise&lt;void>}
-     */
-    async updateOrder (taskId, order) {
-        const response = await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${this._taskListId}/tasks/${taskId}`, {order: order})
-        return response.data()
-    }
+    
+    <h4 class="name" id="AworkError">
+        <a class="href-link" href="#AworkError">#</a>
+        
+        <span class="code-name">
+            
+                new AworkError<span class="signature">()</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
 
-}</code></pre>
-        </article>
-    </section>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+    <dt class="tag-todo">To Do:</dt>
+    <dd class="tag-todo">
+        <ul>
+            <li>extends Error</li>
+        </ul>
+    </dd>
+    
+
+    
+        <p class="tag-source">
+            <a href="client_index.js.html" class="button">View Source</a>
+            <span>
+                <a href="client_index.js.html">client/index.js</a>, <a href="client_index.js.html#line9">line 9</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Number</span>
+
+
+    </span>
+
+<h4 class="name" id="code">
+    <a class="href-link" href="#code">#</a>
+    
+    <span class="code-name">
+        code
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    HTTP Response Code#
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="client_index.js.html" class="button">View Source</a>
+            <span>
+                <a href="client_index.js.html">client/index.js</a>, <a href="client_index.js.html#line20">line 20</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="description">
+    <a class="href-link" href="#description">#</a>
+    
+    <span class="code-name">
+        description
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    Error Description
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="client_index.js.html" class="button">View Source</a>
+            <span>
+                <a href="client_index.js.html">client/index.js</a>, <a href="client_index.js.html#line28">line 28</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="link">
+    <a class="href-link" href="#link">#</a>
+    
+    <span class="code-name">
+        link
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    Error Link
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="client_index.js.html" class="button">View Source</a>
+            <span>
+                <a href="client_index.js.html">client/index.js</a>, <a href="client_index.js.html#line36">line 36</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">String</span>
+
+
+    </span>
+
+<h4 class="name" id="space">
+    <a class="href-link" href="#space">#</a>
+    
+    <span class="code-name">
+        space
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    An random awesome space fact preventing you from going insane
+when debugging
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="client_index.js.html" class="button">View Source</a>
+            <span>
+                <a href="client_index.js.html">client/index.js</a>, <a href="client_index.js.html#line45">line 45</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 

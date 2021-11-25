@@ -72,7 +72,7 @@ class TaskStatus {
   }
   /**
    * The icon of the task status.
-   * @type {Icon} nullable
+   * @type {import('../index').Icon} nullable
    */
 
 
