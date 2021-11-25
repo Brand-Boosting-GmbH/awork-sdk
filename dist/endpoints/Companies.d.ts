@@ -122,6 +122,13 @@ export class Companies {
      * @param {String} companyId The id of the company.
      * @returns
      */
+    tags(companyId: string): EntityTags;
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified company Id and name.
+     * @param {String} companyId The id of the company.
+     * @returns
+     * @deprecated
+     */
     entityTags(companyId: string): EntityTags;
 }
 import { Company } from "../model/Company";

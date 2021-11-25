@@ -261,8 +261,19 @@ class Users {
    */
 
 
-  entityTags(userId) {
+  tags(userId) {
     return new _EntityTags.EntityTags(this._client, 'users', userId);
+  }
+  /**
+   * Returns the {@link EntityTags} Endpoint with the specified user Id and name.
+   * @param {String} userId The id of the users.
+   * @returns 
+   * @deprecated
+   */
+
+
+  entityTags(userId) {
+    return this.tags(userId);
   }
 
 }
