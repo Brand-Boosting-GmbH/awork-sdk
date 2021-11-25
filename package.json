@@ -1,6 +1,6 @@
 {
     "name": "@brandboostinggmbh/awork-sdk",
-    "version": "0.3.12",
+    "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
