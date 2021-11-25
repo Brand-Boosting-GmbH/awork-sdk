@@ -242,6 +242,19 @@ export class Projects {
      * @returns {TaskLists}
      */
     taskLists(projectId: string): TaskLists;
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified project Id and name.
+     * @param {String} projectId The id of the project.
+     * @returns
+     */
+    tags(projectId: string): EntityTags;
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified project Id and name.
+     * @param {String} projectId The id of the project.
+     * @returns
+     * @deprecated
+     */
+    entityTags(projectId: string): EntityTags;
 }
 import { Project } from "../model/Project";
 import { TaskDependency } from "../model/TaskDependency";
@@ -253,3 +266,4 @@ import { ProjectAutomations } from "./ProjectAutomations";
 import { EntityImages } from "./EntityImages";
 import { ProjectTasks } from "./ProjectTasks";
 import { TaskLists } from "./TaskLists";
+import { EntityTags } from "./EntityTags";

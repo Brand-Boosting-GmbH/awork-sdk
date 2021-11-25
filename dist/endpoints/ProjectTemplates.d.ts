@@ -133,9 +133,23 @@ export class ProjectTemplates {
      * @returns {ProjectTemplateTaskStatuses}
      */
     taskStatuses(projectTemplateId: string): ProjectTemplateTaskStatuses;
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified project tempate Id and name.
+     * @param {String} projectTemplateId The id of the project template.
+     * @returns
+     */
+    tags(projectTemplateId: string): EntityTags;
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified project tempate Id and name.
+     * @param {String} projectTemplateId The id of the project template.
+     * @returns
+     * @deprecated
+     */
+    entityTags(projectTemplateId: string): EntityTags;
 }
 import { ProjectTemplate } from "../model/ProjectTemplate";
 import { ProjectTemplateProjectStatuses } from "./ProjectTemplateProjectStatuses";
 import { ProjectTemplateAutomations } from "./ProjectTemplateAutomations";
 import { EntityImages } from "./EntityImages";
 import { ProjectTemplateTaskStatuses } from "./ProjectTemplateTaskStatuses";
+import { EntityTags } from "./EntityTags";

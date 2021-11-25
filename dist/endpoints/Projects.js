@@ -31,6 +31,8 @@ var _ProjectSubtasks = require("./ProjectSubtasks");
 
 var _TaskLists = require("./TaskLists");
 
+var _EntityTags = require("./EntityTags");
+
 /**
  * Class corresponding to Aworks Projects Endpoints
  * @category Endpoints
@@ -274,6 +276,27 @@ class Projects {
 
   taskLists(projectId) {
     return new _TaskLists.TaskLists(this._client, 'projects', projectId);
+  }
+  /**
+   * Returns the {@link EntityTags} Endpoint with the specified project Id and name.
+   * @param {String} projectId The id of the project.
+   * @returns 
+   */
+
+
+  tags(projectId) {
+    return new _EntityTags.EntityTags(this._client, 'projects', projectId);
+  }
+  /**
+   * Returns the {@link EntityTags} Endpoint with the specified project Id and name.
+   * @param {String} projectId The id of the project.
+   * @returns 
+   * @deprecated
+   */
+
+
+  entityTags(projectId) {
+    return this.tags(projectId);
   }
 
 }
