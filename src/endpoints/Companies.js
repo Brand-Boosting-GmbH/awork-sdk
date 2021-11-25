@@ -134,7 +134,17 @@ export class Companies {
      * @param {String} companyId The id of the company.
      * @returns 
      */
-    entityTags (companyId) {
+     tags (companyId) {
         return new EntityTags(this._client, 'companies', companyId)
+    }
+
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified company Id and name.
+     * @param {String} companyId The id of the company.
+     * @returns 
+     * @deprecated
+     */
+    entityTags (companyId) {
+        return this.tags(companyId)
     }
 }

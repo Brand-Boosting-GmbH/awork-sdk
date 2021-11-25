@@ -224,7 +224,17 @@ export class Users {
      * @param {String} userId The id of the users.
      * @returns 
      */
-    entityTags (userId) {
+     tags (userId) {
         return new EntityTags(this._client, 'users', userId)
+    }
+
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified user Id and name.
+     * @param {String} userId The id of the users.
+     * @returns 
+     * @deprecated
+     */
+    entityTags (userId) {
+        return this.tags(userId)
     }
 }
