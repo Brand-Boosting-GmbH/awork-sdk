@@ -11,6 +11,7 @@ import { EntityImages } from './EntityImages'
 import { ProjectTasks } from './ProjectTasks'
 import { ProjectSubtasks } from './ProjectSubtasks'
 import { TaskLists } from './TaskLists'
+import { EntityTags } from './EntityTags'
 
 
 /**
@@ -237,5 +238,24 @@ export class Projects {
      */
     taskLists (projectId) {
         return new TaskLists(this._client, 'projects', projectId)
+    }
+
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified project Id and name.
+     * @param {String} projectId The id of the project.
+     * @returns 
+     */
+    tags (projectId) {
+        return new EntityTags(this._client, 'projects', projectId)
+    }
+
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified project Id and name.
+     * @param {String} projectId The id of the project.
+     * @returns 
+     * @deprecated
+     */
+    entityTags (projectId) {
+        return this.tags(projectId)
     }
 }

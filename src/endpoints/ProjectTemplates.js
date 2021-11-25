@@ -4,6 +4,7 @@ import { ProjectTemplateProjectStatuses } from './ProjectTemplateProjectStatuses
 import { ProjectTemplateAutomations } from './ProjectTemplateAutomations'
 import { EntityImages } from './EntityImages'
 import { ProjectTemplateTaskStatuses } from './ProjectTemplateTaskStatuses'
+import { EntityTags } from './EntityTags'
 
 /**
  * Class corresponding to Aworks ProjectTemplates Endpoints
@@ -150,5 +151,24 @@ export class ProjectTemplates {
      */
     taskStatuses (projectTemplateId) {
         return new ProjectTemplateTaskStatuses(this._client, projectTemplateId)
+    }
+
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified project tempate Id and name.
+     * @param {String} projectTemplateId The id of the project template.
+     * @returns 
+     */
+    tags (projectTemplateId) {
+        return new EntityTags(this._client, 'projecttemplates', projectTemplateId)
+    }
+    
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified project tempate Id and name.
+     * @param {String} projectTemplateId The id of the project template.
+     * @returns 
+     * @deprecated
+     */
+    entityTags (projectTemplateId) {
+        return this.tags(projectTemplateId)
     }
 }
