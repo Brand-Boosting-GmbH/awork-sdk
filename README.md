@@ -1,16 +1,37 @@
-# Awork SDK Node.js
+# Awork SDK
 
-A complete node-js wrapper for the awork API.
+An (almost) complete JavaScript API wrapper for project management software [Awork](https://awork.io).
+The goal of this project is to provide an comprehensive set of tools to interact with the Awork REST SDK when working with JavaScript.
+This library can be imported as a CommonJS or ES module and supports autocompletion via .d.ts files.
 
-Note: This SDK is unofficial and its maintained by [Brand Boosting GmbH](https://brand-boosting.de)
+Please be aware: Awork is a product of HQLabs GmbH. This project is maintained by [Brand Boosting GmbH](https://brand-boosting.de) and is not endorsed by HQLabs GmbH in any way.
+
+## Ressources:
+
+* [Awork SDK Reference](https://brand-boosting-gmbh.github.io/awork-sdk/index.html) (every endpoint in detail)
+
+* [The Awork Developer Portal](https://developers.awork.io/)
+
+## Found a bug?
+
+This library is quite new and there may be bugs. [Please open a issue](https://github.com/Brand-Boosting-GmbH/awork-sdk/issues) if you think you encountered a bug.
+
+## ToDos
+
+We are trying to maintain this project as actively as possible.
+[Please open a issue](https://github.com/Brand-Boosting-GmbH/awork-sdk/issues) if you have a specific feature request.
+
+- [ ] Documenting the OAuthClient and OAuthServer Class
+- [ ] EasyOAuth Service for serverless applications
+- [ ] Migrate to TypeScript
+- [ ] Write actually useful tests
+- [ ] Write Reference Home Page
 
 ## Installation:
 
 <pre>
 $ npm i @brandboostinggmbh/awork-sdk
 </pre>
-
-After the installation you have to import Awork and create a new Awork object with your api key as parameter:
 
 <pre>
 import { Awork } from '@brandboostinggmbh/awork-sdk/dist'
@@ -19,14 +40,9 @@ const awork = new Awork({ apiKey: YOUR_API_KEY })
 
 ## Usage:
 
-* Can be used to synchronize Awork with other platforms.
-
-* Allows to manage entire Awork with it.
-
-## Examples:
-
-Most endpoints include the get, list, create, update and delete methods.
-
+Most endpoints include the CRUD operations (get, list, create, update and delete).
+Sometimes there are additional business operations. (setArchived, removeProjectMember, addTags)
+Nested endpoints can be chained. (eg. ```awork.projects.files(YOUR_PROJECT_ID).list()```)
 
 
 ##### Get a specific project
@@ -60,7 +76,7 @@ await awork.users.create({
 ##### Update a specific task
 
 <pre>
-await awork.tasks.update( YOUR_TASK_ID, {
+await awork.tasks.update(YOUR_TASK_ID, {
     plannedDuration: 3600,
     remainingDuration: 1800,
     name: 'Fly me to the Moon',
@@ -72,21 +88,47 @@ await awork.tasks.update( YOUR_TASK_ID, {
 })
 </pre>
 
-##### Delete  a company
+##### Delete a company
 
 <pre>
-await awork.companies.delete({
-    companyId: 'ff11b111-11b1-1111-ab1111b11b11'
-    contactInfoId: 'ff22b222-22b2-2222-ab2222b22b22'
+await awork.companies.delete('ff11b111-11b1-1111-ab1111b11b11')
+</pre>
+
+##### Add tag to specific task
+
+<pre>
+await awork.tasks.tags(taskId).addTags([
+    {
+        name: 'CI/CD',
+        color: 'blue'
+    }
+])
+</pre>
+
+##### Create TaskList inside specific project
+
+<pre>
+await awork.projects.taskLists(YOUR_PROJECT_ID).create({
+    name: 'Moon Flight Preperations',
+    order: 0
 })
 </pre>
 
+##### Pagination and filtering
 
-## Documentations:
+<pre>
+await awork.projects.taskLists(YOUR_PROJECT_ID).list(
+    {
+        page: 2,
+        pageSize: 20,
+        filterBy: "Name eq 'Moon Flight Preperations'"
+    }
+)
+</pre>
 
-* [The Docs of the awork SDK](https://brand-boosting-gmbh.github.io/awork-sdk/index.html) in which you can find all the Endpoints documented in detail.
+## Acknowledgements
 
-* [The awork.io Developer Docs](https://developers.awork.io/)
+Thank you for [Nils Czernig](https://www.linkedin.com/in/nils-czernig-301a1160/) at Awork for providing us with an unlimited demo workspace.
 
 <img title="" src="https://brand-boosting-gmbh.github.io/awork-sdk/assets/brandboosting.png" alt="" width="169"><img title="" src="https://brand-boosting-gmbh.github.io/awork-sdk/assets/awork.png" alt="" width="176">
 

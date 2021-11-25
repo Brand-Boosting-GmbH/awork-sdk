@@ -2,7 +2,7 @@ import { Awork } from '../src/index'
 import { API_KEY } from './credentials'
 const awork = new Awork({ apiKey: API_KEY })
 
-test('awork teams integration test', async () => {
+test('awork teams test', async () => {
     const team = await awork.teams.create({ name: 'Best Team Evaaaaaa', color: 'yellow', icon: 'cloud' })
     const team2 = await awork.teams.update(team.id, { name: team.name, color: 'arctic', icon: 'brush' })
     const team3 = await awork.teams.get(team.id)
