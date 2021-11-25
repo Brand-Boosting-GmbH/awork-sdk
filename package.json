@@ -1,7 +1,7 @@
 {
     "name": "@brandboostinggmbh/awork-sdk",
-    "version": "1.0.0",
-    "description": "",
+    "version": "1.0.1",
+    "description": "An (almost) complete JavaScript API wrapper for project management software awork.",
     "main": "index.js",
     "scripts": {
         "test": "jest",
@@ -9,7 +9,7 @@
         "build": "babel src --out-dir dist --plugins @babel/plugin-transform-modules-commonjs && npx -p typescript tsc src/**.js --declaration --allowJs --emitDeclarationOnly --outDir dist",
         "declaration:build": "tsc -p declaration.tsconfig.json"
     },
-    "author": "",
+    "author": "Brand Boosting GmbH",
     "license": "GNU GPLv3",
     "dependencies": {
         "axios": "^0.21.1",
