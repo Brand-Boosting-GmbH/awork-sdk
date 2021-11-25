@@ -128,7 +128,7 @@ await awork.projects.taskLists(YOUR_PROJECT_ID).list(
 
 ## Acknowledgements
 
-Thank you for [Nils Czernig](https://www.linkedin.com/in/nils-czernig-301a1160/) at Awork for providing us with an unlimited demo workspace.
+Thanks to [Nils Czernig](https://www.linkedin.com/in/nils-czernig-301a1160/) at Awork for providing us with an unlimited demo workspace.
 
 <img title="" src="https://brand-boosting-gmbh.github.io/awork-sdk/assets/brandboosting.png" alt="" width="169"><img title="" src="https://brand-boosting-gmbh.github.io/awork-sdk/assets/awork.png" alt="" width="176">
 
