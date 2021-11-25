@@ -32,7 +32,7 @@ import '../globalTypedef'
 
     /**
      * The color of the milestone.
-     * @type {Color} nullable
+     * @type {import('../index').Color} nullable
      */
     get color () {
         return this._data.color

@@ -44,20 +44,3 @@ test('create project', async () => {
     })*/
     console.log(await projects.list())
 })
-
-test('create user', async () => {
-    const client = new Client(API_KEY)
-    const users = new Users(client)
-    const user1 = await users.create({
-        "firstName": 'John',
-        "lastName": 'Smith',
-        "birthDate": "2021-09-21T08:30:26.7764709+00:00",
-        "gender": "Male",
-        "title": "Dr.",
-        "position": "Manager",
-        "language": "de-DE",
-        "capacityPerWeek": null,
-        "accountId": null
-    })
-    console.log(await users.get(user1.id))
-})
