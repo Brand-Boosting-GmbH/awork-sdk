@@ -155,8 +155,19 @@ class Companies {
    */
 
 
-  entityTags(companyId) {
+  tags(companyId) {
     return new _EntityTags.EntityTags(this._client, 'companies', companyId);
+  }
+  /**
+   * Returns the {@link EntityTags} Endpoint with the specified company Id and name.
+   * @param {String} companyId The id of the company.
+   * @returns 
+   * @deprecated
+   */
+
+
+  entityTags(companyId) {
+    return this.tags(companyId);
   }
 
 }

@@ -209,6 +209,13 @@ export class Users {
      * @param {String} userId The id of the users.
      * @returns
      */
+    tags(userId: string): EntityTags;
+    /**
+     * Returns the {@link EntityTags} Endpoint with the specified user Id and name.
+     * @param {String} userId The id of the users.
+     * @returns
+     * @deprecated
+     */
     entityTags(userId: string): EntityTags;
 }
 import { User } from "../model/User";
