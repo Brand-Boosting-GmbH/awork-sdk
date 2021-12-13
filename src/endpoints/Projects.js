@@ -12,6 +12,7 @@ import { ProjectTasks } from './ProjectTasks'
 import { ProjectSubtasks } from './ProjectSubtasks'
 import { TaskLists } from './TaskLists'
 import { EntityTags } from './EntityTags'
+import { ProjectTaskStatuses } from './ProjectTaskStatuses'
 
 
 /**
@@ -184,6 +185,15 @@ export class Projects {
      */
     projectStatuses (projectId) {
         return new ProjectProjectStatuses(this._client, projectId)
+    }
+
+    /**
+      * Returns the {@link ProjectTaskStatuses} Endpoint with the specified project Id.
+     * @param {String} projectId The id of the project.
+     * @returns {ProjectTaskStatuses}
+     */
+    taskStatuses (projectId) {
+        return new ProjectTaskStatuses(this._client, projectId)
     }
 
     /**

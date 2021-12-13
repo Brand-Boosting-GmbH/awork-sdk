@@ -49,6 +49,10 @@ export class ProjectTasks {
         return response.data()
     }
 
+    /**
+     * 
+     * @deprecated
+     */
     taskStatuses () {
         return new ProjectTaskStatuses(this._client, this._projectId)
     }
