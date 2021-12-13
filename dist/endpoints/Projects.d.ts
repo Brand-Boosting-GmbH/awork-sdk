@@ -207,6 +207,12 @@ export class Projects {
      */
     projectStatuses(projectId: string): ProjectProjectStatus;
     /**
+      * Returns the {@link ProjectTaskStatuses} Endpoint with the specified project Id.
+     * @param {String} projectId The id of the project.
+     * @returns {ProjectTaskStatuses}
+     */
+    taskStatuses(projectId: string): ProjectTaskStatuses;
+    /**
      * Returns the {@link Autopilots} Endpoint with the specified project Id.
      * @param {String} projectId The id of the project.
      * @returns {Autopilots}
@@ -261,6 +267,7 @@ import { TaskDependency } from "../model/TaskDependency";
 import { ProjectMilestone } from "../model/ProjectMilestone";
 import { ProjectMembers } from "./ProjectMembers";
 import { EntityFiles } from "./EntityFiles";
+import { ProjectTaskStatuses } from "./ProjectTaskStatuses";
 import { Autopilots } from "./Autopilots";
 import { ProjectAutomations } from "./ProjectAutomations";
 import { EntityImages } from "./EntityImages";

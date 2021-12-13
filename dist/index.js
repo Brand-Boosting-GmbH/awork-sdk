@@ -285,7 +285,7 @@ class Awork {
   }
   /**
    * The type of work endpoints allow you to manage your types of work. They are helpful to describe the type of a task or a time entry.
-   * @returns {TypesOfWork}
+   * @returns {TypesOfWorks}
    */
 
 

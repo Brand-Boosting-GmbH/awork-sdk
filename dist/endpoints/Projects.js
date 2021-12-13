@@ -33,6 +33,8 @@ var _TaskLists = require("./TaskLists");
 
 var _EntityTags = require("./EntityTags");
 
+var _ProjectTaskStatuses = require("./ProjectTaskStatuses");
+
 /**
  * Class corresponding to Aworks Projects Endpoints
  * @category Endpoints
@@ -216,6 +218,16 @@ class Projects {
 
   projectStatuses(projectId) {
     return new _ProjectProjectStatuses.ProjectProjectStatuses(this._client, projectId);
+  }
+  /**
+    * Returns the {@link ProjectTaskStatuses} Endpoint with the specified project Id.
+   * @param {String} projectId The id of the project.
+   * @returns {ProjectTaskStatuses}
+   */
+
+
+  taskStatuses(projectId) {
+    return new _ProjectTaskStatuses.ProjectTaskStatuses(this._client, projectId);
   }
   /**
    * Returns the {@link Autopilots} Endpoint with the specified project Id.

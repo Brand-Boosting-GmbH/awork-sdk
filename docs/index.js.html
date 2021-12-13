@@ -108,7 +108,7 @@ import { TimeEntries } from "./endpoints/TimeEntries"
 import { TimeReports } from "./endpoints/TimeReports"
 import { Users } from "./endpoints/Users"
 import { Webhooks } from "./endpoints/Webhooks"
-import { TypesOfWork, TypesOfWorks } from "./endpoints/TypesOfWork"
+import { TypesOfWorks } from "./endpoints/TypesOfWork"
 import { MeAssignedTasks } from "./endpoints/MeAssignedTasks"
 import { MeDashboards } from "./endpoints/MeDashboards"
 import { MeProjectTasks } from "./endpoints/MeProjectTasks"
@@ -322,7 +322,7 @@ export class Awork {
 
     /**
      * The type of work endpoints allow you to manage your types of work. They are helpful to describe the type of a task or a time entry.
-     * @returns {TypesOfWork}
+     * @returns {TypesOfWorks}
      */
     get typesOfWork() {
         return new TypesOfWorks(this.client)

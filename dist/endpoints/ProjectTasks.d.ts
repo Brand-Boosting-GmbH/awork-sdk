@@ -28,6 +28,10 @@ export class ProjectTasks {
      * @returns {Promise<Array<String>>}
      */
     tagList(): Promise<Array<string>>;
+    /**
+     *
+     * @deprecated
+     */
     taskStatuses(): ProjectTaskStatuses;
     /**
      * @typedef {Object} ChangeProjectModel

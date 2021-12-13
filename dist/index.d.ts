@@ -127,9 +127,9 @@ export class Awork {
     get timeReports(): timeReports;
     /**
      * The type of work endpoints allow you to manage your types of work. They are helpful to describe the type of a task or a time entry.
-     * @returns {TypesOfWork}
+     * @returns {TypesOfWorks}
      */
-    get typesOfWork(): TypesOfWork;
+    get typesOfWork(): TypesOfWorks;
     /**
      * The users endpoints allow you to manage the users of your workspace as well as their contact details.
      * @returns {Users}
@@ -199,6 +199,7 @@ import { Projects } from "./endpoints/Projects";
 import { TaskBundles } from "./endpoints/TaskBundles";
 import { Teams } from "./endpoints/Teams";
 import { TimeEntries } from "./endpoints/TimeEntries";
+import { TypesOfWorks } from "./endpoints/TypesOfWork";
 import { Users } from "./endpoints/Users";
 import { Webhooks } from "./endpoints/Webhooks";
 import { Tasks } from "./endpoints/Tasks";

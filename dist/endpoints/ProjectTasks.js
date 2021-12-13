@@ -61,6 +61,11 @@ class ProjectTasks {
     const response = await this._client.get(`/projects/projecttasks/tags`);
     return response.data();
   }
+  /**
+   * 
+   * @deprecated
+   */
+
 
   taskStatuses() {
     return new _ProjectTaskStatuses.ProjectTaskStatuses(this._client, this._projectId);
