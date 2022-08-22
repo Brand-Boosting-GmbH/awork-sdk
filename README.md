@@ -4,7 +4,7 @@ An (almost) complete JavaScript API wrapper for project management software [Awo
 The goal of this project is to provide a comprehensive set of tools to interact with the Awork REST API when working with JavaScript.
 This library can be imported as a CommonJS or ES module and supports autocompletion via .d.ts files.
 
-Please be aware: Awork is a product of HQLabs GmbH. This project is maintained by [Brand Boosting GmbH](https://brand-boosting.de) and is not endorsed by HQLabs GmbH in any way.
+Please be aware: Awork is a product of awork GmbH. This project is maintained by [Brand Boosting GmbH](https://brand-boosting.de) and is not endorsed by awork GmbH in any way.
 
 ## Resources:
 
