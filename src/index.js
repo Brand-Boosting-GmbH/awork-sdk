@@ -67,10 +67,10 @@ import { ProjectStatuses } from "./endpoints/ProjectStatuses"
 export class Awork {
 
     /**
-     * @param {({apiKey: String})} init 
+     * @param {({apiKey: String, basePath: String})} init
      */
-    constructor({ apiKey }){
-        this.client = new Client(apiKey)
+    constructor({ apiKey, basePath = 'https://api.awork.io/api/v1' }) {
+        this.client = new Client(apiKey, basePath);
     }
 
     /**
@@ -230,7 +230,7 @@ export class Awork {
      * @returns {timeReports}
      */
     get timeReports() {
-        return new TimeReports(this.client) 
+        return new TimeReports(this.client)
     }
 
     /**
