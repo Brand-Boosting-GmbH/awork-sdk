@@ -96,12 +96,13 @@ var _ProjectStatuses = require("./endpoints/ProjectStatuses");
  */
 class Awork {
   /**
-   * @param {({apiKey: String})} init 
+   * @param {({apiKey: String, basePath: String})} init
    */
   constructor({
-    apiKey
+    apiKey,
+    basePath = 'https://api.awork.io/api/v1'
   }) {
-    this.client = new _client.Client(apiKey);
+    this.client = new _client.Client(apiKey, basePath);
   }
   /**
    * The Absence Endpoints allow you to manage Absences for users.

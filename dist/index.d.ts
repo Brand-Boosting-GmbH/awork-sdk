@@ -19,10 +19,11 @@
  */
 export class Awork {
     /**
-     * @param {({apiKey: String})} init
+     * @param {({apiKey: String, basePath: String})} init
      */
-    constructor({ apiKey }: ({
+    constructor({ apiKey, basePath }: ({
         apiKey: string;
+        basePath: string;
     }));
     client: Client;
     /**

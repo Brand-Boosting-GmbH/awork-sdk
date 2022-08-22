@@ -49,7 +49,7 @@
                     href="index.html"
                     class="link"
                 >
-                    API Documentation
+                    Documentation
                 </a>
                 
                 
@@ -164,7 +164,7 @@
   <td class="type">
   
       
-<span class="param-type"><a href="Client.html">Client</a></span>
+<code class="param-type"><a href="Client.html">Client</a></code>
 
 
   
@@ -189,7 +189,7 @@
   <td class="type">
   
       
-<span class="param-type">'projects'</span>
+<code class="param-type">'projects'</code>
 
 
   
@@ -214,7 +214,7 @@
   <td class="type">
   
       
-<span class="param-type">String</span>
+<code class="param-type">String</code>
 
 
   
@@ -406,7 +406,7 @@ To add a new task to a project task list, the user needs manage permissions on t
   <td class="type">
   
       
-<span class="param-type">String</span>
+<code class="param-type">String</code>
 
 
   
@@ -431,7 +431,7 @@ To add a new task to a project task list, the user needs manage permissions on t
   <td class="type">
   
       
-<span class="param-type">Array.&lt;<a href="global.html#AddTaskModel">AddTaskModel</a>></span>
+<code class="param-type">Array.&lt;<a href="global.html#AddTaskModel">AddTaskModel</a>></code>
 
 
   
@@ -524,7 +524,7 @@ To add a new task to a project task list, the user needs manage permissions on t
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;Array.&lt;({taskId: String, order: Number})>></span>
+<code class="param-type">Promise.&lt;Array.&lt;({taskId: String, order: Number})>></code>
 
 
     </div>
@@ -607,7 +607,7 @@ To create a new project task list, the user needs manage permissions on the proj
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#TaskListCreateModel">TaskListCreateModel</a></span>
+<code class="param-type"><a href="global.html#TaskListCreateModel">TaskListCreateModel</a></code>
 
 
   
@@ -700,7 +700,7 @@ To create a new project task list, the user needs manage permissions on the proj
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></span>
+<code class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></code>
 
 
     </div>
@@ -785,7 +785,7 @@ To delete project task list, the user needs manage permissions on the project-pl
   <td class="type">
   
       
-<span class="param-type">String</span>
+<code class="param-type">String</code>
 
 
   
@@ -814,7 +814,7 @@ To delete project task list, the user needs manage permissions on the project-pl
   <td class="type">
   
       
-<span class="param-type">Boolean</span>
+<code class="param-type">Boolean</code>
 
 
   
@@ -913,7 +913,7 @@ To delete project task list, the user needs manage permissions on the project-pl
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;void></span>
+<code class="param-type">Promise.&lt;void></code>
 
 
     </div>
@@ -996,7 +996,7 @@ The permission check in this function is dynamically based on the entity name. I
   <td class="type">
   
       
-<span class="param-type">String</span>
+<code class="param-type">String</code>
 
 
   
@@ -1089,7 +1089,7 @@ The permission check in this function is dynamically based on the entity name. I
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></span>
+<code class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></code>
 
 
     </div>
@@ -1174,7 +1174,7 @@ The permission check in this function is dynamically based on the entity name. I
   <td class="type">
   
       
-<span class="param-type">AdvancedListOptions</span>
+<code class="param-type">AdvancedListOptions</code>
 
 
   
@@ -1277,7 +1277,7 @@ The permission check in this function is dynamically based on the entity name. I
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;Array.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>></span>
+<code class="param-type">Promise.&lt;Array.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>>></code>
 
 
     </div>
@@ -1360,7 +1360,7 @@ To remove a task from a project task list, the user needs manage permissions on 
   <td class="type">
   
       
-<span class="param-type">String</span>
+<code class="param-type">String</code>
 
 
   
@@ -1385,7 +1385,7 @@ To remove a task from a project task list, the user needs manage permissions on 
   <td class="type">
   
       
-<span class="param-type">Array.&lt;String></span>
+<code class="param-type">Array.&lt;String></code>
 
 
   
@@ -1478,7 +1478,7 @@ To remove a task from a project task list, the user needs manage permissions on 
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;void></span>
+<code class="param-type">Promise.&lt;void></code>
 
 
     </div>
@@ -1560,7 +1560,7 @@ To remove a task from a project task list, the user needs manage permissions on 
   <td class="type">
   
       
-<span class="param-type">String</span>
+<code class="param-type">String</code>
 
 
   
@@ -1585,7 +1585,7 @@ To remove a task from a project task list, the user needs manage permissions on 
   <td class="type">
   
       
-<span class="param-type"><a href="global.html#TaskListArchiveModel">TaskListArchiveModel</a></span>
+<code class="param-type"><a href="global.html#TaskListArchiveModel">TaskListArchiveModel</a></code>
 
 
   
@@ -1678,7 +1678,7 @@ To remove a task from a project task list, the user needs manage permissions on 
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></span>
+<code class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></code>
 
 
     </div>
@@ -1761,7 +1761,7 @@ To update a project task list, the user needs manage permissions on the project-
   <td class="type">
   
       
-<span class="param-type">String</span>
+<code class="param-type">String</code>
 
 
   
@@ -1786,7 +1786,7 @@ To update a project task list, the user needs manage permissions on the project-
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<code class="param-type">Object</code>
 
 
   
@@ -1879,7 +1879,7 @@ To update a project task list, the user needs manage permissions on the project-
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></span>
+<code class="param-type">Promise.&lt;<a href="TaskListTemplate.html">TaskListTemplate</a>></code>
 
 
     </div>
@@ -1962,7 +1962,7 @@ To update the order of project task lists, the user needs manage permissions on 
   <td class="type">
   
       
-<span class="param-type">String</span>
+<code class="param-type">String</code>
 
 
   
@@ -1987,7 +1987,7 @@ To update the order of project task lists, the user needs manage permissions on 
   <td class="type">
   
       
-<span class="param-type">Number</span>
+<code class="param-type">Number</code>
 
 
   
@@ -2080,7 +2080,7 @@ To update the order of project task lists, the user needs manage permissions on 
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;void></span>
+<code class="param-type">Promise.&lt;void></code>
 
 
     </div>
@@ -2114,9 +2114,9 @@ To update the order of project task lists, the user needs manage permissions on 
             
             <footer class="footer">
                 <div class="content has-text-centered">
-                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a></p>
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a></p>
                     <p class="sidebar-created-by">
-                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
                         <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
                     </p>
                 </div>
@@ -2129,6 +2129,7 @@ To update the order of project task lists, the user needs manage permissions on 
 <script src="scripts/app.min.js"></script>
 <script>PR.prettyPrint();</script>
 <script src="scripts/linenumber.js"> </script>
+
 
 </body>
 </html>

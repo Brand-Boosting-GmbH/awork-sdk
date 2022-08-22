@@ -49,5 +49,34 @@ export class ExtendedUser extends User {
          */
         color: import('../index').Color;
     }[];
+    toPlainObject(): {
+        accountId: any;
+        teams: any;
+        id: any;
+        firstName: any;
+        lastName: any;
+        birthDate: any;
+        gender: any;
+        title: any;
+        position: any;
+        language: any;
+        capacityPerWeek: any;
+        key: any;
+        status: {
+            invitationAccepted: any;
+            isDeactivated: any;
+        };
+        createdOn: any;
+        createdBy: any;
+        updatedOn: any;
+        updatedBy: any;
+        isArchived: any;
+        isDeactivated: any;
+        deactivatedOn: any;
+        hasImage: any;
+        userContactInfos: any;
+        resourceVersion: any;
+        tags: any;
+    };
 }
 import { User } from "./User";

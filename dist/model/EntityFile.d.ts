@@ -47,7 +47,7 @@ export class EntityFile {
      * The name of the linked entity type.
      * @type {('projects'|'companies'|'tasks'|'comments')}
      */
-    get entityType(): "comments" | "projects" | "companies" | "tasks";
+    get entityType(): "projects" | "companies" | "tasks" | "comments";
     /**
      * The MIME type of the file.
      * @type {String}
