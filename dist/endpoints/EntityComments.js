@@ -41,7 +41,7 @@ class EntityComments {
 
 
   async get(commentId) {
-    const response = await this._client.get(`/${entityName}/${entityId}/comments/${commentId}`);
+    const response = await this._client.get(`/${this.entityName}/${this.entityId}/comments/${commentId}`);
     const data = response.data();
     return new _Comment.Comment(data);
   }
@@ -53,7 +53,7 @@ class EntityComments {
 
 
   async list(options) {
-    const response = await this._client.get(`/${entityName}/${entityId}/comments`, options);
+    const response = await this._client.get(`/${this.entityName}/${this.entityId}/comments`, options);
     const data = response.data();
     return data.map(d => new _Comment.Comment(d));
   }
@@ -72,7 +72,7 @@ class EntityComments {
 
 
   async create(comment) {
-    const response = await this._client.post(`/${entityName}/${entityId}/comments`, comment);
+    const response = await this._client.post(`/${this.entityName}/${this.entityId}/comments`, comment);
     const data = response.data();
     return new _Comment.Comment(data);
   }
@@ -83,7 +83,7 @@ class EntityComments {
 
 
   async delete() {
-    await this._client.delete(`/${entityName}/${entityId}/comments`);
+    await this._client.delete(`/${this.entityName}/${this.entityId}/comments`);
   }
   /**
    * @typedef {CommentCreateModel} CommentUpdateModel
@@ -98,7 +98,7 @@ class EntityComments {
 
 
   async update(commentId, comment) {
-    const response = await this._client.put(`/${entityName}/${entityId}/comments/${commentId}`, comment);
+    const response = await this._client.put(`/${this.entityName}/${this.entityId}/comments/${commentId}`, comment);
     const data = response.data();
     return new _Comment.Comment(data);
   }
@@ -110,7 +110,7 @@ class EntityComments {
 
 
   async delete(commentId) {
-    await this._client.delete(`/${entityName}/${entityId}/comments/${commentId}`);
+    await this._client.delete(`/${this.entityName}/${this.entityId}/comments/${commentId}`);
   }
   /**
    * @typedef {Object} ReactionsUpdateModel
@@ -127,7 +127,7 @@ class EntityComments {
 
 
   async react(commentId, reaction) {
-    await this._client.post(`/${entityName}/${entityId}/comments/${commentId}/react`);
+    await this._client.post(`/${this.entityName}/${this.entityId}/comments/${commentId}/react`, reaction);
   }
   /**
    * Returns the {@link EntityFiles} Endpoint with the specified comment Id and entityType 'comments'.
