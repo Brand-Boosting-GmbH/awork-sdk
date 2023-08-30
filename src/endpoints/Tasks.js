@@ -8,6 +8,7 @@ import { UserPrivateTasksSubtasks } from './UserPrivateTasksSubtasks'
 import { UserOtherPrivateTasksSubtasks } from './UserOtherPrivateTasksSubtasks'
 import { EntityTags } from "./EntityTags"
 import { Setting } from "../model/Setting"
+import { EntityComments } from './EntityComments'
 
 export class Tasks {
     constructor(client) {
@@ -283,6 +284,15 @@ export class Tasks {
      */
      files (taskId) { 
       return new EntityFiles(this._client, 'tasks', taskId)
+    }
+
+    /**
+     * Returns the {@link EntityComments} Endpoint with the specified task Id and entityType 'tasks'.
+     * @param {String} taskId The id of the task.
+     * @returns {EntityComments}
+     */
+    comments (taskId) { 
+      return new EntityComments(this._client, 'tasks', taskId)
     }
 
     /**
