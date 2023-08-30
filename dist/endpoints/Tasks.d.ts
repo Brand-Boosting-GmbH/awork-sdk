@@ -379,6 +379,12 @@ export class Tasks {
      */
     files(taskId: string): EntityFiles;
     /**
+     * Returns the {@link EntityComments} Endpoint with the specified task Id and entityType 'tasks'.
+     * @param {String} taskId The id of the task.
+     * @returns {EntityComments}
+     */
+    comments(taskId: string): EntityComments;
+    /**
      * Returns the {@link SubTasks} Endpoint with the specified task Id.
      * @param {String} taskId The id of the task.
      * @returns {SubTasks}
@@ -421,6 +427,7 @@ import { TaskRecurrency } from "../model/TaskRecurrency";
 import { TaskDependency } from "../model/TaskDependency";
 import { Setting } from "../model/Setting";
 import { EntityFiles } from "./EntityFiles";
+import { EntityComments } from "./EntityComments";
 import { SubTasks } from "./SubTasks";
 import { ProjectSubtasks } from "./ProjectSubtasks";
 import { UserPrivateTasksSubtasks } from "./UserPrivateTasksSubtasks";

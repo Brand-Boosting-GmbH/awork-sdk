@@ -25,6 +25,8 @@ var _EntityTags = require("./EntityTags");
 
 var _Setting = require("../model/Setting");
 
+var _EntityComments = require("./EntityComments");
+
 class Tasks {
   constructor(client) {
     this._client = client;
@@ -322,6 +324,16 @@ class Tasks {
 
   files(taskId) {
     return new _EntityFiles.EntityFiles(this._client, 'tasks', taskId);
+  }
+  /**
+   * Returns the {@link EntityComments} Endpoint with the specified task Id and entityType 'tasks'.
+   * @param {String} taskId The id of the task.
+   * @returns {EntityComments}
+   */
+
+
+  comments(taskId) {
+    return new _EntityComments.EntityComments(this._client, 'tasks', taskId);
   }
   /**
    * Returns the {@link SubTasks} Endpoint with the specified task Id.

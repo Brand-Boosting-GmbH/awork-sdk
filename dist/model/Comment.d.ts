@@ -45,7 +45,7 @@ export class Comment {
      * The type of the entity of the comment. Required.
      * @type {('companies'|'files'|'projects'|'tasks')} nullable
      */
-    get entityType(): "files" | "projects" | "companies" | "tasks";
+    get entityType(): "projects" | "companies" | "tasks" | "files";
     /**
      * The date this object was created.
      * @type {String} date-time
@@ -83,9 +83,9 @@ export class Comment {
      */
     get projectName(): string;
     /**
-     * @type {String} nullable
+     * @type {import('../index').Icon} nullable
      */
-    get projectProjectTypeIcon(): string;
+    get projectProjectTypeIcon(): import("../index").Icon;
     /**
      * @type {String} nullable
      */
@@ -96,9 +96,9 @@ export class Comment {
      */
     get entityName(): string;
     /**
-     * @type {String} nullable
+     * @type {import('../index').Icon} nullable
      */
-    get entityProjectTypeIcon(): string;
+    get entityProjectTypeIcon(): import("../index").Icon;
     /**
      * @type {String} nullable
      */
@@ -186,7 +186,7 @@ export class Comment {
      * The version of the entity.
      * @type {Integer} int64
      */
-    get resourceVersion(): any;
+    get resourceVersion(): Integer;
     toPlainObject(): {
         message: any;
         userId: any;
