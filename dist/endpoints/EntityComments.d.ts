@@ -10,7 +10,7 @@ export class EntityComments {
      * @param {('companies'|'files'|'projects'|'tasks')} entityName
      * @param {String} entityId
      */
-    constructor(client: import('../client/index').Client);
+    constructor(client: import('../client/index').Client, entityName: ('companies' | 'files' | 'projects' | 'tasks'), entityId: string);
     /** @private */
     private _client;
     /** @private */
