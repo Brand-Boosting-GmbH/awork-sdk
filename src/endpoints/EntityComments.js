@@ -30,7 +30,7 @@ export class EntityComments {
      * @returns {Promise<Comment>}
      */
     async get(commentId) {
-        const response = await this._client.get(`/${entityName}/${entityId}/comments/${commentId}`)
+        const response = await this._client.get(`/${this.entityName}/${this.entityId}/comments/${commentId}`)
         const data = response.data()
         return new Comment(data)
     }
@@ -41,7 +41,7 @@ export class EntityComments {
      * @returns {Promise<Comment>}
      */
     async list(options) {
-        const response = await this._client.get(`/${entityName}/${entityId}/comments`, options)
+        const response = await this._client.get(`/${this.entityName}/${this.entityId}/comments`, options)
         const data = response.data()
         return data.map(d => new Comment(d))
     }
@@ -59,7 +59,7 @@ export class EntityComments {
      * @returns {Promise<Comment>}
      */
     async create(comment) {
-        const response = await this._client.post(`/${entityName}/${entityId}/comments`, comment)
+        const response = await this._client.post(`/${this.entityName}/${this.entityId}/comments`, comment)
         const data = response.data()
         return new Comment(data)
     }
@@ -69,7 +69,7 @@ export class EntityComments {
      * @returns {Promise<void>}
      */
     async delete() {
-        await this._client.delete(`/${entityName}/${entityId}/comments`)
+        await this._client.delete(`/${this.entityName}/${this.entityId}/comments`)
     }
 
     /**
@@ -83,7 +83,7 @@ export class EntityComments {
      * @returns {Promise<Comment>}
      */
     async update(commentId, comment) {
-        const response = await this._client.put(`/${entityName}/${entityId}/comments/${commentId}`, comment)
+        const response = await this._client.put(`/${this.entityName}/${this.entityId}/comments/${commentId}`, comment)
         const data = response.data()
         return new Comment(data)
     }
@@ -94,7 +94,7 @@ export class EntityComments {
      * @returns {Promise<void>}
      */
     async delete(commentId) {
-        await this._client.delete(`/${entityName}/${entityId}/comments/${commentId}`)   
+        await this._client.delete(`/${this.entityName}/${this.entityId}/comments/${commentId}`)   
     }
 
     /**
@@ -110,7 +110,7 @@ export class EntityComments {
      * @returns {Promise<void>}
      */
     async react(commentId, reaction) {
-        await this._client.post(`/${entityName}/${entityId}/comments/${commentId}/react`)
+        await this._client.post(`/${this.entityName}/${this.entityId}/comments/${commentId}/react`, reaction)
     }
 
     /**
