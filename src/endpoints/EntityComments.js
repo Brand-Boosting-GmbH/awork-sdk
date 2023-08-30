@@ -15,7 +15,7 @@ export class EntityComments {
      * @param {('companies'|'files'|'projects'|'tasks')} entityName
      * @param {String} entityId
      */
-     constructor(client) {
+     constructor(client, entityName, entityId) {
         /** @private */
         this._client = client
         /** @private */
