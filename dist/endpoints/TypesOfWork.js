@@ -12,7 +12,7 @@ var _TypeOfWork = require("../model/TypeOfWork");
 /**
  * Class corresponding to Aworks TypeOfWork Endpoints
  * @category Endpoints
- * @see [TypeOfWork in Awork API Docs](https://openapi.awork.io/#/TypeOfWork)
+ * @see [TypeOfWork in Awork API Docs](https://openapi.awork.com/#/TypeOfWork)
  */
 class TypesOfWorks {
   /**

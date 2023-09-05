@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks ProjectMilestones Endpoints.
  * @category Endpoints
- * @see [ProjectMilestones in Awork API Docs](https://openapi.awork.io/#/ProjectMilestones)
+ * @see [ProjectMilestones in Awork API Docs](https://openapi.awork.com/#/ProjectMilestones)
  */
 export class ProjectMilestones {
     /**

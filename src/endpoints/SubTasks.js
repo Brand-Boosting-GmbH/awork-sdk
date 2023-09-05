@@ -7,16 +7,16 @@ import { UserOtherPrivateTasksSubtasks } from './UserOtherPrivateTasksSubtasks'
 /**
  * Class corresponding to Aworks SubTasks Endpoints
  * @category Endpoints
- * @see [SubTasks in Awork API Docs](https://openapi.awork.io/#/SubTasks)
+ * @see [SubTasks in Awork API Docs](https://openapi.awork.com/#/SubTasks)
  */
 export class SubTasks {
 
-     /**
-     * Endpoint constructor
-     * @param {import('../client/index').Client} client
-     * @param {String} taskId The id of the task.
-     */
-    constructor (client, taskId) {
+    /**
+    * Endpoint constructor
+    * @param {import('../client/index').Client} client
+    * @param {String} taskId The id of the task.
+    */
+    constructor(client, taskId) {
         /** @private */
         this._client = client
         /** @private */
@@ -28,7 +28,7 @@ export class SubTasks {
      * @param {String} subtaskId The id of the subtask.
      * @returns {Promise<SubTask>}
      */
-    async get (subtaskId) {
+    async get(subtaskId) {
         const response = await this._client.get(`/tasks/${this._taskId}/subtasks/${subtaskId}`)
         const data = response.data()
         return new SubTask(data)
@@ -39,7 +39,7 @@ export class SubTasks {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<SubTask>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`/tasks/${this._taskId}/subtasks`, options)
         const data = response.data()
         return data.map(d => new SubTask(d))
@@ -73,7 +73,7 @@ export class SubTasks {
      * @param {SubTaskUpdateModel} subTask The model to update the subtask.
      * @returns {Promise<SubTask>} 
      */
-    async update (subtaskId, subTask) {
+    async update(subtaskId, subTask) {
         const response = await this._client.put(`/tasks/${this._taskId}/subtasks/${subtaskId}`, subTask)
         const data = response.data()
         return new SubTask(data)
@@ -84,7 +84,7 @@ export class SubTasks {
      * @param {String} subtaskId The id of the subtask.
      * @returns {Promise<void>}
      */
-    async delete (subtaskId) {
+    async delete(subtaskId) {
         await this._client.delete(`/tasks/${this._taskId}/subtasks/${subtaskId}`)
     }
 
@@ -93,7 +93,7 @@ export class SubTasks {
      * @param {String} subtaskId The id of the subtask.
      * @returns {ProjectSubtasks}
      */
-    projectSubtasks (subtaskId) {
+    projectSubtasks(subtaskId) {
         return new ProjectSubtasks(this._client, subtaskId)
     }
 
@@ -102,7 +102,7 @@ export class SubTasks {
      * @param {String} subtaskId The id of the subtask.
      * @returns {UserPrivateTasksSubtasks}
      */
-     userPrivateTasksSubtasks (subtaskId) {
+    userPrivateTasksSubtasks(subtaskId) {
         return new UserPrivateTasksSubtasks(this._client, subtaskId)
     }
 
@@ -111,7 +111,7 @@ export class SubTasks {
      * @param {String} subtaskId The id of the subtask.
      * @returns {UserOtherPrivateTasksSubtasks}
      */
-    userOtherPrivateTasksSubtasks (subtaskId) {
+    userOtherPrivateTasksSubtasks(subtaskId) {
         return new UserOtherPrivateTasksSubtasks(this._client, subtaskId)
     }
 }

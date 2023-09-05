@@ -4,7 +4,7 @@ import { Tag } from "../model/Tag"
 /**
  * Class corresponding to Aworks Tags Endpoints
  * @category Endpoints
- * @see [Tags in Awork API Docs](https://openapi.awork.io/#/Tags)
+ * @see [Tags in Awork API Docs](https://openapi.awork.com/#/Tags)
  */
 export class EntityTags {
     /**
@@ -13,7 +13,7 @@ export class EntityTags {
      * @param {('companies'|'tasks'|'users')} entityName The name of the entity
      * @param {String} entityId The id of the entity
      */
-     constructor(client, entityName, entityId) {
+    constructor(client, entityName, entityId) {
         /** @private */
         this._client = client
         /** @private */
@@ -53,10 +53,10 @@ export class EntityTags {
      * @param {Array<TagsModel>} addTags The model to add tags.
      * @returns {Promise<Array<Tag>>}
      */
-    async addTags (addTags) {
+    async addTags(addTags) {
         const response = await this._client.post(`${this._entityName}/${this._entityId}/addtags`, addTags)
         const data = response.data()
-        return new Tag(data)  
+        return new Tag(data)
     }
 
     /**
@@ -70,10 +70,10 @@ export class EntityTags {
      * @param {UpdateTagsModel} updateTags The model to update tags.
      * @returns {Promise<Tag>}
      */
-    async updateTags (updateTags) {
+    async updateTags(updateTags) {
         const response = await this._client.post(`${this._entityName}/${this._entityId}/updatetags`, updateTags)
         const data = response.data()
-        return new Tag(data)  
+        return new Tag(data)
     }
 
     /**
@@ -81,7 +81,7 @@ export class EntityTags {
      * @param {TagsModel} deleteTags The model to delete tags.
      * @returns {Promise<void>}
      */
-    async deleteTags (deleteTags) {
+    async deleteTags(deleteTags) {
         const response = await this._client.post(`${this._entityName}/${this._entityId}/deletetags`, deleteTags)
         return response.data()
     }
@@ -91,7 +91,7 @@ export class EntityTags {
      * @param {TagsModel} deleteTag The model to delete tags.
      * @returns {Promise<void>}
      */
-     async deleteTag (deleteTag) {
+    async deleteTag(deleteTag) {
         const response = await this._client.post(`${this._entityName}/deletetags`, deleteTag)
         return response.data()
     }

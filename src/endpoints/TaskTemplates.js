@@ -4,14 +4,14 @@ import { TaskTemplateSubTaskTemplates } from './TaskTemplateSubTaskTemplates'
 /**
  * Class corresponding to Aworks tasktemplates related part of the TaskBundles Endpoints
  * @category Endpoints
- * @see [TaskBundles in Awork API Docs](https://openapi.awork.io/#/TaskBundles)
+ * @see [TaskBundles in Awork API Docs](https://openapi.awork.com/#/TaskBundles)
  */
 export class TaskTemplates {
     /**
      * Endpoint constructor
      * @param {import('../client/index').Client} client 
      */
-    constructor (client) {
+    constructor(client) {
         /**@private */
         this._client = client
     }
@@ -29,7 +29,7 @@ export class TaskTemplates {
      * @param {String} taskTemplateId The id of the task template.
      * @returns {Promise<Recurrency>}
      */
-    async recurrency (taskTemplateId) {
+    async recurrency(taskTemplateId) {
         const response = await this._client.get(`tasktemplates/${taskTemplateId}/recurrency`)
         return new Recurrency(response.data())
     }
@@ -46,7 +46,7 @@ export class TaskTemplates {
         return response.data();
     }
 
-    subTaskTemplates (taskTemplateId) {
+    subTaskTemplates(taskTemplateId) {
         return new TaskTemplateSubTaskTemplates(this._client, taskTemplateId)
     }
 }

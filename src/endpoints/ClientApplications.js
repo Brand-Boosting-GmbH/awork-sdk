@@ -4,7 +4,7 @@ import { ClientApplication } from "../model/ClientApplication"
 /**
  * Class corresponding to Aworks ClientApplications Endpoints
  * @category Endpoints
- * @see [ClientApplications in Awork API Docs](https://openapi.awork.io/#/ClientApplications)
+ * @see [ClientApplications in Awork API Docs](https://openapi.awork.com/#/ClientApplications)
  */
 export class ClientApplications {
 
@@ -24,7 +24,7 @@ export class ClientApplications {
      * @param {String} clientId The id of the client application.
      * @returns {Promise<ClientApplication>}
      */
-    async get (clientId) {
+    async get(clientId) {
         const response = await this._client.get(`/clientapplications/${clientId}`)
         const data = response.data()
         return new ClientApplication(data)
@@ -35,7 +35,7 @@ export class ClientApplications {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<ClientApplication>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get('/clientapplications', options)
         const data = response.data()
         return data.map(d => new ClientApplication(d))
@@ -53,7 +53,7 @@ export class ClientApplications {
      * @param {ClientCreateModel} client The client application is required for the OAuth flow.
      * @returns {Promise<ClientApplication>}
      */
-    async create (client) {
+    async create(client) {
         const response = await this._client.post('/clientapplications', client)
         const data = response.data()
         return new ClientApplication(data)
@@ -70,7 +70,7 @@ export class ClientApplications {
      * @param {ClientUpdateModel} client The client application is required for the OAuth flow.
      * @returns {Promise<ClientApplication>}
      */
-    async update (clientId, client) {
+    async update(clientId, client) {
         const response = await this._client.put(`/clientapplications/${clientId}`, client)
         const data = response.data()
         return new ClientApplication(data)
@@ -81,7 +81,7 @@ export class ClientApplications {
      * @param {String} clientId The id of the client application.
      * @returns {Promise<void>}
      */
-    async delete (clientId) {
+    async delete(clientId) {
         await this._client.delete(`/clientapplications/${clientId}`)
     }
 
@@ -90,7 +90,7 @@ export class ClientApplications {
      * @param {String} clientId The id of the client application.
      * @returns {Promise<String>}
      */
-    async generateSecret (clientId) {
+    async generateSecret(clientId) {
         const response = await this._client.post(`/clientapplications/${clientId}/generatesecret`)
         return response.data().clientSecret
     }
@@ -100,7 +100,7 @@ export class ClientApplications {
      * @param {String} clientId The id of the client application.
      * @returns {Promise<String>}
      */
-    async generateApiKey (clientId) {
+    async generateApiKey(clientId) {
         const response = await this._client.post(`/clientapplications/${clientId}/generateapikey`)
         return response.data().apiUserId
     }

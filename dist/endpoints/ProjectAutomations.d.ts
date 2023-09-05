@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks ProjectAutomations Endpoints
  * @category Endpoints
- * @see [ProjectAutomations in Awork API Docs](https://openapi.awork.io/#/ProjectAutomations)
+ * @see [ProjectAutomations in Awork API Docs](https://openapi.awork.com/#/ProjectAutomations)
  */
 export class ProjectAutomations {
     /**

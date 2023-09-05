@@ -18,7 +18,7 @@ import { ProjectTaskStatuses } from './ProjectTaskStatuses'
 /**
  * Class corresponding to Aworks Projects Endpoints
  * @category Endpoints
- * @see [Projects in Awork API Docs](https://openapi.awork.io/#/Projects)
+ * @see [Projects in Awork API Docs](https://openapi.awork.com/#/Projects)
  */
 export class Projects {
 
@@ -107,7 +107,7 @@ export class Projects {
     /**
      * @typedef {Object} DeleteProjectOptions
      * @property {Boolean} [deleteTimeTrackings] Set to true to delete also the related time trackings. If it is set to false the related time trackings are still there, but the project and task reference will be cleared. That will also happen if no request body is present.
-     */    
+     */
 
     /**
      * Deletes the project with the specified id. In the default case the related tasks of this project will also be deleted and the related time trackings of this project and all tasks loose the relation to the deleted project and tasks. To delete the time trackings as well, it is necessary to set the 'DeleteTimeTrackings' property of the post model to true.
@@ -134,7 +134,7 @@ export class Projects {
      * @param {TaskBundleAddToProjectModel} taskBundelToBeAdded The model to add the task bundle to the project.
      * @returns {Promise<void>}
      */
-    async addTaskBundle (projectId, taskBundelToBeAdded) {
+    async addTaskBundle(projectId, taskBundelToBeAdded) {
         await this._client.post(`/projects/${projectId}/addtaskbundle`, taskBundelToBeAdded)
     }
 
@@ -143,18 +143,18 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {Promise<Array<TaskDependency>>}
      */
-     async taskDependencyList (projectId) {
+    async taskDependencyList(projectId) {
         const response = await this._client.get(`/projects/${projectId}/taskdependencies`)
         const data = response.data()
         return data.map(d => new TaskDependency(d))
-      }
+    }
 
-      /**
-       * Returns all project milestones of the specified project. The user needs 'read' permissions of feature 'project-planning-data' to get the data.
-       * @param {String} projectId The id of the project.
-       * @returns {Promise<Array<ProjectMilestone>>}
-       */
-    async milestoneList (projectId) {
+    /**
+     * Returns all project milestones of the specified project. The user needs 'read' permissions of feature 'project-planning-data' to get the data.
+     * @param {String} projectId The id of the project.
+     * @returns {Promise<Array<ProjectMilestone>>}
+     */
+    async milestoneList(projectId) {
         const response = await this._client.get(`projects/${projectId}/milestones`)
         const data = response.data()
         return data.map(d => new ProjectMilestone(d))
@@ -165,7 +165,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {ProjectMembers}
      */
-    members (projectId) {
+    members(projectId) {
         return new ProjectMembers(this._client, projectId)
     }
 
@@ -174,7 +174,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {EntityFiles}
      */
-    files (projectId) { //projects = entityName, projectId = entityId
+    files(projectId) { //projects = entityName, projectId = entityId
         return new EntityFiles(this._client, 'projects', projectId)
     }
 
@@ -183,7 +183,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {ProjectProjectStatus}
      */
-    projectStatuses (projectId) {
+    projectStatuses(projectId) {
         return new ProjectProjectStatuses(this._client, projectId)
     }
 
@@ -192,7 +192,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {ProjectTaskStatuses}
      */
-    taskStatuses (projectId) {
+    taskStatuses(projectId) {
         return new ProjectTaskStatuses(this._client, projectId)
     }
 
@@ -201,7 +201,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {Autopilots}
      */
-    autopilots (projectId) {
+    autopilots(projectId) {
         return new Autopilots(this._client, projectId)
     }
 
@@ -210,7 +210,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {ProjectAutomations}
      */
-    automations (projectId) {
+    automations(projectId) {
         return new ProjectAutomations(this._client, projectId)
     }
 
@@ -219,7 +219,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {EntityImages}
      */
-    images (projectId) {
+    images(projectId) {
         return new EntityImages(this._client, 'projects', projectId)
     }
 
@@ -228,7 +228,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {ProjectTasks}
      */
-    tasks (projectId) {
+    tasks(projectId) {
         return new ProjectTasks(this._client, projectId)
     }
 
@@ -237,7 +237,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {ProjectsSubtasks}
      */
-    projectSubtasks (projectId) {
+    projectSubtasks(projectId) {
         return new ProjectSubtasks(this._client, projectId)
     }
 
@@ -246,7 +246,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns {TaskLists}
      */
-    taskLists (projectId) {
+    taskLists(projectId) {
         return new TaskLists(this._client, 'projects', projectId)
     }
 
@@ -255,7 +255,7 @@ export class Projects {
      * @param {String} projectId The id of the project.
      * @returns 
      */
-    tags (projectId) {
+    tags(projectId) {
         return new EntityTags(this._client, 'projects', projectId)
     }
 
@@ -265,7 +265,7 @@ export class Projects {
      * @returns 
      * @deprecated
      */
-    entityTags (projectId) {
+    entityTags(projectId) {
         return this.tags(projectId)
     }
 }

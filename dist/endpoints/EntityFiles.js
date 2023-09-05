@@ -20,7 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Class corresponding to Aworks EntityFiles Endpoints
  * @category Endpoints
- * @see [EntityFiles in Awork API Docs](https://openapi.awork.io/#/EntityFiles)
+ * @see [EntityFiles in Awork API Docs](https://openapi.awork.com/#/EntityFiles)
  */
 class EntityFiles {
   /**

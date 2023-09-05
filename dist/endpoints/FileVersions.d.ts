@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Versions part of the Aworks EntityFiles Endpoints
  * @category Endpoints
- * @see [EntityFiles in Awork API Docs](https://openapi.awork.io/#/EntityFiles)
+ * @see [EntityFiles in Awork API Docs](https://openapi.awork.com/#/EntityFiles)
  */
 export class FileVersions {
     constructor(client: any, entityName: any, entityId: any, fileId: any);

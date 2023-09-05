@@ -12,7 +12,7 @@ var _Task = require("../model/Task");
 /**
  * Class corresponding to Aworks UsersAssignedTasks Endpoints
  * @category Endpoints
- * @see [UsersAssignedTasks in Awork API Docs](https://openapi.awork.io/#/UsersAssignedTasks)
+ * @see [UsersAssignedTasks in Awork API Docs](https://openapi.awork.com/#/UsersAssignedTasks)
  */
 class UsersAssignedTasks {
   /**

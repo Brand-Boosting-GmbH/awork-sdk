@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks ProjectRoles Endpoints
  * @category Endpoints
- * @see [ProjectRoles in Awork API Docs](https://openapi.awork.io/#/ProjectRoles)
+ * @see [ProjectRoles in Awork API Docs](https://openapi.awork.com/#/ProjectRoles)
  */
 export class ProjectRoles {
     /**

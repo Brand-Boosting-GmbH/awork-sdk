@@ -6,7 +6,7 @@ import FormData from "form-data"
 /**
  * Class corresponding to Aworks TemporaryFiles Endpoints
  * @category Endpoints
- * @see [TemporaryFiles in Awork API Docs](https://openapi.awork.io/#/TemporaryFiles)
+ * @see [TemporaryFiles in Awork API Docs](https://openapi.awork.com/#/TemporaryFiles)
  */
 export class TemporaryFiles {
     /**
@@ -57,19 +57,19 @@ export class TemporaryFiles {
 
     async create(file, metadata) {
         let filename = metadata.filename || file.name
-        if(file instanceof Buffer) {
+        if (file instanceof Buffer) {
             const { ext } = await fromBuffer(file)
             filename = filename || `upload.${ext}`
-        }   
+        }
         let formData = new FormData()
         formData.append('file', file, filename || 'upload')
         formData.append('name', metadata.name || filename || 'upload')
         formData.append('filename', filename || 'upload')
-        const response = await this._client.post('/temporaryfiles', formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders()})
+        const response = await this._client.post('/temporaryfiles', formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders() })
         const data = response.data()
         return new EntityFile(data)
     }
-    
+
     /**
      * @typedef {Object} TemporaryFilesUpdateModel
      * @property {String} [name] The user-specified name of the file.

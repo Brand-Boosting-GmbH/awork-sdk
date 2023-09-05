@@ -4,7 +4,7 @@ import { TypeOfWork } from "../model/TypeOfWork"
 /**
  * Class corresponding to Aworks TypeOfWork Endpoints
  * @category Endpoints
- * @see [TypeOfWork in Awork API Docs](https://openapi.awork.io/#/TypeOfWork)
+ * @see [TypeOfWork in Awork API Docs](https://openapi.awork.com/#/TypeOfWork)
  */
 export class TypesOfWorks {
     /**
@@ -34,7 +34,7 @@ export class TypesOfWorks {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<TypeOfWork>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`/typeofwork`, options)
         const data = response.data()
         return data.map(d => new TypeOfWork(d))
@@ -52,7 +52,7 @@ export class TypesOfWorks {
      * @param {TypeOfWorkCreateModel} typeOfWork The model to create the type of work.
      * @returns {Promise<TypeOfWork>}
      */
-    async create (typeOfWork) {
+    async create(typeOfWork) {
         const response = await this._client.post('/typeofwork', typeOfWork)
         const data = response.data()
         return new TypeOfWork(data)
@@ -68,7 +68,7 @@ export class TypesOfWorks {
      * @param {TypeOfWorkUpdateModel} typeOfWork The model to update the type of work.
      * @returns {Promise<TypeOfWork>}
      */
-    async update (typeOfWorkId, typeOfWork) {
+    async update(typeOfWorkId, typeOfWork) {
         const response = await this._client.put(`/typeofwork/${typeOfWorkId}`, typeOfWork)
         const data = response.data()
         return new TypeOfWork(data)
@@ -79,15 +79,15 @@ export class TypesOfWorks {
      * @param {String} typeOfWorkId The id of the type of work.
      * @returns {Promise<void>}
      */
-    async delete (typeOfWorkId) {
-        await this._client.post(`/typeofwork/${typeOfWorkId}/delete`, {'typeOfWorkId': typeOfWorkId})
+    async delete(typeOfWorkId) {
+        await this._client.post(`/typeofwork/${typeOfWorkId}/delete`, { 'typeOfWorkId': typeOfWorkId })
     }
 
     /**
      * Returns all possible icons for type of work.
      * @returns {Promise<Array<String>>}
      */
-    async icons () {
+    async icons() {
         const response = await this._client.get('/typeofwork/icons')
         return response.data()
     }
@@ -98,8 +98,8 @@ export class TypesOfWorks {
      * @param {Boolean} [archived] Flags the entity as archived.
      * @returns {Promise<Object>}
      */
-    async setArchived (typeOfWorkId, archived = true) {
-        const response = await this._client.post(`/typeofwork/${typeOfWorkId}/setarchived`, {'isArchived': archived})
+    async setArchived(typeOfWorkId, archived = true) {
+        const response = await this._client.post(`/typeofwork/${typeOfWorkId}/setarchived`, { 'isArchived': archived })
         return response.data()
     }
 

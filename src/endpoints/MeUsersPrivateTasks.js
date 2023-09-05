@@ -6,27 +6,27 @@ import { UsersPrivateTasks } from './UsersPrivateTasks'
 /**
  * Class corresponding to Aworks UsersPrivateTasks Endpoints
  * @category Endpoints
- * @see [UsersPrivateTasks in Awork API Docs](https://openapi.awork.io/#/UsersPrivateTasks)
+ * @see [UsersPrivateTasks in Awork API Docs](https://openapi.awork.com/#/UsersPrivateTasks)
  */
- export class MeUsersPrivateTasks extends UsersPrivateTasks {
+export class MeUsersPrivateTasks extends UsersPrivateTasks {
 
-    /**
-    * Endpoint constructor
-    * @param {import('../client/index').Client} client
-    * @param {String} taskId The id of the task.
-    */
-   constructor (client) {
+   /**
+   * Endpoint constructor
+   * @param {import('../client/index').Client} client
+   * @param {String} taskId The id of the task.
+   */
+   constructor(client) {
       super(client)
-       /** @private */
-       this._userPrefix = `me`
+      /** @private */
+      this._userPrefix = `me`
    }
 
    /**
     * Returns all tags of the private tasks.
     * @returns {Promise<Array<String>>}
     */
-   async tags () {
-     const response = await this._client.get(`/me/privatetasks/tags`)
-     return response.data()
+   async tags() {
+      const response = await this._client.get(`/me/privatetasks/tags`)
+      return response.data()
    }
 }

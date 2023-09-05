@@ -18,7 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Class corresponding to Aworks TemporaryFiles Endpoints
  * @category Endpoints
- * @see [TemporaryFiles in Awork API Docs](https://openapi.awork.io/#/TemporaryFiles)
+ * @see [TemporaryFiles in Awork API Docs](https://openapi.awork.com/#/TemporaryFiles)
  */
 class TemporaryFiles {
   /**

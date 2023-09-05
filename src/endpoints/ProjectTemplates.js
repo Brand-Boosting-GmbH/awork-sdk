@@ -9,7 +9,7 @@ import { EntityTags } from './EntityTags'
 /**
  * Class corresponding to Aworks ProjectTemplates Endpoints
  * @category Endpoints
- * @see [ProjectTemplates in Awork API Docs](https://openapi.awork.io/#/ProjectTemplates)
+ * @see [ProjectTemplates in Awork API Docs](https://openapi.awork.com/#/ProjectTemplates)
  */
 export class ProjectTemplates {
 
@@ -122,7 +122,7 @@ export class ProjectTemplates {
      * @param {String} projectTemplateId The id of the project template
      * @returns {ProjectTemplateProjectStatuses}
      */
-    projectStatus (projectTemplateId) {
+    projectStatus(projectTemplateId) {
         return new ProjectTemplateProjectStatuses(this._client, projectTemplateId)
     }
 
@@ -131,7 +131,7 @@ export class ProjectTemplates {
      * @param {String} projectTemplateId The id of the project template
      * @returns {ProjectTemplateAutomations}
      */
-    automations (projectTemplateId) {
+    automations(projectTemplateId) {
         return new ProjectTemplateAutomations(this._client, projectTemplateId)
     }
 
@@ -140,7 +140,7 @@ export class ProjectTemplates {
      * @param {String} projectTemplateId The id of the project template.
      * @returns {EntityImages}
      */
-    images (projectTemplateId) {
+    images(projectTemplateId) {
         return new EntityImages(this._client, 'projecttemplates', projectTemplateId)
     }
 
@@ -149,7 +149,7 @@ export class ProjectTemplates {
      * @param {String} projectTemplateId The id of the project template.
      * @returns {ProjectTemplateTaskStatuses}
      */
-    taskStatuses (projectTemplateId) {
+    taskStatuses(projectTemplateId) {
         return new ProjectTemplateTaskStatuses(this._client, projectTemplateId)
     }
 
@@ -158,17 +158,17 @@ export class ProjectTemplates {
      * @param {String} projectTemplateId The id of the project template.
      * @returns 
      */
-    tags (projectTemplateId) {
+    tags(projectTemplateId) {
         return new EntityTags(this._client, 'projecttemplates', projectTemplateId)
     }
-    
+
     /**
      * Returns the {@link EntityTags} Endpoint with the specified project tempate Id and name.
      * @param {String} projectTemplateId The id of the project template.
      * @returns 
      * @deprecated
      */
-    entityTags (projectTemplateId) {
+    entityTags(projectTemplateId) {
         return this.tags(projectTemplateId)
     }
 }

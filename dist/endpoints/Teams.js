@@ -12,7 +12,7 @@ var _Team = require("../model/Team");
 /**
  * Class corresponding to Aworks Teams Endpoints
  * @category Endpoints
- * @see [Teams in Awork API Docs](https://openapi.awork.io/#/Teams)
+ * @see [Teams in Awork API Docs](https://openapi.awork.com/#/Teams)
  */
 class Teams {
   /**

@@ -12,12 +12,12 @@ class AworkError {
         this.status = error.response.status
         this.statusText = error.response.statusText
     }
-    
+
     /**
      * HTTP Response Code#
      * @type {String|Number}
      */
-    get code () {
+    get code() {
         return this.data.code
     }
 
@@ -25,7 +25,7 @@ class AworkError {
      * Error Description
      * @type {String}
      */
-    get description () {
+    get description() {
         return this.data.description
     }
 
@@ -33,7 +33,7 @@ class AworkError {
      * Error Link
      * @type {String}
      */
-    get link () {
+    get link() {
         return this.data.link
     }
 
@@ -42,35 +42,35 @@ class AworkError {
      * when debugging
      * @type {String}
      */
-    get space () {
+    get space() {
         return this.data.space
     }
 
-    get validationErrors () {
+    get validationErrors() {
         return this.data.validationErrors
     }
-     
-    
-    
+
+
+
 }
 
 class AworkResponse {
 
-    constructor (status, headers, data) {
+    constructor(status, headers, data) {
         this._status = status
         this._headers = headers,
-        this._data = data
+            this._data = data
     }
 
-    get status () {
+    get status() {
         return this._status
     }
 
-    get headers () {
+    get headers() {
         return this._headers
     }
 
-    data () {
+    data() {
         return this._data
     }
 
@@ -83,7 +83,7 @@ class AworkResponse {
  */
 export class Client {
 
-    constructor (apiKey = '', basePath = 'https://api.awork.io/api/v1'){
+    constructor(apiKey = '', basePath = 'https://api.awork.com/api/v1') {
         this.basePath = basePath
         this.http = axios.create({
             baseURL: basePath,
@@ -94,8 +94,8 @@ export class Client {
     }
 
 
-    static getPlainObject (obj) {
-        if(typeof obj === 'object' && typeof obj.toPlainObject === 'function') {
+    static getPlainObject(obj) {
+        if (typeof obj === 'object' && typeof obj.toPlainObject === 'function') {
             return obj.toPlainObject()
         }
         return obj

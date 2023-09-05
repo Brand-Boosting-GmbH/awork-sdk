@@ -4,7 +4,7 @@ import '../globalTypedef'
 /**
  * Class corresponding to Aworks subtasktemplates related part of the TaskBundles Endpoints
  * @category Endpoints
- * @see [TaskBundles in Awork API Docs](https://openapi.awork.io/#/TaskBundles)
+ * @see [TaskBundles in Awork API Docs](https://openapi.awork.com/#/TaskBundles)
  */
 export class TaskTemplateSubTaskTemplates {
     /**
@@ -24,7 +24,7 @@ export class TaskTemplateSubTaskTemplates {
      * @param {String} subTaskTemplateId The id of the subtask template id.
      * @returns {Promise<SubTaskTemplate>}
      */
-    async get (subTaskTemplateId) {
+    async get(subTaskTemplateId) {
         const response = await this._client.get(`tasktemplates/${this._taskTemplateId}/subtasktemplates/${subTaskTemplateId}`)
         const data = response.data()
         return new SubTaskTemplate(data)
@@ -35,7 +35,7 @@ export class TaskTemplateSubTaskTemplates {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<SubTaskTemplate>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`tasktemplates/${this._taskTemplateId}/subtasktemplates`, options)
         const data = response.data()
         return data.map(d => new SubTaskTemplate(d))
@@ -52,7 +52,7 @@ export class TaskTemplateSubTaskTemplates {
      * @param {SubTaskTemplateCreateModel} subTaskTemplate The model to create the subtask template.
      * @returns {Promise<SubTaskTemplate>}
      */
-    async create (subTaskTemplate) {
+    async create(subTaskTemplate) {
         const response = await this._client.post(`tasktemplates/${this._taskTemplateId}/subtasktemplates`, subTaskTemplate)
         const data = response.data()
         return new SubTaskTemplate(data)
@@ -70,7 +70,7 @@ export class TaskTemplateSubTaskTemplates {
      * @param {SubTaskTemplateUpdateModel} subTaskTemplate The model to update the subtask template.
      * @return {Promise<SubTaskTemplate>}
      */
-    async update (subTaskTemplateId, subTaskTemplate) {
+    async update(subTaskTemplateId, subTaskTemplate) {
         const response = await this._client.put(`tasktemplates/${this._taskTemplateId}/subtasktemplates/${subTaskTemplateId}`, subTaskTemplate)
         const data = response.data()
         return new SubTaskTemplate(data)
@@ -81,7 +81,7 @@ export class TaskTemplateSubTaskTemplates {
      * @param {String} subtaskTemplateId The id of the subtask template.
      * @returns {Promise<void>}
      */
-     async delete (subTaskTemplateId) {
+    async delete(subTaskTemplateId) {
         await this._client.delete(`tasktemplates/${this._taskTemplateId}/subtasktemplates/${subTaskTemplateId}`)
     }
 }

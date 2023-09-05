@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks UsersPrivateTasks Endpoints
  * @category Endpoints
- * @see [UsersPrivateTasks in Awork API Docs](https://openapi.awork.io/#/UsersPrivateTasks)
+ * @see [UsersPrivateTasks in Awork API Docs](https://openapi.awork.com/#/UsersPrivateTasks)
  */
 export class MeUsersPrivateTasks extends UsersPrivateTasks {
     /**

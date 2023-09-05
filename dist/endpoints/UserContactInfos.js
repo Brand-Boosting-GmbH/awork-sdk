@@ -14,7 +14,7 @@ var _UserContactInfo = require("../model/UserContactInfo");
 /**
  * Class corresponding to Aworks project related part of the UserContactInfos Endpoints
  * @category Endpoints
- * @see [UserContactInfos in Awork API Docs](https://openapi.awork.io/#/UserContactInfos)
+ * @see [UserContactInfos in Awork API Docs](https://openapi.awork.com/#/UserContactInfos)
  */
 class UserContactInfos {
   /**

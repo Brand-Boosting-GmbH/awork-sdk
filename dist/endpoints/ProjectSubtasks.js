@@ -12,7 +12,7 @@ var _SubTask = require("../model/SubTask");
 /**
  * Class corresponding to Aworks ProjectSubtasks Endpoints
  * @category Endpoints
- * @see [ProjectSubtasks in Awork API Docs](https://openapi.awork.io/#/ProjectSubtasks)
+ * @see [ProjectSubtasks in Awork API Docs](https://openapi.awork.com/#/ProjectSubtasks)
  */
 class ProjectSubtasks {
   /**

@@ -1,7 +1,7 @@
 /**
  * Class corresponding to the Member part of Aworks Projects Endpoint
  * @category Endpoints
- * @see [Projects in Awork API Docs](https://openapi.awork.io/#/Projects)
+ * @see [Projects in Awork API Docs](https://openapi.awork.com/#/Projects)
  */
 export class ProjectMembers {
     constructor(client: any, projectId: any);

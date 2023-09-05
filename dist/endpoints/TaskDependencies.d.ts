@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks TaskDependencies Endpoints.
  * @category Endpoints
- * @see [TaskDependencies in Awork API Docs](https://openapi.awork.io/#/TaskDependencies)
+ * @see [TaskDependencies in Awork API Docs](https://openapi.awork.com/#/TaskDependencies)
  */
 export class TaskDependencies {
     /**

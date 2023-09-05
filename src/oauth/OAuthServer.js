@@ -6,7 +6,7 @@ export class OAuthServer {
      * OAuthServer Constructor
      * @param {({apiKey: String}))} auth 
      */
-    constructor(clientId, secret, redirectUri){
+    constructor(clientId, secret, redirectUri) {
         /** @private */
         this._clientId = clientId
         /** @private */
@@ -27,12 +27,12 @@ export class OAuthServer {
      * @param {String} code The code that was received in the previous authorization response.
      * @returns {AworkAuth}
      */
-    async requestToken(code){
+    async requestToken(code) {
         let params = new URLSearchParams()
         params.append('redirect_uri', this._redirectUri)
         params.append('grant_type', 'authorization_code')
         params.append('code', code)
-        const { data } = await axios.post('https://api.awork.io/api/v1/accounts/token', params, {
+        const { data } = await axios.post('https://api.awork.com/api/v1/accounts/token', params, {
             auth: {
                 username: this._clientId,
                 password: this._secret

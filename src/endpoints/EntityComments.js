@@ -6,7 +6,7 @@ import { EntityFiles } from './EntityFiles'
 /**
  * Class corresponding to Aworks Comments Endpoints
  * @category Endpoints
- * @see [Comments in Awork API Docs](https://openapi.awork.io/#/Comments)
+ * @see [Comments in Awork API Docs](https://openapi.awork.com/#/Comments)
  */
 export class EntityComments {
     /**
@@ -15,7 +15,7 @@ export class EntityComments {
      * @param {('companies'|'files'|'projects'|'tasks')} entityName
      * @param {String} entityId
      */
-     constructor(client, entityName, entityId) {
+    constructor(client, entityName, entityId) {
         /** @private */
         this._client = client
         /** @private */
@@ -94,7 +94,7 @@ export class EntityComments {
      * @returns {Promise<void>}
      */
     async delete(commentId) {
-        await this._client.delete(`/${this._entityName}/${this._entityId}/comments/${commentId}`)   
+        await this._client.delete(`/${this._entityName}/${this._entityId}/comments/${commentId}`)
     }
 
     /**
@@ -118,7 +118,7 @@ export class EntityComments {
      * @param {String} commentId The id of the comment.
      * @returns {EntityFiles}
      */
-     files (commentId) {
+    files(commentId) {
         return new EntityFiles(this._client, 'comments', commentId)
     }
 }

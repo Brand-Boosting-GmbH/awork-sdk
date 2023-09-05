@@ -3,7 +3,7 @@ import { TaskDependency } from "../model/TaskDependency"
 /**
  * Class corresponding to Aworks TaskDependencies Endpoints.
  * @category Endpoints
- * @see [TaskDependencies in Awork API Docs](https://openapi.awork.io/#/TaskDependencies)
+ * @see [TaskDependencies in Awork API Docs](https://openapi.awork.com/#/TaskDependencies)
  */
 
 export class TaskDependencies {
@@ -27,7 +27,7 @@ export class TaskDependencies {
      * @param {TaskDependencyCreateModel} taskDependency Describes the dependency between two tasks. One Task is the predecessor and one task is the successor.
      * @returns {Promise<TaskDependency>}
      */
-    async create (taskDependency) {
+    async create(taskDependency) {
         const response = await this._client.post('/taskdependencies', taskDependency)
         const data = response.data()
         return new TaskDependency(data)
@@ -38,7 +38,7 @@ export class TaskDependencies {
      * @param {String} taskDependencyId The id of the task dependency.
      * @returns {Promise<void>}
      */
-    async delete (taskDependencyId) {
+    async delete(taskDependencyId) {
         await this._client.delete(`/taskdependencies/${taskDependencyId}`)
     }
 }

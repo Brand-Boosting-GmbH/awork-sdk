@@ -5,15 +5,15 @@ import { User } from '../model/User'
 /**
  * Class corresponding to Aworks Users Endpoints
  * @category Endpoints
- * @see [Users in Awork API Docs](https://openapi.awork.io/#/Users)
+ * @see [Users in Awork API Docs](https://openapi.awork.com/#/Users)
  */
 export class MeUsers extends Users {
 
-     /**
-     * Endpoint constructor
-     * @param {import('../client/index').Client} client
-     */
-    constructor (client) {
+    /**
+    * Endpoint constructor
+    * @param {import('../client/index').Client} client
+    */
+    constructor(client) {
         super(client)
         /** @private */
         this._userPrefix = `/me`

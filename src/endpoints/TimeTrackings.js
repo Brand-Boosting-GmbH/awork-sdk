@@ -4,7 +4,7 @@ import { TimeEntry } from '../model/TimeEntry'
 /**
  * Class corresponding to Aworks TimeTrackings Endpoints
  * @category Endpoints
- * @see [TimeTrackings in Awork API Docs](https://openapi.awork.io/#/TimeTrackings)
+ * @see [TimeTrackings in Awork API Docs](https://openapi.awork.com/#/TimeTrackings)
  */
 export class TimeTrackings {
     /**
@@ -12,13 +12,13 @@ export class TimeTrackings {
      * @param {import('../client/index').Client} client 
      * @param {String} userId The id of the user.
      */
-     constructor(client, userId) {
+    constructor(client, userId) {
         /** @private */
         this._client = client
         /** @private */
         this._userId = userId
         /** @private */
-        this._userPrefix = `/users/${this.userId}` 
+        this._userPrefix = `/users/${this.userId}`
     }
 
     /**
@@ -44,17 +44,17 @@ export class TimeTrackings {
      * @param {TimeTrackingStartModel} timeTrackingStartModel The model to start a time tracking.
      * @returns {Promise<TimeEntry>}
      */
-    async start (timeTrackingStartModel) {
+    async start(timeTrackingStartModel) {
         const response = await this._client.post(`${this._userPrefix}/timetracking/stop`, timeTrackingStartModel)
         const data = response.data()
-        return new TimeEntry(data)  
+        return new TimeEntry(data)
     }
 
     /**
      * There is no request body necessary for this operation. For this operation to work there must be a running time tracking for the user.
      * @returns {Promise<TimeEntry>}
      */
-    async stop () {
+    async stop() {
         const response = await this._client.post(`${this._userPrefix}/timetracking/stop`)
         const data = response.data()
         return new TimeEntry(data)

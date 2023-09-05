@@ -10,7 +10,7 @@ require("../globalTypedef");
 /**
  * Class corresponding to Aworks project related part of the Files Endpoints
  * @category Endpoints
- * @see [Files in Awork API Docs](https://openapi.awork.io/#/Files)
+ * @see [Files in Awork API Docs](https://openapi.awork.com/#/Files)
  */
 class Files {
   /**

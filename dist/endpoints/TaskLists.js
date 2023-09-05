@@ -14,7 +14,7 @@ var _TaskListTasks = require("./TaskListTasks");
 /**
  * Class corresponding to Aworks TaskLists Endpoints
  * @category Endpoints
- * @see [TaskLists in Awork API Docs](https://openapi.awork.io/#/TaskLists)
+ * @see [TaskLists in Awork API Docs](https://openapi.awork.com/#/TaskLists)
  */
 class TaskLists {
   /**

@@ -12,7 +12,7 @@ var _Tag = require("../model/Tag");
 /**
  * Class corresponding to Aworks Tags Endpoints
  * @category Endpoints
- * @see [Tags in Awork API Docs](https://openapi.awork.io/#/Tags)
+ * @see [Tags in Awork API Docs](https://openapi.awork.com/#/Tags)
  */
 class EntityTags {
   /**

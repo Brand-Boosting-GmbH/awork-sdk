@@ -14,7 +14,7 @@ var _ProjectTemplateActions = require("./ProjectTemplateActions");
 /**
  * Class corresponding to Aworks ProjectTemplateAutomations Endpoints
  * @category Endpoints
- * @see [ProjectTemplateAutomations in Awork API Docs](https://openapi.awork.io/#/ProjectTemplateAutomations)
+ * @see [ProjectTemplateAutomations in Awork API Docs](https://openapi.awork.com/#/ProjectTemplateAutomations)
  */
 class ProjectTemplateAutomations {
   /**

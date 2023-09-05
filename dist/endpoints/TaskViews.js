@@ -12,7 +12,7 @@ var _TaskView = require("../model/TaskView");
 /**
  * Class corresponding to Aworks TaskViews Endpoints
  * @category Endpoints
- * @see [TaskViews in Awork API Docs](https://openapi.awork.io/#/TaskViews)
+ * @see [TaskViews in Awork API Docs](https://openapi.awork.com/#/TaskViews)
  */
 class TaskViews {
   /**

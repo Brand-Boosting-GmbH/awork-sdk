@@ -16,7 +16,7 @@ var _Task = require("../model/Task");
 /**
  * Class corresponding to Aworks TaskViews Endpoints
  * @category Endpoints
- * @see [TaskViews in Awork API Docs](https://openapi.awork.io/#/TaskViews)
+ * @see [TaskViews in Awork API Docs](https://openapi.awork.com/#/TaskViews)
  */
 class MeTaskViews extends _TaskViews.TaskViews {
   /**

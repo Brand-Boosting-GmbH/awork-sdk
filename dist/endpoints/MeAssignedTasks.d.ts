@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks UsersAssignedTasks Endpoints
  * @category Endpoints
- * @see [UsersAssignedTasks in Awork API Docs](https://openapi.awork.io/#/UsersAssignedTasks)
+ * @see [UsersAssignedTasks in Awork API Docs](https://openapi.awork.com/#/UsersAssignedTasks)
  */
 export class MeAssignedTasks extends UsersAssignedTasks {
     /**

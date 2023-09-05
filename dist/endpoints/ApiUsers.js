@@ -12,7 +12,7 @@ var _ApiUser = require("../model/ApiUser");
 /**
  * Class corresponding to Aworks ApiUsers Endpoints
  * @category Endpoints
- * @see [ApiUsers in Awork API Docs](https://openapi.awork.io/#/ApiUsers)
+ * @see [ApiUsers in Awork API Docs](https://openapi.awork.com/#/ApiUsers)
  */
 class ApiUsers {
   /**

@@ -1,6 +1,6 @@
 # Awork SDK
 
-An (almost) complete JavaScript API wrapper for project management software [Awork](https://awork.io).
+An (almost) complete JavaScript API wrapper for project management software [Awork](https://awork.com).
 The goal of this project is to provide a comprehensive set of tools to interact with the Awork REST API when working with JavaScript.
 This library can be imported as a CommonJS or ES module and supports autocompletion via .d.ts files.
 
@@ -10,7 +10,7 @@ Please be aware: Awork is a product of awork GmbH. This project is maintained by
 
 * [Awork SDK Reference](https://brand-boosting-gmbh.github.io/awork-sdk/index.html) (every endpoint in detail)
 
-* [The Awork Developer Portal](https://developers.awork.io/)
+* [The Awork Developer Portal](https://developers.awork.com/)
 
 ## Found a bug?
 

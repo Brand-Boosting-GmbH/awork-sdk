@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks SubTasks Endpoints
  * @category Endpoints
- * @see [SubTasks in Awork API Docs](https://openapi.awork.io/#/SubTasks)
+ * @see [SubTasks in Awork API Docs](https://openapi.awork.com/#/SubTasks)
  */
 export class SubTasks {
     /**

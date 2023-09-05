@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks ProjectTasks Endpoints
  * @category Endpoints
- * @see [ProjectTasks in Awork API Docs](https://openapi.awork.io/#/ProjectTasks)
+ * @see [ProjectTasks in Awork API Docs](https://openapi.awork.com/#/ProjectTasks)
  */
 export class ProjectTemplateTaskStatuses {
     constructor(client: any, projectTemplateId: any);

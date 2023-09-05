@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks MeDashboards Endpoints
  * @category Endpoints
- * @see [MeDashboards in Awork API Docs](https://openapi.awork.io/#/MeDashboards)
+ * @see [MeDashboards in Awork API Docs](https://openapi.awork.com/#/MeDashboards)
  */
 export class MeDashboards {
     /**

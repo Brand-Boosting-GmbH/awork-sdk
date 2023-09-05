@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks TimeEntries Endpoints
  * @category Endpoints
- * @see [TimeEntries in Awork API Docs](https://openapi.awork.io/#/TimeEntries)
+ * @see [TimeEntries in Awork API Docs](https://openapi.awork.com/#/TimeEntries)
  */
 export class TimeEntries {
     /**

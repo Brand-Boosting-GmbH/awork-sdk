@@ -38,7 +38,7 @@ var _ProjectTaskStatuses = require("./ProjectTaskStatuses");
 /**
  * Class corresponding to Aworks Projects Endpoints
  * @category Endpoints
- * @see [Projects in Awork API Docs](https://openapi.awork.io/#/Projects)
+ * @see [Projects in Awork API Docs](https://openapi.awork.com/#/Projects)
  */
 class Projects {
   /**
