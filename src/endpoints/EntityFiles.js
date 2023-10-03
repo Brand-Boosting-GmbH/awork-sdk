@@ -170,7 +170,7 @@ export class EntityFiles {
      * @returns {String} binary
      */
     async download (fileId, options = {}) {
-        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${fileId}/download`, options)
+        const response = await this._client.getBinary(`/${this._entityName}/${this._entityId}/files/${fileId}/download`, options)
         return response.data()
     }
 
