@@ -126,6 +126,24 @@ class Client {
     });
     return new AworkResponse(response.status, response.headers, response.data);
   }
+  /**
+   * 
+   * @param {String} path 
+   * @param {Object} params 
+   * @returns {AworkResponse}
+   */
+
+
+  async getBinary(path, params = {}, headers = {}) {
+    const response = await this.http.get(path, {
+      params,
+      headers,
+      responseType: 'arraybuffer'
+    }).catch(e => {
+      throw new AworkError(e);
+    });
+    return new AworkResponse(response.status, response.headers, Buffer.from(response.data, 'binary').toString('base64'));
+  }
 
   async post(path, payload, params = {}, headers = {}) {
     let data = Client.getPlainObject(payload);
