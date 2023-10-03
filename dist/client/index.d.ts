@@ -15,6 +15,13 @@ export class Client {
      * @returns {AworkResponse}
      */
     get(path: string, params?: any, headers?: {}): AworkResponse;
+    /**
+     *
+     * @param {String} path
+     * @param {Object} params
+     * @returns {AworkResponse}
+     */
+    getBinary(path: string, params?: any, headers?: {}): AworkResponse;
     post(path: any, payload: any, params?: {}, headers?: {}): Promise<AworkResponse>;
     put(path: any, payload: any, params?: {}, headers?: {}): Promise<AworkResponse>;
     delete(path: any, params?: {}, headers?: {}): Promise<AworkResponse>;

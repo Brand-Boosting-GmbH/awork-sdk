@@ -52,7 +52,7 @@ class EntityImages {
 
 
   async download(options = {}) {
-    const response = await this._client.get(`/files/images/${this._entityName}/${this._entityId}`, options);
+    const response = await this._client.getBinary(`/files/images/${this._entityName}/${this._entityId}`, options);
     return response.data();
   }
   /**
