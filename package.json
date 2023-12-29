@@ -1,6 +1,6 @@
 {
     "name": "@brandboostinggmbh/awork-sdk",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "description": "An (almost) complete JavaScript API wrapper for project management software awork.",
     "main": "index.js",
     "scripts": {
