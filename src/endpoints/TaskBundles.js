@@ -7,7 +7,7 @@ import { Task } from '../model/Task'
 /**
  * Class corresponding to Aworks TaskBundles Endpoints
  * @category Endpoints
- * @see [TaskBundles in Awork API Docs](https://openapi.awork.io/#/TaskBundles)
+ * @see [TaskBundles in Awork API Docs](https://openapi.awork.com/#/TaskBundles)
  */
 
 export class TaskBundles {
@@ -25,7 +25,7 @@ export class TaskBundles {
      * @param {String} taskBundleId 
      * @returns {Promise<TaskBundle>}
      */
-    async get (taskBundleId) {
+    async get(taskBundleId) {
         const response = await this._client.get(`/taskbundles/${taskBundleId}`)
         const data = response.data()
         return new TaskBundle(data)
@@ -36,7 +36,7 @@ export class TaskBundles {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<TaskBundle>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get('/taskbundles', options)
         const data = response.data()
         return data.map(d => new TaskBundle(d))
@@ -55,7 +55,7 @@ export class TaskBundles {
      * @param {TaskBundleModel} taskbundle 
      * @returns {Promise<TaskBundle>}
      */
-    async create (taskbundle) {
+    async create(taskbundle) {
         const response = await this._client.post('/taskbundles', taskbundle)
         const data = response.data()
         return new TaskBundle(data)
@@ -67,7 +67,7 @@ export class TaskBundles {
      * @param {TaskBundleModel} taskBundle 
      * @returns {Promise<TaskBundle>}
      */
-    async update (taskBundleId, taskBundle) {
+    async update(taskBundleId, taskBundle) {
         const response = await this._client.put(`/taskbundles/${taskBundleId}`, taskBundle)
         const data = response.data()
         return new TaskBundle(data)
@@ -78,7 +78,7 @@ export class TaskBundles {
      * @param {String} taskBundleId 
      * @returns {Promise<void>}
      */
-    async delete (taskBundleId) {
+    async delete(taskBundleId) {
         await this._client.delete(`/taskbundles/${taskBundleId}`)
     }
 
@@ -86,7 +86,7 @@ export class TaskBundles {
      * Returns all possible icons for a task bundle.
      * @returns {Promise<Array<String>>}
      */
-    async icons () {
+    async icons() {
         const response = await this._client.get('/taskbundles/icons')
         return response.data()
     }
@@ -96,7 +96,7 @@ export class TaskBundles {
      * @param {String} taskBundleId The id of the task bundle to be copied.
      * @returns {Promise<TaskBundle>}
      */
-    async copy (taskBundleId) {
+    async copy(taskBundleId) {
         const response = await this._client.post(`/taskbundles/${taskBundleId}/copy`)
         const data = response.data()
         return new TaskBundle(data)
@@ -116,7 +116,7 @@ export class TaskBundles {
      * @param {TaskBundleCreateModel} taskBundle The model to create the task bundle.
      * @returns {Promise<Task>}
      */
-    async createFromProject (projectId, taskBundle) {
+    async createFromProject(projectId, taskBundle) {
         const response = await this._client.post(`/taskbundles/fromproject/${projectId}`, taskBundle)
         const data = response.data()
         return new Task(data)
@@ -128,7 +128,7 @@ export class TaskBundles {
      * @param {TaskBundleCreateModel} taskBundle The model to create the task bundle.
      * @returns {Promise<Task>}
      */
-    async createFromTaskList (taskListId, taskBundle) {
+    async createFromTaskList(taskListId, taskBundle) {
         const response = await this._client.post(`/taskbundles/fromtasklist/${taskListId}`, taskBundle)
         const data = response.data()
         return new Task(data)
@@ -139,7 +139,7 @@ export class TaskBundles {
      * @param {String} projectId The id of the task bundle.
      * @returns {ProjectProjectStatus}
      */
-    taskListTemplates (taskBundleId) {
+    taskListTemplates(taskBundleId) {
         return new TaskBundleTaskListTemplates(this._client, taskBundleId)
     }
 
@@ -148,7 +148,7 @@ export class TaskBundles {
      * @param {String} projectId The id of the task bundle.
      * @returns {ProjectProjectStatus}
      */
-    taskTemplates (taskBundleId) {
+    taskTemplates(taskBundleId) {
         return new TaskBundleTaskTemplates(this._client, taskBundleId)
     }
 }

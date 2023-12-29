@@ -100,7 +100,7 @@ class Awork {
    */
   constructor({
     apiKey,
-    basePath = 'https://api.awork.io/api/v1'
+    basePath = 'https://api.awork.com/api/v1'
   }) {
     this.client = new _client.Client(apiKey, basePath);
   }

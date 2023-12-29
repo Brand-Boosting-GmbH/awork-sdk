@@ -4,7 +4,7 @@ import '../globalTypedef'
 /**
  * Class corresponding to Aworks ProjectMilestones Endpoints.
  * @category Endpoints
- * @see [ProjectMilestones in Awork API Docs](https://openapi.awork.io/#/ProjectMilestones)
+ * @see [ProjectMilestones in Awork API Docs](https://openapi.awork.com/#/ProjectMilestones)
  */
 
 export class ProjectMilestones {
@@ -23,7 +23,7 @@ export class ProjectMilestones {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<ProjectMilestone>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get('/projectmilestones', options)
         const data = response.data()
         return data.map(d => new ProjectMilestone(d))
@@ -43,7 +43,7 @@ export class ProjectMilestones {
      * @param {ProjectMilestoneCreateModel} milestone The model to create a project milstone.
      * @returns {Promise<ProjectMilestone>}>
      */
-    async create (milestone) {
+    async create(milestone) {
         const response = await this._client.post('/projectmilestones', milestone)
         const data = response.data()
         return new ProjectMilestone(data)
@@ -62,7 +62,7 @@ export class ProjectMilestones {
      * @param {ProjectMilestoneUpdateModel} milestone The model to update a project milestone.
      * @returns {Promise<ProjectMilestone>}
      */
-    async update (milestoneId, milestone) {
+    async update(milestoneId, milestone) {
         const response = await this._client.put(`/projectmilestones/${milestoneId}`, milestone)
         const data = response.data()
         return new ProjectMilestone(data)
@@ -74,7 +74,7 @@ export class ProjectMilestones {
      * @param {String} milestoneId The id of the project milestone.
      * @returns {Promise<void>}
      */
-    async delete (milestoneId) {
+    async delete(milestoneId) {
         await this._client.delete(`/projectmilestones/${milestoneId}`)
     }
 }

@@ -12,7 +12,7 @@ var _UserPrivateTasksSubtasks = require("./UserPrivateTasksSubtasks");
 /**
  * Class corresponding to Aworks UserPrivateTasksSubtasks Endpoints
  * @category Endpoints
- * @see [UserPrivateTasksSubtasks in Awork API Docs](https://openapi.awork.io/#/UserPrivateTasksSubtasks)
+ * @see [UserPrivateTasksSubtasks in Awork API Docs](https://openapi.awork.com/#/UserPrivateTasksSubtasks)
  */
 class MeUserPrivateSubtasks extends _UserPrivateTasksSubtasks.UserPrivateTasksSubtasks {
   /**

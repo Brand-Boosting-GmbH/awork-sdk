@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks ProjectTemplateActions Endpoints
  * @category Endpoints
- * @see [ProjectTemplateActions in Awork API Docs](https://openapi.awork.io/#/ProjectTemplateActions)
+ * @see [ProjectTemplateActions in Awork API Docs](https://openapi.awork.com/#/ProjectTemplateActions)
  */
 export class ProjectTemplateActions {
     /**

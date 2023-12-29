@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks TimeReports Endpoints
  * @category Endpoints
- * @see [TimeReports in Awork API Docs](https://openapi.awork.io/#/TimeReports)
+ * @see [TimeReports in Awork API Docs](https://openapi.awork.com/#/TimeReports)
  */
 export class TimeReports {
     /**

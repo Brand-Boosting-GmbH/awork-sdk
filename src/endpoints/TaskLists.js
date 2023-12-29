@@ -6,7 +6,7 @@ import { TaskListTasks } from "./TaskListTasks"
 /**
  * Class corresponding to Aworks TaskLists Endpoints
  * @category Endpoints
- * @see [TaskLists in Awork API Docs](https://openapi.awork.io/#/TaskLists)
+ * @see [TaskLists in Awork API Docs](https://openapi.awork.com/#/TaskLists)
  */
 
 export class TaskLists {
@@ -16,7 +16,7 @@ export class TaskLists {
      * @param {('projects')} entityName Currently only 'projects' supported.
      * @param {String} entityId The id of the entity (project)
      */
-     constructor(client, entityName, entityId) {
+    constructor(client, entityName, entityId) {
         /**@private*/
         this._client = client
         /**@private */
@@ -31,7 +31,7 @@ export class TaskLists {
      * @param {String} taskListId The id of the task list.
      * @returns {Promise<TaskListTemplate>}
      */
-    async get (taskListId) {
+    async get(taskListId) {
         const response = await this._client.get(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}`, options)
         const data = response.data()
         return new TaskListTemplate(data)
@@ -47,7 +47,7 @@ export class TaskLists {
      * @param {AdvancedListOptions} [options] Pagination, filtering and show archived option.
      * @returns {Promise<Array<TaskListTemplate>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`/${this._entityName}/${this._entityId}/tasklists`, options)
         const data = response.data()
         return data.map(d => new TaskListTemplate(d))
@@ -65,7 +65,7 @@ export class TaskLists {
      * @param {TaskListCreateModel} taskList The model to create a new task list.
      * @returns {Promise<TaskListTemplate>}
      */
-    async create (taskList) {
+    async create(taskList) {
         const response = await this._client.post(`/${this._entityName}/${this._entityId}/tasklists`, taskList)
         const data = response.data()
         return new TaskListTemplate(data)
@@ -78,7 +78,7 @@ export class TaskLists {
      * @param {{name: String}} taskList The model used to update the task list with the specified id.
      * @returns {Promise<TaskListTemplate>}
      */
-    async update (taskListId, taskList) {
+    async update(taskListId, taskList) {
         const response = await this._client.put(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}`, taskList)
         const data = response.data()
         return new TaskListTemplate(data)
@@ -91,8 +91,8 @@ export class TaskLists {
      * @param {Boolean} deleteTasks Whether all tasks in this list should be deleted. If false or not set, the tasks will just be removed from the list.
      * @returns {Promise<void>}
      */
-    async delete (taskListId, deleteTasks = false) {
-        await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/delete`, {deleteTasks: deleteTasks})
+    async delete(taskListId, deleteTasks = false) {
+        await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/delete`, { deleteTasks: deleteTasks })
     }
 
     /**
@@ -102,8 +102,8 @@ export class TaskLists {
      * @param {Number} order The order of the list.
      * @returns {Promise<void>}
      */
-    async updateOrder (taskListId, order) {
-        await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/updateorder`, {order: order})
+    async updateOrder(taskListId, order) {
+        await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/updateorder`, { order: order })
     }
 
     /**
@@ -120,7 +120,7 @@ export class TaskLists {
      * @param {TaskListArchiveModel} archiveOptions The model to archive the task list.
      * @return {Promise<TaskListTemplate>}
      */
-    async setArchived (taskListId, archiveOptions) {
+    async setArchived(taskListId, archiveOptions) {
         const response = await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/setarchived`, archiveOptions)
         const data = response.data()
         return new TaskListTemplate(data)
@@ -139,7 +139,7 @@ export class TaskLists {
      * @param {Array<AddTaskModel>} tasksToAdd The ids of the tasks to add to the list.
      * @returns {Promise<Array<({taskId: String, order: Number})>>}
      */
-    async addTasks (taskListId, tasksToAdd) {
+    async addTasks(taskListId, tasksToAdd) {
         const response = await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/addtasks`, tasksToAdd)
         return response.data()
     }
@@ -151,11 +151,11 @@ export class TaskLists {
      * @param {Array<String>} tasksToRemove The ids of the tasks to remove from the list.
      * @returns {Promise<void>}
      */
-    async removeTasks (taskListId, tasksToRemove) {
+    async removeTasks(taskListId, tasksToRemove) {
         await this._client.post(`/${this._entityName}/${this._entityId}/tasklists/${taskListId}/removetasks`, tasksToRemove)
     }
 
-    tasks (taskListId) {
+    tasks(taskListId) {
         return new TaskListTasks(this._client, this._entityName, this._entityId, taskListId)
     }
 

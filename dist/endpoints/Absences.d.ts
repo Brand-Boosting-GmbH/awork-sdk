@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks Absences Endpoints
  * @category Endpoints
- * @see [Absences in Awork API Docs](https://openapi.awork.io/#/Absences)
+ * @see [Absences in Awork API Docs](https://openapi.awork.com/#/Absences)
  */
 export class Absences {
     /**

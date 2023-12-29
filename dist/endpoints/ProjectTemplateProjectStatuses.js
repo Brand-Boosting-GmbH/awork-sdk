@@ -10,7 +10,7 @@ var _ProjectStatus = require("../model/ProjectStatus");
 /**
  * Class corresponding to Aworks projecttemplates related part of the ProjectStatuses Endpoints
  * @category Endpoints
- * @see [ProjectStatuses in Awork API Docs](https://openapi.awork.io/#/ProjectStatuses)
+ * @see [ProjectStatuses in Awork API Docs](https://openapi.awork.com/#/ProjectStatuses)
  */
 class ProjectTemplateProjectStatuses {
   /**

@@ -3,7 +3,7 @@ import { ProjectMember } from "../model/ProjectMember"
 /**
  * Class corresponding to the Member part of Aworks Projects Endpoint
  * @category Endpoints
- * @see [Projects in Awork API Docs](https://openapi.awork.io/#/Projects)
+ * @see [Projects in Awork API Docs](https://openapi.awork.com/#/Projects)
  */
 export class ProjectMembers {
     constructor(client, projectId) {
@@ -83,8 +83,8 @@ export class ProjectMembers {
      * @returns {Promise<ProjectMember>}
      */
     async update(userId, projectMember) {
-        await this._client.post(`projects/${this._projectId}/updateprojectmember`, { userId, ...projectMember})
-        return new ProjectMember({ userId, ...projectMember})
+        await this._client.post(`projects/${this._projectId}/updateprojectmember`, { userId, ...projectMember })
+        return new ProjectMember({ userId, ...projectMember })
     }
 
     /**
@@ -95,6 +95,6 @@ export class ProjectMembers {
      * @returns {Promise<void>}
      */
     async delete(projectMemberId) {
-        await this._client.post(`projects/${this._projectId}/removeprojectmember`, {userId: projectMemberId})
+        await this._client.post(`projects/${this._projectId}/removeprojectmember`, { userId: projectMemberId })
     }
 }

@@ -12,18 +12,18 @@ import { EntityTags } from './EntityTags'
 /**
  * Class corresponding to Aworks Users Endpoints
  * @category Endpoints
- * @see [Users in Awork API Docs](https://openapi.awork.io/#/Users)
+ * @see [Users in Awork API Docs](https://openapi.awork.com/#/Users)
  */
 export class Users {
     /**
      * Endpoint constructor
      * @param {import('../client/index').Client} client 
      */
-     constructor(client) {
+    constructor(client) {
         /** @private */
         this._client = client
         /** @private */
-        this._userPrefix = `/users` 
+        this._userPrefix = `/users`
     }
 
     /**
@@ -44,7 +44,7 @@ export class Users {
      * @returns {Promise<Array<User>>}
      */
     async list(options, showArchived = false) {
-        const response = await this._client.get('/users', { ...options, showArchived})
+        const response = await this._client.get('/users', { ...options, showArchived })
         const data = response.data()
         return data.map(d => new User(d))
     }
@@ -133,7 +133,7 @@ export class Users {
      * @returns 
      */
     async setArchived(userId, isArchived) {
-        const response = await this._client.post(`/users/${userId}/setarchived`, {isArchived: isArchived})
+        const response = await this._client.post(`/users/${userId}/setarchived`, { isArchived: isArchived })
         const data = response.data()
         return new ExtendedUser(data)
     }
@@ -188,7 +188,7 @@ export class Users {
      * @param {String} usersId The id of the user.
      * @returns {EntityImages}
      */
-     images (usersId) {
+    images(usersId) {
         return new EntityImages(this._client, 'users', usersId)
     }
 
@@ -197,8 +197,8 @@ export class Users {
      * @param {String} userId The id of the user.
      * @returns {UserPrivateTasksSubtasks}
      */
-    userPrivateTasksSubtasks (userId) {
-        return new UserPrivateTasksSubtasks(this._client, userId )
+    userPrivateTasksSubtasks(userId) {
+        return new UserPrivateTasksSubtasks(this._client, userId)
     }
 
     /**
@@ -206,8 +206,8 @@ export class Users {
      * @param {String} userId The id of the user.
      * @returns {UserOtherPrivateTasksSubtasks}
      */
-    userOtherPrivateTasksSubtasks (userId) {
-        return new UserOtherPrivateTasksSubtasks(this._client, userId )
+    userOtherPrivateTasksSubtasks(userId) {
+        return new UserOtherPrivateTasksSubtasks(this._client, userId)
     }
 
     /**
@@ -215,8 +215,8 @@ export class Users {
      * @param {String} userId The id of the user.
      * @returns {TimeTrackings}
      */
-    timeTrackings (userId) {
-        return new TimeTrackings(this._client, userId )
+    timeTrackings(userId) {
+        return new TimeTrackings(this._client, userId)
     }
 
     /**
@@ -224,7 +224,7 @@ export class Users {
      * @param {String} userId The id of the users.
      * @returns 
      */
-     tags (userId) {
+    tags(userId) {
         return new EntityTags(this._client, 'users', userId)
     }
 
@@ -234,7 +234,7 @@ export class Users {
      * @returns 
      * @deprecated
      */
-    entityTags (userId) {
+    entityTags(userId) {
         return this.tags(userId)
     }
 }

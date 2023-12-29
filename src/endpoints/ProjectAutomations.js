@@ -6,9 +6,9 @@ import { ProjectActions } from './ProjectActions'
 /**
  * Class corresponding to Aworks ProjectAutomations Endpoints
  * @category Endpoints
- * @see [ProjectAutomations in Awork API Docs](https://openapi.awork.io/#/ProjectAutomations)
+ * @see [ProjectAutomations in Awork API Docs](https://openapi.awork.com/#/ProjectAutomations)
  */
- export class ProjectAutomations {
+export class ProjectAutomations {
     /**
      * Endpoint constructor
      * @param {import('../client/index').Client} client 
@@ -37,7 +37,7 @@ import { ProjectActions } from './ProjectActions'
      * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Automation>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`/projects/${this._projectId}/automations`, options)
         const data = response.data()
         return data.map(d => new Automation(d))
@@ -54,7 +54,7 @@ import { ProjectActions } from './ProjectActions'
      * @param {AutomationCreateModel} automation The model to create an automation.
      * @returns {Promise<Automation>}
      */
-    async create (automation) {
+    async create(automation) {
         const response = await this._client.post(`/projects/${this._projectId}/automations`, automation)
         const data = response.data()
         return new Automation(data)
@@ -72,7 +72,7 @@ import { ProjectActions } from './ProjectActions'
      * @param {AutomationUpdateModel} automation The model to update an automation.
      * @returns {Promise<Automation>}
      */
-    async update (automationId, automation) {
+    async update(automationId, automation) {
         const response = await this._client.put(`/projects/${this._projectId}/automations/${automationId}`, automation)
         const data = response.data()
         return new Automation(data)
@@ -83,7 +83,7 @@ import { ProjectActions } from './ProjectActions'
      * @param {String} automationId The id of the automation.
      * @returns {Promise<Automation>}
      */
-    async delete (automationId) {
+    async delete(automationId) {
         const response = await this._client.delete(`/projects/${this._projectId}/automations/${automationId}`)
         const data = response.data()
         return new Automation(data)
@@ -94,7 +94,7 @@ import { ProjectActions } from './ProjectActions'
      * @param {String} projectTemplateId The id of the project template
      * @returns {ProjectActions}
      */
-     actions (automationId) {
+    actions(automationId) {
         return new ProjectActions(this._client, this._projectId, automationId)
     }
 }

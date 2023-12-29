@@ -4,7 +4,7 @@ import { TaskTemplate } from '../model/TaskTemplate'
 /**
  * Class corresponding to Aworks tasktemplates related part of the TaskBundles Endpoints
  * @category Endpoints
- * @see [TaskBundles in Awork API Docs](https://openapi.awork.io/#/TaskBundles)
+ * @see [TaskBundles in Awork API Docs](https://openapi.awork.com/#/TaskBundles)
  */
 export class TaskBundleTaskTemplates {
     /**
@@ -24,7 +24,7 @@ export class TaskBundleTaskTemplates {
      * @param {String} taskTemplateId The id of the task template.
      * @returns {Promise<TaskTemplate>}
      */
-    async get (taskTemplateId) {
+    async get(taskTemplateId) {
         const response = await this._client.get(`/taskbundles/${this._taskBundleId}/tasktemplates/${taskTemplateId}`)
         const data = response.data()
         return new TaskTemplate(data)
@@ -35,7 +35,7 @@ export class TaskBundleTaskTemplates {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<TaskListTemplate>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`/taskbundles/${this._taskBundleId}/tasktemplates`, options)
         const data = response.data()
         return data.map(d => new TaskTemplate(d))
@@ -59,7 +59,7 @@ export class TaskBundleTaskTemplates {
      * @param {TaskTemplateCreateModel} taskTemplate The model used to create a new task template.
      * @returns {Promise<TaskTemplate>}
      */
-    async create (taskTemplate) {
+    async create(taskTemplate) {
         const response = await this._client.post(`/taskbundles/${this._taskBundleId}/tasktemplates`, taskTemplate)
         const data = response.data()
         return new TaskTemplate(data)
@@ -75,7 +75,7 @@ export class TaskBundleTaskTemplates {
      * @param {TaskTemplateUpdateModel} taskTemplate The model to update a task template.
      * @returns {Promise<TaskTemplate>}
      */
-    async update (taskTemplateId, taskTemplate) {
+    async update(taskTemplateId, taskTemplate) {
         const response = await this._client.put(`/taskbundles/${this._taskBundleId}/tasktemplates/${taskTemplateId}`, taskTemplate)
         const data = response.data()
         return new TaskTemplate(data)
@@ -86,7 +86,7 @@ export class TaskBundleTaskTemplates {
      * @param {String} taskTemplateId The id of the task template.
      * @returns {Promise<void>}
      */
-    async delete (taskTemplateId) {
+    async delete(taskTemplateId) {
         await this._client.delete(`/taskbundles/${this._taskBundleId}/tasktemplates/${taskTemplateId}`)
     }
 }

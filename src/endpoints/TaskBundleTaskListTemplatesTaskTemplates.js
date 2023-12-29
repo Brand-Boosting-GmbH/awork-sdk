@@ -4,16 +4,16 @@ import '../globalTypedef'
 /**
  * Class corresponding to Aworks tasktemplates related part of the TaskBundles - TaskListTemplate Endpoints
  * @category Endpoints
- * @see [TaskBundles in Awork API Docs](https://openapi.awork.io/#/TaskBundles)
+ * @see [TaskBundles in Awork API Docs](https://openapi.awork.com/#/TaskBundles)
  */
 export class TaskBundleTaskListTemplatesTaskTemplates {
-     /**
-     * Endpoint constructor
-     * @param {import('../client/index').Client} client 
-     * @param {String} taskBundleId The id of the task bundle.
-     * @param {String} taskListTemplateId The id of the task list template.
-     */
-    constructor (client, taskBundleId, taskListTemplateId) {
+    /**
+    * Endpoint constructor
+    * @param {import('../client/index').Client} client 
+    * @param {String} taskBundleId The id of the task bundle.
+    * @param {String} taskListTemplateId The id of the task list template.
+    */
+    constructor(client, taskBundleId, taskListTemplateId) {
         /**@private */
         this._client = client
         /**@private */
@@ -27,7 +27,7 @@ export class TaskBundleTaskListTemplatesTaskTemplates {
      * @param {String} taskTemplateId The id of the task.
      * @returns {Promise<TaskTemplate>}
      */
-    async get (taskTemplateId) {
+    async get(taskTemplateId) {
         const response = await this._client.get(`/taskbundles/${this._taskBundleId}/tasklisttemplates/${this._taskListTemplateId}/tasktemplates/${taskTemplateId}`)
         const data = response.data()
         return new TaskTemplate(data)
@@ -38,7 +38,7 @@ export class TaskBundleTaskListTemplatesTaskTemplates {
      * @param {import('../global').ListOptions} options Pagination and filtering options.
      * @returns {Promise<Array<TaskTemplate>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`/taskbundles/${this._taskBundleId}/tasklisttemplates/${this._taskListTemplateId}/tasktemplates`, options)
         const data = response.data()
         return data.map(d => new TaskTemplate(d))
@@ -50,8 +50,8 @@ export class TaskBundleTaskListTemplatesTaskTemplates {
      * @param {Number} order The order of the task in the list.
      * @returns {Promise<void>}
      */
-    async updateOrder (taskTemplateId, order) {
-        await this._client.get(`/taskbundles/${this._taskBundleId}/tasklisttemplates/${this._taskListTemplateId}/tasktemplates/${taskTemplateId}/updateorder`, {order: order})
+    async updateOrder(taskTemplateId, order) {
+        await this._client.get(`/taskbundles/${this._taskBundleId}/tasklisttemplates/${this._taskListTemplateId}/tasktemplates/${taskTemplateId}/updateorder`, { order: order })
     }
 
     /**
@@ -65,7 +65,7 @@ export class TaskBundleTaskListTemplatesTaskTemplates {
      * @param {TaskTemplatesToAdd} taskTemplatesToAdd The ids of the task templates to add to the list.
      * @returns {Promise<Array<Object>>}
      */
-     async addTaskTemplates (taskTemplatesToAdd) {
+    async addTaskTemplates(taskTemplatesToAdd) {
         const response = await this._client.post(`/taskbundles/${this._taskBundleId}/tasklisttemplates/${this._taskListTemplateId}/addtasktemplates`, taskTemplatesToAdd)
         return response.data()
     }
@@ -75,7 +75,7 @@ export class TaskBundleTaskListTemplatesTaskTemplates {
      * @param {Array<String>} taskTemplatesToRemove The ids of the tasks to remove from the list.
      * @returns {Promise<void>}
      */
-    async removeTaskTemplates (taskTemplatesToRemove) {
+    async removeTaskTemplates(taskTemplatesToRemove) {
         await this._client.post(`/taskbundles/${this._taskBundleId}/tasklisttemplates/${this._taskListTemplateId}/addtasktemplates`, taskTemplatesToRemove)
     }
 }

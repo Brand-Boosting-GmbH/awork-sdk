@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks project related part of the ProjectStatuses Endpoints
  * @category Endpoints
- * @see [ProjectStatuses in Awork API Docs](https://openapi.awork.io/#/ProjectStatuses)
+ * @see [ProjectStatuses in Awork API Docs](https://openapi.awork.com/#/ProjectStatuses)
  */
 export class ProjectProjectStatuses {
     /**

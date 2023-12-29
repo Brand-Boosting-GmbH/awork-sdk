@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks Companies Endpoints
  * @category Endpoints
- * @see [Companies in Awork API Docs](https://openapi.awork.io/#/Companies)
+ * @see [Companies in Awork API Docs](https://openapi.awork.com/#/Companies)
  */
 export class Companies {
     /**

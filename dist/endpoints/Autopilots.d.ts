@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks Autopilots Endpoints
  * @category Endpoints
- * @see [Autopilots in Awork API Docs](https://openapi.awork.io/#/Autopilots)
+ * @see [Autopilots in Awork API Docs](https://openapi.awork.com/#/Autopilots)
  */
 export class Autopilots {
     /**

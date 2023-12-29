@@ -4,18 +4,18 @@ import { TaskView } from '../model/TaskView'
 /**
  * Class corresponding to Aworks TaskViews Endpoints
  * @category Endpoints
- * @see [TaskViews in Awork API Docs](https://openapi.awork.io/#/TaskViews)
+ * @see [TaskViews in Awork API Docs](https://openapi.awork.com/#/TaskViews)
  */
 export class TaskViews {
     /**
      * Endpoint constructor
      * @param {import('../client/index').Client} client 
      */
-     constructor(client) {
+    constructor(client) {
         /** @private */
         this._client = client
         /** @private */
-        this._userPrefix = `` 
+        this._userPrefix = ``
     }
 
     /**
@@ -28,7 +28,7 @@ export class TaskViews {
         const data = response.data()
         return new TaskView(data)
     }
-    
+
     /**
      * Returns all task views. Task views that are not shared are not considered.
      * @param {import('../global').ListOptions} [options] Pagination and filtering options

@@ -3,15 +3,15 @@ import { ProjectStatus } from "../model/ProjectStatus"
 /**
  * Class corresponding to Aworks project related part of the ProjectStatuses Endpoints
  * @category Endpoints
- * @see [ProjectStatuses in Awork API Docs](https://openapi.awork.io/#/ProjectStatuses)
+ * @see [ProjectStatuses in Awork API Docs](https://openapi.awork.com/#/ProjectStatuses)
  */
 export class ProjectProjectStatuses {
-    
-     /**
-     * Endpoint constructor
-     * @param {import('../client/index').Client} client 
-     * @param {String} projectId The id of the project.
-     */
+
+    /**
+    * Endpoint constructor
+    * @param {import('../client/index').Client} client 
+    * @param {String} projectId The id of the project.
+    */
     constructor(client, projectId) {
         /** @private */
         this._client = client

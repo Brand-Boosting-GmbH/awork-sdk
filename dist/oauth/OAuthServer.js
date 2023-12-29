@@ -45,7 +45,7 @@ class OAuthServer {
     params.append('code', code);
     const {
       data
-    } = await _axios.default.post('https://api.awork.io/api/v1/accounts/token', params, {
+    } = await _axios.default.post('https://api.awork.com/api/v1/accounts/token', params, {
       auth: {
         username: this._clientId,
         password: this._secret

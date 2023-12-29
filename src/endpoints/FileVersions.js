@@ -8,11 +8,11 @@ import FormData from "form-data"
 /**
  * Class corresponding to Versions part of the Aworks EntityFiles Endpoints
  * @category Endpoints
- * @see [EntityFiles in Awork API Docs](https://openapi.awork.io/#/EntityFiles)
+ * @see [EntityFiles in Awork API Docs](https://openapi.awork.com/#/EntityFiles)
  */
 export class FileVersions {
 
-    constructor (client, entityName, entityId, fileId) {
+    constructor(client, entityName, entityId, fileId) {
         /** @private */
         this._client = client
         /** @private */
@@ -28,7 +28,7 @@ export class FileVersions {
      * @param {String} versionId 
      * @returns {Promise<FileVersion>}
      */
-    async get (versionId) {
+    async get(versionId) {
         const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions/${versionId}`)
         const data = response.data()
         return new FileVersion(data)
@@ -40,13 +40,13 @@ export class FileVersions {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Array<FileVersion>}
      */
-     async list (options) {
+    async list(options) {
         const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions`, options)
         const data = response.data()
         return data.map(d => new FileVersion(d))
     }
 
-    
+
     /**
      * @typedef {Object} FileMetaData
      * @property {String} [name] The user-specified name of the file.
@@ -58,17 +58,17 @@ export class FileVersions {
      * @param {File|Buffer} file
      * @param {FileMetaData} metadata 
      */
-    async create (file, metadata) {
+    async create(file, metadata) {
         let filename = metadata.filename || file.name
-        if(file instanceof Buffer) {
+        if (file instanceof Buffer) {
             const { ext } = await fromBuffer(file)
             filename = filename || `upload.${ext}`
-        }    
+        }
         let formData = new FormData()
         formData.append('file', file, filename || 'upload')
         formData.append('name', metadata.name || filename || 'upload')
         formData.append('filename', filename || 'upload')
-        const response = await this._client.post(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions`, formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders()})
+        const response = await this._client.post(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions`, formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders() })
         const data = response.data()
         return new FileVersion(data)
     }
@@ -78,7 +78,7 @@ export class FileVersions {
      * @param {String} versionId 
      * @returns {Promise<Object>}
      */
-    async download (versionId) {
+    async download(versionId) {
         const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${this._fileId}/versions/${versionId}/download`)
         return response.data()
     }

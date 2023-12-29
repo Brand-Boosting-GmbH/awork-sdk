@@ -4,14 +4,14 @@ import { ApiUser } from "../model/ApiUser"
 /**
  * Class corresponding to Aworks ApiUsers Endpoints
  * @category Endpoints
- * @see [ApiUsers in Awork API Docs](https://openapi.awork.io/#/ApiUsers)
+ * @see [ApiUsers in Awork API Docs](https://openapi.awork.com/#/ApiUsers)
  */
 export class ApiUsers {
     /**
      * Endpoint constructor
      * @param {import('../client/index').Client} client 
      */
-     constructor(client) {
+    constructor(client) {
         /**
          * @private
          */

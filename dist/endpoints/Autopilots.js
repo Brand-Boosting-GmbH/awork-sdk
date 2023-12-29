@@ -12,7 +12,7 @@ var _Autopilot = require("../model/Autopilot");
 /**
  * Class corresponding to Aworks Autopilots Endpoints
  * @category Endpoints
- * @see [Autopilots in Awork API Docs](https://openapi.awork.io/#/Autopilots)
+ * @see [Autopilots in Awork API Docs](https://openapi.awork.com/#/Autopilots)
  */
 class Autopilots {
   /**

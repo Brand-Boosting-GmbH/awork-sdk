@@ -12,7 +12,7 @@ var _TimeEntry = require("../model/TimeEntry");
 /**
  * Class corresponding to Aworks TimeTrackings Endpoints
  * @category Endpoints
- * @see [TimeTrackings in Awork API Docs](https://openapi.awork.io/#/TimeTrackings)
+ * @see [TimeTrackings in Awork API Docs](https://openapi.awork.com/#/TimeTrackings)
  */
 class TimeTrackings {
   /**

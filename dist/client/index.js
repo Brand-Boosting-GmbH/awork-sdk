@@ -92,7 +92,7 @@ class AworkResponse {
 
 
 class Client {
-  constructor(apiKey = '', basePath = 'https://api.awork.io/api/v1') {
+  constructor(apiKey = '', basePath = 'https://api.awork.com/api/v1') {
     this.basePath = basePath;
     this.http = _axios.default.create({
       baseURL: basePath,

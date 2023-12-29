@@ -4,7 +4,7 @@ import '../globalTypedef'
 /**
  * Class corresponding to Aworks ProjectTemplateActions Endpoints
  * @category Endpoints
- * @see [ProjectTemplateActions in Awork API Docs](https://openapi.awork.io/#/ProjectTemplateActions)
+ * @see [ProjectTemplateActions in Awork API Docs](https://openapi.awork.com/#/ProjectTemplateActions)
  */
 export class ProjectTemplateActions {
     /**
@@ -27,7 +27,7 @@ export class ProjectTemplateActions {
      * @param {String} actionId The id of the action.
      * @returns {Promise<Action>}
      */
-    async get (actionId) {
+    async get(actionId) {
         const response = await this._client.get(`/projecttemplates/${this._projectTemplateId}/automations/${this._automationId}/actions/${actionId}`)
         const data = response.data()
         return new Action(data)
@@ -38,7 +38,7 @@ export class ProjectTemplateActions {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Action>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`/projecttemplates/${this._projectTemplateId}/automations/${this._automationId}/actions`, options)
         const data = response.data()
         return data.map(d => new Action(d))
@@ -62,7 +62,7 @@ export class ProjectTemplateActions {
      * @param {ActionCreateModel} action The model to create an action.
      * @returns {Promise<Action>}
      */
-    async create (action) {
+    async create(action) {
         const response = await this._client.post(`/projecttemplates/${this._projectTemplateId}/automations/${this._automationId}/actions`, action)
         const data = response.data()
         return new Action(data)
@@ -79,7 +79,7 @@ export class ProjectTemplateActions {
      * @param {ActionUpdateModel} action The model to update an action.
      * @returns {Promise<Action>}
      */
-    async update (actionId, action) {
+    async update(actionId, action) {
         const response = await this._client.put(`/projecttemplates/${this._projectTemplateId}/automations/${this._automationId}/actions/${actionId}`, action)
         const data = response.data()
         return new Action(data)
@@ -90,7 +90,7 @@ export class ProjectTemplateActions {
      * @param {String} actionId The id of the action.
      * @returns {Promise<void>}
      */
-    async delete (actionId) {
+    async delete(actionId) {
         await this._client.delete(`/projecttemplates/${this._projectTemplateId}/automations/${this._automationId}/actions/${actionId}`)
     }
 
@@ -100,8 +100,8 @@ export class ProjectTemplateActions {
      * @param {Number} order The order of the automation within a list.
      * @returns {Promise<Action>}
      */
-    async updateOrder (actionId, order) {
-        const response = await this._client.post(`/projecttemplates/${this._projectTemplateId}/automations/${this._automationId}/actions/${actionId}/updateorder`, {order: order})
+    async updateOrder(actionId, order) {
+        const response = await this._client.post(`/projecttemplates/${this._projectTemplateId}/automations/${this._automationId}/actions/${actionId}/updateorder`, { order: order })
         const data = response.data()
         return new Action(data)
     }

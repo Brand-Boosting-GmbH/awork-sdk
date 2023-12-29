@@ -6,7 +6,7 @@ import { ProjectTemplateActions } from './ProjectTemplateActions'
 /**
  * Class corresponding to Aworks ProjectTemplateAutomations Endpoints
  * @category Endpoints
- * @see [ProjectTemplateAutomations in Awork API Docs](https://openapi.awork.io/#/ProjectTemplateAutomations)
+ * @see [ProjectTemplateAutomations in Awork API Docs](https://openapi.awork.com/#/ProjectTemplateAutomations)
  */
 export class ProjectTemplateAutomations {
     /**
@@ -37,7 +37,7 @@ export class ProjectTemplateAutomations {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Automation>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`/projecttemplates/${this._projectTemplateId}/automations`, options)
         const data = response.data()
         return data.map(d => new Automation(d))
@@ -54,7 +54,7 @@ export class ProjectTemplateAutomations {
      * @param {AutomationCreateModel} automation The model to create an automation.
      * @returns {Promise<Automation>}
      */
-    async create (automation) {
+    async create(automation) {
         const response = await this._client.post(`/projecttemplates/${this._projectTemplateId}/automations`, automation)
         const data = response.data()
         return new Automation(data)
@@ -72,7 +72,7 @@ export class ProjectTemplateAutomations {
      * @param {AutomationUpdateModel} automation The model to update an automation.
      * @returns {Promise<Automation>}
      */
-    async update (automationId, automation) {
+    async update(automationId, automation) {
         const response = await this._client.put(`/projecttemplates/${this._projectTemplateId}/automations/${automationId}`, automation)
         const data = response.data()
         return new Automation(data)
@@ -84,8 +84,8 @@ export class ProjectTemplateAutomations {
      * @param {Boolean} removefromProjects Whether to delete the automation also from all projects of the projecttemplate.
      * @returns {Promise<void>}
      */
-    async delete (automationId, removefromProjects) {
-        await this._client.delete(`/projecttemplates/${this._projectTemplateId}/automations/${automationId}`, {removeFromProjects: removefromProjects})
+    async delete(automationId, removefromProjects) {
+        await this._client.delete(`/projecttemplates/${this._projectTemplateId}/automations/${automationId}`, { removeFromProjects: removefromProjects })
     }
 
     /**
@@ -94,7 +94,7 @@ export class ProjectTemplateAutomations {
      * @param {String} automationId The id of the automation.
      * @returns {Promise<void>}
      */
-    async reApply (automationId) {
+    async reApply(automationId) {
         await this._client.post(`/projecttemplates/${this._projectTemplateId}/automations/${automationId}/reapply`)
     }
 
@@ -103,7 +103,7 @@ export class ProjectTemplateAutomations {
      * @param {String} projectTemplateId The id of the project template
      * @returns {ProjectTemplateActions}
      */
-     actions (automationId) {
+    actions(automationId) {
         return new ProjectTemplateActions(this._client, this._projectTemplateId, automationId)
     }
 }

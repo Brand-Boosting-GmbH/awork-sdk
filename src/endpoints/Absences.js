@@ -4,7 +4,7 @@ import { Absence } from "../model/Absence"
 /**
  * Class corresponding to Aworks Absences Endpoints
  * @category Endpoints
- * @see [Absences in Awork API Docs](https://openapi.awork.io/#/Absences)
+ * @see [Absences in Awork API Docs](https://openapi.awork.com/#/Absences)
  */
 export class Absences {
 
@@ -12,7 +12,7 @@ export class Absences {
      * Endpoint constructor
      * @param {import('../client/index').Client} client 
      */
-     constructor(client) {
+    constructor(client) {
         /**
          * @private
          */

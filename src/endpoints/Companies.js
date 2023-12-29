@@ -7,7 +7,7 @@ import { EntityTags } from "./EntityTags"
 /**
  * Class corresponding to Aworks Companies Endpoints
  * @category Endpoints
- * @see [Companies in Awork API Docs](https://openapi.awork.io/#/Companies)
+ * @see [Companies in Awork API Docs](https://openapi.awork.com/#/Companies)
  */
 export class Companies {
     /**
@@ -97,7 +97,7 @@ export class Companies {
      * Returns all company industries that are currently in use.
      * @returns {Promise<Array>String>>}
      */
-    async industries () {
+    async industries() {
         const response = await this._client.get(`/companies/industries`)
         return response.data()
     }
@@ -107,7 +107,7 @@ export class Companies {
      * @param {String} companyId The id of the company.
      * @returns {CompaniesContactInfos}
      */
-    contactInfo (companyId) {
+    contactInfo(companyId) {
         return new CompaniesContactInfos(this._client, companyId)
     }
 
@@ -116,7 +116,7 @@ export class Companies {
      * @param {String} companyId The id of the company.
      * @returns {EntityFiles}
      */
-     files (companyId) {
+    files(companyId) {
         return new EntityFiles(this._client, 'companies', companyId)
     }
 
@@ -125,7 +125,7 @@ export class Companies {
      * @param {String} projectId The id of the company.
      * @returns {EntityImages}
      */
-     images (companyId) {
+    images(companyId) {
         return new EntityImages(this._client, 'companies', companyId)
     }
 
@@ -134,7 +134,7 @@ export class Companies {
      * @param {String} companyId The id of the company.
      * @returns 
      */
-     tags (companyId) {
+    tags(companyId) {
         return new EntityTags(this._client, 'companies', companyId)
     }
 
@@ -144,7 +144,7 @@ export class Companies {
      * @returns 
      * @deprecated
      */
-    entityTags (companyId) {
+    entityTags(companyId) {
         return this.tags(companyId)
     }
 }

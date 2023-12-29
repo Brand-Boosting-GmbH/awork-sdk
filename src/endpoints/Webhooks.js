@@ -4,7 +4,7 @@ import { Webhook } from "../model/Webhook"
 /**
  * Class corresponding to Aworks Webhooks Endpoints
  * @category Endpoints
- * @see [Webhooks in Awork API Docs](https://openapi.awork.io/#/Webhooks)
+ * @see [Webhooks in Awork API Docs](https://openapi.awork.com/#/Webhooks)
  */
 export class Webhooks {
     /**
@@ -21,7 +21,7 @@ export class Webhooks {
      * @param {String} webhookId The id of the webhook.
      * @returns {Promise<WebHook>}
      */
-    async get (webhookId) {
+    async get(webhookId) {
         const response = await this._client.get(`/webhooks/${webhookId}`)
         const data = response.data()
         return new Webhook(data)
@@ -32,7 +32,7 @@ export class Webhooks {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<Webhook>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`/webhooks`, options)
         const data = response.data()
         return data.map(d => new Webhook(d))
@@ -54,7 +54,7 @@ export class Webhooks {
      * @param {WebhookCreateModel} webhook The model to create a webhook.
      * @returns {Promise<Webhook>}
      */
-    async create (webhook) {
+    async create(webhook) {
         const response = await this._client.post('/webhooks', webhook)
         const data = response.data()
         return new Webhook(data)
@@ -66,7 +66,7 @@ export class Webhooks {
      * @param {WebhookUpdateModel} webhook The model to update a webhook.
      * @returns {Promise<Webhook>}
      */
-    async update (webhookId, webhook) {
+    async update(webhookId, webhook) {
         const response = await this._client.post(`/webhooks/${webhookId}`, webhook)
         const data = response.data()
         return new Webhook(data)
@@ -77,7 +77,7 @@ export class Webhooks {
      * @param {String} webhookId The id of the webhook. 
      * @returns {Promise<void>}
      */
-    async delete (webhookId) {
+    async delete(webhookId) {
         await this._client.delete(`/webhooks/${webhookId}`)
     }
 
@@ -85,7 +85,7 @@ export class Webhooks {
      * Returns all available event types for generic webhooks in Awork.
      * @returns {Promise<Array<String>>}
      */
-    async eventTypes () {
+    async eventTypes() {
         const response = await this._client.get('/webhooks/eventtypes')
         return response.data()
     }
@@ -94,7 +94,7 @@ export class Webhooks {
      * Returns all available event types for Slack webhooks in Awork.
      * @returns {Promise<Array<String>>}
      */
-    async slackEventTypes () {
+    async slackEventTypes() {
         const response = await this._client.get('/webhooks/eventtypes/slack')
         return response.data()
     }
@@ -104,7 +104,7 @@ export class Webhooks {
      * @param {String} webhookId The id of the webhook.
      * @returns {Promise<Array<String>>}
      */
-    async logs (webhookId) {
+    async logs(webhookId) {
         const response = await this._client.get(`/webhooks/${webhookId}/logs`)
         return response.data()
     }

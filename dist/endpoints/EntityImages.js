@@ -18,7 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Class corresponding to Aworks project related part of the Files Endpoints
  * @category Endpoints
- * @see [Files in Awork API Docs](https://openapi.awork.io/#/Files)
+ * @see [Files in Awork API Docs](https://openapi.awork.com/#/Files)
  */
 class EntityImages {
   /**

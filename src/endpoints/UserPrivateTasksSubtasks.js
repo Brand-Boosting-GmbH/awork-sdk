@@ -4,18 +4,18 @@ import { SubTask } from '../model/SubTask'
 /**
  * Class corresponding to Aworks UserPrivateTasksSubtasks Endpoints
  * @category Endpoints
- * @see [UserPrivateTasksSubtasks in Awork API Docs](https://openapi.awork.io/#/UserPrivateTasksSubtasks)
+ * @see [UserPrivateTasksSubtasks in Awork API Docs](https://openapi.awork.com/#/UserPrivateTasksSubtasks)
  */
 export class UserPrivateTasksSubtasks {
 
-     /**
-     * Endpoint constructor
-     * @param {import('../client/index').Client} client
-     * @param {String} taskId The id of the task.
-     * @param {String} subtaskId The id of the subtask.
-     * @param {String} userId The id of the user.
-     */
-    constructor (client, taskId, userId) {
+    /**
+    * Endpoint constructor
+    * @param {import('../client/index').Client} client
+    * @param {String} taskId The id of the task.
+    * @param {String} subtaskId The id of the subtask.
+    * @param {String} userId The id of the user.
+    */
+    constructor(client, taskId, userId) {
         /** @private */
         this._client = client
         /** @private */
@@ -30,7 +30,7 @@ export class UserPrivateTasksSubtasks {
      * Returns a subtask for a private task with the specified id. The user needs to be assigned to the task.
      * @returns {Promise<SubTask>}
      */
-    async get (subtaskId) {
+    async get(subtaskId) {
         const response = await this._client.get(`${this._userPrefix}/privatetasks/${this._taskId}/subtasks/${subtaskId}`)
         const data = response.data()
         return new SubTask(data)
@@ -41,7 +41,7 @@ export class UserPrivateTasksSubtasks {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<SubTask>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`${this._userPrefix}/privatetasks/${this._taskId}/subtasks`, options)
         const data = response.data()
         return data.map(d => new SubTask(d))

@@ -14,7 +14,7 @@ var _EntityFiles = require("./EntityFiles");
 /**
  * Class corresponding to Aworks Comments Endpoints
  * @category Endpoints
- * @see [Comments in Awork API Docs](https://openapi.awork.io/#/Comments)
+ * @see [Comments in Awork API Docs](https://openapi.awork.com/#/Comments)
  */
 class EntityComments {
   /**

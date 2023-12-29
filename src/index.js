@@ -26,9 +26,9 @@ import { MeAssignedTasks } from "./endpoints/MeAssignedTasks"
 import { MeDashboards } from "./endpoints/MeDashboards"
 import { MeProjectTasks } from "./endpoints/MeProjectTasks"
 import { MeTaskViews } from "./endpoints/MeTaskViews"
-import { MeTimeTrackings} from "./endpoints/MeTimeTrackings"
+import { MeTimeTrackings } from "./endpoints/MeTimeTrackings"
 import { MeUserOtherPrivateSubtasks } from "./endpoints/MeUserOtherPrivateSubtasks"
-import { MeUsers} from "./endpoints/MeUsers"
+import { MeUsers } from "./endpoints/MeUsers"
 import { MeUserPrivateSubtasks } from "./endpoints/MeUserPrivateSubtasks"
 import { ProjectStatuses } from "./endpoints/ProjectStatuses"
 
@@ -69,7 +69,7 @@ export class Awork {
     /**
      * @param {({apiKey: String, basePath: String})} init
      */
-    constructor({ apiKey, basePath = 'https://api.awork.io/api/v1' }) {
+    constructor({ apiKey, basePath = 'https://api.awork.com/api/v1' }) {
         this.client = new Client(apiKey, basePath);
     }
 
@@ -261,11 +261,11 @@ export class Awork {
      * The Tasks endpoints can be used for general task operations and batch operations. The batch operations include changing the task status, assigning users and more.
      * @returns {Tasks}
      */
-     get tasks() {
+    get tasks() {
         return new Tasks(this.client)
     }
 
-    get me () {
+    get me() {
         return {
             assignedTasks: new MeAssignedTasks(this.client),
             dashboards: new MeDashboards(this.client),

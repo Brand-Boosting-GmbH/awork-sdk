@@ -12,7 +12,7 @@ var _ProjectTasks = require("./ProjectTasks");
 /**
  * Class corresponding to Aworks ProjectTasks Endpoints
  * @category Endpoints
- * @see [ProjectTasks in Awork API Docs](https://openapi.awork.io/#/ProjectTasks)
+ * @see [ProjectTasks in Awork API Docs](https://openapi.awork.com/#/ProjectTasks)
  */
 class MeProjectTasks extends _ProjectTasks.ProjectTasks {
   /**

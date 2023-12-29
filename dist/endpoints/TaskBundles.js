@@ -18,7 +18,7 @@ var _Task = require("../model/Task");
 /**
  * Class corresponding to Aworks TaskBundles Endpoints
  * @category Endpoints
- * @see [TaskBundles in Awork API Docs](https://openapi.awork.io/#/TaskBundles)
+ * @see [TaskBundles in Awork API Docs](https://openapi.awork.com/#/TaskBundles)
  */
 class TaskBundles {
   /**

@@ -12,7 +12,7 @@ var _TimeReport = require("../model/TimeReport");
 /**
  * Class corresponding to Aworks TimeReports Endpoints
  * @category Endpoints
- * @see [TimeReports in Awork API Docs](https://openapi.awork.io/#/TimeReports)
+ * @see [TimeReports in Awork API Docs](https://openapi.awork.com/#/TimeReports)
  */
 class TimeReports {
   /**

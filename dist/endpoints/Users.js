@@ -28,7 +28,7 @@ var _EntityTags = require("./EntityTags");
 /**
  * Class corresponding to Aworks Users Endpoints
  * @category Endpoints
- * @see [Users in Awork API Docs](https://openapi.awork.io/#/Users)
+ * @see [Users in Awork API Docs](https://openapi.awork.com/#/Users)
  */
 class Users {
   /**
@@ -63,7 +63,8 @@ class Users {
 
 
   async list(options, showArchived = false) {
-    const response = await this._client.get('/users', { ...options,
+    const response = await this._client.get('/users', {
+      ...options,
       showArchived
     });
     const data = response.data();

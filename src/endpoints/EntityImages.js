@@ -7,10 +7,10 @@ import FormData from "form-data"
 /**
  * Class corresponding to Aworks project related part of the Files Endpoints
  * @category Endpoints
- * @see [Files in Awork API Docs](https://openapi.awork.io/#/Files)
+ * @see [Files in Awork API Docs](https://openapi.awork.com/#/Files)
  */
- export class EntityImages {
-    
+export class EntityImages {
+
     /**
     * Endpoint constructor
     * @param {import('../client/index').Client} client 
@@ -18,13 +18,13 @@ import FormData from "form-data"
     * @param {String} entityId
     */
     constructor(client, entityName, entityId) {
-       /** @private */
-       this._client = client
+        /** @private */
+        this._client = client
         /** @private */
         this._entityName = entityName
         /** @private */
         this._entityId = entityId
-   }
+    }
 
     /**
      * @typedef {Object} DownloadOptions
@@ -55,17 +55,17 @@ import FormData from "form-data"
      * @param {FileMetaData} metadata The file metadata.
      * @returns {Promise<EntityFile>}
      */
-     async create (file, metadata) {
+    async create(file, metadata) {
         let filename = metadata.filename || file.name
-        if(file instanceof Buffer) {
+        if (file instanceof Buffer) {
             const { ext } = await fromBuffer(file)
             filename = filename || `upload.${ext}`
-        }    
+        }
         let formData = new FormData()
         formData.append('file', file, filename || 'upload')
         formData.append('name', metadata.name || filename || 'upload')
         formData.append('filename', filename || 'upload')
-        const response = await this._client.post(`/files/images/${this._entityName}/${this._entityId}`, formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders()})
+        const response = await this._client.post(`/files/images/${this._entityName}/${this._entityId}`, formData.getBuffer(), {}, { 'Content-Length': formData.getLengthSync(), ...formData.getHeaders() })
         const data = response.data()
         return new EntityFile(data)
     }
@@ -74,7 +74,7 @@ import FormData from "form-data"
      * Deletes the profile image of the entity with the specified id.
      * @returns {Promise<void>}
      */
-    async delete () {
+    async delete() {
         await this._client.delete(`/files/images/${this._entityName}/${this._entityId}`)
     }
 }

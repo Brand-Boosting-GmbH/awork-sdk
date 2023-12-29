@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks EntityFiles Endpoints
  * @category Endpoints
- * @see [EntityFiles in Awork API Docs](https://openapi.awork.io/#/EntityFiles)
+ * @see [EntityFiles in Awork API Docs](https://openapi.awork.com/#/EntityFiles)
  */
 export class EntityFiles {
     /**

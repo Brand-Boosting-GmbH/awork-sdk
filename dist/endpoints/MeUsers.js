@@ -14,7 +14,7 @@ var _User = require("../model/User");
 /**
  * Class corresponding to Aworks Users Endpoints
  * @category Endpoints
- * @see [Users in Awork API Docs](https://openapi.awork.io/#/Users)
+ * @see [Users in Awork API Docs](https://openapi.awork.com/#/Users)
  */
 class MeUsers extends _Users.Users {
   /**

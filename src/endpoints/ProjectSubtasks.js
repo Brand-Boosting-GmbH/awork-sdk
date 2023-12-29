@@ -4,18 +4,18 @@ import { SubTask } from '../model/SubTask'
 /**
  * Class corresponding to Aworks ProjectSubtasks Endpoints
  * @category Endpoints
- * @see [ProjectSubtasks in Awork API Docs](https://openapi.awork.io/#/ProjectSubtasks)
+ * @see [ProjectSubtasks in Awork API Docs](https://openapi.awork.com/#/ProjectSubtasks)
  */
 export class ProjectSubtasks {
 
-     /**
-     * Endpoint constructor
-     * @param {import('../client/index').Client} client
-     * @param {String} taskId The id of the task.
-     * @param {String} subtaskId The id of the subtask.
-     * @param {String} projectId The id of the project.
-     */
-    constructor (client, taskId, subtaskId, projectId) {
+    /**
+    * Endpoint constructor
+    * @param {import('../client/index').Client} client
+    * @param {String} taskId The id of the task.
+    * @param {String} subtaskId The id of the subtask.
+    * @param {String} projectId The id of the project.
+    */
+    constructor(client, taskId, subtaskId, projectId) {
         /** @private */
         this._client = client
         /** @private */

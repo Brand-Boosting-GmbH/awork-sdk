@@ -1,7 +1,7 @@
 /**
  * Class corresponding to Aworks tasktemplates related part of the TaskBundles - TaskListTemplate Endpoints
  * @category Endpoints
- * @see [TaskBundles in Awork API Docs](https://openapi.awork.io/#/TaskBundles)
+ * @see [TaskBundles in Awork API Docs](https://openapi.awork.com/#/TaskBundles)
  */
 export class TaskBundleTaskListTemplatesTaskTemplates {
     /**

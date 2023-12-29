@@ -12,7 +12,7 @@ require("../globalTypedef");
 /**
  * Class corresponding to Aworks ProjectStatuses Endpoints
  * @category Endpoints
- * @see [ProjectStatuses in Awork API Docs](https://openapi.awork.io/#/ProjectStatuses)
+ * @see [ProjectStatuses in Awork API Docs](https://openapi.awork.com/#/ProjectStatuses)
  */
 class ProjectStatuses {
   /**

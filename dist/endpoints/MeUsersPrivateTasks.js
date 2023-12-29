@@ -16,7 +16,7 @@ var _UsersPrivateTasks = require("./UsersPrivateTasks");
 /**
  * Class corresponding to Aworks UsersPrivateTasks Endpoints
  * @category Endpoints
- * @see [UsersPrivateTasks in Awork API Docs](https://openapi.awork.io/#/UsersPrivateTasks)
+ * @see [UsersPrivateTasks in Awork API Docs](https://openapi.awork.com/#/UsersPrivateTasks)
  */
 class MeUsersPrivateTasks extends _UsersPrivateTasks.UsersPrivateTasks {
   /**

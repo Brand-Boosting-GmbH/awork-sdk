@@ -12,7 +12,7 @@ var _Webhook = require("../model/Webhook");
 /**
  * Class corresponding to Aworks Webhooks Endpoints
  * @category Endpoints
- * @see [Webhooks in Awork API Docs](https://openapi.awork.io/#/Webhooks)
+ * @see [Webhooks in Awork API Docs](https://openapi.awork.com/#/Webhooks)
  */
 class Webhooks {
   /**

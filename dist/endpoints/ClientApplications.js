@@ -12,7 +12,7 @@ var _ClientApplication = require("../model/ClientApplication");
 /**
  * Class corresponding to Aworks ClientApplications Endpoints
  * @category Endpoints
- * @see [ClientApplications in Awork API Docs](https://openapi.awork.io/#/ClientApplications)
+ * @see [ClientApplications in Awork API Docs](https://openapi.awork.com/#/ClientApplications)
  */
 class ClientApplications {
   /**

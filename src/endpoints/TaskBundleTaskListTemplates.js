@@ -5,16 +5,16 @@ import '../globalTypedef'
 /**
  * Class corresponding to Aworks tasklisttemplates related part of the TaskBundles Endpoints
  * @category Endpoints
- * @see [TaskBundles in Awork API Docs](https://openapi.awork.io/#/TaskBundles)
+ * @see [TaskBundles in Awork API Docs](https://openapi.awork.com/#/TaskBundles)
  */
 export class TaskBundleTaskListTemplates {
-    
-     /**
-     * Endpoint constructor
-     * @param {import('../client/index').Client} client 
-     * @param {String} taskBundleId The id of the task bundle.
-     */
-    constructor (client, taskBundleId) {
+
+    /**
+    * Endpoint constructor
+    * @param {import('../client/index').Client} client 
+    * @param {String} taskBundleId The id of the task bundle.
+    */
+    constructor(client, taskBundleId) {
         /**@private */
         this._client = client
         /**@private */
@@ -26,7 +26,7 @@ export class TaskBundleTaskListTemplates {
      * @param {String} taskListTemplateId The id of the task list template.
      * @returns {Promise<TaskListTemplate>}
      */
-    async get (taskListTemplateId) {
+    async get(taskListTemplateId) {
         const response = await this._client.get(`/taskbundles/${this._taskBundleId}/tasklisttemplates/${taskListTemplateId}`)
         const data = response.data()
         return new TaskListTemplate(data)
@@ -37,7 +37,7 @@ export class TaskBundleTaskListTemplates {
      * @param {import('../global').ListOptions} [options] Pagination and filtering options.
      * @returns {Promise<Array<TaskListTemplate>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get(`/taskbundles/${this._taskBundleId}/tasklisttemplates`, options)
         const data = response.data()
         return data.map(d => new TaskListTemplate(d))
@@ -54,7 +54,7 @@ export class TaskBundleTaskListTemplates {
      * @param {TaskListTemplateCreateModel} taskListTemplate The model to create a new task list template.
      * @returns {Promise<TaskListTemplate>}
      */
-    async create (taskListTemplate) {
+    async create(taskListTemplate) {
         const response = await this._client.post(`/taskbundles/${this._taskBundleId}/tasklisttemplates`, taskListTemplate)
         const data = response.data()
         return new TaskListTemplate(data)
@@ -70,7 +70,7 @@ export class TaskBundleTaskListTemplates {
      * @param {TaskListTemplateUpdateModel} taskListTemplate The model to update a task list template.
      * @returns {Promise<TaskListTemplate>}
      */
-    async update (taskListTemplateId, taskListTemplate) {
+    async update(taskListTemplateId, taskListTemplate) {
         const response = await this._client.put(`/taskbundles/${this._taskBundleId}/tasklisttemplates/${taskListTemplateId}`, taskListTemplate)
         const data = response.data()
         return new TaskListTemplate(data)
@@ -81,7 +81,7 @@ export class TaskBundleTaskListTemplates {
      * @param {String} taskListTemplateId The id of the task list template.
      * @returns {Promise<void>}
      */
-    async delete (taskListTemplateId) {
+    async delete(taskListTemplateId) {
         await this._client.delete(`/taskbundles/${this._taskBundleId}/tasklisttemplates/${taskListTemplateId}`)
     }
 
@@ -90,8 +90,8 @@ export class TaskBundleTaskListTemplates {
      * @param {String} taskListTemplateId The id of the task list template.
      * @param {Number} order The order of the list.
      */
-    async updateOrder (taskListTemplateId, order) {
-        await this._client.post(`/taskbundles/${this._taskBundleId}/tasklisttemplates/${taskListTemplateId}/updateorder`, {order: order})
+    async updateOrder(taskListTemplateId, order) {
+        await this._client.post(`/taskbundles/${this._taskBundleId}/tasklisttemplates/${taskListTemplateId}/updateorder`, { order: order })
     }
 
     /**
@@ -99,7 +99,7 @@ export class TaskBundleTaskListTemplates {
      * @param {String} projectId The id of the task list template.
      * @returns {ProjectProjectStatus}
      */
-    taskTemplates (taskListTemplateId) {
+    taskTemplates(taskListTemplateId) {
         return new TaskBundleTaskListTemplatesTaskTemplates(this._client, this._taskBundleId, taskListTemplateId)
     }
 

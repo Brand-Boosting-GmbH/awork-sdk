@@ -12,7 +12,7 @@ var _ProjectType = require("../model/ProjectType");
 /**
  * Class corresponding to Aworks ProjectTypes Endpoints
  * @category Endpoints
- * @see [ProjectTypes in Awork API Docs](https://openapi.awork.io/#/ProjectTypes)
+ * @see [ProjectTypes in Awork API Docs](https://openapi.awork.com/#/ProjectTypes)
  */
 class ProjectTypes {
   /**

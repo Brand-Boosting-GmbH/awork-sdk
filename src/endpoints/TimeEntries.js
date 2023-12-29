@@ -4,14 +4,14 @@ import { TimeEntry } from "../model/TimeEntry"
 /**
  * Class corresponding to Aworks TimeEntries Endpoints
  * @category Endpoints
- * @see [TimeEntries in Awork API Docs](https://openapi.awork.io/#/TimeEntries)
+ * @see [TimeEntries in Awork API Docs](https://openapi.awork.com/#/TimeEntries)
  */
 export class TimeEntries {
     /**
      * Endpoint constructor
      * @param {import('../client/index').Client} client 
      */
-     constructor(client) {
+    constructor(client) {
         /** @private */
         this._client = client
     }
@@ -72,7 +72,7 @@ export class TimeEntries {
     async create(timeEntry) {
         const response = await this._client.post('/timeentries', timeEntry)
         const data = response.data()
-        return new TimeEntry(data)        
+        return new TimeEntry(data)
     }
 
     /**
@@ -106,7 +106,7 @@ export class TimeEntries {
      * @returns {Promise<void>}
      */
     async deleteTimeEntries(timeEntry) {
-        await this._client.post('/timeentries/delete', {ids: timeEntry})
+        await this._client.post('/timeentries/delete', { ids: timeEntry })
     }
 
     /**
@@ -115,7 +115,7 @@ export class TimeEntries {
      * @returns {Promise<void>}
      */
     async setBilled(timeEntry) {
-        await this._client.post('/timeentries/setbilled', {ids: timeEntry})
+        await this._client.post('/timeentries/setbilled', { ids: timeEntry })
     }
 
     /**
@@ -124,7 +124,7 @@ export class TimeEntries {
      * @returns {Promise<void>}
      */
     async setUnbilled(timeEntry) {
-        await this._client.post('/timeentries/setunbilled', {ids: timeEntry})
+        await this._client.post('/timeentries/setunbilled', { ids: timeEntry })
     }
 
     /**
@@ -133,7 +133,7 @@ export class TimeEntries {
      * @returns {Promise<void>}
      */
     async setUnbillable(timeEntry) {
-        await this._client.post('/timeentries/setunbillable', {ids: timeEntry}) 
+        await this._client.post('/timeentries/setunbillable', { ids: timeEntry })
     }
 
     /**
@@ -142,7 +142,7 @@ export class TimeEntries {
      * @returns {Promise<void>} 
      */
     async setBillable(timeEntry) {
-        await this._client.post('/timeentries/setbillable', {ids: timeEntry}) 
+        await this._client.post('/timeentries/setbillable', { ids: timeEntry })
     }
 
     /**
@@ -157,7 +157,7 @@ export class TimeEntries {
      * @returns {Promise<void>}
      */
     async setTypeOfWork(timeEntry) {
-        await this._client.post('/timeentries/settypeofwork', {ids: timeEntry})
+        await this._client.post('/timeentries/settypeofwork', { ids: timeEntry })
     }
 
     /**
@@ -168,6 +168,6 @@ export class TimeEntries {
     async lastTimeEntries(options) {
         const response = await this._client.get('/timeentries/last', options)
         const data = response.data()
-        return data.map(d => new TimeEntry(d))        
+        return data.map(d => new TimeEntry(d))
     }
 }

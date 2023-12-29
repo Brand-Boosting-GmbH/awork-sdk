@@ -4,9 +4,9 @@ import { ProjectRole } from "../model/ProjectRole"
 /**
  * Class corresponding to Aworks ProjectRoles Endpoints
  * @category Endpoints
- * @see [ProjectRoles in Awork API Docs](https://openapi.awork.io/#/ProjectRoles)
+ * @see [ProjectRoles in Awork API Docs](https://openapi.awork.com/#/ProjectRoles)
  */
- export class ProjectRoles {
+export class ProjectRoles {
 
     /**
      * Endpoint constructor
@@ -24,7 +24,7 @@ import { ProjectRole } from "../model/ProjectRole"
      * @param {String} projectRoleId The id of the project role.
      * @returns {Promise<ProjectRole>}
      */
-    async get (projectRoleId) {
+    async get(projectRoleId) {
         const response = await this._client.get(`/projectroles/${projectRoleId}`)
         const data = response.data()
         return new ProjectRole(data)
@@ -35,7 +35,7 @@ import { ProjectRole } from "../model/ProjectRole"
      * @param {import('../global').ListOptions} [options] Pagination and filtering options
      * @returns {Promise<Array<ProjectRole>>}
      */
-    async list (options) {
+    async list(options) {
         const response = await this._client.get('/projectroles', options)
         const data = response.data()
         return data.map(d => new ProjectRole(d))
@@ -54,7 +54,7 @@ import { ProjectRole } from "../model/ProjectRole"
      * @param {ProjectRoleCreateModel} projectRole The model to create a project role.
      * @return {Promise<ProjectRole>}
      */
-    async create (projectRole) {
+    async create(projectRole) {
         const response = await this._client.post('/projectroles', projectRole)
         const data = response.data()
         return new ProjectRole(data)
@@ -69,7 +69,7 @@ import { ProjectRole } from "../model/ProjectRole"
      * @param {String} projectRoleId The id of the project role.
      * @param {ProjectRoleUpdateModel} projectRole The model to update a project.
      */
-    async update (projectRoleId, projectRole) {
+    async update(projectRoleId, projectRole) {
         const response = await this._client.put(`/projectroles/${projectRoleId}`, projectRole)
         const data = response.data()
         return new ProjectRole(data)
@@ -81,8 +81,8 @@ import { ProjectRole } from "../model/ProjectRole"
      * @param {String} newProjectRoleId The project role id to replace the old project role with.
      * @return {Promise<void>}
      */
-    async delete (projectRoleId, newProjectRoleId) {
-        await this._client.post(`/projectroles/${projectRoleId}/delete`, {newProjectRoleId: newProjectRoleId})
+    async delete(projectRoleId, newProjectRoleId) {
+        await this._client.post(`/projectroles/${projectRoleId}/delete`, { newProjectRoleId: newProjectRoleId })
     }
 
     /**
@@ -90,7 +90,7 @@ import { ProjectRole } from "../model/ProjectRole"
      * @param {String} userId The id of the user.
      * @returns {Promise<Array<ProjectRole>>}
      */
-    async byUserId (userId) {
+    async byUserId(userId) {
         const response = await this._client.get(`/projectroles/byuserid/${userId}`)
         const data = response.data()
         return data.map(d => new ProjectRole(d))

@@ -4,14 +4,14 @@ import { Autopilot } from "../model/Autopilot"
 /**
  * Class corresponding to Aworks Autopilots Endpoints
  * @category Endpoints
- * @see [Autopilots in Awork API Docs](https://openapi.awork.io/#/Autopilots)
+ * @see [Autopilots in Awork API Docs](https://openapi.awork.com/#/Autopilots)
  */
 export class Autopilots {
     /**
      * Endpoint constructor
      * @param {import('../client/index').Client} client 
      */
-     constructor(client, projectId) {
+    constructor(client, projectId) {
         /** @private */
         this._client = client
         /** @private */
@@ -26,7 +26,7 @@ export class Autopilots {
     async get(autopilotId) {
         const response = await this._client.get(`/autopilot/${autopilotId}`)
         const data = response.data()
-        return new Autopilot(data) 
+        return new Autopilot(data)
     }
 
     /**
@@ -36,9 +36,9 @@ export class Autopilots {
     async get() {
         const response = await this._client.get(`/projects/${this._projectId}/autopilot`)
         const data = response.data()
-        return new Autopilot(data) 
+        return new Autopilot(data)
     }
-    
+
     /**
      * @typedef {Object} AlertObject
      * @property {String} id The id of the alert.
@@ -52,7 +52,7 @@ export class Autopilots {
      * @property {String} type The type of the autopilot.
      * @property {Array<AlertObject>} alerts The alerts of the autopilot.
      */
-    
+
     /**
      * Creates a new autopilot for the project with the specified id. Also creates and enables all alerts for the new autopilot. For this action, the user needs to be the owner of the project or must have 'read' permissions of the feature 'project-master-data' globally or in his project role.
      * @param {AutopilotCreateModel} autopilot The model to create a autopilot for a specific project.
