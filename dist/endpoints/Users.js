@@ -63,8 +63,7 @@ class Users {
 
 
   async list(options, showArchived = false) {
-    const response = await this._client.get('/users', {
-      ...options,
+    const response = await this._client.get('/users', { ...options,
       showArchived
     });
     const data = response.data();
