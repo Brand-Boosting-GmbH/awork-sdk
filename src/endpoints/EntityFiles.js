@@ -169,8 +169,8 @@ export class EntityFiles {
      * @param {DownloadOptions} [options] The download options.
      * @returns {String} binary
      */
-    async download(fileId, options = {}) {
-        const response = await this._client.get(`/${this._entityName}/${this._entityId}/files/${fileId}/download`, options)
+    async download (fileId, options = {}) {
+        const response = await this._client.getBinary(`/${this._entityName}/${this._entityId}/files/${fileId}/download`, options)
         return response.data()
     }
 

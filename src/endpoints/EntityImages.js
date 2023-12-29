@@ -38,8 +38,8 @@ export class EntityImages {
      * @param {DownloadOptions} [options] The download options.
      * @returns {String} binary
      */
-    async download(options = {}) {
-        const response = await this._client.get(`/files/images/${this._entityName}/${this._entityId}`, options)
+     async download (options = {}) {
+        const response = await this._client.getBinary(`/files/images/${this._entityName}/${this._entityId}`, options)
         return response.data()
     }
 
